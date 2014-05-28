@@ -18,3 +18,11 @@
 
 (require 'column-marker)
 (require 'fill-column-indicator)
+
+;; markdown customization
+ (add-hook 'markdown-mode-hook
+            (lambda ()
+              (when buffer-file-name
+                (add-hook 'after-save-hook
+                          'check-parens
+                          nil t))))

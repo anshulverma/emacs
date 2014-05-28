@@ -1,5 +1,5 @@
 ;; list of packages I need
-(setq package-list '(coffee-mode groovy-mode))
+(setq package-list '(coffee-mode groovy-mode markdown-mode  markdown-mode+ markdown-toc))
 
 ;; ### install packages
 ; list the repositories containing them
