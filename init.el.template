@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/emacs/lisp/")
+(add-to-list 'load-path "{EMACS_HOME}/lisp/")
 
 (require 'emacs-type)
 

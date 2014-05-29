@@ -1,8 +1,7 @@
 ;; ----WHITESPACE----
 (require 'whitespace)
 (global-whitespace-mode 1)
-(setq whitespace-style '(face tabs spaces trailing lines-tail space-before-tab newline indentation
-                              empty space-after-tab space-mark tab-mark newline-mark))
+(setq whitespace-style '(face tabs spaces trailing lines-tail space-before-tab newline indentation empty space-after-tab space-mark tab-mark newline-mark))
 (setq whitespace-line-column nil) ; this will make it same as fill-column
 (setq-default whitespace-mode t)
 (setq whitespace-display-mappings
