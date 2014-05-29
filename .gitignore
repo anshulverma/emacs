@@ -3,3 +3,7 @@
 *#*
 *.bak
 init.el
+
+# library files
+lib
+lib-impl
