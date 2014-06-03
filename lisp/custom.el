@@ -18,8 +18,11 @@
 (defvaralias 'sh-basic-offset 'tab-width)
 (setq sh-basic-offset 2
       sh-indentation 2)
+
+;; indentation
 (defvaralias 'cperl-indent-level 'tab-width)
 (setq-default indent-tabs-mode nil)
+(electric-indent-mode 1)
 
 (set-mouse-color "black")
 
@@ -84,3 +87,8 @@
 
 ;; increase emacs GC threshold to ~20MB
 (setq gc-cons-threshold 20000000)
+
+;; save point between sessions
+(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file "~/.emacs.d/saved-places")

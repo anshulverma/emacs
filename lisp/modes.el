@@ -38,15 +38,23 @@
 (require 'linum)
 (global-linum-mode 1)
 
-;; ----IDO MODE WITH FLX IN VERTICAL MODE----
+;; ----IDO MODE----
+(ido-mode 1)
+(setq ido-use-faces nil
+      ido-enable-prefix nil
+      ido-enable-flex-matching t
+      ido-case-fold nil
+      ido-auto-merge-work-directories-length -1
+      ido-create-new-buffer 'always
+      ido-use-filename-at-point nil
+      ido-max-prospects 10)
+
+;; use flx-ido for better name matching
 (require 'flx-ido)
 (require 'ido-vertical-mode)
-(ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
 (ido-vertical-mode 1)
-;; disable ido faces to see flx highlights.
-(setq ido-use-faces nil)
 
 ;; ----SMEX----
 (require 'smex) ; Not needed if you use package.el
