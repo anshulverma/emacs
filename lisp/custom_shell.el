@@ -3,3 +3,4 @@
     ;; run shell in emacs
     (shell))
   (print "EMACS_SHELL is not set; skipping shell customization"))
+(setenv "PAGER" "cat")

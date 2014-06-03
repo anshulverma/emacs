@@ -13,7 +13,10 @@
                      smex
                      projectile
                      perspective
-                     persp-projectile))
+                     persp-projectile
+                     auto-complete
+                     org
+                     magit))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

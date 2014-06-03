@@ -38,6 +38,7 @@
 (require 'linum)
 (global-linum-mode 1)
 
+
 ;; ----IDO MODE----
 (ido-mode 1)
 (setq ido-use-faces nil
@@ -56,6 +57,7 @@
 (flx-ido-mode 1)
 (ido-vertical-mode 1)
 
+
 ;; ----SMEX----
 (require 'smex) ; Not needed if you use package.el
 (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
@@ -66,10 +68,12 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 (setq-default smex-history-length 64)
 
+
 ;; ----PROJECTILE----
 (require 'projectile)
 (projectile-global-mode) ;; to enable in all buffers
-(setq projectile-enable-caching t)
+(setq projectile-enable-caching t
+      projectile-indexing-method 'native)
 
 ; mode integration
 (require 'persp-projectile)

@@ -9,8 +9,66 @@
                          :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
  '(linum ((t (:background "dim gray" :forground "gold" :family "DejaVu Sans Mono")))))
 
-;;; turn on syntax highlighting
+;;; environment look and feel
+
+; turn on syntax highlighting
 (global-font-lock-mode 1)
+
+; visible bel
+(setf visible-bell t)
+
+; turn on flyspell mode
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
+; use popup for flyspell correction
+(defun flyspell-emacs-popup-textual (event poss word)
+  "A textual flyspell popup menu."
+  (require 'popup)
+  (let* ((corrects (if flyspell-sort-corrections
+                       (sort (car (cdr (cdr poss))) 'string<)
+                     (car (cdr (cdr poss)))))
+         (cor-menu (if (consp corrects)
+                       (mapcar (lambda (correct)
+                                 (list correct correct))
+                               corrects)
+                     '()))
+         (affix (car (cdr (cdr (cdr poss)))))
+         show-affix-info
+         (base-menu  (let ((save (if (and (consp affix) show-affix-info)
+                                     (list
+                                      (list (concat "Save affix: " (car affix))
+                                            'save)
+                                      '("Accept (session)" session)
+                                      '("Accept (buffer)" buffer))
+                                   '(("Save word" save)
+                                     ("Accept (session)" session)
+                                     ("Accept (buffer)" buffer)))))
+                       (if (consp cor-menu)
+                           (append cor-menu (cons "" save))
+                         save)))
+         (menu (mapcar
+                (lambda (arg) (if (consp arg) (car arg) arg))
+                base-menu)))
+    (cadr (assoc (popup-menu* menu :scroll-bar t) base-menu))))
+(eval-after-load "flyspell"
+  '(progn
+     (fset 'flyspell-emacs-popup 'flyspell-emacs-popup-textual)))
+
+; use textual popup in terminal without window system
+(defun flyspell-emacs-popup-choose (org-fun event poss word)
+  (if (window-system)
+      (funcall org-fun event poss word)
+    (flyspell-emacs-popup-textual event poss word)))
+(eval-after-load "flyspell"
+  '(progn
+     (advice-add 'flyspell-emacs-popup :around #'flyspell-emacs-popup-choose)))
+
+; display file name in window title
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (concat "Emacs: " (abbreviate-file-name (buffer-file-name)))
+                 "Emacs: %b"))))
 
 ;; set default width and onlyspaces mode
 (setq tab-width 2)
@@ -22,7 +80,7 @@
 ;; indentation
 (defvaralias 'cperl-indent-level 'tab-width)
 (setq-default indent-tabs-mode nil)
-(electric-indent-mode 1)
+(global-set-key (kbd "RET") 'newline-and-indent)
 
 (set-mouse-color "black")
 
@@ -92,3 +150,36 @@
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file "~/.emacs.d/saved-places")
+
+;;; editing customizations
+(setq kill-whole-line t) ; kill entire line including RET
+
+; copy line(s) function
+(defun jao-copy-line (arg)
+  "Copy lines (as many as prefix argument) in the kill ring"
+  (interactive "p")
+  (kill-ring-save (line-beginning-position)
+                  (line-beginning-position (+ 1 arg)))
+  (message "%d line%s copied" arg (if (= 1 arg) "" "s")))
+
+; yank with indentation
+(defadvice yank (after indent-region activate)
+  (if (member major-mode '(emacs-lisp-mode
+                           lisp-mode
+                           sh-mode))
+      (indent-region (region-beginning) (region-end) nil)))
+
+;; Indentation for python
+;; Ignoring electric indentation
+(defun electric-indent-ignore-python (char)
+  "Ignore electric indentation for python-mode"
+  (if (equal major-mode 'python-mode)
+      `no-indent'
+    nil))
+(add-hook 'electric-indent-functions 'electric-indent-ignore-python)
+
+;; Enter key executes newline-and-indent
+(defun set-newline-and-indent ()
+  "Map the return key with `newline-and-indent'"
+  (local-set-key (kbd "RET") 'newline-and-indent))
+(add-hook 'python-mode-hook 'set-newline-and-indent)
