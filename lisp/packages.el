@@ -6,7 +6,8 @@
 
 ;; list of packages I need
 (setq package-list '(coffee-mode
-                     markdown-mode markdown-toc))
+                     markdown-mode markdown-toc
+                     paredit paredit-everywhere))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
