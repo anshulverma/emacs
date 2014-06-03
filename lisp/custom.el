@@ -77,3 +77,7 @@
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
+;; change M-. to find function at point instead of find tag at point for elisp
+(define-key emacs-lisp-mode-map
+(kbd "M-.") 'find-function-at-point)
