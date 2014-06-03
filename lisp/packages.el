@@ -7,7 +7,10 @@
 ;; list of packages I need
 (setq package-list '(coffee-mode
                      markdown-mode markdown-toc
-                     paredit paredit-everywhere))
+                     paredit paredit-everywhere
+                     flx-ido
+                     ido-vertical-mode
+                     smex))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
