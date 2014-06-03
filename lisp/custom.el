@@ -60,3 +60,20 @@
         (comment-or-uncomment-region start end)
         (next-line)))
 (global-set-key "\M-;" 'comment-eclipse)
+
+;; y/n instead of yes/no
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+;; show matching parenthesis
+(show-paren-mode 1)
+
+;; turn on elisp documentatin auto display
+(defun ted-frob-eldoc-argument-list (string)
+   "Upcase and fontify STRING for use with `eldoc-mode'."
+   (propertize (upcase string)
+               'face 'font-lock-variable-name-face))
+(setq eldoc-argument-case 'ted-frob-eldoc-argument-list)
+
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
