@@ -10,7 +10,10 @@
                      paredit paredit-everywhere
                      flx-ido
                      ido-vertical-mode
-                     smex))
+                     smex
+                     projectile
+                     perspective
+                     persp-projectile))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

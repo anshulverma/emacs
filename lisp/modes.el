@@ -65,3 +65,13 @@
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 (setq-default smex-history-length 64)
+
+;; ----PROJECTILE----
+(require 'projectile)
+(projectile-global-mode) ;; to enable in all buffers
+(setq projectile-enable-caching t)
+
+; mode integration
+(require 'persp-projectile)
+(define-key projectile-mode-map (kbd "C-c C-s") 'projectile-persp-switch-project)
+(persp-mode 1)
