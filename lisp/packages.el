@@ -16,7 +16,8 @@
                      persp-projectile
                      auto-complete
                      org
-                     magit))
+                     magit
+                     window-number))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

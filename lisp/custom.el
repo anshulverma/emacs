@@ -62,7 +62,8 @@
     (flyspell-emacs-popup-textual event poss word)))
 (eval-after-load "flyspell"
   '(progn
-     (advice-add 'flyspell-emacs-popup :around #'flyspell-emacs-popup-choose)))
+     (defadvice flyspell-emacs-popup (around flyspell-emacs-popup-choose-advice)
+       (flyspell-emacs-popup-choose))))
 
 ; display file name in window title
 (setq frame-title-format

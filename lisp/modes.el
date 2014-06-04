@@ -76,10 +76,16 @@
 ;; ----PROJECTILE----
 (require 'projectile)
 (projectile-global-mode) ;; to enable in all buffers
-(setq projectile-enable-caching t
-      projectile-indexing-method 'native)
+(setq projectile-enable-caching t)
+(setq projectile-indexing-method 'native)
 
 ; mode integration
 (require 'persp-projectile)
 (define-key projectile-mode-map (kbd "C-c C-s") 'projectile-persp-switch-project)
 (persp-mode 1)
+
+
+;; ----WINDOW NUMBER----
+(require 'window-number)
+(window-number-mode)
+(window-number-meta-mode)
