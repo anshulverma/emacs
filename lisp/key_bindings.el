@@ -53,3 +53,9 @@
   (flyspell-correct-word-before-point))
 (global-set-key (kbd "C-c f n") 'flyspell-check-next-misspelled-word)
 (global-set-key (kbd "C-c f c") 'flyspell-correct-word-before-point)
+
+;;; whitespace
+(global-set-key (kbd "\C-c w") 'whitespace-mode)
+(global-set-key (kbd "\C-c t") 'whitespace-toggle-options)
+(global-set-key (kbd "\C-c W") 'global-whitespace-mode)
+(global-set-key (kbd "\C-c T") 'global-whitespace-toggle-options)

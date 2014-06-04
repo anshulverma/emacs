@@ -1,7 +1,15 @@
 ;; ----WHITESPACE----
 (require 'whitespace)
 (global-whitespace-mode 1)
-(setq whitespace-style '(face tabs spaces trailing lines-tail space-before-tab newline indentation empty space-after-tab space-mark tab-mark newline-mark))
+(setq whitespace-style '(face
+                         tabs
+                         trailing
+                         lines-tail
+                         space-before-tab
+                         newline
+                         indentation
+                         empty
+                         space-after-tab))
 (setq whitespace-line-column nil) ; this will make it same as fill-column
 (setq-default whitespace-mode t)
 (setq whitespace-display-mappings
@@ -9,10 +17,6 @@
   '((space-mark 32 [183] [46]) ; 32 SPACE, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
     (newline-mark 10 [182 10]) ; 10 LINE FEED
     (tab-mark 9 [9655 9] [92 9]))) ; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
-(global-set-key "\C-c_w" 'whitespace-mode)
-(global-set-key "\C-c_t" 'whitespace-toggle-options)
-(global-set-key "\C-c=w" 'global-whitespace-mode)
-(global-set-key "\C-c=t" 'global-whitespace-toggle-options)
 (autoload 'whitespace-mode "whitespace" "Toggle whitespace visualization." t)
 (autoload 'whitespace-toggle-options "whitespace" "Toggle local `whitespace-mode' options." t)
 
