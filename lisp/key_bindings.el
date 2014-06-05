@@ -148,3 +148,6 @@
                 (lambda ()
                   (interactive)
                   (ignore-errors (backward-char 5))))
+
+;; magit status buffer
+(global-set-key (kbd "C-c g") 'magit-status)

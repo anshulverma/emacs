@@ -21,7 +21,8 @@
                      window-number
                      undo-tree
                      ace-jump-mode
-                     expand-region))
+                     expand-region
+                     dired-details))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
