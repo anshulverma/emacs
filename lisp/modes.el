@@ -79,7 +79,7 @@
 (setq projectile-enable-caching t)
 (setq projectile-indexing-method 'native)
 
-; mode integration
+; perspective mode integration
 (require 'persp-projectile)
 (define-key projectile-mode-map (kbd "C-c C-s") 'projectile-persp-switch-project)
 (persp-mode 1)
