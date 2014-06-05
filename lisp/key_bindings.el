@@ -185,3 +185,22 @@
           (message "File '%s' successfully renamed to '%s'"
                    name (file-name-nondirectory new-name)))))))
 (global-set-key (kbd "C-x <f2>") 'rename-current-buffer-file)
+
+; move lines around
+(defun move-line-down ()
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines 1))
+    (forward-line)
+    (move-to-column col)))
+(defun move-line-up ()
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines -1))
+    (move-to-column col)))
+(global-set-key (kbd "<C-M-up>") 'move-line-up)
+(global-set-key (kbd "<C-M-down>") 'move-line-down)
