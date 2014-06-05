@@ -18,7 +18,8 @@
                      org
                      magit
                      window-number
-                     undo-tree))
+                     undo-tree
+                     ace-jump-mode))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

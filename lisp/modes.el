@@ -94,3 +94,8 @@
 ;; ----UNDO TREE----
 (require 'undo-tree)
 (global-undo-tree-mode)
+
+
+;; ----ACE JUMP---
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
