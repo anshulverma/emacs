@@ -19,7 +19,8 @@
                      magit
                      window-number
                      undo-tree
-                     ace-jump-mode))
+                     ace-jump-mode
+                     expand-region))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
