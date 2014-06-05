@@ -89,3 +89,8 @@
 (require 'window-number)
 (window-number-mode)
 (window-number-meta-mode)
+
+
+;; ----UNDO TREE----
+(require 'undo-tree)
+(global-undo-tree-mode)

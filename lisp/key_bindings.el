@@ -1,3 +1,7 @@
+(defgroup nuaavee nil
+  "Custom support for nuaavee's emacs environment."
+  :group 'emacs)
+
 (global-set-key "\C-c\C-d" "\C-a\C- \C-n\M-w\C-y") ; duplicate current line
 
 ;; easy spell check
@@ -100,3 +104,19 @@
         (decf n)))))
 
 (global-set-key (kbd "C-c d") 'duplicate-current-line)
+
+;; shrink/enlarge buffers
+(define-minor-mode buffer-resize-mode
+  "Toggles buffer-resize-mode.
+    This command toggles the buffer resize mode. When enabled, buffer resize mode allows you to use
+    W, A, S, D keys to resize the current buffer."
+  :init-value nil
+  :lighter " BufferResize[C-cr(wasd)]"
+  :keymap (let ((map (make-sparse-keymap)))
+            (define-key map (kbd "C-c C-r C-w") 'enlarge-window)
+            (define-key map (kbd "C-c C-r C-a") 'shrink-window-horizontally)
+            (define-key map (kbd "C-c C-r C-s") 'shrink-window)
+            (define-key map (kbd "C-c C-r C-d") 'enlarge-window-horizontally)
+            map)
+  :group 'nuaavee)
+(global-set-key (kbd "C-c r") 'buffer-resize-mode)

@@ -17,7 +17,8 @@
                      auto-complete
                      org
                      magit
-                     window-number))
+                     window-number
+                     undo-tree))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
