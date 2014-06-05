@@ -10,6 +10,7 @@
                      paredit paredit-everywhere
                      flx-ido
                      ido-vertical-mode
+                     ido-ubiquitous
                      smex
                      projectile
                      perspective
