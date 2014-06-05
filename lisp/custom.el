@@ -5,7 +5,7 @@
  '(tab-width 2))
 (custom-set-faces
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil
-                         :overline nil :underline nil :slant normal :weight normal :height 98
+                         :overline nil :underline nil :slant normal :weight normal :height 128
                          :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
  '(linum ((t (:background "dim gray" :forground "gold" :family "DejaVu Sans Mono")))))
 
