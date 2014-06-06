@@ -1,3 +1,6 @@
+(setq package-enable-at-startup nil)
+(package-initialize)
+
 ; turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -9,14 +12,19 @@
 (setq jde-help-remote-file-exists-function '("beanshell"))
 
 (add-to-list 'load-path "{EMACS_HOME}/lisp/")
+(add-to-list 'load-path "{EMACS_HOME}/setup/")
 
 (require 'emacs-type)
 
 (load-library "packages") ;; make sure all the packages are installed
-(load-library "custom") ;; customizations to the my emacs environment
-(load-library "modes") ;; mode and configurations
-(load-library "key_bindings") ;; custom key bindings
-(load-library "custom_shell") ;; shell loading and configuration
+
+(add-hook 'after-init-hook 'initialize-after-init)
+
+(defun initialize-after-init ()
+  (load-library "custom")           ;; customizations to the my emacs environment
+  (load-library "modes")             ;; mode and configurations
+  (load-library "key_bindings")   ;; custom key bindings
+  (load-library "custom_shell")) ;; shell loading and configuration
 
 ;; setting up JDEE
 (add-to-list 'load-path "{EMACS_HOME}/lib/jdee/lisp")

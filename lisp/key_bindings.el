@@ -126,7 +126,7 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; join lines
-(global-set-key (kbd "M-j")
+(global-set-key (kbd "C-c j")
                 (lambda ()
                   (interactive)
                   (join-line -1)))

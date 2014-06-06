@@ -18,6 +18,7 @@
                      auto-complete
                      org
                      magit
+                     git-messenger
                      window-number
                      undo-tree
                      ace-jump-mode
