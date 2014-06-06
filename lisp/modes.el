@@ -121,3 +121,6 @@
 
 ;; ----MAGIT----
 (eval-after-load 'magit '(require 'setup-magit))
+
+;; ----COLUMN NUMBER----
+(setq column-number-mode 1)
