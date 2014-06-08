@@ -23,7 +23,8 @@
                      undo-tree
                      ace-jump-mode
                      expand-region
-                     dired-details))
+                     dired-details
+                     bash-completion))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
