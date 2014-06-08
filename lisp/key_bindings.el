@@ -111,12 +111,12 @@
     This command toggles the buffer resize mode. When enabled, buffer resize mode allows you to use
     W, A, S, D keys to resize the current buffer."
   :init-value nil
-  :lighter " BufferResize[C-cr(wasd)]"
+  :lighter " BufferResize"
   :keymap (let ((map (make-sparse-keymap)))
-            (define-key map (kbd "C-c C-r C-w") 'enlarge-window)
-            (define-key map (kbd "C-c C-r C-a") 'shrink-window-horizontally)
-            (define-key map (kbd "C-c C-r C-s") 'shrink-window)
-            (define-key map (kbd "C-c C-r C-d") 'enlarge-window-horizontally)
+            (define-key map (kbd "C-w") 'enlarge-window)
+            (define-key map (kbd "C-a") 'shrink-window-horizontally)
+            (define-key map (kbd "C-s") 'shrink-window)
+            (define-key map (kbd "C-d") 'enlarge-window-horizontally)
             map)
   :group 'nuaavee)
 (global-set-key (kbd "C-c r") 'buffer-resize-mode)
