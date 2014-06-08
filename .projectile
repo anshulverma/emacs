@@ -1,4 +1,8 @@
+# Temporary files
 -*~
 -*#*
+-*.bak
+
+# Library files
 -/lib
 -/lib-impl
