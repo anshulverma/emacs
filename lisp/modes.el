@@ -124,3 +124,13 @@
 
 ;; ----COLUMN NUMBER----
 (setq column-number-mode 1)
+
+
+;; ----COFFEE MODE----
+(defun coffee-custom ()
+  "coffee-mode-hook"
+
+  ;; Emacs key binding
+  (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer))
+
+(add-hook 'coffee-mode-hook '(lambda () (coffee-custom)))
