@@ -129,8 +129,10 @@
 ;; ----COFFEE MODE----
 (defun coffee-custom ()
   "coffee-mode-hook"
-
   ;; Emacs key binding
   (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer))
-
 (add-hook 'coffee-mode-hook '(lambda () (coffee-custom)))
+
+; go to corresponding point in js after compilation
+(setq coffee-args-compile '("-c" "-m")) ;; generating sourcemap
+(add-hook 'coffee-after-compile-hook 'sourcemap-goto-corresponding-point)

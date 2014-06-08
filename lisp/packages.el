@@ -24,7 +24,8 @@
                      ace-jump-mode
                      expand-region
                      dired-details
-                     bash-completion))
+                     bash-completion
+                     sourcemap))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
