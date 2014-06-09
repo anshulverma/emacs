@@ -135,3 +135,24 @@
 ; go to corresponding point in js after compilation
 (setq coffee-args-compile '("-c" "-m")) ;; generating sourcemap
 (add-hook 'coffee-after-compile-hook 'sourcemap-goto-corresponding-point)
+
+
+;; ----AUTO COMPLETE----
+(require 'auto-complete)
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories
+             "~/.workspace/emacs/dict")
+
+(ac-config-default)
+(ac-flyspell-workaround)
+
+(setq ac-delay 0.1
+      ac-auto-start 1)
+
+; hack to enable auto-complete mode everywhere
+(define-globalized-minor-mode real-global-auto-complete-mode
+  auto-complete-mode (lambda ()
+                       (if (not (minibufferp (current-buffer)))
+                           (auto-complete-mode 1))
+                       ))
+(real-global-auto-complete-mode t)
