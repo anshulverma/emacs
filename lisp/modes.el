@@ -149,10 +149,6 @@
 (setq ac-delay 0.1
       ac-auto-start 1)
 
-; hack to enable auto-complete mode everywhere
-(define-globalized-minor-mode real-global-auto-complete-mode
-  auto-complete-mode (lambda ()
-                       (if (not (minibufferp (current-buffer)))
-                           (auto-complete-mode 1))
-                       ))
-(real-global-auto-complete-mode t)
+; enable auto complete for specific modes
+(add-to-list 'ac-modes 'coffee-mode)
+(add-to-list 'ac-modes 'java-mode)
