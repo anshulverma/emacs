@@ -8,7 +8,6 @@
                          space-before-tab
                          newline
                          indentation
-                         empty
                          space-after-tab))
 (setq whitespace-line-column nil) ; this will make it same as fill-column
 (setq-default whitespace-mode t)
