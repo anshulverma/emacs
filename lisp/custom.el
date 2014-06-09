@@ -198,3 +198,18 @@
 ;; Also auto refresh dired, but be quiet about it
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
+
+;; popup select window
+(require 'popup)
+(require 'popup-select-window)
+;; (global-set-key (kbd "C-x o") 'popup-select-window)
+(global-set-key "\C-xo" 'popup-select-window)
+(setq popup-select-window-window-highlight-face
+      '(:background "navy"))
+(setq popup-select-window-window-highlight-face
+      '(:foreground "white" :background "navy"))
+(setq popup-select-window-use-modeline-highlight nil)
+(setq popup-select-window-use-buffer-highlight nil)
+(setq popup-select-window-active-modeline-bgcolor "blue")
+(setq popup-select-window-inactive-modeline-bgcolor "gray")
+(setq popup-select-window-popup-windows 1)
