@@ -202,8 +202,7 @@
 ;; popup select window
 (require 'popup)
 (require 'popup-select-window)
-;; (global-set-key (kbd "C-x o") 'popup-select-window)
-(global-set-key "\C-xo" 'popup-select-window)
+(global-set-key (kbd "C-x o") 'popup-select-window)
 (setq popup-select-window-window-highlight-face
       '(:background "navy"))
 (setq popup-select-window-window-highlight-face
