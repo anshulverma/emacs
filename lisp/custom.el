@@ -82,7 +82,9 @@
 (defvaralias 'cperl-indent-level 'tab-width)
 (setq-default indent-tabs-mode nil)
 (global-set-key (kbd "RET") 'newline-and-indent)
+(setq js-indent-level 2)
 
+;; mouse settings
 (set-mouse-color "black")
 
 ;; position and size window automatically based on display resolution
