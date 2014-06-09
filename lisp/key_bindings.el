@@ -60,9 +60,9 @@
 
 ;;; whitespace
 (global-set-key (kbd "\C-c w") 'whitespace-mode)
-(global-set-key (kbd "\C-c t") 'whitespace-toggle-options)
+(global-set-key (kbd "\C-c t w") 'whitespace-toggle-options)
 (global-set-key (kbd "\C-c W") 'global-whitespace-mode)
-(global-set-key (kbd "\C-c T") 'global-whitespace-toggle-options)
+(global-set-key (kbd "\C-c t W") 'global-whitespace-toggle-options)
 
 ;;; copy lines
 (defun copy-line (arg)
@@ -239,3 +239,14 @@
 (put 'paredit-open-square 'delete-selection t)
 (put 'paredit-doublequote 'delete-selection t)
 (put 'paredit-newline 'delete-selection t)
+
+; temporary full-screen toggle
+(defun toggle-maximize-buffer () "Maximize buffer"
+       (interactive)
+       (if (= 1 (length (window-list)))
+           (jump-to-register '_)
+         (progn
+           (window-configuration-to-register '_)
+           (delete-other-windows))))
+
+(global-set-key (kbd "C-c t f") 'toggle-maximize-buffer)
