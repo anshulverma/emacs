@@ -152,3 +152,7 @@
 ; enable auto complete for specific modes
 (add-to-list 'ac-modes 'coffee-mode)
 (add-to-list 'ac-modes 'java-mode)
+
+
+;; ----ICICLES----
+(icy-mode 1)

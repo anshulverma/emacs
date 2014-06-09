@@ -250,3 +250,6 @@
            (delete-other-windows))))
 
 (global-set-key (kbd "C-c t f") 'toggle-maximize-buffer)
+
+; icicle bindings
+(global-set-key (kbd "C-c i") 'imenu)

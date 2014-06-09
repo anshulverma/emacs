@@ -25,7 +25,8 @@
                      expand-region
                      dired-details
                      bash-completion
-                     sourcemap))
+                     sourcemap
+                     icicles))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
