@@ -21,9 +21,10 @@
 (add-hook 'after-init-hook 'initialize-after-init)
 
 (defun initialize-after-init ()
-  (load-library "custom")           ;; customizations to the my emacs environment
-  (load-library "modes")             ;; mode and configurations
-  (load-library "key_bindings")   ;; custom key bindings
+  (load-library "custom")        ;; customizations to the my emacs environment
+  (load-library "modes")         ;; mode and configurations
+  (load-library "key_bindings")  ;; custom key bindings
+  (load-library "environment")   ;; environment specific config
   (load-library "custom_shell")) ;; shell loading and configuration
 
 ;; setting up JDEE
