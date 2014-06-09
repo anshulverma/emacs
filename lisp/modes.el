@@ -141,7 +141,7 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories
-             "~/.workspace/emacs/dict")
+             "../dict")
 
 (ac-config-default)
 (ac-flyspell-workaround)
