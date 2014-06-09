@@ -7,7 +7,8 @@
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil
                          :overline nil :underline nil :slant normal :weight normal :height 128
                          :width normal :foundry "unknown" :family "Courier New"))))
- '(linum ((t (:background "dim gray" :forground "gold" :family "Courier New")))))
+ '(linum ((t (:background "dim gray" :forground "gold" :family "Courier New"))))
+ '(popup-face ((t (:background "dim gray" :foreground "white smoke")))))
 
 ;;; environment look and feel
 
