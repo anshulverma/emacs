@@ -271,3 +271,6 @@ M-x compile.
         (revert-buffer t t))
     (call-interactively 'compile)))
 (global-set-key (kbd "<f5>") 'compile-again)
+
+; regular expression builder
+(global-set-key (kbd "C-x r") 'regexp-builder)
