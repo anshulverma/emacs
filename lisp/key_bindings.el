@@ -274,3 +274,6 @@ M-x compile.
 
 ; regular expression builder
 (global-set-key (kbd "C-x r") 'regexp-builder)
+
+; auto-complete binding
+(global-set-key [C-tab] 'ac-start)

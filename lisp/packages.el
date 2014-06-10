@@ -27,6 +27,7 @@
                      bash-completion
                      sourcemap
                      icicles
+                     fuzzy
                      powerline
                      diminish))
 
