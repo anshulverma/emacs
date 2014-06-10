@@ -223,3 +223,11 @@
   (ansi-color-apply-on-region (point-min) (point-max))
   (toggle-read-only))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
+;; add stacktrace regexp for Javascript
+(defun js-error-trace ()
+  (add-to-list 'compilation-error-regexp-alist 'js-error-regexp)
+  (add-to-list 'compilation-error-regexp-alist-alist
+               ('js-error-regexp " at [^/]*\\(/[^:]*\\):\\([0-9]*\\):\\([0-9]*\\))?$"
+                                 1 2 3)))
+(add-hook 'coffee-mode-hook 'js-error-trace)
