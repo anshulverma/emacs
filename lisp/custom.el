@@ -213,3 +213,11 @@
 (setq popup-select-window-active-modeline-bgcolor "blue")
 (setq popup-select-window-inactive-modeline-bgcolor "gray")
 (setq popup-select-window-popup-windows 1)
+
+;; fix ANSI colors in compilation buffer
+(require 'ansi-color)
+(defun colorize-compilation-buffer ()
+  (toggle-read-only)
+  (ansi-color-apply-on-region (point-min) (point-max))
+  (toggle-read-only))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
