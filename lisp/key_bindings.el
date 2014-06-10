@@ -262,6 +262,7 @@
 If there was no last time, or there is a prefix argument, this acts like
 M-x compile.
 """
+  (save-some-buffers 1)
   (interactive "p")
   (if (and (eq pfx 1)
            compilation-last-buffer)
@@ -269,4 +270,4 @@ M-x compile.
         (set-buffer compilation-last-buffer)
         (revert-buffer t t))
     (call-interactively 'compile)))
-(global-set-key (kbd "C-c RET") 'compile-again)
+(global-set-key (kbd "<f5>") 'compile-again)
