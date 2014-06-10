@@ -269,4 +269,4 @@ M-x compile.
         (set-buffer compilation-last-buffer)
         (revert-buffer t t))
     (call-interactively 'compile)))
-(global-set-key (kbd "C-c 1") 'compile-again)
+(global-set-key (kbd "C-c RET") 'compile-again)
