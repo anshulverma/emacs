@@ -1,8 +1,19 @@
 ;;; ----MAC OSX----
 (if (eq system-type 'darwin)
 
-    ;; ispell is hard to find in emacs
-    (setq ispell-program-name "/usr/local/bin/ispell")
+    (progn
 
-    ;; make COMMAND key function as CTRL
-    (setq mac-command-modifier 'control))
+      ;; ispell is hard to find in emacs
+      (setq ispell-program-name "/usr/local/bin/ispell")
+
+      ;; make COMMAND key function as CTRL
+      (setq mac-command-modifier 'control)
+
+
+      ;; markdown seems to be hard to find too
+      (defun markdown-custom ()
+        "markdown-mode-hook"
+        (setq markdown-command "/usr/local/bin/markdown"))
+      (add-hook 'markdown-mode-hook '(lambda() (markdown-custom)))
+
+      ))
