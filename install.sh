@@ -2,7 +2,32 @@
 
 # TODO check emacs version
 
-# TODO check if ispell is installed; installed it if it isn't
+# get platform type
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+  platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+  platform='darwin'
+fi
+
+# check if ispell is installed
+command_exists () {
+  type "$1" &> /dev/null ;
+}
+
+# suggest how to install ispell
+if command_exists ispell; then
+  echo "ispell is already installed..."
+else
+  echo "Please install ispell:"
+  if [[ $platform == 'linux' ]]; then
+    echo "sudo apt-get install ispell"
+  else
+    echo "brew install ispell"
+  fi
+  exit 1
+fi
 
 # download all libraries
 # TODO: use npi
