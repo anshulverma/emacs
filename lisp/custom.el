@@ -228,6 +228,7 @@
 (defun js-error-trace ()
   (add-to-list 'compilation-error-regexp-alist 'js-error-regexp)
   (add-to-list 'compilation-error-regexp-alist-alist
-               ('js-error-regexp " at [^/]*\\(/[^:]*\\):\\([0-9]*\\):\\([0-9]*\\))?$"
+               '(js-error-regexp " at [^/]*\\(/[^:]*\\):\\([0-9]*\\):\\([0-9]*\\))?$"
                                  1 2 3)))
 (add-hook 'coffee-mode-hook 'js-error-trace)
+(add-hook 'js-mode-hook 'js-error-trace)
