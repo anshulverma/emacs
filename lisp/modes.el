@@ -156,3 +156,28 @@
 
 ;; ----POWERLINE----
 (powerline-center-theme)
+
+
+;; ----DIMINISH----
+(defmacro rename-modeline (package-name mode new-name)
+  `(eval-after-load ,package-name
+     '(defadvice ,mode (after rename-modeline activate)
+        (setq mode-name ,new-name))))
+
+(rename-modeline "js2-mode" js2-mode "JS2")
+(rename-modeline "clojure-mode" clojure-mode "Clj")
+(diminish 'global-whitespace-mode)
+(diminish 'whitespace-mode)
+(diminish 'undo-tree-mode)
+(diminish 'ace-jump-mode)
+(diminish 'projectile-mode)
+(diminish 'auto-complete-mode)
+(diminish 'eldoc-mode)
+
+(defun diminish-prog-modes ()
+  "Diminish all the unwanted modes from prog modes"
+  (progn
+    (if (member 'flyspell-mode minor-mode-list)
+    (diminish 'flyspell-mode))))
+(add-hook 'emacs-lisp-mode-hook 'diminish-prog-modes)
+

@@ -27,7 +27,8 @@
                      bash-completion
                      sourcemap
                      icicles
-                     powerline))
+                     powerline
+                     diminish))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
