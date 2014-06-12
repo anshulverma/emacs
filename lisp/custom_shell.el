@@ -10,10 +10,15 @@
   (interactive)
   (let ((comint-buffer-maximum-size 0))
     (comint-truncate-buffer)))
-
-
 (defun shell-mode-setup()
   "Set up key bindings and other things specific to shell mode"
   (progn
     (local-set-key (kbd "C-x c") 'clear-shell)))
 (setq shell-mode-hook 'shell-mode-setup)
+
+; fix ANSI color
+(eval-after-load 'shell
+  '(progn
+     (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+     (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on t)
+     t))
