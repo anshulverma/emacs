@@ -119,7 +119,7 @@
             (define-key map (kbd "C-d") 'enlarge-window-horizontally)
             map)
   :group 'nuaavee)
-(global-set-key (kbd "C-c r") 'buffer-resize-mode)
+(global-set-key (kbd "C-c t r") 'buffer-resize-mode)
 
 ;; expand-region
 (require 'expand-region)
