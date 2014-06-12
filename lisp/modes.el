@@ -180,3 +180,7 @@
     (if (member 'flyspell-mode minor-mode-list)
     (diminish 'flyspell-mode))))
 (add-hook 'emacs-lisp-mode-hook 'diminish-prog-modes)
+
+
+;; ----SPEEDBAR----
+(require 'sr-speedbar)

@@ -29,7 +29,8 @@
                      icicles
                      fuzzy
                      powerline
-                     diminish))
+                     diminish
+                     sr-speedbar))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
