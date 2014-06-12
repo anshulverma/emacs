@@ -156,7 +156,7 @@
 
 ;; ----POWERLINE----
 (powerline-default-theme)
-
+(setq powerline-default-separator (quote arrow-fade))
 
 ;; ----DIMINISH----
 (defmacro rename-modeline (package-name mode new-name)
@@ -180,4 +180,3 @@
     (if (member 'flyspell-mode minor-mode-list)
     (diminish 'flyspell-mode))))
 (add-hook 'emacs-lisp-mode-hook 'diminish-prog-modes)
-
