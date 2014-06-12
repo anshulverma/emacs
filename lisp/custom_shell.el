@@ -4,3 +4,16 @@
     (shell))
   (print "EMACS_SHELL is not set; skipping shell customization"))
 (setenv "PAGER" "cat")
+
+; clear shell buffer
+(defun clear-shell ()
+  (interactive)
+  (let ((comint-buffer-maximum-size 0))
+    (comint-truncate-buffer)))
+
+
+(defun shell-mode-setup()
+  "Set up key bindings and other things specific to shell mode"
+  (progn
+    (local-set-key (kbd "C-x c") 'clear-shell)))
+(setq shell-mode-hook 'shell-mode-setup)
