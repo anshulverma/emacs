@@ -184,3 +184,4 @@
 
 ;; ----SPEEDBAR----
 (require 'sr-speedbar)
+(require 'speedbar-extension)
