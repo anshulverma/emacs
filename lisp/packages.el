@@ -26,7 +26,8 @@
                      dired-details
                      bash-completion
                      sourcemap
-                     icicles))
+                     icicles
+                     powerline))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
