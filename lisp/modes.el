@@ -155,7 +155,7 @@
 
 
 ;; ----POWERLINE----
-(powerline-center-theme)
+(powerline-default-theme)
 
 
 ;; ----DIMINISH----
