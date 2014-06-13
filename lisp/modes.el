@@ -186,3 +186,11 @@
 (require 'sr-speedbar)
 (require 'speedbar-extension)
 (require 'projectile-speedbar)
+
+(defun speedbar-setup-hook ()
+  "Set up properties in speedbar mode"
+  (progn
+    (set-fill-column 0)
+    ))
+(add-hook 'speedbar-mode-hook 'speedbar-setup-hook)
+(add-hook 'speedbar-mode-hook 'fci-mode)
