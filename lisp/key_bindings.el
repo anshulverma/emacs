@@ -279,3 +279,6 @@ M-x compile.
 (global-set-key [C-tab] 'ac-start)
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
+
+; speedbar
+(global-set-key (kbd "M-<f2>") 'nv-speedbar-open-current-buffer-in-tree)
