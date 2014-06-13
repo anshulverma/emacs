@@ -10,7 +10,9 @@
  '(linum ((t (:background "dim gray" :forground "gold" :family "Courier New"))))
  '(popup-face ((t (:background "dim gray" :foreground "white smoke"))))
  '(mode-line ((t (:foreground "#030303" :background "#fdfdfd" :box nil))))
- '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
+ '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
+ '(speedbar-file-face ((t (:foreground "gray88"))))
+ '(speedbar-selected-face ((t (:background "gray80" :foreground "gray6")))))
 
 ;;; environment look and feel
 
