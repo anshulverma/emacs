@@ -1,3 +1,95 @@
+;;; projectile-speedbar --- projectile integration for speedbar
+
+;; Author: Anshul Verma <anshul.verma86@gmail.com>
+;; Maintainer: Anshul Verma <anshul.verma86@gmail.com>
+;; Copyright (C) 2014, 2009, Anshul Verma, all rights reserved.
+;; Created: 2014
+;; Version: 0.0.1
+;; Last-Updated: 2014-06-13 03:15:56
+;; URL: http://www.emacswiki.org/emacs/download/projectile-speedbar.el
+;; Keywords: speedbar, sr-speedbar, projectile, projectile-speedbar.el
+;; Compatibility: GNU Emacs 24
+;;
+;; Features that might be required by this library:
+;;
+;;  `speedbar' `sr-speedbar' `projectile'
+;;
+
+;;; This file is NOT part of GNU Emacs
+
+;;; License
+;;
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 3, or (at your option)
+;; any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program; see the file COPYING.  If not, write to
+;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth
+;; Floor, Boston, MA 02110-1301, USA.
+
+;;; Commentary:
+;;
+;; This package sits on top of speedbar and projectile and provides an
+;; easy to use and useful integration between the two.
+;;
+;; With this package when you switch between projects that work with
+;; projectile, speedbar will automatically show the directly listing
+;; of that project as well as expand the tree to show the file in the
+;; project.
+;;
+;; To invoke this function manually:
+;;
+;; `nv-speedbar
+;;
+
+;;; Installation
+;;
+;; Copy speedbar-projectile.el to your load-path and add this to ~/.emacs
+;;
+;;  (require 'projectile-emacs)
+;;
+;; Sometimes, when I am deep in a project tree, I like to use this shortcut
+;; to see full context:
+;;
+;;  (global-set-key (kbd "M-<f2>") 'nv-speedbar-open-current-buffer-in-tree)
+;;
+
+;;; Customize:
+;;
+;;
+
+;;; Change log:
+;;
+;; * 13 June 2014:
+;;   * Anshul Verma
+;;     * Initial feature with commentary
+
+;;; Acknowledgments
+;;
+;;    All emacsers ... :)
+;;
+
+;;; Bug
+;;
+;; * Should switch to file buffer after opening a file via projectile-find-file
+;;
+;; * Should select the current buffer file in directory listing after project switch
+;;
+
+;;; TODO
+;;
+;;
+
+(require 'speedbar)
+(require 'sr-speedbar)
+
 (defun nv-find-project-root ()
   (setq nv-current-dir (file-truename buffer-file-name))
   (while (not (file-exists-p (concat nv-current-dir ".git")))
