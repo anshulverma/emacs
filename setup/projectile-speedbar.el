@@ -20,10 +20,9 @@
 
 (defun nv-speedbar-expand-line-list (&optional arg)
   (when arg
-    (message (car arg))
     (re-search-forward (concat " " (car arg) "$"))
     (speedbar-expand-line (car arg))
-    (speedbar-next 1) ;; Move into the list.
+    (speedbar-next 1)
     (nv-speedbar-expand-line-list (cdr arg))))
 
 (defun nv-speedbar-open-current-buffer-in-tree ()
@@ -31,13 +30,14 @@
   (let* ((root-dir (nv-find-project-root))
          (original-buffer-file-directory (file-name-directory (buffer-file-name)))
          (relative-buffer-path (car (cdr (split-string original-buffer-file-directory root-dir))))
-         (parents (butlast (split-string relative-buffer-path "/"))))
+         (parents (butlast (split-string relative-buffer-path "/")))
+         (original-window (get-buffer-window)))
     (save-excursion
-      (message "root: %s --- parents: %s" root-dir parents)
       (nv-open-current-project-in-speedbar root-dir)
-      (set-buffer speedbar-buffer)
+      (select-window (get-buffer-window speedbar-buffer))
       (beginning-of-buffer)
-      (nv-speedbar-expand-line-list parents))))
+      (nv-speedbar-expand-line-list parents)
+      (select-window original-window))))
 
 (add-hook 'projectile-find-dir-hook 'nv-speedbar-open-current-buffer-in-tree)
 (add-hook 'projectile-find-file-hook 'nv-speedbar-open-current-buffer-in-tree)
