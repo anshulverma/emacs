@@ -46,7 +46,7 @@
 ;;
 ;; To invoke this function manually:
 ;;
-;; `nv-speedbar
+;; `nv-speedbar-open-current-buffer-in-tree
 ;;
 
 ;;; Installation
