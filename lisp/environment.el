@@ -7,7 +7,7 @@
       (setq ispell-program-name "/usr/local/bin/ispell")
 
       ;; make COMMAND key function as CTRL
-      (setq mac-command-modifier 'control)
+      ;; (setq mac-command-modifier 'control)
 
 
       ;; markdown seems to be hard to find too
