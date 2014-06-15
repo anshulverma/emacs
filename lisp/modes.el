@@ -5,10 +5,12 @@
                          tabs
                          trailing
                          lines-tail
+                         lines
                          space-before-tab
                          newline
                          indentation
-                         space-after-tab))
+                         space-after-tab
+                         tab-mark))
 (setq whitespace-line-column nil) ; this will make it same as fill-column
 (setq-default whitespace-mode t)
 (setq whitespace-display-mappings
