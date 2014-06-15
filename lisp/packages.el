@@ -26,7 +26,6 @@
                      dired-details
                      bash-completion
                      sourcemap
-                     icicles
                      fuzzy
                      powerline
                      diminish
