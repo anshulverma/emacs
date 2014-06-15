@@ -29,7 +29,8 @@
                      fuzzy
                      powerline
                      diminish
-                     sr-speedbar))
+                     sr-speedbar
+                     ample-theme))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

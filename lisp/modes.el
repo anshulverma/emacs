@@ -13,6 +13,7 @@
                          tab-mark))
 (setq whitespace-line-column nil) ; this will make it same as fill-column
 (setq-default whitespace-mode t)
+(setq-default show-trailing-whitespace t)
 (setq whitespace-display-mappings
       ;; all numbers are Unicode codepoint in decimal. try (insert-char 182 ) to see it
       '((space-mark 32 [183] [46]) ; 32 SPACE, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
