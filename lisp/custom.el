@@ -2,7 +2,8 @@
  '(custom-enabled-themes (quote (ample)))
  '(global-whitespace-mode nil nil nil "enable whitespace all the time")
  '(sh-basic-offset 2)
- '(tab-width 2))
+ '(tab-width 2)
+ '(blink-cursor-mode nil))
 (custom-set-faces
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil
                          :overline nil :underline nil :slant normal :weight normal :height 128
@@ -266,3 +267,4 @@
                      (- (frame-width) sr-speedbar-width)))
   (ad-enable-advice 'sr-speedbar-close 'after 'sr-speedbar-close-resize-frame))
 (add-hook 'speedbar-mode-hook (lambda () (linum-mode -1)))
+
