@@ -270,3 +270,8 @@
 
 ; delete trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+; create new buffer
+(defun new-buffer ()
+  (interactive)
+  (switch-to-buffer (generate-new-buffer "buffer")))
