@@ -132,18 +132,26 @@ and you have to scroll or press C-l to update the numbers."
 (defun linum-update-window (win)
   "Update line numbers for the portion visible in window WIN."
   (goto-char (window-start win))
-  (let ((line (line-number-at-pos))
-        (limit (window-end win t))
-        (fmt (cond ((stringp linum-format) linum-format)
-                   ((eq linum-format 'dynamic)
-                    (let ((w (length (number-to-string
-                                      (count-lines (point-min) (point-max))))))
-                      (concat "%" (number-to-string w) "d")))))
-        (width 0))
+  (let* ((line (line-number-at-pos))
+         (limit (window-end win t))
+         ;; set empty-line-at-eob flag
+         (empty-line-at-eob (or (equal ?\n (char-before (point-max)))
+                                (equal (point-min) (point-max))))
+         ;; we will automatically number the line at eob if it's not empty
+         ;; (so we'll say it's already done)
+         (numbered-line-at-eob (not empty-line-at-eob))
+         (fmt (cond ((stringp linum-format) linum-format)
+                    ((eq linum-format 'dynamic)
+                     (let* ((c (count-lines (point-min) (point-max)))
+                            (w (length (number-to-string
+                                        (+ c (if empty-line-at-eob 1 0))))))
+                       (concat "%" (number-to-string w) "d")))))
+         (width 0))
     (run-hooks 'linum-before-numbering-hook)
     ;; Create an overlay (or reuse an existing one) for each
     ;; line visible in this window, if necessary.
-    (while (and (not (eobp)) (<= (point) limit))
+    ;; stop if point>limit, or if eobp and numbered-line-at-eob
+    (while (and (not (and (eobp) numbered-line-at-eob)) (<= (point) limit))
       (let* ((str (if fmt
                       (propertize (format fmt line) 'face 'linum)
                     (funcall linum-format line)))
@@ -163,6 +171,10 @@ and you have to scroll or press C-l to update the numbers."
             (overlay-put ov 'before-string
                          (propertize " " 'display `((margin left-margin) ,str)))
             (overlay-put ov 'linum-str str))))
+      ;; before moving forward, if we're already at eob
+      (if (eobp)
+          ;; then we've numbered the empty line
+          (setq numbered-line-at-eob t))
       (forward-line)
       (setq line (1+ line)))
     (set-window-margins win width)))
