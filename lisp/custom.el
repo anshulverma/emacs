@@ -13,7 +13,8 @@
  '(mode-line ((t (:foreground "#030303" :background "#fdfdfd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
  '(speedbar-file-face ((t (:foreground "gray88"))))
- '(speedbar-selected-face ((t (:background "gray80" :foreground "gray6")))))
+ '(speedbar-selected-face ((t (:background "gray80" :foreground "gray6"))))
+ '(diff-removed ((t (:inherit diff-changed :background "#553333" :foreground "gray")))))
 
 ;;; environment look and feel
 
