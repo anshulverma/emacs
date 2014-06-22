@@ -1,5 +1,7 @@
 (custom-set-variables
  '(custom-enabled-themes (quote (ample)))
+ '(custom-safe-themes (quote ("5ace361b4ed7f0d1b0b7d72934446e1c61cded099db9f52125036f0a0bdea498"
+                              default)))
  '(global-whitespace-mode nil nil nil "enable whitespace all the time")
  '(sh-basic-offset 2)
  '(tab-width 2)
