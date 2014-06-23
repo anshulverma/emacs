@@ -162,7 +162,7 @@ and you have to scroll or press C-l to update the numbers."
                               (push o linum-overlays))
                             (setq linum-available (delete o linum-available))
                             (throw 'visited t))))))
-        (setq width (max width (+ (length str) 1)))
+        (setq width (max width (+ (length str) 0)))
         (unless visited
           (let ((ov (if (null linum-available)
                         (make-overlay (point) (point))

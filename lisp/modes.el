@@ -42,6 +42,13 @@
 
 ;; ----LINE NUMBERS----
 (require 'linum)
+
+; line number format
+(defun linum-format-func (line)
+  (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
+     (propertize (format (format "%%%dd" w) line) 'face 'linum)))
+
+(setq linum-format 'linum-format-func)
 (global-linum-mode 1)
 
 
@@ -193,8 +200,7 @@
 (defun speedbar-setup-hook ()
   "Set up properties in speedbar mode"
   (progn
-    (set-fill-column 0)
-    ))
+    (set-fill-column 0)))
 (add-hook 'speedbar-mode-hook 'speedbar-setup-hook)
 (add-hook 'speedbar-mode-hook 'fci-mode)
 (setq speedbar-vc-do-check nil)

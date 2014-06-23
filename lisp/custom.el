@@ -10,7 +10,7 @@
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil
                          :overline nil :underline nil :slant normal :weight normal :height 128
                          :width normal :foundry "unknown" :family "Courier New"))))
- '(linum ((t (:background "#bbbbbb" :foreground "#555555" :family "Courier New"))))
+ '(linum ((t (:background "gray20" :foreground "gray60" :family "Courier New"))))
  '(popup-face ((t (:background "dim gray" :foreground "white smoke"))))
  '(mode-line ((t (:foreground "#030303" :background "#fdfdfd" :box nil))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
