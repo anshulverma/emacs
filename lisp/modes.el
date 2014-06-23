@@ -198,3 +198,7 @@
 (add-hook 'speedbar-mode-hook 'speedbar-setup-hook)
 (add-hook 'speedbar-mode-hook 'fci-mode)
 (setq speedbar-vc-do-check nil)
+
+
+;; ----HL-LINE----
+(global-hl-line-mode)
