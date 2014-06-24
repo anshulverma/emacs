@@ -17,7 +17,8 @@
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
  '(speedbar-file-face ((t (:foreground "gray88"))))
  '(speedbar-selected-face ((t (:background "gray80" :foreground "gray6"))))
- '(diff-removed ((t (:inherit diff-changed :background "#553333" :foreground "gray")))))
+ '(diff-removed ((t (:inherit diff-changed :background "#553333" :foreground "gray"))))
+ '(region ((t (:background "gray24")))))
 
 ;;; environment look and feel
 
