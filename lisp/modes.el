@@ -208,3 +208,7 @@
 
 ;; ----HL-LINE----
 (global-hl-line-mode)
+
+
+;; ----SUB-WORD----
+(add-hook 'prog-mode-hook 'subword-mode)
