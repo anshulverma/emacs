@@ -25,7 +25,8 @@
   (load-library "modes")         ;; mode and configurations
   (load-library "key_bindings")  ;; custom key bindings
   (load-library "environment")   ;; environment specific config
-  (load-library "custom_shell")) ;; shell loading and configuration
+  (load-library "custom_shell")  ;; shell loading and configuration
+  (load-library "finalize"))     ;; finalize all configuration
 
 ;; setting up JDEE
 (add-to-list 'load-path "{EMACS_HOME}/lib/jdee/lisp")

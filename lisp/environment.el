@@ -16,4 +16,5 @@
         (setq markdown-command "/usr/local/bin/markdown"))
       (add-hook 'markdown-mode-hook '(lambda() (markdown-custom)))
 
-      ))
+      ;; resize font height for mac
+      (set-face-attribute 'default nil :height 180)))
