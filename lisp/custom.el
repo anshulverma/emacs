@@ -261,3 +261,6 @@
 (defun new-buffer ()
   (interactive)
   (switch-to-buffer (generate-new-buffer "buffer")))
+
+; reuse frame for buffers
+(setq-default display-buffer-reuse-frames t)
