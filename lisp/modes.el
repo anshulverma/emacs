@@ -212,3 +212,9 @@
 
 ;; ----SUB-WORD----
 (add-hook 'prog-mode-hook 'subword-mode)
+
+
+;; ----FLYMAKE----
+(require 'flymake)
+(require 'flymake-coffee)
+(add-hook 'coffee-mode-hook 'flymake-coffee-load)

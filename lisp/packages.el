@@ -30,7 +30,9 @@
                      powerline
                      diminish
                      sr-speedbar
-                     ample-theme))
+                     ample-theme
+                     flymake
+                     flymake-coffee))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
