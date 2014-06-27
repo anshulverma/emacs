@@ -32,7 +32,8 @@
                      sr-speedbar
                      ample-theme
                      flycheck
-                     flycheck-pos-tip))
+                     flycheck-pos-tip
+                     iedit))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
