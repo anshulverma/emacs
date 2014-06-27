@@ -218,3 +218,5 @@
 (require 'flymake)
 (require 'flymake-coffee)
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
+
+(require 'rfringe)

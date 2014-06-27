@@ -32,7 +32,8 @@
                      sr-speedbar
                      ample-theme
                      flymake
-                     flymake-coffee))
+                     flymake-coffee
+                     rfringe))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
