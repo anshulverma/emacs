@@ -214,9 +214,8 @@
 (add-hook 'prog-mode-hook 'subword-mode)
 
 
-;; ----FLYMAKE----
-(require 'flymake)
-(require 'flymake-coffee)
-(add-hook 'coffee-mode-hook 'flymake-coffee-load)
-
-(require 'rfringe)
+;; ----FLYCHECK----
+(add-hook 'prog-mode-hook 'flycheck-mode)
+(eval-after-load 'flycheck
+  '(custom-set-variables
+    '(flycheck-display-errors-function 'flycheck-pos-tip-error-messages)))

@@ -31,9 +31,8 @@
                      diminish
                      sr-speedbar
                      ample-theme
-                     flymake
-                     flymake-coffee
-                     rfringe))
+                     flycheck
+                     flycheck-pos-tip))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
