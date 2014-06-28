@@ -55,15 +55,17 @@
 ;;
 ;;  (require 'projectile-emacs)
 ;;
+
+;;; Customize:
+;;
 ;; Sometimes, when I am deep in a project tree, I like to use this shortcut
 ;; to see full context:
 ;;
 ;;  (global-set-key (kbd "M-<f2>") 'nv-speedbar-open-current-buffer-in-tree)
 ;;
-
-;;; Customize:
+;; You can also disable the feature completely:
 ;;
-;;
+;;  (setq nv-projectile-speedbar-enable nil)
 
 ;;; Change log:
 ;;
@@ -75,6 +77,9 @@
 ;;   * Anshul Verma
 ;;     * fix bug "should switch to file buffer after opening a file via projectile-find-file"
 ;;
+;; * 27 June 2014
+;;   * Anshul Verma
+;;     * add ability to turn projectile speedbar off
 
 ;;; Acknowledgments
 ;;
@@ -92,6 +97,20 @@
 
 (require 'speedbar)
 (require 'sr-speedbar)
+
+;;; Code:
+
+(defgroup nv-speedbar nil
+  "Auto refresh speedbar based on projectile."
+  :group 'speedbar)
+
+(defcustom nv-projectile-speedbar-enable t
+  "Do not aute-refresh speedbar using `projectile-speedbar'.
+Set to nil to disable projectile speedbar. Default is t."
+  :type 'boolean
+  :set (lambda (symbol value)
+         (set symbol value))
+  :group 'nv-speedbar)
 
 (defun nv-find-project-root ()
   (setq nv-current-dir (file-truename buffer-file-name))
@@ -127,14 +146,15 @@
          (relative-buffer-path (car (cdr (split-string original-buffer-file-directory root-dir))))
          (parents (butlast (split-string relative-buffer-path "/")))
          (original-window (get-buffer-window)))
-    (save-excursion
-      (nv-open-current-project-in-speedbar root-dir)
-      (select-window (get-buffer-window speedbar-buffer))
-      (beginning-of-buffer)
-      (nv-speedbar-expand-line-list parents)
-      (if (not (eq original-window (get-buffer-window speedbar-buffer)))
-          (select-window original-window)
-        (other-window 1)))))
+    (if nv-projectile-speedbar-enable
+        (save-excursion
+          (nv-open-current-project-in-speedbar root-dir)
+          (select-window (get-buffer-window speedbar-buffer))
+          (beginning-of-buffer)
+          (nv-speedbar-expand-line-list parents)
+          (if (not (eq original-window (get-buffer-window speedbar-buffer)))
+              (select-window original-window)
+            (other-window 1))))))
 
 (add-hook 'projectile-find-dir-hook 'nv-speedbar-open-current-buffer-in-tree)
 (add-hook 'projectile-find-file-hook 'nv-speedbar-open-current-buffer-in-tree)
@@ -142,3 +162,5 @@
 (add-hook 'projectile-cache-files-find-file-hook 'nv-speedbar-open-current-buffer-in-tree)
 
 (provide 'projectile-speedbar)
+
+;;; projectile-speedbar.el ends here
