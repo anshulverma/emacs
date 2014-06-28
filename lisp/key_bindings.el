@@ -283,3 +283,6 @@ M-x compile.
 ; speedbar
 (global-set-key (kbd "M-<f2>") 'nv-speedbar-open-current-buffer-in-tree)
 (global-set-key (kbd "C-c t s") 'sr-speedbar-toggle)
+
+; iedit mode
+(global-set-key (kbd "C-c ;") 'iedit-mode)
