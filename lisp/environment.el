@@ -21,4 +21,6 @@
 
       ;; copy environment variables when running in window mode
       (when (memq window-system '(mac ns))
-        (exec-path-from-shell-initialize))))
+        (progn
+          (exec-path-from-shell-initialize)
+          (exec-path-from-shell-copy-env "PS1")))))
