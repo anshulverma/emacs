@@ -17,4 +17,10 @@
       (add-hook 'markdown-mode-hook '(lambda() (markdown-custom)))
 
       ;; resize font height for mac
-      (set-face-attribute 'default nil :height 144)))
+      (set-face-attribute 'default nil :height 144)
+
+      ;; copy environment variables when running in window mode
+      (when (memq window-system '(mac ns))
+        (progn
+          (exec-path-from-shell-initialize)
+          (exec-path-from-shell-copy-env "PS1")))))

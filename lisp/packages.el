@@ -33,7 +33,8 @@
                      ample-theme
                      flycheck
                      flycheck-pos-tip
-                     iedit))
+                     iedit
+                     exec-path-from-shell))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
