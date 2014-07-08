@@ -30,6 +30,9 @@
 (add-hook 'after-change-major-mode-hook 'fci-mode) ; every file should have a fill-column
 (setq fci-rule-width 2)
 (setq fci-rule-color "dark gray")
+(add-hook 'coffee-mode-hook
+          (lambda ()
+            (setq fill-column 80)))
 
 ;; markdown customization
 (add-hook 'markdown-mode-hook
