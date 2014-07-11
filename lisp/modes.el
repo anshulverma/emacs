@@ -227,3 +227,7 @@
 
 ;; ----CUA----
 (cua-mode t)
+
+
+;; ----RIARI----
+(require 'rinari)
