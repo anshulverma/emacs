@@ -41,7 +41,8 @@
                      enh-ruby-mode
                      textmate
                      rvm
-                     rhtml-mode))
+                     rhtml-mode
+                     yaml-mode))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
