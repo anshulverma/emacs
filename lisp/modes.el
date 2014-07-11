@@ -233,11 +233,23 @@
 (require 'rinari)
 
 
-;; ----HIGHLIGHT-INDENTATION----
-(add-hook 'ruby-mode-hook 'highlight-indentation-current-column-mode)
-(add-hook 'coffee-mode-hook 'highlight-indentation-current-column-mode)
-
-
 ;; ----ROBE----
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'robe-mode-hook 'ac-robe-setup)
+(add-hook 'enh-ruby-mode-hook 'robe-mode)
+
+(add-hook 'robe-mode-hook 'auto-complete-mode)
+
+
+;; ----ENHANCED-RUBY-MODE----
+(autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
+(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
+(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+
+(remove-hook 'enh-ruby-mode-hook 'erm-define-faces)
+
+
+;; ----HIGHLIGHT-INDENTATION----
+(add-hook 'ruby-mode-hook 'highlight-indentation-current-column-mode)
+(add-hook 'coffee-mode-hook 'highlight-indentation-current-column-mode)
+(add-hook 'enh-ruby-mode-hook 'highlight-indentation-current-column-mode)

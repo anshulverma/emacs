@@ -37,7 +37,8 @@
                      exec-path-from-shell
                      rinari
                      highlight-indentation
-                     robe))
+                     robe
+                     enh-ruby-mode))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
