@@ -40,7 +40,8 @@
                      robe
                      enh-ruby-mode
                      textmate
-                     rvm))
+                     rvm
+                     rhtml-mode))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
