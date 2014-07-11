@@ -171,31 +171,6 @@
 (powerline-default-theme)
 (setq powerline-default-separator (quote arrow-fade))
 
-;; ----DIMINISH----
-(defmacro rename-modeline (package-name mode new-name)
-  `(eval-after-load ,package-name
-     '(defadvice ,mode (after rename-modeline activate)
-        (setq mode-name ,new-name))))
-
-(rename-modeline "js2-mode" js2-mode "JS2")
-(rename-modeline "clojure-mode" clojure-mode "Clj")
-(diminish 'global-whitespace-mode)
-(diminish 'whitespace-mode)
-(diminish 'undo-tree-mode)
-(diminish 'ace-jump-mode)
-(diminish 'projectile-mode)
-(diminish 'auto-complete-mode)
-(diminish 'eldoc-mode)
-(diminish 'rainbow-mode)
-
-(defun diminish-prog-modes ()
-  "Diminish all the unwanted modes from prog modes"
-  (progn
-    (if (member 'flyspell-mode minor-mode-list)
-    (diminish 'flyspell-mode))))
-(add-hook 'emacs-lisp-mode-hook 'diminish-prog-modes)
-
-
 ;; ----SPEEDBAR----
 (require 'sr-speedbar)
 (require 'speedbar-extension)
@@ -237,7 +212,6 @@
 ;; ----ROBE----
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'robe-mode-hook 'ac-robe-setup)
-(add-hook 'enh-ruby-mode-hook 'robe-mode)
 
 (add-hook 'robe-mode-hook 'auto-complete-mode)
 
@@ -249,6 +223,8 @@
 
 (remove-hook 'enh-ruby-mode-hook 'erm-define-faces)
 
+(add-hook 'enh-ruby-mode-hook 'robe-mode)
+(add-hook 'enh-ruby-mode-hook 'smartparens-mode)
 
 ;; ----HIGHLIGHT-INDENTATION----
 (add-hook 'ruby-mode-hook 'highlight-indentation-current-column-mode)
@@ -257,4 +233,68 @@
 
 
 ;; ----RAINBOW----
+(require 'rainbow-mode)
+
 (add-hook 'css-mode-hook 'rainbow-mode)
+
+
+;; ----DIMINISH----
+(defmacro rename-modeline (package-name mode new-name)
+  `(eval-after-load ,package-name
+     '(defadvice ,mode (after rename-modeline activate)
+        (setq mode-name ,new-name))))
+
+(rename-modeline "js2-mode" js2-mode "JS2")
+(rename-modeline "clojure-mode" clojure-mode "Clj")
+(diminish 'global-whitespace-mode)
+(diminish 'whitespace-mode)
+(diminish 'undo-tree-mode)
+(diminish 'ace-jump-mode)
+(diminish 'projectile-mode)
+(diminish 'auto-complete-mode)
+(diminish 'eldoc-mode)
+(diminish 'rainbow-mode)
+
+(defun diminish-prog-modes ()
+  "Diminish all the unwanted modes from prog modes"
+  (progn
+    (if (member 'flyspell-mode minor-mode-list)
+        (diminish 'flyspell-mode))))
+(add-hook 'emacs-lisp-mode-hook 'diminish-prog-modes)
+
+
+;; ----WEB-MODE----
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[gj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(setq web-mode-engines-alist
+      '(("php"    . "\\.phtml\\'")
+        ("blade"  . "\\.blade\\."))
+      )
+
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+(setq web-mode-style-padding 1)
+(setq web-mode-script-padding 1)
+(setq web-mode-block-padding 0)
+(setq web-mode-comment-style 2)
+
+(setq web-mode-extra-snippets
+      '(("erb" . (("name" . ("beg" . "end"))))
+        ("php" . (("name" . ("beg" . "end"))
+                  ("name" . ("beg" . "end"))))
+        ))
+
+(setq web-mode-enable-css-colorization t)
+(setq web-mode-enable-block-face t)
+(setq web-mode-enable-part-face t)
+(setq web-mode-enable-comment-keywords t)
+(setq web-mode-enable-current-element-highlight t)

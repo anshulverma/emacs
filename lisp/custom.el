@@ -19,7 +19,8 @@
  '(speedbar-selected-face ((t (:background "gray80" :foreground "gray6"))))
  '(diff-removed ((t (:inherit diff-changed :background "#553333" :foreground "gray"))))
  '(region ((t (:background "gray24"))))
- '(font-lock-string-face ((t (:foreground "#bc8125")))))
+ '(font-lock-string-face ((t (:foreground "#bc8125"))))
+ '(web-mode-block-face ((t (:background "dark slate gray")))))
 
 ;;; environment look and feel
 

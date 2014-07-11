@@ -44,7 +44,8 @@
                      rhtml-mode
                      yaml-mode
                      smartparens
-                     rainbow-mode))
+                     rainbow-mode
+                     web-mode))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
