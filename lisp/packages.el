@@ -38,7 +38,8 @@
                      rinari
                      highlight-indentation
                      robe
-                     enh-ruby-mode))
+                     enh-ruby-mode
+                     textmate))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
