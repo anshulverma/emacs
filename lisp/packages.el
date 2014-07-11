@@ -35,7 +35,8 @@
                      flycheck-pos-tip
                      iedit
                      exec-path-from-shell
-                     rinari))
+                     rinari
+                     highlight-indentation))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

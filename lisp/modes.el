@@ -231,3 +231,8 @@
 
 ;; ----RIARI----
 (require 'rinari)
+
+
+;; ----HIGHLIGHT-INDENTATION----
+(add-hook 'ruby-mode-hook 'highlight-indentation-current-column-mode)
+(add-hook 'coffee-mode-hook 'highlight-indentation-current-column-mode)
