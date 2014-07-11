@@ -43,7 +43,8 @@
                      rvm
                      rhtml-mode
                      yaml-mode
-                     smartparens))
+                     smartparens
+                     rainbow-mode))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

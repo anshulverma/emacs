@@ -186,6 +186,7 @@
 (diminish 'projectile-mode)
 (diminish 'auto-complete-mode)
 (diminish 'eldoc-mode)
+(diminish 'rainbow-mode)
 
 (defun diminish-prog-modes ()
   "Diminish all the unwanted modes from prog modes"
@@ -253,3 +254,7 @@
 (add-hook 'ruby-mode-hook 'highlight-indentation-current-column-mode)
 (add-hook 'coffee-mode-hook 'highlight-indentation-current-column-mode)
 (add-hook 'enh-ruby-mode-hook 'highlight-indentation-current-column-mode)
+
+
+;; ----RAINBOW----
+(add-hook 'css-mode-hook 'rainbow-mode)
