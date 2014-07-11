@@ -230,6 +230,7 @@
 (add-hook 'ruby-mode-hook 'highlight-indentation-current-column-mode)
 (add-hook 'coffee-mode-hook 'highlight-indentation-current-column-mode)
 (add-hook 'enh-ruby-mode-hook 'highlight-indentation-current-column-mode)
+(add-hook 'web-mode-hook 'highlight-indentation-current-column-mode)
 
 
 ;; ----RAINBOW----
