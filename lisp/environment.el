@@ -23,4 +23,11 @@
       (when (memq window-system '(mac ns))
         (progn
           (exec-path-from-shell-initialize)
-          (exec-path-from-shell-copy-env "PS1")))))
+          (exec-path-from-shell-copy-env "PS1")
+          (exec-path-from-shell-copy-env "GEM_HOME")
+          (exec-path-from-shell-copy-env "IRBC")
+          (exec-path-from-shell-copy-env "MY_RUBY_HOME")
+          (exec-path-from-shell-copy-env "rvm_env_string")
+          (exec-path-from-shell-copy-env "rvm_ruby_string")
+          (exec-path-from-shell-copy-env "GEM_PATH")
+          (exec-path-from-shell-copy-env "RUBY_VERSION")))))
