@@ -42,7 +42,8 @@
                      textmate
                      rvm
                      rhtml-mode
-                     yaml-mode))
+                     yaml-mode
+                     smartparens))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
