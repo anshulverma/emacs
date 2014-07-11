@@ -39,7 +39,8 @@
                      highlight-indentation
                      robe
                      enh-ruby-mode
-                     textmate))
+                     textmate
+                     rvm))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
