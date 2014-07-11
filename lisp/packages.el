@@ -36,7 +36,8 @@
                      iedit
                      exec-path-from-shell
                      rinari
-                     highlight-indentation))
+                     highlight-indentation
+                     robe))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
