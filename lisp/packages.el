@@ -1,8 +1,8 @@
 ; list the repositories containing them
-(setq package-archives '(("melpa" . "http://melpa.milkbox.net/packages/")
-                         ("elpa" . "http://tromey.com/elpa/")
-                         ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+(setq package-archives '(("elpa" . "http://tromey.com/elpa/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")))
 
 ;; list of packages I need
 (setq package-list '(coffee-mode
