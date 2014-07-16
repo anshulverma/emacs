@@ -149,6 +149,8 @@
 (setq coffee-args-compile '("-c" "-m")) ;; generating sourcemap
 (add-hook 'coffee-after-compile-hook 'sourcemap-goto-corresponding-point)
 
+(add-hook 'coffee-mode-hook 'smartparens-mode)
+
 
 ;; ----AUTO COMPLETE----
 (require 'auto-complete)
