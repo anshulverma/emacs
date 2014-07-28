@@ -47,7 +47,8 @@
                      rainbow-mode
                      web-mode
                      csv-mode
-                     csv-nav))
+                     csv-nav
+                     ox-reveal))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
