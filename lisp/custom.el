@@ -5,7 +5,13 @@
  '(global-whitespace-mode nil nil nil "enable whitespace all the time")
  '(sh-basic-offset 2)
  '(tab-width 2)
- '(blink-cursor-mode nil))
+ '(blink-cursor-mode nil)
+ '(send-mail-function (quote smtpmail-send-it))
+ '(smtpmail-smtp-server "namail.corp.adobe.com")
+ '(smtpmail-smtp-service 25)
+ '(user-full-name "Anshul Verma")
+ '(user-mail-address "ansverma@adobe.com")
+ '(global-font-lock-mode t))
 (custom-set-faces
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil
                          :overline nil :underline nil :slant normal :weight normal :height 128
