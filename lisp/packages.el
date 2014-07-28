@@ -45,7 +45,9 @@
                      yaml-mode
                      smartparens
                      rainbow-mode
-                     web-mode))
+                     web-mode
+                     csv-mode
+                     csv-nav))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
