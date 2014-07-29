@@ -1,3 +1,5 @@
+(setq basedir "{EMACS_HOME}/")
+
 (setq package-enable-at-startup nil)
 (package-initialize)
 

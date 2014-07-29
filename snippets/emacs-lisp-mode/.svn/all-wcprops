@@ -1,0 +1,893 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode
+END
+widget-get
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/widget-get
+END
+car
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/car
+END
+assq
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/assq
+END
+equal
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/equal
+END
+while
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/while
+END
+interactive
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/interactive
+END
+delete-char
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/delete-char
+END
+y-or-n-p
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/y-or-n-p
+END
+cond
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/cond
+END
+hash
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/hash
+END
+kbd
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/kbd
+END
+and
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/and
+END
+grabstring
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/grabstring
+END
+cons
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/cons
+END
+x-file.read-lines
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/x-file.read-lines
+END
+search-forward
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/search-forward
+END
+push
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/push
+END
+repeat
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/repeat
+END
+set-mark
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/set-mark
+END
+progn
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/progn
+END
+line-beginning-position
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/line-beginning-position
+END
+minor_mode
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/minor_mode
+END
+defcustom
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/defcustom
+END
+nth
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/nth
+END
+aset
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/aset
+END
+dolist
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/dolist
+END
+split-string
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/split-string
+END
+memq
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/memq
+END
+match-end
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/match-end
+END
+x-file.process
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/x-file.process
+END
+buffer-file-name
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/buffer-file-name
+END
+file-relative-name
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/file-relative-name
+END
+word-or-region
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/word-or-region
+END
+number-to-string
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/number-to-string
+END
+make-directory
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/make-directory
+END
+skip-chars-backward
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/skip-chars-backward
+END
+region-beginning
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/region-beginning
+END
+region-end
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/region-end
+END
+x-dired.process_marked
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/x-dired.process_marked
+END
+file.process
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/file.process
+END
+bounds-of-thing-at-point
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/bounds-of-thing-at-point
+END
+end-of-line
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/end-of-line
+END
+search-forward-regexp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/search-forward-regexp
+END
+file.read-lines
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/file.read-lines
+END
+vector
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/vector
+END
+insert
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/insert
+END
+save-buffer
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/save-buffer
+END
+cdr
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/cdr
+END
+unless
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/unless
+END
+file-name-nondirectory
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/file-name-nondirectory
+END
+save-excursion
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/save-excursion
+END
+setq
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/setq
+END
+insert-file-contents
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/insert-file-contents
+END
+forward-char
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/forward-char
+END
+x-word-or-region
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/x-word-or-region
+END
+buffer-modified-p
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/buffer-modified-p
+END
+dired.process_marked
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/dired.process_marked
+END
+format
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/format
+END
+point
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/point
+END
+error
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/error
+END
+region-active-p
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/region-active-p
+END
+fboundp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/fboundp
+END
+kill-buffer
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/kill-buffer
+END
+mapcar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/mapcar
+END
+looking-at
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/looking-at
+END
+eq
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/eq
+END
+file-name-extension
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/file-name-extension
+END
+concat
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/concat
+END
+null
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/null
+END
+.read_me
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/155/trunk/emacsconf/snippets/emacs-lisp-mode/.read_me
+END
+replace-regexp-in-string
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/replace-regexp-in-string
+END
+princ
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/princ
+END
+get
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/get
+END
+global-set-key
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/global-set-key
+END
+mapc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/mapc
+END
+substring
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/substring
+END
+length
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/length
+END
+rename-file
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/rename-file
+END
+word_regexp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/word_regexp
+END
+function
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/function
+END
+buffer-substring
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/buffer-substring
+END
+beginning-of-line
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/beginning-of-line
+END
+set
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/set
+END
+print
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/print
+END
+file-name-directory
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/file-name-directory
+END
+match-string
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/match-string
+END
+not
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/not
+END
+grabthing
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/grabthing
+END
+append
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/append
+END
+search-backward-regexp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/search-backward-regexp
+END
+file-name-sans-extension
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/file-name-sans-extension
+END
+x-grabthing
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/x-grabthing
+END
+point-min
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/point-min
+END
+list
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/list
+END
+point-max
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/point-max
+END
+search-backward
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/search-backward
+END
+make-local-variable
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/make-local-variable
+END
+forward-line
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/forward-line
+END
+x-find-replace
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/x-find-replace
+END
+defun
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/defun
+END
+when
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/when
+END
+with-current-buffer
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/with-current-buffer
+END
+set-buffer
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/set-buffer
+END
+replace-regexp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/replace-regexp
+END
+string=
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/string=
+END
+string
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/string
+END
+x-grabstring
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/x-grabstring
+END
+expand-file-name
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/expand-file-name
+END
+string-to-number
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/string-to-number
+END
+delete-file
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/delete-file
+END
+or
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/or
+END
+lambda
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/lambda
+END
+consp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/consp
+END
+funcall
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/funcall
+END
+let
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/let
+END
+apply
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/apply
+END
+add-hook
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/add-hook
+END
+hi-lock
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/hi-lock
+END
+backward-char
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/backward-char
+END
+find-replace
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/find-replace
+END
+current-buffer
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/current-buffer
+END
+x-traverse_dir
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/x-traverse_dir
+END
+string-match
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/string-match
+END
+thing-at-point
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/thing-at-point
+END
+delete-directory
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/delete-directory
+END
+directory-files
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/directory-files
+END
+skip-chars-forward
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/skip-chars-forward
+END
+defvar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/defvar
+END
+put
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/put
+END
+re-search-forward
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/re-search-forward
+END
+require
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/require
+END
+aref
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/aref
+END
+set-file-modes
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/set-file-modes
+END
+defsubst
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/defsubst
+END
+define-key
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/define-key
+END
+goto-char
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/goto-char
+END
+delete-region
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/delete-region
+END
+message
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/message
+END
+.yas-parents
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/155/trunk/emacsconf/snippets/emacs-lisp-mode/.yas-parents
+END
+re-search-backward
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/re-search-backward
+END
+stringp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/stringp
+END
+traverse_dir
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/traverse_dir
+END
+match-beginning
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/match-beginning
+END
+buffer-substring-no-properties
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/buffer-substring-no-properties
+END
+line-end-position
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/line-end-position
+END
+find-file
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/find-file
+END
+if
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/341/trunk/emacsconf/snippets/emacs-lisp-mode/if
+END
+condition-case
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/404/trunk/emacsconf/snippets/emacs-lisp-mode/condition-case
+END

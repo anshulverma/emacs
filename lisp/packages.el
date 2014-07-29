@@ -18,7 +18,6 @@
                      perspective
                      persp-projectile
                      auto-complete
-                     org
                      magit
                      git-messenger
                      window-number
@@ -51,7 +50,9 @@
                      csv-mode
                      csv-nav
                      ox-reveal
-                     htmlize))
+                     htmlize
+                     org-plus-contrib
+                     yasnippet))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

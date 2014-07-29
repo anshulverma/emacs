@@ -310,3 +310,18 @@
 
 ;; ----ORG-REVEAL----
 (require 'ox-reveal)
+
+
+;; ----ORG-LATEX----
+(require 'ox-latex)
+(unless (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
+(add-to-list 'org-export-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")))
+
+
+;; ----YASNIPPET----
+(require 'yasnippet)
+(yas-global-mode 1)

@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode
+END
+if
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/if
+END
+macro
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/macro
+END
+include
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/include
+END
+.yas-parents
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/.yas-parents
+END
+message
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/message
+END
+function
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/function
+END
+project
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/project
+END
+ifelse
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/ifelse
+END
+foreach
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/foreach
+END
+option
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/option
+END
+cmake_minimum_required
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/cmake_minimum_required
+END
+set
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/341/trunk/emacsconf/snippets/cmake-mode/set
+END
