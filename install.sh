@@ -34,6 +34,8 @@ fi
 # TODO: if not already installed, install eclipse from http://mirrors.ibiblio.org/eclipse/eclipse/downloads/drops4/R-4.3.2-201402211700/eclipse-SDK-4.3.2-macosx-cocoa-x86_64.tar.gz
 # TODO: download and install eclim http://eclim.org/install.html#installer-automated
 # TODO: OR use skyberts' method http://www.skybert.net/emacs/java/
+# TODO: download reveal.js
+# TODO: install pygments
 URL='http://iweb.dl.sourceforge.net/project/jdee/jdee/2.4.1/jdee-bin-2.4.1.tar.bz2'
 FILE=`mktemp`
 wget "$URL" -O $FILE  # TODO: use curl
