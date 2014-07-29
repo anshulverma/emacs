@@ -48,7 +48,8 @@
                      web-mode
                      csv-mode
                      csv-nav
-                     ox-reveal))
+                     ox-reveal
+                     htmlize))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
