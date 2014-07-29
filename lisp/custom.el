@@ -14,7 +14,7 @@
  '(global-font-lock-mode t))
 (custom-set-faces
  '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil
-                         :overline nil :underline nil :slant normal :weight normal :height 128
+                         :overline nil :underline nil :slant normal :weight normal :height 96
                          :width normal :foundry "unknown" :family "Courier New"))))
  '(linum ((t (:background "gray20" :foreground "gray60" :family "Courier New"))))
  '(hl-line ((t (:background "gray16"))))
