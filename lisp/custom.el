@@ -333,3 +333,6 @@
 (define-key yas-minor-mode-map (kbd "<C-tab>")     'yas-ido-expand)
 
 (add-to-list 'yas-snippet-dirs (concat basedir "snippets"))
+
+;; ----REVEL.JS ORG----
+(setq org-reveal-root (concat basedir "../reveal.js"))
