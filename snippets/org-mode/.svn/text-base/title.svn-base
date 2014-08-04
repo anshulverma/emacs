@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: #+TITLE: ...
-# key: title
-# --
-#+TITLE: $1

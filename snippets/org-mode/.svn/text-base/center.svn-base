@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: #+BEGIN_CENTER ... #+END_CENTER
-# key: center
-# --
-#+BEGIN_CENTER
-$0
-#+END_CENTER

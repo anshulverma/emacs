@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: :DRAWERNAME: ... :END:
-# key: drawer
-# --
-:DRAWERNAME:
-$0
-:END:
