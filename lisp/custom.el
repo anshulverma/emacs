@@ -337,7 +337,8 @@
 ;; ----REVEL.JS ORG----
 (setq org-reveal-root (concat basedir "../reveal.js"))
 
-;; allow for export=>beamer by placing
+; turn on cdlatex in org mode
+(add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 
 ;; #+LaTeX_CLASS: beamer in org files
 (unless (boundp 'org-export-latex-classes)
@@ -390,6 +391,3 @@
                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-
-; turn on cdlatex in org mode
-(add-hook 'org-mode-hook 'turn-on-org-cdlatex)
