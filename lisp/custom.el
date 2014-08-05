@@ -391,3 +391,6 @@
                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+; set default method for tramp
+(setq tramp-default-method "ssh")
