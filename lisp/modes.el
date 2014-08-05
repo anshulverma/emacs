@@ -257,6 +257,7 @@
 (diminish 'auto-complete-mode)
 (diminish 'eldoc-mode)
 (diminish 'rainbow-mode)
+(diminish 'yas-minor-mode)
 
 (defun diminish-prog-modes ()
   "Diminish all the unwanted modes from prog modes"
