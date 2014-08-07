@@ -30,4 +30,7 @@
           (exec-path-from-shell-copy-env "rvm_env_string")
           (exec-path-from-shell-copy-env "rvm_ruby_string")
           (exec-path-from-shell-copy-env "GEM_PATH")
-          (exec-path-from-shell-copy-env "RUBY_VERSION")))))
+          (exec-path-from-shell-copy-env "RUBY_VERSION")))
+
+      ;; set function key as hyper
+      (setq ns-function-modifier 'hyper)))
