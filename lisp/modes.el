@@ -259,7 +259,6 @@
 (diminish 'rainbow-mode)
 (diminish 'yas-minor-mode)
 (diminish 'visual-line-mode)
-(diminish 'vc-mode)
 
 (defun diminish-prog-modes ()
   "Diminish all the unwanted modes from prog modes"
