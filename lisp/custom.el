@@ -467,3 +467,6 @@
 ;;; lisp modes
 (sp-with-modes sp--lisp-modes
   (sp-local-pair "(" nil :bind "C-("))
+
+;; no confirmation prompt when killing a buffer opened by emacsclient
+(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
