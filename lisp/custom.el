@@ -470,3 +470,6 @@
 
 ;; no confirmation prompt when killing a buffer opened by emacsclient
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
+
+;; custom behavior for forward-word
+(require 'misc)
