@@ -17,6 +17,7 @@
                          :overline nil :underline nil :slant normal :weight normal :height 96
                          :width normal :foundry "unknown" :family "Courier New"))))
  '(linum ((t (:background "gray20" :foreground "gray60" :family "Courier New"))))
+ '(highlight ((t (:background "dark slate gray"))))
  '(hl-line ((t (:background "gray16"))))
  '(popup-face ((t (:background "dim gray" :foreground "white smoke"))))
  '(mode-line ((t (:foreground "#030303" :background "#fdfdfd" :box nil))))
