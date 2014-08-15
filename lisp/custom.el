@@ -1,4 +1,5 @@
 (custom-set-variables
+ '(custom-enabled-themes (quote (ample-light)))
  '(global-whitespace-mode nil nil nil "enable whitespace all the time")
  '(sh-basic-offset 2)
  '(tab-width 2)
@@ -35,7 +36,7 @@
   "Enables the ample-light theme"
   (setq custom-enabled-themes (quote (ample-light))))
 
-(nv/enable-theme-ample-light)
+;; (nv/enable-theme-ample-light)
 
 ;;; environment look and feel
 
