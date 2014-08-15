@@ -52,7 +52,8 @@
                      ox-reveal
                      htmlize
                      org-plus-contrib
-                     yasnippet))
+                     yasnippet
+                     git-timemachine))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
