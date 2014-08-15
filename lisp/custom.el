@@ -349,6 +349,11 @@
 ; turn on cdlatex in org mode
 (add-hook 'org-mode-hook 'turn-on-org-cdlatex)
 
+(defun nv/set-fill-column (fill-column-width)
+  (setq fill-column fill-column-width))
+
+(add-hook 'org-mode-hook (nv/set-fill-column 72))
+
 ;; #+LaTeX_CLASS: beamer in org files
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
@@ -464,6 +469,8 @@
   (sp-local-tag "2" "**" "**")
   (sp-local-tag "s" "```scheme" "```")
   (sp-local-tag "<"  "<_>" "</_>" :transform 'sp-match-sgml-tags))
+
+(add-hook 'markdown-mode-hook (nv/set-fill-column 72))
 
 ;;; tex-mode latex-mode
 (sp-with-modes '(tex-mode plain-tex-mode latex-mode)
