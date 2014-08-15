@@ -1,7 +1,4 @@
 (custom-set-variables
- '(custom-enabled-themes (quote (ample)))
- '(custom-safe-themes (quote ("5ace361b4ed7f0d1b0b7d72934446e1c61cded099db9f52125036f0a0bdea498"
-                              default)))
  '(global-whitespace-mode nil nil nil "enable whitespace all the time")
  '(sh-basic-offset 2)
  '(tab-width 2)
@@ -13,21 +10,32 @@
  '(user-mail-address "ansverma@adobe.com")
  '(global-font-lock-mode t))
 (custom-set-faces
- '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil
-                         :overline nil :underline nil :slant normal :weight normal :height 96
-                         :width normal :foundry "unknown" :family "Courier New"))))
- '(linum ((t (:background "gray20" :foreground "gray60" :family "Courier New"))))
- '(highlight ((t (:background "dark slate gray"))))
- '(hl-line ((t (:background "gray16"))))
- '(popup-face ((t (:background "dim gray" :foreground "white smoke"))))
- '(mode-line ((t (:foreground "#030303" :background "#fdfdfd" :box nil))))
- '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
- '(speedbar-file-face ((t (:foreground "gray88"))))
- '(speedbar-selected-face ((t (:background "gray80" :foreground "gray6"))))
- '(diff-removed ((t (:inherit diff-changed :background "#553333" :foreground "gray"))))
- '(region ((t (:background "gray24"))))
  '(font-lock-string-face ((t (:foreground "#bc8125"))))
  '(web-mode-block-face ((t (:background "dark slate gray")))))
+
+(defun nv/enable-theme-ample ()
+  "Enables the ample theme"
+  (setq custom-enabled-themes (quote (ample)))
+  ;; '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil
+  ;; :overline nil :underline nil :slant normal :weight normal :height 96
+  ;; :width normal :foundry "unknown" :family "Courier New"))))
+  ;; '(linum ((t (:background "gray20" :foreground "gray60" :family "Courier New"))))
+  ;; '(highlight ((t (:background "dark slate gray"))))
+  ;; '(hl-line ((t (:background "gray16"))))
+  ;; '(mode-line ((t (:foreground "#030303" :background "#fdfdfd" :box nil))))
+  ;; '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
+  ;; '(region ((t (:background "gray24"))))
+  ;; '(popup-face ((t (:background "dim gray" :foreground "white smoke"))))
+  ;; '(speedbar-file-face ((t (:foreground "gray88"))))
+  ;; '(speedbar-selected-face ((t (:background "gray80" :foreground "gray6"))))
+  ;; '(diff-removed ((t (:inherit diff-changed :background "#553333" :foreground "gray"))))
+)
+
+(defun nv/enable-theme-ample-light ()
+  "Enables the ample-light theme"
+  (setq custom-enabled-themes (quote (ample-light))))
+
+(nv/enable-theme-ample-light)
 
 ;;; environment look and feel
 
