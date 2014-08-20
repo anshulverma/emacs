@@ -12,7 +12,9 @@
  '(global-font-lock-mode t))
 (custom-set-faces
  '(font-lock-string-face ((t (:foreground "#bc8125"))))
- '(web-mode-block-face ((t (:background "dark slate gray")))))
+ '(mode-line ((t (:foreground "#030303" :background "#fdfdfd" :box nil))))
+ '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
+ '(web-mode-block-face ((t (:background "controlLightHighlightColor")))))
 
 (defun nv/enable-theme-ample ()
   "Enables the ample theme"
@@ -23,8 +25,6 @@
   ;; '(linum ((t (:background "gray20" :foreground "gray60" :family "Courier New"))))
   ;; '(highlight ((t (:background "dark slate gray"))))
   ;; '(hl-line ((t (:background "gray16"))))
-  ;; '(mode-line ((t (:foreground "#030303" :background "#fdfdfd" :box nil))))
-  ;; '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
   ;; '(region ((t (:background "gray24"))))
   ;; '(popup-face ((t (:background "dim gray" :foreground "white smoke"))))
   ;; '(speedbar-file-face ((t (:foreground "gray88"))))
