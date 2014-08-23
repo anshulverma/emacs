@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Mocha test's describe method call for coffee-mode
+# key: mdesc
+# contributor: Anshul Verma <anshul.verma86@gmail.com>
+# --
+describe '$1', ->
+  $0
