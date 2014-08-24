@@ -3,5 +3,4 @@
 # key: mit
 # contributor: Anshul Verma <anshul.verma86@gmail.com>
 # --
-it '$1', ->
-  $0
+it '$1', ->$0

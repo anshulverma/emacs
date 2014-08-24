@@ -3,5 +3,4 @@
 # key: mdesc
 # contributor: Anshul Verma <anshul.verma86@gmail.com>
 # --
-describe '$1', ->
-  $0
+describe '$1', ->$0
