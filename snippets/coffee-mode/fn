@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Add new coffee script function
+# key: fn
+# binding: direct-keybinding
+# --
+${1:name} = (${2:params}) ->$0
