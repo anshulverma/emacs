@@ -165,7 +165,7 @@
         (delete-file filename)
         (kill-buffer buffer)
         (message "File '%s' successfully removed" filename)))))
-(global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
+(global-set-key (kbd "C-c C-k") 'delete-current-buffer-file)
 
 ; rename current file
 (defun rename-current-buffer-file ()
