@@ -53,7 +53,8 @@
                      htmlize
                      org-plus-contrib
                      yasnippet
-                     git-timemachine))
+                     git-timemachine
+                     gnuplot-mode))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

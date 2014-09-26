@@ -327,3 +327,18 @@
 ;; ----YASNIPPET----
 (require 'yasnippet)
 (yas-global-mode 1)
+
+
+;; ----GNUPLOT----
+(require 'gnuplot-mode)
+
+(setq auto-mode-alist
+      (append '(("\\.\\(gp\\|gnuplot\\\\)"))))
+
+(setq auto-mode-alist
+      (append
+       (list
+        '("\\.gp$" . gnuplot-mode)
+        '("\\.gnuplot$" . gnuplot-mode)
+        '("\\.plt$" . gnuplot-mode))
+       auto-mode-alist))
