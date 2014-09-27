@@ -45,7 +45,6 @@
                      rhtml-mode
                      yaml-mode
                      smartparens
-                     rainbow-mode
                      web-mode
                      csv-mode
                      csv-nav

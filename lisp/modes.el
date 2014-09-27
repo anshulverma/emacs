@@ -228,17 +228,12 @@
 (add-hook 'enh-ruby-mode-hook 'robe-mode)
 (add-hook 'enh-ruby-mode-hook 'smartparens-mode)
 
+
 ;; ----HIGHLIGHT-INDENTATION----
 (add-hook 'ruby-mode-hook 'highlight-indentation-current-column-mode)
 (add-hook 'coffee-mode-hook 'highlight-indentation-current-column-mode)
 (add-hook 'enh-ruby-mode-hook 'highlight-indentation-current-column-mode)
 (add-hook 'web-mode-hook 'highlight-indentation-current-column-mode)
-
-
-;; ----RAINBOW----
-(require 'rainbow-mode)
-
-(add-hook 'css-mode-hook 'rainbow-mode)
 
 
 ;; ----DIMINISH----
@@ -256,7 +251,6 @@
 (diminish 'projectile-mode)
 (diminish 'auto-complete-mode)
 (diminish 'eldoc-mode)
-(diminish 'rainbow-mode)
 (diminish 'yas-minor-mode)
 (diminish 'visual-line-mode)
 
