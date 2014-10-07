@@ -7,3 +7,6 @@ init.el
 # library files
 lib
 lib-impl
+
+# compilation artifacts
+.yas-compiled-snippets.el
