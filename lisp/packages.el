@@ -53,7 +53,8 @@
                      org-plus-contrib
                      yasnippet
                      git-timemachine
-                     gnuplot-mode))
+                     gnuplot-mode
+                     org-mime))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

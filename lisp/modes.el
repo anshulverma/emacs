@@ -329,3 +329,19 @@
 (add-to-list 'auto-mode-alist '("\\.gnuplot$" . gnuplot-mode))
 (add-to-list 'auto-mode-alist '("\\.gp$" . gnuplot-mode))
 (add-to-list 'auto-mode-alist '("\\.plt$" . gnuplot-mode))
+
+
+;; ----ORG-MIME----
+(require 'org-mime)
+(setq org-mime-library 'mml)
+
+(add-hook 'org-mime-html-hook
+          (lambda ()
+            (org-mime-change-element-style
+             "pre" (format "color: %s; background-color: %s; padding: 0.5em;"
+                           "#E6E1DC" "#232323"))))
+
+(add-hook 'org-mime-html-hook
+          (lambda ()
+            (org-mime-change-element-style
+             "blockquote" "border-left: 2px solid gray; padding-left: 4px;")))
