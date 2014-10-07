@@ -326,13 +326,6 @@
 ;; ----GNUPLOT----
 (require 'gnuplot-mode)
 
-(setq auto-mode-alist
-      (append '(("\\.\\(gp\\|gnuplot\\\\)"))))
-
-(setq auto-mode-alist
-      (append
-       (list
-        '("\\.gp$" . gnuplot-mode)
-        '("\\.gnuplot$" . gnuplot-mode)
-        '("\\.plt$" . gnuplot-mode))
-       auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.gnuplot$" . gnuplot-mode))
+(add-to-list 'auto-mode-alist '("\\.gp$" . gnuplot-mode))
+(add-to-list 'auto-mode-alist '("\\.plt$" . gnuplot-mode))
