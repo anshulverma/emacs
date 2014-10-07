@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Org mode header for documents
+# key: header.org
+# contributor: Anshul Verma <anshul.verma86@gmail.com>
+# --
+#+TITLE: $1
+#+AUTHOR: `user-full-name`
+#+DATE: `(current-time-string)`
+#+EMAIL: `user-mail-address`
+#+DESCRIPTION: $2
+#+KEYWORDS: $3
+
+$0
