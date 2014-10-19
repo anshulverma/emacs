@@ -54,7 +54,9 @@
                      yasnippet
                      git-timemachine
                      gnuplot-mode
-                     org-mime))
+                     org-mime
+                     log4j-mode
+                     dockerfile-mode))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)

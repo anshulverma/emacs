@@ -345,3 +345,8 @@
           (lambda ()
             (org-mime-change-element-style
              "blockquote" "border-left: 2px solid gray; padding-left: 4px;")))
+
+
+
+;; ----DOCKER FILE----
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
