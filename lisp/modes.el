@@ -354,7 +354,7 @@
 
 ;; ----MULTIPLE CURSORS----
 (require 'multiple-cursors)
-(global-set-key (kbd "C-c .") 'mc/edit-lines)  ; cursor on each line in selection
+(global-set-key (kbd "C-c C-.") 'mc/edit-lines)  ; cursor on each line in selection
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c ,") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c C-,") 'mc/mark-all-like-this)
