@@ -56,7 +56,8 @@
                      gnuplot-mode
                      org-mime
                      log4j-mode
-                     dockerfile-mode))
+                     dockerfile-mode
+                     multiple-cursors))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
