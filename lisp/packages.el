@@ -57,7 +57,8 @@
                      org-mime
                      log4j-mode
                      dockerfile-mode
-                     multiple-cursors))
+                     multiple-cursors
+                     groovy-mode))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
