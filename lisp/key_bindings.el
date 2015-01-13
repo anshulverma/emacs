@@ -281,7 +281,7 @@ M-x compile.
 (define-key ac-complete-mode-map "\C-p" 'ac-previous)
 
 ; speedbar
-(global-set-key (kbd "M-<f2>") 'nv-speedbar-open-current-buffer-in-tree)
+(global-set-key (kbd "M-<f2>") 'projectile-speedbar-open-current-buffer-in-tree)
 (global-set-key (kbd "C-c t s") 'sr-speedbar-toggle)
 
 ; iedit mode
