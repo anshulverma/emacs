@@ -1,9 +1,23 @@
 ;;; package --- Summary
 
+;; Setup and configure web-mode
+;;
+;; Following file some of the file types associated with web-mode:
+;; - phtml
+;; - php
+;; - jsp
+;; - asp
+;; - erb
+;; - mustache
+;; - djhtml
+;; - html
+;;
+
 ;;; Commentary:
 
 ;; To use:
-;;   (require 'setup-web-mode)
+;; (require 'setup-web-mode)
+;;
 
 ;;; Code:
 
@@ -20,8 +34,7 @@
 
 (setq web-mode-engines-alist
       '(("php"    . "\\.phtml\\'")
-        ("blade"  . "\\.blade\\."))
-      )
+        ("blade"  . "\\.blade\\.")))
 
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
@@ -34,8 +47,7 @@
 (setq web-mode-extra-snippets
       '(("erb" . (("name" . ("beg" . "end"))))
         ("php" . (("name" . ("beg" . "end"))
-                  ("name" . ("beg" . "end"))))
-        ))
+                  ("name" . ("beg" . "end"))))))
 
 (setq web-mode-enable-css-colorization t)
 (setq web-mode-enable-block-face t)
