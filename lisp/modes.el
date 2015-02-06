@@ -197,11 +197,7 @@
 
 
 ;; ----FLYCHECK----
-(add-hook 'prog-mode-hook 'flycheck-mode)
-(eval-after-load 'flycheck
-  '(custom-set-variables
-    '(flycheck-display-errors-function 'flycheck-pos-tip-error-messages)))
-
+(require 'setup-flycheck)
 
 ;; ----CUA----
 (cua-mode t)
