@@ -512,5 +512,30 @@ http://www.emacswiki.org/emacs/AlignCommands"
                   (concat regexp "\\([[:space:]]*\\)")
                   1 spacing t)))
 
+;; fix indentation after opening brace
+(defun c-mode-insert-lcurly ()
+  (interactive)
+  (insert "{")
+  (let ((pps (syntax-ppss)))
+    (when (and (eolp) (not (or (nth 3 pps) (nth 4 pps)))) ;; EOL and not in string or comment
+      (c-indent-line)
+      (insert "\n\n}")
+      (c-indent-line)
+      (forward-line -1)
+      (c-indent-line))))
+
+(define-minor-mode nuaavee/prog-mode
+  "Toggles custom prog mode for nuaavee"
+  :init-value nil
+  :lighter " nv/prog-mode"
+  :keymap (let ((map (make-sparse-keymap)))
+            (define-key map "{" 'c-mode-insert-lcurly)
+            map)
+  :group 'nuaavee)
+
+(add-hook 'prog-mode-hook 'nuaavee/prog-mode)
+
+(message "custom.el loaded")
+
 (provide 'custom)
 ;;; custom.el ends here
