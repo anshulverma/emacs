@@ -36,25 +36,31 @@
       '(("php"    . "\\.phtml\\'")
         ("blade"  . "\\.blade\\.")))
 
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 2)
-(setq web-mode-style-padding 1)
-(setq web-mode-script-padding 1)
-(setq web-mode-block-padding 0)
-(setq web-mode-comment-style 2)
-
 (setq web-mode-extra-snippets
       '(("erb" . (("name" . ("beg" . "end"))))
         ("php" . (("name" . ("beg" . "end"))
                   ("name" . ("beg" . "end"))))))
 
-(setq web-mode-enable-css-colorization t)
-(setq web-mode-enable-block-face t)
-(setq web-mode-enable-part-face t)
-(setq web-mode-enable-comment-keywords t)
-(setq web-mode-enable-current-element-highlight t)
+(defun my-web-mode-hook ()
+  "Settings for Web mode."
 
+  ;; indentation
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-style-padding 1)
+  (setq web-mode-script-padding 1)
+  (setq web-mode-block-padding 0)
+
+  (setq web-mode-comment-style 2)
+  (setq web-mode-enable-css-colorization t)
+  (setq web-mode-enable-block-face t)
+  (setq web-mode-enable-part-face t)
+  (setq web-mode-enable-comment-keywords t)
+  (setq web-mode-enable-current-element-highlight t)
+  (setq web-mode-enable-auto-pairing t)
+  )
+(add-hook 'web-mode-hook  'my-web-mode-hook)
 
 (provide 'setup-web-mode)
 ;;; setup-web-mode.el ends here
