@@ -58,7 +58,8 @@
                      log4j-mode
                      dockerfile-mode
                      multiple-cursors
-                     groovy-mode))
+                     groovy-mode
+                     auto-complete-octave))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
