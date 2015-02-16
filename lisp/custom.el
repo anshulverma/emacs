@@ -533,7 +533,8 @@ http://www.emacswiki.org/emacs/AlignCommands"
             map)
   :group 'nuaavee)
 
-(add-hook 'prog-mode-hook 'nuaavee/prog-mode)
+(add-hook 'java-mode-hook 'nuaavee/prog-mode)
+(add-hook 'js-mode-hook 'nuaavee/prog-mode)
 
 (message "custom.el loaded")
 
