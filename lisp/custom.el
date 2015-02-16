@@ -181,14 +181,13 @@
                            sh-mode))
       (indent-region (region-beginning) (region-end) nil)))
 
-;; Indentation for python
 ;; Ignoring electric indentation
-(defun electric-indent-ignore-python (char)
-  "Ignore electric indentation for python-mode"
-  (if (equal major-mode 'python-mode)
+(defun electric-indent-ignore-modes (char)
+  "Ignore electric indentation for some modes"
+  (if (or (equal major-mode 'python-mode) (equal major-mode 'octave-mode))
       `no-indent'
     nil))
-(add-hook 'electric-indent-functions 'electric-indent-ignore-python)
+(add-hook 'electric-indent-functions 'electric-indent-ignore-modes)
 
 ;; Enter key executes newline-and-indent
 (defun set-newline-and-indent ()

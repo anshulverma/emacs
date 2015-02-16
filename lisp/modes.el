@@ -329,5 +329,8 @@
 (add-to-list 'interpreter-mode-alist '("groovy" . groovy-mode))
 
 
+;; ----OCTAVE----
+(add-to-list 'auto-mode-alist '("\.m$" . octave-mode))
+
 (provide 'modes)
 ;;; modes.el ends here
