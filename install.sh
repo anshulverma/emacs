@@ -37,7 +37,7 @@ fi
 # TODO: download reveal.js
 # TODO: install pygments
 URL='http://iweb.dl.sourceforge.net/project/jdee/jdee/2.4.1/jdee-bin-2.4.1.tar.bz2'
-FILE=`mktemp -t jdee`
+FILE=`mktemp -t jdee-XXXX`
 wget "$URL" -O $FILE  # TODO: use curl
 mkdir -p "$PWD/lib-impl"
 echo "extracting JDEE..."
