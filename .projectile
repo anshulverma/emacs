@@ -1,8 +1,11 @@
+# SCM
+-.git/
+
 # Temporary files
 -*~
 -*#*
 -*.bak
 
 # Library files
--/lib
--/lib-impl
+-lib/
+-lib-impl/

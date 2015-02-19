@@ -30,10 +30,6 @@
   (load-library "custom_shell")  ;; shell loading and configuration
   (load-library "finalize"))     ;; finalize all configuration
 
-;; setting up JDEE
-(add-to-list 'load-path "{EMACS_HOME}/lib/jdee/lisp")
-(load "jde")
-
 ;; start emacs server if not already started
 (load "server")
 (unless (server-running-p) (server-start))
