@@ -334,5 +334,9 @@
 
 (add-hook 'octave-mode-hook 'auto-complete-mode)
 
+;; ----RVM----
+(require 'rvm)
+(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
+
 (provide 'modes)
 ;;; modes.el ends here
