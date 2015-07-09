@@ -13,6 +13,7 @@
 (custom-set-faces
  '(font-lock-string-face ((t (:foreground "#bc8125"))))
  '(mode-line ((t (:foreground "#030303" :background "#fdfdfd" :box nil))))
+ '(hl-line ((t (:background "#404040"))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
  '(web-mode-block-face ((t (:background "controlLightHighlightColor")))))
 
