@@ -49,7 +49,9 @@
 ; line number format
 (defun linum-format-func (line)
   (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
-     (propertize (format (format "%%%dd" w) line) 'face 'linum)))
+    (propertize (format (if (display-graphic-p)
+                            (format "%%%dd" w)
+                          (format "%%%dd " w)) line) 'face 'linum)))
 
 (setq linum-format 'linum-format-func)
 (global-linum-mode 1)
