@@ -13,9 +13,10 @@
 (custom-set-faces
  '(font-lock-string-face ((t (:foreground "#bc8125"))))
  '(mode-line ((t (:foreground "#030303" :background "#fdfdfd" :box nil))))
- '(hl-line ((t (:background "#20282f"))))
+ '(hl-line ((t (:background "#303030"))))
  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil))))
- '(web-mode-block-face ((t (:background "controlLightHighlightColor")))))
+ '(web-mode-block-face ((t (:background "controlLightHighlightColor"))))
+ '(region ((t (:background "#7f7f7f")))))
 
 (defun nv/enable-theme-ample ()
   "Enables the ample theme"
