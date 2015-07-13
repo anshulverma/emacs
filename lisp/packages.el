@@ -59,7 +59,8 @@
                      dockerfile-mode
                      multiple-cursors
                      groovy-mode
-                     auto-complete-octave))
+                     auto-complete-octave
+                     go-mode))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
