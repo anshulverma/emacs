@@ -22,7 +22,6 @@
 (autoload 'whitespace-mode "whitespace" "Toggle whitespace visualization." t)
 (autoload 'whitespace-toggle-options "whitespace" "Toggle local `whitespace-mode' options." t)
 
-
 ;; ----FILL COLUMN----
 (require 'column-marker)
 (require 'fill-column-indicator)
@@ -42,7 +41,6 @@
                         'check-parens
                         nil t))))
 
-
 ;; ----LINE NUMBERS----
 (require 'linum)
 
@@ -55,7 +53,6 @@
 
 (setq linum-format 'linum-format-func)
 (global-linum-mode 1)
-
 
 ;; ----IDO MODE----
 (ido-mode 1)
@@ -90,7 +87,6 @@
 (ido-ubiquitous-use-new-completing-read yas/expand 'yasnippet)
 (ido-ubiquitous-use-new-completing-read yas/visit-snippet-file 'yasnippet)
 
-
 ;; ----SMEX----
 (require 'smex)
 (smex-initialize)
@@ -99,7 +95,6 @@
 ; keep old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 (setq-default smex-history-length 64)
-
 
 ;; ----PROJECTILE----
 (require 'projectile)
@@ -112,33 +107,27 @@
 (define-key projectile-mode-map (kbd "C-c C-s") 'projectile-persp-switch-project)
 (persp-mode 1)
 
-
 ;; ----WINDOW NUMBER----
 (require 'window-number)
 (window-number-mode)
 (window-number-meta-mode)
 
-
 ;; ----UNDO TREE----
 (require 'undo-tree)
 (global-undo-tree-mode)
-
 
 ;; ----ACE JUMP---
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-
 ;; ----DELETE SELECTION----
 (delete-selection-mode)
-
 
 ;; ----MAGIT----
 (eval-after-load 'magit '(require 'setup-magit))
 
 ;; ----COLUMN NUMBER----
 (setq column-number-mode 1)
-
 
 ;; ----COFFEE MODE----
 (defun coffee-custom ()
@@ -152,7 +141,6 @@
 (add-hook 'coffee-after-compile-hook 'sourcemap-goto-corresponding-point)
 
 (add-hook 'coffee-mode-hook 'smartparens-mode)
-
 
 ;; ----AUTO COMPLETE----
 (require 'auto-complete)
@@ -169,7 +157,6 @@
 ; enable auto complete for specific modes
 (add-to-list 'ac-modes 'coffee-mode)
 (add-to-list 'ac-modes 'java-mode)
-
 
 ;; ----POWERLINE----
 (powerline-default-theme)
@@ -189,14 +176,11 @@
 (setq speedbar-vc-do-check nil)
 (setq projectile-speedbar-enable nil)
 
-
 ;; ----HL-LINE----
 (global-hl-line-mode)
 
-
 ;; ----SUB-WORD----
 (add-hook 'prog-mode-hook 'subword-mode)
-
 
 ;; ----FLYCHECK----
 (require 'setup-flycheck)
@@ -204,17 +188,14 @@
 ;; ----CUA----
 (cua-mode t)
 
-
 ;; ----RIARI----
 (require 'rinari)
-
 
 ;; ----ROBE----
 (add-hook 'ruby-mode-hook 'robe-mode)
 (add-hook 'robe-mode-hook 'ac-robe-setup)
 
 (add-hook 'robe-mode-hook 'auto-complete-mode)
-
 
 ;; ----ENHANCED-RUBY-MODE----
 (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
@@ -226,13 +207,11 @@
 (add-hook 'enh-ruby-mode-hook 'robe-mode)
 (add-hook 'enh-ruby-mode-hook 'smartparens-mode)
 
-
 ;; ----HIGHLIGHT-INDENTATION----
 (add-hook 'ruby-mode-hook 'highlight-indentation-current-column-mode)
 (add-hook 'coffee-mode-hook 'highlight-indentation-current-column-mode)
 (add-hook 'enh-ruby-mode-hook 'highlight-indentation-current-column-mode)
 (add-hook 'web-mode-hook 'highlight-indentation-current-column-mode)
-
 
 ;; ----DIMINISH----
 (defmacro rename-modeline (package-name mode new-name)
@@ -259,19 +238,15 @@
         (diminish 'flyspell-mode))))
 (add-hook 'emacs-lisp-mode-hook 'diminish-prog-modes)
 
-
 ;; ----WEB-MODE----
 (require 'setup-web-mode)
-
 
 ;; ----CSV----
 (add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-nav-mode))
 ;; (autoload 'csv-mode "csv-mode" "Major mode for editing comma-separated value files." t)
 
-
 ;; ----ORG-REVEAL----
 (require 'ox-reveal)
-
 
 ;; ----ORG-LATEX----
 (require 'ox-latex)
@@ -282,11 +257,9 @@
                "\\documentclass{article}"
                ("\\section{%s}" . "\\section*{%s}")))
 
-
 ;; ----YASNIPPET----
 (require 'yasnippet)
 (yas-global-mode 1)
-
 
 ;; ----GNUPLOT----
 (require 'gnuplot-mode)
@@ -294,7 +267,6 @@
 (add-to-list 'auto-mode-alist '("\\.gnuplot$" . gnuplot-mode))
 (add-to-list 'auto-mode-alist '("\\.gp$" . gnuplot-mode))
 (add-to-list 'auto-mode-alist '("\\.plt$" . gnuplot-mode))
-
 
 ;; ----ORG-MIME----
 (require 'org-mime)
@@ -311,11 +283,8 @@
             (org-mime-change-element-style
              "blockquote" "border-left: 2px solid gray; padding-left: 4px;")))
 
-
-
 ;; ----DOCKER FILE----
 (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
-
 
 ;; ----MULTIPLE CURSORS----
 (require 'multiple-cursors)
