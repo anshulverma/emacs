@@ -340,5 +340,8 @@
 (require 'rvm)
 (rvm-use-default) ;; use rvm's default ruby for the current Emacs session
 
+;; ----ECHO KEYS----
+(require 'echo-keys)
+
 (provide 'modes)
 ;;; modes.el ends here
