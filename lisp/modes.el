@@ -310,5 +310,10 @@
 ;; ----ECHO KEYS----
 (require 'echo-keys)
 
+
+;; ----JADE----
+(add-to-list 'auto-mode-alist '("\.jade$" . jade-mode))
+
+
 (provide 'modes)
 ;;; modes.el ends here

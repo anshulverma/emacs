@@ -60,7 +60,9 @@
                      multiple-cursors
                      groovy-mode
                      auto-complete-octave
-                     go-mode))
+                     go-mode
+                     applescript-mode
+                     jade-mode))
 
 ; activate all the packages (in particular autoloads)
 (package-initialize)
