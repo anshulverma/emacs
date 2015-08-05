@@ -8,6 +8,7 @@
  '(smtpmail-smtp-server "namail.corp.adobe.com")
  '(smtpmail-smtp-service 25)
  '(user-full-name "Anshul Verma")
+ '(org-directory "~/.workspace/org")
  '(user-mail-address "ansverma@adobe.com")
  '(global-font-lock-mode t))
 (custom-set-faces
