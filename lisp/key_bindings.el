@@ -132,11 +132,11 @@
                   (join-line -1)))
 
 ;; Move more quickly
-(global-set-key (kbd "C-c C-n")
+(global-set-key (kbd "M-n")
                 (lambda ()
                   (interactive)
                   (ignore-errors (next-line 5))))
-(global-set-key (kbd "C-c C-p")
+(global-set-key (kbd "M-p")
                 (lambda ()
                   (interactive)
                   (ignore-errors (previous-line 5))))
