@@ -12,3 +12,7 @@ Simply run:
 ````bash
 ./install.sh
 ````
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/anshulverma/emacs/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
