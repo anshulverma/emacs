@@ -1,18 +1,7 @@
 emacs
 =====
 
-Trying to track my emacs environment configuration.
+Tracking emacs configuration using `Cask`. I got the idea for this
+from http://tullo.ch/articles/modern-emacs-setup
 
 This is a WIP.
-
-# Installation
-
-Simply run:
-
-````bash
-./install.sh
-````
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/anshulverma/emacs/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
