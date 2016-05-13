@@ -102,5 +102,14 @@
 
 (require 'auto-complete-auctex)
 
+(eval-after-load 'info-look '(let ()
+                                (info-lookup-add-help
+                                 :mode 'latex-mode
+                                 :regexp ".*"
+                                 :parse-rule "\\\\?[a-zA-Z]+\\|\\\\[^a-zA-Z]"
+                                 :doc-spec '(("(latex2e)Concept Index" )
+                                             ("(latex2e)Command Index")))
+                                ))
+
 (provide '06-latex)
 ;;; 06-latex.el ends here
