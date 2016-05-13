@@ -2,42 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'magit)
+
 ; magit status buffer
 (global-set-key (kbd "C-c g") 'magit-status)
-
-; from https://github.com/magnars/.emacs.d/blob/master/setup-magit.el
-
-;; Subtler highlight
-(set-face-background 'magit-item-highlight "#121212")
-(set-face-background 'diff-file-header "#121212")
-(set-face-foreground 'diff-context "#666666")
-(set-face-foreground 'diff-added "#00cc33")
-(set-face-foreground 'diff-removed "#ff0000")
-
-(set-default 'magit-stage-all-confirm nil)
-(set-default 'magit-unstage-all-confirm nil)
-
-(eval-after-load 'ediff
-  '(progn
-     (set-face-foreground 'ediff-odd-diff-B "#ffffff")
-     (set-face-background 'ediff-odd-diff-B "#292521")
-     (set-face-foreground 'ediff-even-diff-B "#ffffff")
-     (set-face-background 'ediff-even-diff-B "#292527")
-
-     (set-face-foreground 'ediff-odd-diff-A "#ffffff")
-     (set-face-background 'ediff-odd-diff-A "#292521")
-     (set-face-foreground 'ediff-even-diff-A "#ffffff")
-     (set-face-background 'ediff-even-diff-A "#292527")))
-
-;; todo:
-;; diff-added-face      diff-changed-face
-;; diff-context-face    diff-file-header-face
-;; diff-function-face   diff-header-face
-;; diff-hunk-header-face        diff-index-face
-;; diff-indicator-added-face    diff-indicator-changed-face
-;; diff-indicator-removed-face  diff-nonexistent-face
-;; diff-removed-face
-
 
 ;; Load git configurations
 ;; For instance, to run magit-svn-mode in a project, do:
