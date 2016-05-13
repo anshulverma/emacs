@@ -55,6 +55,7 @@
 ;; string manipulation for emacs
 (depends-on "s")
 
+;; deals with parens pairs and tries to be smart about it
 (depends-on "smartparens")
 
 ;; provides a convenient interface to your recently and most frequently used commands
