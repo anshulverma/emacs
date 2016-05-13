@@ -1,6 +1,5 @@
+(source "elpy" "http://jorgenschaefer.github.io/packages/")
 (source gnu)
-(source gnu)
-(source marmalade)
 (source melpa)
 
 (depends-on "bind-key")
@@ -21,9 +20,11 @@
 (depends-on "f")
 
 ; Syntax checking for GNU Emacs
-
 (depends-on "flycheck")
 (depends-on "flycheck-cask")
+
+(depends-on "dired-details+")
+
 (depends-on "htmlize")
 (depends-on "idle-highlight-mode")
 (depends-on "magit")
