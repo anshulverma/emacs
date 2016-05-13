@@ -97,3 +97,7 @@
 
 ;; auto complete for various programming modes
 (depends-on "auto-complete")
+
+;; latex stuff
+(depends-on "auctex")
+(depends-on "auto-complete-auctex")
