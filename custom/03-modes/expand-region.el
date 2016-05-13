@@ -1,4 +1,4 @@
-;;; expand-region --- Summary
+;;; setup-expand-region --- Summary
 ;;; Commentary:
 ;;; Code:
 
@@ -15,5 +15,5 @@
 
 (add-hook 'text-mode-hook 'er/add-text-mode-expansions)
 
-(provide '03-expand-region)
-;;; 02-expand-region.el ends here
+(provide 'setup-expand-region)
+;;; setup-expand-region.el ends here

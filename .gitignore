@@ -13,3 +13,5 @@ lib-impl
 .cask/
 *~
 node_modules
+eshell/
+*.log

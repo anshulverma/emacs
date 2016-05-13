@@ -23,11 +23,19 @@
 (depends-on "flycheck")
 (depends-on "flycheck-cask")
 
+; show / hide details in dired mode using "(" or ")"
 (depends-on "dired-details+")
 
+; export contents of an Emacs buffer to HTML while respecting
+; display properties such as colors, fonts, underlining, invisibility, etc.
 (depends-on "htmlize")
+
+; highlight the word the point is on
 (depends-on "idle-highlight-mode")
+
+; git integration for emacs
 (depends-on "magit")
+
 (depends-on "multiple-cursors")
 (depends-on "nyan-mode")
 (depends-on "pallet")
