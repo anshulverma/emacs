@@ -1,4 +1,4 @@
-;;; projectile --- Summary
+;;; setup-projectile --- Summary
 ;;; Commentary:
 ;;; Code:
 
