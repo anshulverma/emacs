@@ -2,12 +2,8 @@
 *~
 *#*
 *.bak
-init.el
 *.log
 *.eld
-projectile.cache
-places
-ac-comphist.dat
 
 # library files
 lib
@@ -23,3 +19,10 @@ eshell/
 *.eld
 projectile.cache
 .yas-compiled*
+.mc-lists.el
+projectile.cache
+ac-comphist.dat
+places
+
+# backup code
+/backup/init.el
