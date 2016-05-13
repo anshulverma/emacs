@@ -91,3 +91,6 @@
 
 ;; theme
 (depends-on "zenburn-theme")
+
+;; name says it all
+(depends-on "better-defaults")
