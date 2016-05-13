@@ -15,3 +15,4 @@ lib-impl
 node_modules
 eshell/
 *.log
+*.eld
