@@ -43,6 +43,7 @@
 ;; track of installed packages
 (depends-on "pallet")
 
+;; popup window manager (removes temporary buffers after their use)
 (depends-on "popwin")
 (depends-on "prodigy")
 (depends-on "projectile")
