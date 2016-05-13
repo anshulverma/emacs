@@ -104,3 +104,8 @@
 
 ;; provide help according to major mode
 (depends-on "info-look")
+
+;; efficiently export and synchronize local
+;; databases (bib, rdf, html, json etc) and
+;; Zotero collections directly from emacs.
+(depends-on "zotelo")

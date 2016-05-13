@@ -94,6 +94,8 @@
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (add-hook 'LaTeX-mode-hook 'yas-minor-mode)
 (add-hook 'LaTeX-mode-hook 'auto-complete-mode)
+;; make sure to install Zotero "brew install Caskroom/cask/zotero"
+(add-hook 'LaTeX-mode-hook 'zotelo-minor-mode)
 
 (setq reftex-label-alist (quote (("thm" nil nil nil nil nil -3))))
 (setq reftex-plug-into-AUCTeX t)
