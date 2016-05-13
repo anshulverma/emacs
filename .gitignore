@@ -3,6 +3,10 @@
 *#*
 *.bak
 init.el
+*.log
+*.eld
+projectile.cache
+places
 
 # library files
 lib
