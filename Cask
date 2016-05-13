@@ -88,3 +88,6 @@
 
 ;; switch between windows using numbers
 (depends-on "window-number")
+
+;; theme
+(depends-on "zenburn-theme")
