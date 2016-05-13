@@ -10,3 +10,6 @@ lib-impl
 
 # compilation artifacts
 .yas-compiled-snippets.el
+.cask/
+*~
+node_modules
