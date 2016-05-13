@@ -38,8 +38,11 @@
 
 ;; multiple cursors in one window
 (depends-on "multiple-cursors")
-(depends-on "nyan-mode")
+
+;; pallet is a package management helper that uses cask to keep
+;; track of installed packages
 (depends-on "pallet")
+
 (depends-on "popwin")
 (depends-on "prodigy")
 (depends-on "projectile")
