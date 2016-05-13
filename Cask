@@ -94,3 +94,6 @@
 
 ;; name says it all
 (depends-on "better-defaults")
+
+;; auto complete for various programming modes
+(depends-on "auto-complete")
