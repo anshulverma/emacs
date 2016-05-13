@@ -85,3 +85,6 @@
 (depends-on "helm-dash")
 ;; projectile enhanced using helm
 (depends-on "helm-projectile")
+
+;; switch between windows using numbers
+(depends-on "window-number")
