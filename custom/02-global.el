@@ -33,5 +33,7 @@
  '(smtpmail-smtp-service 25)
  '(user-full-name "Anshul Verma"))
 
+(require 'info-look)
+
 (provide '02-global)
 ;;; 02-global.el ends here

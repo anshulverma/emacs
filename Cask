@@ -101,3 +101,6 @@
 ;; latex stuff
 (depends-on "auctex")
 (depends-on "auto-complete-auctex")
+
+;; provide help according to major mode
+(depends-on "info-look")
