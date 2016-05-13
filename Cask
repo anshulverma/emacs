@@ -4,6 +4,8 @@
 
 (depends-on "bind-key")
 (depends-on "cask")
+
+;; modern list library
 (depends-on "dash")
 
 ;; drag stuff (words, region, lines) around
@@ -58,10 +60,6 @@
 ;; deals with parens pairs and tries to be smart about it
 (depends-on "smartparens")
 
-;; provides a convenient interface to your recently and most frequently used commands
-;; (built on top of ido)
-(depends-on "smex")
-
 ;; use-package declaration for simplifying .emacs
 (depends-on "use-package")
 
@@ -70,3 +68,20 @@
 
 ;; template system for emacs
 (depends-on "yasnippet")
+
+;; provides a convenient interface to your recently and most frequently used commands
+;; (built on top of ido)
+(depends-on "smex")
+
+;; helm and friends
+(depends-on "helm")
+;; hopping squeezed lines based on keyword
+(depends-on "helm-swoop")
+;; flx-based fuzzy sorting for helm
+(depends-on "helm-flx")
+;; better fuzzy matching for helm
+(depends-on "helm-fuzzier")
+;; browse documentation for many languages using helm machinery
+(depends-on "helm-dash")
+;; projectile enhanced using helm
+(depends-on "helm-projectile")
