@@ -16,3 +16,4 @@ node_modules
 eshell/
 *.log
 *.eld
+projectile.cache

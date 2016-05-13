@@ -1,4 +1,4 @@
-;;; popwin --- Summary
+;;; setup-popwin --- Summary
 ;;; Commentary:
 ;;; Code:
 

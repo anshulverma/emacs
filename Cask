@@ -56,7 +56,11 @@
 (depends-on "s")
 
 (depends-on "smartparens")
+
+;; provides a convenient interface to your recently and most frequently used commands
+;; (built on top of ido)
 (depends-on "smex")
+
 (depends-on "use-package")
 (depends-on "web-mode")
 (depends-on "yasnippet")

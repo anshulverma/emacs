@@ -9,3 +9,7 @@
 # Library files
 -lib/
 -lib-impl/
+=======
+-.git/
+-.cask/
+-*~
