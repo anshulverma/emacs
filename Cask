@@ -6,36 +6,37 @@
 (depends-on "cask")
 (depends-on "dash")
 
-; drag stuff (words, region, lines) around
-; <M-up> / <M-down> / <M-left> / <M-right>
+;; drag stuff (words, region, lines) around
+;; <M-up> / <M-down> / <M-left> / <M-right>
 (depends-on "drag-stuff")
 
-; Make Emacs use the $PATH set up by the user's shell
+;; Make Emacs use the $PATH set up by the user's shell
 (depends-on "exec-path-from-shell")
 
-; expand or contract selection <C-=>
+;; expand or contract selection <C-=>
 (depends-on "expand-region")
 
-; Modern API for working with files and directories in Emacs
+;; Modern API for working with files and directories in Emacs
 (depends-on "f")
 
-; Syntax checking for GNU Emacs
+;; Syntax checking for GNU Emacs
 (depends-on "flycheck")
 (depends-on "flycheck-cask")
 
-; show / hide details in dired mode using "(" or ")"
+;; show / hide details in dired mode using "(" or ")"
 (depends-on "dired-details+")
 
-; export contents of an Emacs buffer to HTML while respecting
-; display properties such as colors, fonts, underlining, invisibility, etc.
+;; export contents of an Emacs buffer to HTML while respecting
+;; display properties such as colors, fonts, underlining, invisibility, etc.
 (depends-on "htmlize")
 
-; highlight the word the point is on
+;; highlight the word the point is on
 (depends-on "idle-highlight-mode")
 
-; git integration for emacs
+;; git integration for emacs
 (depends-on "magit")
 
+;; multiple cursors in one window
 (depends-on "multiple-cursors")
 (depends-on "nyan-mode")
 (depends-on "pallet")
