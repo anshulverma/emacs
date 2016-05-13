@@ -45,6 +45,8 @@
 
 ;; popup window manager (removes temporary buffers after their use)
 (depends-on "popwin")
+
+;; define services and control all of them form emacs
 (depends-on "prodigy")
 (depends-on "projectile")
 (depends-on "s")
