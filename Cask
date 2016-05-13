@@ -48,8 +48,13 @@
 
 ;; define services and control all of them form emacs
 (depends-on "prodigy")
+
+;; project integration library
 (depends-on "projectile")
+
+;; string manipulation for emacs
 (depends-on "s")
+
 (depends-on "smartparens")
 (depends-on "smex")
 (depends-on "use-package")
