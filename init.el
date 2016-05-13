@@ -2,4 +2,6 @@
 (cask-initialize)
 (require 'pallet)
 
+(add-to-list 'load-path "~/.emacs.d/lib/")
+
 (mapc 'load (f--files "~/.emacs.d/custom" (s-matches? "^.*\.el$" it) t))
