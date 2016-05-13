@@ -2,4 +2,4 @@
 (cask-initialize)
 (require 'pallet)
 
-(mapc 'load (directory-files "~/.emacs.d/custom" t "^[0-9]+.*\.el$"))
+(mapc 'load (f--files "~/.emacs.d/custom" (s-matches? "^.*\.el$" it) t))
