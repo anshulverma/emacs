@@ -62,6 +62,9 @@
 ;; (built on top of ido)
 (depends-on "smex")
 
+;; use-package declaration for simplifying .emacs
 (depends-on "use-package")
+
+;; autonomous emacs major-mode for editing web templates
 (depends-on "web-mode")
 (depends-on "yasnippet")
