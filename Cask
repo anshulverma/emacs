@@ -67,4 +67,6 @@
 
 ;; autonomous emacs major-mode for editing web templates
 (depends-on "web-mode")
+
+;; template system for emacs
 (depends-on "yasnippet")

@@ -17,3 +17,4 @@ eshell/
 *.log
 *.eld
 projectile.cache
+.yas-compiled*
