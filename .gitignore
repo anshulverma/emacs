@@ -8,6 +8,7 @@
 # library files
 lib
 lib-impl
+/predictive/
 
 # compilation artifacts
 .yas-compiled-snippets.el
