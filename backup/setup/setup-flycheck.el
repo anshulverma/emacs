@@ -12,11 +12,14 @@
 ;;; Code:
 
 (require 'flycheck)
+(require 'flycheck-pos-tip)
 
-(add-hook 'prog-mode-hook 'flycheck-mode)
-(eval-after-load 'flycheck
-  '(custom-set-variables
-    '(flycheck-display-errors-function 'flycheck-pos-tip-error-messages)))
+;; (eval-after-load 'flycheck
+  ;; '(custom-set-variables
+    ;; '(flycheck-display-errors-function 'flycheck-pos-tip-error-messages)))
+
+(with-eval-after-load 'flycheck '((flycheck-pos-tip-mode)
+                                  (add-hook 'prog-mode-hook 'flycheck-mode)))
 
 (provide 'setup-flycheck)
 ;;; setup-flycheck.el ends here

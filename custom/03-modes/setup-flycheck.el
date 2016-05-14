@@ -6,8 +6,7 @@
 
 (add-hook 'prog-mode-hook 'flycheck-mode)
 (eval-after-load 'flycheck
-  '(custom-set-variables
-    '(flycheck-display-errors-function 'flycheck-pos-tip-error-messages)))
+  '(flycheck-pos-tip-mode))
 
 (provide 'setup-flycheck)
 ;;; setup-flycheck.el ends here

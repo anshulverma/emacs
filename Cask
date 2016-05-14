@@ -24,6 +24,7 @@
 ;; Syntax checking for GNU Emacs
 (depends-on "flycheck")
 (depends-on "flycheck-cask")
+(depends-on "flycheck-pos-tip")
 
 ;; show / hide details in dired mode using "(" or ")"
 (depends-on "dired-details+")
