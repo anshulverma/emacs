@@ -95,12 +95,17 @@
 ;; name says it all
 (depends-on "better-defaults")
 
-;; auto complete for various programming modes
-(depends-on "auto-complete")
+;; company mode for auto complete
+(depends-on "company")
+(depends-on "company-flx")
+(depends-on "company-math")
+(depends-on "company-auctex")
+(depends-on "company-dict")
+(depends-on "company-quickhelp")
 
 ;; latex stuff
 (depends-on "auctex")
-(depends-on "auto-complete-auctex")
+(depends-on "company-auctex")
 
 ;; provide help according to major mode
 (depends-on "info-look")
