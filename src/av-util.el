@@ -1,4 +1,4 @@
-;;; init --- Summary
+;;; av-util --- Summary
 ;;; Commentary:
 ;;; Code:
 
@@ -92,5 +92,5 @@
         (error "Cannot open tramp file")
       (browse-url (concat "file://" file-name)))))
 
-(provide '01-init)
-;;; 01-init.el ends here
+(provide 'av-util)
+;;; av-util.el ends here

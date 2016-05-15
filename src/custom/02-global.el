@@ -35,5 +35,34 @@
 
 (require 'info-look)
 
+;; common-lisp functions
+(require 'cl)
+
+;; When you visit a file, point goes to the
+;; last place where it was when you
+;; previously visited the same file.
+(require 'saveplace)
+
+;; find-file-at-point
+(require 'ffap)
+
+;; overrides Emacs' default mechanism for
+;; making buffer names unique (using suffixes
+;; like <2>, <3> etc.) with a more sensible
+;; behaviour which use parts of the file
+;; names to make the buffer names
+;; distinguishable.
+(require 'uniquify)
+
+;; translates ANSI SGR (Select Graphic
+;; Rendition) escape sequences like "Esc [ 30
+;; m" into EmacsOverlays, TextProperties, or
+;; XEmacsExtents with face colours, bold,
+;; etc.
+(require 'ansi-color)
+
+;; diminish keeps the modeline tidy
+(require 'diminish)
+
 (provide '02-global)
 ;;; 02-global.el ends here

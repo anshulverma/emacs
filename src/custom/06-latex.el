@@ -5,6 +5,9 @@
 ;; IMPORTANT -- make sure AUCTeX is installed:
 ;; brew install homebrew/tex/auctex
 
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
+
 (setq LaTeX-amsmath-label "eq:")
 (setq LaTeX-command-style (quote (("" "%(PDF)%(latex) -file-line-error %S%(PDFout)"))))
 (setq LaTeX-label-function (quote reftex-label))
@@ -110,6 +113,41 @@
                                  :doc-spec '(("(latex2e)Concept Index" )
                                              ("(latex2e)Command Index")))
                                 ))
+
+;; automagic detection of master file
+(defun guess-TeX-master (filename)
+  "Guess the master file for FILENAME from currently open .tex files."
+  (let ((candidate nil)
+        (filename (file-name-nondirectory filename)))
+    (save-excursion
+      (dolist (buffer (buffer-list))
+        (with-current-buffer buffer
+          (let ((name (buffer-name))
+                (file buffer-file-name))
+            (if (and file (string-match "\\.tex$" file))
+                (progn
+                  (goto-char (point-min))
+                  (if (re-search-forward (concat "\\\\input{" filename "}") nil t)
+                      (setq candidate file))
+                  (if (re-search-forward (concat "\\\\include{" (file-name-sans-extension filename) "}") nil t)
+                      (setq candidate file))))))))
+    (if candidate
+        (message "TeX master document: %s" (file-name-nondirectory candidate)))
+    candidate))
+
+(add-hook 'LaTeX-mode-hook
+          '(setq TeX-master (guess-TeX-master (buffer-file-name))))
+
+;; highlight (or font-lock) the “\section{title}” lines:
+(font-lock-add-keywords
+ 'latex-mode
+ `((,(concat "^\\s-*\\\\\\("
+             "\\(documentclass\\|\\(sub\\)?section[*]?\\)"
+             "\\(\\[[^]% \t\n]*\\]\\)?{[-[:alnum:]_ ]+"
+             "\\|"
+             "\\(begin\\|end\\){document"
+             "\\)}.*\n?")
+    (0 'your-face append))))
 
 (provide '06-latex)
 ;;; 06-latex.el ends here

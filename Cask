@@ -43,7 +43,8 @@
 (depends-on "multiple-cursors")
 
 ;; pallet is a package management helper that uses cask to keep
-;; track of installed packages
+;; track of installed packages. It will put newly installed
+;; packages in Cask file
 (depends-on "pallet")
 
 ;; popup window manager (removes temporary buffers after their use)
@@ -115,3 +116,6 @@
 ;; databases (bib, rdf, html, json etc) and
 ;; Zotero collections directly from emacs.
 (depends-on "zotelo")
+
+;; keep the mode line tidy
+(depends-on "diminish")
