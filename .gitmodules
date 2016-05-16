@@ -1,0 +1,6 @@
+[submodule "lib/jmax/criticmarkup-emacs"]
+	path = lib/jmax/criticmarkup-emacs
+	url = git@github.com:anshulverma/criticmarkup-emacs.git
+[submodule "lib/jmax/org-ref"]
+	path = lib/jmax/org-ref
+	url = git@github.com:anshulverma/org-ref.git

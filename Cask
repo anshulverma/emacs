@@ -1,5 +1,7 @@
-(source "elpy" "http://jorgenschaefer.github.io/packages/")
+(source elpy "http://jorgenschaefer.github.io/packages/")
+(source org)
 (source gnu)
+(source melpa-stable)
 (source melpa)
 
 (depends-on "bind-key")
@@ -122,4 +124,5 @@
 ;; make Emacs bindings that stick around
 (depends-on "hydra")
 
-(depends-on "org")
+;; org mode and friends
+(depends-on "org-plus-contrib")
