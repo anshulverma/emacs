@@ -24,9 +24,9 @@ ac-comphist.dat
 places
 ido.last
 /recentf
+org-clock-save.el
 
 # backup code
 /backup/init.el
 /backup/lib-impl/
 /backup/lib/
-/org-clock-save.el
