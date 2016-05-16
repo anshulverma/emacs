@@ -6,9 +6,7 @@
 *.eld
 
 # library files
-lib
-lib-impl
-/predictive/
+/lib/predictive/
 
 # compilation artifacts
 .yas-compiled-snippets.el
@@ -29,3 +27,6 @@ ido.last
 
 # backup code
 /backup/init.el
+/backup/lib-impl/
+/backup/lib/
+/org-clock-save.el

@@ -26,6 +26,8 @@
   "Customizations for Emacs setup.")
 
 (add-to-list 'load-path av-lib-dir)
+(add-to-list 'load-path (expand-file-name "jmax" av-lib-dir))
+
 (add-to-list 'load-path av-src-dir)
 
 (require 'av-packages)

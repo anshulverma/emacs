@@ -109,6 +109,8 @@
 ;; latex stuff
 (depends-on "auctex")
 (depends-on "company-auctex")
+(depends-on "org-ref")
+(depends-on "cm-mode")
 
 ;; provide help according to major mode
 (depends-on "info-look")
