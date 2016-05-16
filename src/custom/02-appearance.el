@@ -4,6 +4,9 @@
 
 (load-theme 'zenburn t)
 
+;; resize font height for mac
+(set-face-attribute 'default nil :height 144)
+
 ;; visible bel
 (setf visible-bell t)
 
