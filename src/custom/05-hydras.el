@@ -45,13 +45,15 @@ _~_: modified
   ("q" nil "quit"))
 
 ;; jump between errors in current document
-(defhydra hydra-error (global-map (kbd "M-g e"))
+(defhydra hydra-error ()
   "goto-error"
   ("h" first-error "first")
   ("j" next-error "next")
   ("k" previous-error "prev")
   ("v" recenter-top-bottom "recenter")
   ("q" nil "quit"))
+
+(global-set-key (kbd "C-x y e") 'hydra-error/body)
 
 ;; rectangle-mark-mode
 (require 'rect)
