@@ -77,5 +77,8 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
+;; do not show startup screen
+(setq inhibit-startup-screen t)
+
 (provide '02-appearance)
 ;;; 02-appearance.el ends here

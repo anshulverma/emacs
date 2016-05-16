@@ -35,6 +35,8 @@
 
 ;; show matching parenthesis
 (show-paren-mode 1)
+;; alternative is 'expression, 'parenthesis or 'mixed
+(setq show-paren-style 'mixed)
 
 ;; editing customizations
 (setq kill-whole-line t) ; kill entire line including RET
@@ -46,6 +48,7 @@
                            sh-mode))
       (indent-region (region-beginning) (region-end) nil)))
 
+(auto-fill-mode -1)
+
 (provide '05-editor)
 ;;; 05-editor.el ends here
-
