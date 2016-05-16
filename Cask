@@ -101,7 +101,6 @@
 (depends-on "company")
 (depends-on "company-flx")
 (depends-on "company-math")
-(depends-on "company-auctex")
 (depends-on "company-dict")
 (depends-on "company-quickhelp")
 
@@ -119,3 +118,8 @@
 
 ;; keep the mode line tidy
 (depends-on "diminish")
+
+;; make Emacs bindings that stick around
+(depends-on "hydra")
+
+(depends-on "org")
