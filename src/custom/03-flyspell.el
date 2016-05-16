@@ -107,5 +107,56 @@
 (global-set-key (kbd "C-c f n") 'flyspell-check-next-misspelled-word)
 (global-set-key (kbd "C-c f c") 'flyspell-correct-word-before-point)
 
+(setq ispell-personal-dictionary (expand-file-name ".ispell" av-basedir))
+(setq ispell-silently-savep t)
+
+(add-hook 'flyspell-incorrect-hook
+          (lambda (beg end sym)
+            (message "%s misspelled. Type %s to fix it."
+                     (buffer-substring beg end)
+                     (substitute-command-keys "\\[endless/ispell-word-then-abbrev]"))
+            ;; return nil so word is still highlighted.
+            nil))
+
+(eval-after-load "flyspell"
+  '(progn
+     (define-key flyspell-mouse-map [s-mouse-1] #'flyspell-correct-word)))
+
+(defun flyspell-check-next-highlighted-word ()
+  "Move to next error and check it."
+  (interactive)
+  (flyspell-goto-next-error)
+  (ispell-word))
+
+(defhydra hydra-spell (:color red)
+  "spell"
+  ("s" flyspell-check-previous-highlighted-word "previous")
+  ("n" flyspell-check-next-highlighted-word "next")
+  ("c" ispell-continue "cont")
+  ("e" flyspell-goto-next-error "next error")
+  ("w" ispell-word "word")
+  ("b" ispell-buffer "buffer")
+  ("q" nil "quit" :color blue))
+
+(global-set-key (kbd "C-c f h") 'hydra-spell/body)
+
+;; http://endlessparentheses.com/ispell-and-abbrev-the-perfect-auto-correct.html
+(define-key ctl-x-map "\C-i" 'endless/ispell-word-then-abbrev)
+
+(defun endless/ispell-word-then-abbrev (p)
+  "Call `ispell-word'.  Then create an abbrev for the correction made.
+With prefix P, create local abbrev.  Otherwise it will be global."
+  (interactive "P")
+  (flyspell-goto-previous-error 1)
+  (let ((bef (downcase (or (thing-at-point 'word) ""))) aft)
+    (call-interactively 'ispell-word)
+    (setq aft (downcase (or (thing-at-point 'word) "")))
+    (unless (string= aft bef)
+      (message "\"%s\" now expands to \"%s\" %sally"
+               bef aft (if p "loc" "glob"))
+      (define-abbrev
+        (if p global-abbrev-table local-abbrev-table)
+        bef aft))))
+
 (provide '03-flyspell)
 ;;; 03-flyspell.el ends here
