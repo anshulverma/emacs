@@ -23,7 +23,12 @@
 
 (define-abbrev-table 'elisp-byte-code-mode-abbrev-table '())
 
-(define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
+(define-abbrev-table 'emacs-lisp-mode-abbrev-table
+  '(
+    ("anshu" "anshul" nil 1)
+    ("frmo" "from" nil 0)
+    ("yor" "your" nil 2)
+   ))
 
 (define-abbrev-table 'epa-info-mode-abbrev-table '())
 
