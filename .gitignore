@@ -5,14 +5,14 @@
 *.log
 *.eld
 
-# library files
-/lib/predictive/
-
 # compilation artifacts
 .yas-compiled-snippets.el
 .cask/
 *~
 node_modules
+/lib/elpa/
+
+# caches
 eshell/
 *.log
 *.eld
@@ -25,6 +25,7 @@ places
 ido.last
 /recentf
 org-clock-save.el
+/url/
 
 # backup code
 /backup/init.el
