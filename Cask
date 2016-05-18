@@ -128,3 +128,9 @@
 
 ;; org mode and friends
 (depends-on "org-plus-contrib")
+
+;; python
+(depends-on "eimp")
+(depends-on "elpy")
+(depends-on "pydoc")
+(depends-on "python-mode")
