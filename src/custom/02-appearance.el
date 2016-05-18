@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(load-theme 'zenburn t)
+(load-theme 'leuven t)
 
 ;; resize font height for mac
 (set-face-attribute 'default nil :height 144)
