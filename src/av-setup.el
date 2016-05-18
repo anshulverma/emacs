@@ -5,6 +5,7 @@
 ;;; Code:
 
 (require 'av-util)
+(require 'f)
 
 ;; copy environment variables when running in window mode
 (when (memq window-system '(mac ns))
