@@ -114,7 +114,8 @@
           (title (nth 0 (plist-get info :title)))
           (keywords (s-replace-all '(("\n" . ", ")) (plist-get info :keyword)))
           (terms (s-replace-all '(("\n" . ", ")) (plist-get info :term)))
-          (bottomstuff (plist-get info :bottomstuff)))
+          (bottomstuff (plist-get info :bottomstuff))
+          (ccsdesc-list (-map (lambda (desc) (format "\\ccsdesc%s" desc)) (s-split "\n" (plist-get info :ccsdesc)))))
      ;; org-mode escapes these in the abstract. This is hackery to
      ;; undo it. It is probably not fail-proof
      (setq abstract (org-export-data abstract info))
@@ -134,13 +135,9 @@
 
       (format "\\begin{abstract}\n%s\n\\end{abstract}" abstract)
 
-      "
-\\ccsdesc[500]{Computer systems organization~Embedded systems}
-\\ccsdesc[300]{Computer systems organization~Redundancy}
-\\ccsdesc{Computer systems organization~Robotics}
-\\ccsdesc[100]{Networks~Network reliability}
-\n
-"
+      (-reduce-from (lambda (str item) (concat str "\n" item))
+                    ""
+                    ccsdesc-list)
 
       (format "\\terms{%s}" terms)
 
