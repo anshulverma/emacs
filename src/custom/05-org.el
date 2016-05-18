@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(setq org-latex-create-formula-image-program 'dvipng)
+
 (require 'jmax-org)
 
 ;; enabling flyspell in special edit source blocks.
