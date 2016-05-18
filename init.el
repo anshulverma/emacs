@@ -23,7 +23,7 @@
   "Customizations for Emacs setup.")
 
 (defvar av-lib-dir (expand-file-name "lib" av-basedir)
-  "Customizations for Emacs setup.")
+  "Useful library code found around the web.")
 
 (add-to-list 'load-path av-lib-dir)
 (add-to-list 'load-path (expand-file-name "jmax" av-lib-dir))
