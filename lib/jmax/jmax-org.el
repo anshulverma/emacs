@@ -462,15 +462,15 @@ citecolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue"
              ("linenos" "")))
 
 ;; for minted you must run latex with -shell-escape because it calls pygmentize as an external program
-;; (setq org-latex-pdf-process
-;;       '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %b"
-;;         "bibtex %b"
-;;         "makeindex %b"
-;;         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %b"
-;;         "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %b"))
+(setq org-latex-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %b"
+        "bibtex %b"
+        "makeindex %b"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %b"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %b"))
 
 ;; I have not had good luck with this on windows
-;(setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch"))
+(setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch"))
 
 ;; avoid getting \maketitle right after begin{document}
 ;; you should put \maketitle if and where you want it.
