@@ -2,13 +2,16 @@
 ;;; Commentary:
 ;;; Code:
 
+(defvar av-predictive-dir (expand-file-name "predictive" av-lib-dir)
+  "Base directory for predictive source.")
+
 ;; predictive install location
-(add-to-list 'load-path "~/.emacs.d/predictive/")
+(add-to-list 'load-path av-predictive-dir)
 
 ;; dictionary locations
-(add-to-list 'load-path "~/.emacs.d/predictive/latex/")
-(add-to-list 'load-path "~/.emacs.d/predictive/texinfo/")
-(add-to-list 'load-path "~/.emacs.d/predictive/html/")
+(add-to-list 'load-path (expand-file-name "latex" av-predictive-dir))
+(add-to-list 'load-path (expand-file-name "texinfo" av-predictive-dir))
+(add-to-list 'load-path (expand-file-name "html" av-predictive-dir))
 
 ;; (autoload 'predictive-mode "~/.emacs.d/predictive/predictive"
 ;;   "Turn on Predictive Completion Mode." t)

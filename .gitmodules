@@ -4,3 +4,6 @@
 [submodule "lib/jmax/org-ref"]
 	path = lib/jmax/org-ref
 	url = git@github.com:anshulverma/org-ref.git
+[submodule "predictive"]
+	path = lib/predictive
+	url = http://www.dr-qubit.org/git/predictive.git
