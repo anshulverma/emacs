@@ -66,9 +66,6 @@
 ;; etc.
 (require 'ansi-color)
 
-;; diminish keeps the modeline tidy
-(require 'diminish)
-
 ;; saner regex syntax
 (require 're-builder)
 (setq reb-re-syntax 'string)
