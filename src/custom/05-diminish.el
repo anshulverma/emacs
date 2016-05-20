@@ -30,7 +30,8 @@
    (flyspell-mode         "" flyspell)
    (smartparens-mode      "" av-setup)
    (auto-revert-mode      "" av-setup)
-   (isearch-mode          " 🔎")))
+   (isearch-mode          " 🔎")
+   (undo-tree-mode        "")))
 
 (provide '05-diminish)
 ;;; 05-diminish.el ends here

@@ -90,5 +90,8 @@
 (setq save-abbrevs t)
 (setq-default abbrev-mode t)
 
+;; undo tree everywhere
+(global-undo-tree-mode)
+
 (provide '02-global)
 ;;; 02-global.el ends here

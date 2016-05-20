@@ -71,6 +71,7 @@
         'window-number
         'better-defaults
         'info-look
+        'undo-tree
         )
   "Libraries that should be installed by default.")
 
