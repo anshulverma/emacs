@@ -1,8 +1,11 @@
-;;; appearance --- Summary
+;; appearance --- Summary
 ;;; Commentary:
 ;;; Code:
 
 (load-theme 'leuven t)
+
+;; needed to display emojis
+(set-fontset-font t nil "Symbola")
 
 ;; resize font height for mac
 (set-face-attribute 'default nil :height 144)

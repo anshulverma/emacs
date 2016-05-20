@@ -21,7 +21,6 @@
 ;; (setq completion-cycle-threshold 5)
 
 (after-load 'company
-            (diminish 'company-mode "CMP")
             (define-key company-mode-map (kbd "M-/") 'company-complete)
             (define-key company-active-map (kbd "M-/") 'company-select-next)
             (setq-default company-backends '((company-capf company-dabbrev-code) company-dabbrev))

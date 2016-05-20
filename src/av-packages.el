@@ -42,7 +42,7 @@
         'company-flx 'company-math
         'company-dict 'company-quickhelp
         'undo-tree
-        'diminish
+        'dim
         'eimp
         'elpy 'pydoc 'python-mode
         'org-plus-contrib
