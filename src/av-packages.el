@@ -34,7 +34,7 @@
         'flycheck 'flycheck-pos-tip
         'magit
         'exec-path-from-shell
-        'zenburn-theme 'leuven-theme
+        'zenburn-theme 'leuven-theme 'ample-theme
         'htmlize 'web-mode
         'auctex 'reftex
         'org-ref 'cm-mode

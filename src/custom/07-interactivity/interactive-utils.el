@@ -123,7 +123,7 @@ Repeated invocations toggle between the two most recently open buffers."
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
 ;; themes to cycle through
-(defvar av-cycle-theme-list '(leuven zenburn))
+(defvar av-cycle-theme-list '(leuven zenburn ample))
 
 (defun av-cycle-theme ()
   "Cycle themes based on order specified in av-cycle-theme-list."
