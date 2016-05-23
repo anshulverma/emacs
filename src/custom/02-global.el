@@ -92,6 +92,11 @@
 
 ;; undo tree everywhere
 (global-undo-tree-mode)
+(setq undo-tree-auto-save-history t)
+(setq undo-tree-history-directory-alist (quote (("*" . ".emacs-undo-history"))))
+(setq undo-tree-visualizer-diff t)
+(setq undo-tree-visualizer-relative-timestamps t)
+(setq undo-tree-visualizer-timestamps t)
 
 (provide '02-global)
 ;;; 02-global.el ends here
