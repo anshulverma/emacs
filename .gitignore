@@ -26,6 +26,7 @@ ido.last
 /recentf
 org-clock-save.el
 /url/
+flycheck_*.el
 
 # backup code
 /backup/init.el
