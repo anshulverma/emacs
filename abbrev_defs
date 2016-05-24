@@ -75,6 +75,7 @@
   '(
     ("lenght" "length" nil 2)
     ("teh" "the" nil 2)
+    ("hellp" "hello" nil 1)
    ))
 
 (define-abbrev-table 'gnus-article-edit-mode-abbrev-table '())
@@ -213,4 +214,3 @@
 (define-abbrev-table 'vc-git-region-history-mode-abbrev-table '())
 
 (define-abbrev-table 'web-mode-abbrev-table '())
-
