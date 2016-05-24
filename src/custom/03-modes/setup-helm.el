@@ -169,12 +169,10 @@
 (defun helm-smex-items ()
   (smex-convert-for-ido smex-cache))
 
-
 (defun helm-smex-execute-command (command-name)
   (unwind-protect
       (execute-extended-command helm-current-prefix-arg command-name)
     (smex-rank (intern command-name))))
-
 
 (defvar helm-smex-source
   '((name . "smex")
@@ -184,7 +182,6 @@
     (candidate-transformer . flx-helm-candidate-transformer)
     (action . (("execute command" . helm-smex-execute-command)
                ("execute command with prefix" . helm-smex-execute-command-with-prefix)))))
-
 
 (defun flx-helm-candidate-transformer (candidates)
   "hairy but works"
@@ -218,8 +215,6 @@
                         (> (caddr a) (caddr b)))))
       (helm-smex-flx-highlight-and-format res)
       res)))
-
-
 
 (defun helm-smex-flx-highlight-and-format (res)
   (cl-loop for item in res
