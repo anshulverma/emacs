@@ -5,6 +5,21 @@
 -*~
 -*#*
 -*.bak
+-.yas-*
+-backup/
+-backups/
+-eshell/
+-*.eld
+-*.log
+projectile.cache
+.mc-lists.el
+projectile.cache
+ac-comphist.dat
+places
+ido.last
+/recentf
+org-clock-save.el
+/url/
 
 # Library files
 -lib/
@@ -12,3 +27,7 @@
 -.git/
 -.cask/
 -*~
+
+# helpers
+-dict/
+-snippets/
