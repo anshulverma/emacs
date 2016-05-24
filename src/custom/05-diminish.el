@@ -17,7 +17,8 @@
    (calendar-mode             "📆")
    (scheme-mode               "λ")
    (help-mode                 "🄷")
-   (view-mode                 "👀")))
+   (view-mode                 "👀")
+   (java-mode                 "☕")))
 (dim-minor-names
  '((visual-line-mode      "")
    (auto-fill-function    "")
