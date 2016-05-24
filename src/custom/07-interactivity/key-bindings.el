@@ -33,5 +33,23 @@
 
 (global-set-key (kbd "<backtab>") 'un-indent)
 
+;; Move more quickly
+(global-set-key (kbd "M-n")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (forward-line 5))))
+(global-set-key (kbd "M-p")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (forward-line -5))))
+(global-set-key (kbd "C-c C-f")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (forward-char 5))))
+(global-set-key (kbd "C-c C-b")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (backward-char 5))))
+
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
