@@ -48,7 +48,16 @@
                            sh-mode))
       (indent-region (region-beginning) (region-end) nil)))
 
+;; auto fill
 (auto-fill-mode -1)
+
+;; fill column
+(require 'column-marker)
+(require 'fill-column-indicator)
+(setq-default fill-column 100)
+(add-hook 'after-change-major-mode-hook 'fci-mode) ; every file should have a fill-column
+(setq fci-rule-width 2)
+(setq fci-rule-color "dark gray")
 
 (provide '05-editor)
 ;;; 05-editor.el ends here
