@@ -51,5 +51,7 @@
                   (interactive)
                   (ignore-errors (backward-char 5))))
 
+(global-set-key (kbd "C-c ;") 'iedit-mode-toggle-on-function)
+
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
