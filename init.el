@@ -37,8 +37,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
  '(blink-cursor-mode nil)
+ '(custom-safe-themes
+   (quote
+    ("05411251e1232959144334e4359f8af0931c6c1a2f3a109d0d9e6753b6dfecfe" "4f5bb895d88b6fe6a983e63429f154b8d939b4a8c581956493783b2515e22d6d" "40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" default)))
  '(global-whitespace-mode nil nil nil "enable whitespace all the time")
+ '(hl-sexp-background-color "#efebe9")
  '(package-selected-packages
    (quote
     (zotelo zenburn-theme window-number web-mode use-package smex smartparens prodigy popwin pallet multiple-cursors magit idle-highlight-mode htmlize helm-swoop helm-projectile helm-fuzzier helm-flx helm-dash flycheck-pos-tip flycheck-cask expand-region exec-path-from-shell drag-stuff dired-details+ company-quickhelp company-math company-flx company-dict company-auctex better-defaults)))
