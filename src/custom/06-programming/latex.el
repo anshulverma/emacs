@@ -149,5 +149,5 @@
              "\\)}.*\n?")
     (0 'your-face append))))
 
-(provide '06-latex)
-;;; 06-latex.el ends here
+(provide 'latex)
+;;; latex.el ends here

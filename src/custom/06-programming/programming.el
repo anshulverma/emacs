@@ -15,6 +15,5 @@
 ;; enable yas snippets in programming modes
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 
-(provide '04-programming)
-;;; 04-programming.el ends here
-
+(provide 'programming)
+;;; programming.el ends here
