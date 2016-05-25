@@ -32,5 +32,7 @@
 
 (yas-reload-all)
 
+(add-hook 'org-mode-hook 'yas-minor-mode)
+
 (provide 'setup-yas-snippet)
 ;;; setup-yas-snippet.el ends here
