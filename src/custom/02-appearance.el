@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(load-theme 'leuven t)
+(load-theme 'zenburn t)
 
 ;; needed to display emojis
 (set-fontset-font t nil "Symbola")
