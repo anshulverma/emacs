@@ -53,5 +53,11 @@
 
 (global-set-key (kbd "C-c ;") 'iedit-mode-toggle-on-function)
 
+;; lookup functions in programming mode
+(global-unset-key (kbd "C-c b")) ; unset org-iswitchb which switches between org mode buffers
+(global-set-key (kbd "C-c b f") (lambda ()
+                                  (interactive)
+                                  (describe-function (intern (thing-at-point 'symbol)))))
+
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
