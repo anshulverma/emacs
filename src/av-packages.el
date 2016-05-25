@@ -72,7 +72,8 @@
         'better-defaults
         'info-look
         'undo-tree
-        'iedit)
+        'iedit
+        'slime)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p starter-kit-packages)

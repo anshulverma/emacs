@@ -9,6 +9,8 @@
 
 (define-abbrev-table 'TeX-output-mode-abbrev-table '())
 
+(define-abbrev-table 'apropos-mode-abbrev-table '())
+
 (define-abbrev-table 'awk-mode-abbrev-table
   '(
    ))
@@ -56,6 +58,7 @@
     ("anshu" "anshul" nil 1)
     ("chcle" "cycle" nil 0)
     ("frmo" "from" nil 0)
+    ("programing" "programming" nil 0)
     ("yor" "your" nil 2)
    ))
 
@@ -73,9 +76,9 @@
 
 (define-abbrev-table 'global-abbrev-table
   '(
+    ("hellp" "hello" nil 1)
     ("lenght" "length" nil 2)
     ("teh" "the" nil 2)
-    ("hellp" "hello" nil 1)
    ))
 
 (define-abbrev-table 'gnus-article-edit-mode-abbrev-table '())
@@ -181,9 +184,23 @@
 
 (define-abbrev-table 'reb-mode-abbrev-table '())
 
+(define-abbrev-table 'ruby-mode-abbrev-table '())
+
+(define-abbrev-table 'select-tags-table-mode-abbrev-table '())
+
 (define-abbrev-table 'sh-mode-abbrev-table '())
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
+
+(define-abbrev-table 'sldb-mode-abbrev-table '())
+
+(define-abbrev-table 'slime-connection-list-mode-abbrev-table '())
+
+(define-abbrev-table 'slime-inspector-mode-abbrev-table '())
+
+(define-abbrev-table 'slime-thread-control-mode-abbrev-table '())
+
+(define-abbrev-table 'slime-xref-mode-abbrev-table '())
 
 (define-abbrev-table 'slitex-mode-abbrev-table '())
 
@@ -214,3 +231,6 @@
 (define-abbrev-table 'vc-git-region-history-mode-abbrev-table '())
 
 (define-abbrev-table 'web-mode-abbrev-table '())
+
+(define-abbrev-table 'xref--xref-buffer-mode-abbrev-table '())
+

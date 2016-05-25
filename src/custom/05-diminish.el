@@ -13,12 +13,13 @@
 (dim-major-names
  '((emacs-lisp-mode           "𝑬𝑳")
    (emacs-lisp-byte-code-mode "𝑬𝑳-byte")
-   (lisp-interaction-mode     "𝒍𝒊𝒔𝒑")
+   (lisp-mode                 "𝒍𝒊𝒔𝒑")
    (calendar-mode             "📆")
    (scheme-mode               "λ")
    (help-mode                 "🄷")
    (view-mode                 "👀")
-   (java-mode                 "☕")))
+   (java-mode                 "☕")
+   (org-mode                  "𝒐𝒓𝒈")))
 (dim-minor-names
  '((visual-line-mode      "")
    (auto-fill-function    "")
@@ -33,7 +34,8 @@
    (auto-revert-mode      "" av-setup)
    (isearch-mode          " 🔎")
    (undo-tree-mode        "" av-setup)
-   (global-undo-tree-mode " ⮌" av-setup)))
+   (global-undo-tree-mode " ⮌" av-setup)
+   (slime-mode            "" av-setup)))
 
 (provide '05-diminish)
 ;;; 05-diminish.el ends here
