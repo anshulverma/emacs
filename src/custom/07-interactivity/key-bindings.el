@@ -59,5 +59,8 @@
                                   (interactive)
                                   (describe-function (intern (thing-at-point 'symbol)))))
 
+;; helm swoop lets you move around quickly
+(global-set-key (kbd "C-c h w") 'helm-swoop)
+
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
