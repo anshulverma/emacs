@@ -8,11 +8,11 @@
 (require 'package)
 
 (setq package-archives
-      '(("elpy" . "http://jorgenschaefer.github.io/packages/")
-        ("org"         . "http://orgmode.org/elpa/")
-        ("gnu"         . "http://elpa.gnu.org/packages/")
+      '(("elpy"         . "http://jorgenschaefer.github.io/packages/")
+        ("org"          . "http://orgmode.org/elpa/")
+        ("gnu"          . "http://elpa.gnu.org/packages/")
         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
-        ("melpa" . "http://melpa.org/packages/")))
+        ("melpa"        . "http://melpa.org/packages/")))
 
 (setq package-user-dir (expand-file-name "elpa" av-lib-dir))
 
