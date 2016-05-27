@@ -35,7 +35,14 @@ Puts point in the middle line as well as indent it by correct amount."
         (av/auto-indent-method)
       (newline-and-indent))))
 
+(defun av/nextline-and-indent ()
+  "Go to the end of line then `av/auto-indent-method-maybe'."
+  (interactive)
+  (end-of-line 1)
+  (av/auto-indent-method-maybe))
+
 (define-key java-mode-map (kbd "RET") 'av/auto-indent-method-maybe)
+(define-key java-mode-map (kbd "M-RET") 'av/nextline-and-indent)
 
 (provide 'programming)
 ;;; programming.el ends here
