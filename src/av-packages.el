@@ -36,16 +36,24 @@
         'exec-path-from-shell
         'zenburn-theme 'leuven-theme 'ample-theme
         'htmlize 'web-mode
+
+        'company
+
+        ;; latex stuff
+        'company-auctex
         'auctex 'reftex
+
+        ;; org mode additions
         'org-ref 'cm-mode
-        'company 'company-auctex
+        'org-plus-contrib
+        'ox-twbs ; export org-mode docs as html compatible with twitter bootstrap
+
         'company-flx 'company-math
         'company-dict 'company-quickhelp
         'undo-tree
         'dim
         'eimp
         'elpy 'pydoc 'python-mode
-        'org-plus-contrib
         'jedi 'jedi-direx
         'helm 'helm-themes 'helm-bibtex
         'helm-swoop 'helm-flx 'helm-fuzzier
