@@ -220,7 +220,10 @@
 
 (define-abbrev-table 'tex-shell-abbrev-table '())
 
-(define-abbrev-table 'text-mode-abbrev-table '())
+(define-abbrev-table 'text-mode-abbrev-table
+  '(
+    ("twiter" "twitter" nil 0)
+   ))
 
 (define-abbrev-table 'url-cookie-mode-abbrev-table '())
 
