@@ -12,8 +12,9 @@
    (idle-highlight-mode t))
 
 (add-hook 'emacs-lisp-mode-hook 'custom-programming-modes-hook)
-(add-hook 'ruby-mode-hook 'custom-programming-modes-hook)
-(add-hook 'js-mode-hook 'custom-programming-modes-hook)
+(add-hook 'ruby-mode-hook       'custom-programming-modes-hook)
+(add-hook 'js-mode-hook         'custom-programming-modes-hook)
+(add-hook 'java-mode-hook       'custom-programming-modes-hook)
 
 ;; enable yas snippets in programming modes
 (add-hook 'prog-mode-hook #'yas-minor-mode)
