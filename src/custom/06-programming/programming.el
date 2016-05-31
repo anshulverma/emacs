@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(semantic-mode 1)
+
 (defun custom-programming-modes-hook ()
   "Define common configurations for common programming modes."
    (make-local-variable 'column-number-mode)
