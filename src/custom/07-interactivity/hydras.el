@@ -253,7 +253,7 @@ _s_: status _c_: commit _p_: push _u_: pull
   (hydra-git/body))
 
 ;; togglers
-(defhydra hydra-av-togglers (:color blue :hint nil)
+(defhydra av/hydra-togglers (:color blue :hint nil)
   "
 _f_: maximize-buffer _t_: cycle-theme
 _q_: quit
