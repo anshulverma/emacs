@@ -4,6 +4,7 @@
 *.bak
 *.log
 *.eld
+.DS_Store
 
 # compilation artifacts
 .yas-compiled-snippets.el
@@ -27,6 +28,7 @@ ido.last
 org-clock-save.el
 /url/
 flycheck_*.el
+/semanticdb/
 
 # backup code
 /backup/init.el
