@@ -6,7 +6,7 @@
 ;; brew install homebrew/tex/auctex
 
 (load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+; (load "preview-latex.el" nil t t)
 
 (setq LaTeX-amsmath-label "eq:")
 (setq LaTeX-command-style (quote (("" "%(PDF)%(latex) -file-line-error %S%(PDFout)"))))
