@@ -5,6 +5,7 @@
 *.log
 *.eld
 .DS_Store
+/smex-items
 
 # compilation artifacts
 .yas-compiled-snippets.el
@@ -12,6 +13,7 @@
 *~
 node_modules
 /lib/elpa/
+/elpa
 
 # caches
 eshell/
