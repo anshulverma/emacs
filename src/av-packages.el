@@ -81,7 +81,9 @@
         'info-look
         'undo-tree
         'iedit
-        'slime)
+        'slime
+        'clojure-mode
+        'cider)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p starter-kit-packages)

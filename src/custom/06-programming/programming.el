@@ -9,12 +9,14 @@
    (make-local-variable 'column-number-mode)
    (column-number-mode t)
    (if window-system (hl-line-mode t))
-   (idle-highlight-mode t))
+   (idle-highlight-mode t)
+   (subword-mode +1))
 
 (add-hook 'emacs-lisp-mode-hook 'custom-programming-modes-hook)
 (add-hook 'ruby-mode-hook       'custom-programming-modes-hook)
 (add-hook 'js-mode-hook         'custom-programming-modes-hook)
 (add-hook 'java-mode-hook       'custom-programming-modes-hook)
+(add-hook 'clojure-mode-hook    'custom-programming-modes-hook)
 
 ;; enable yas snippets in programming modes
 (add-hook 'prog-mode-hook #'yas-minor-mode)
