@@ -20,8 +20,8 @@
     (exec-path-from-shell-copy-env "GEM_PATH")
     (exec-path-from-shell-copy-env "RUBY_VERSION")))
 
-(if (file-exists-p "~/.emacs.el")
-    (load "~/.emacs.el"))
+(if (file-exists-p "~/.emacs.local.el")
+    (load "~/.emacs.local.el"))
 
 ;; load all files in custom folder while maintaining the order
 (mapc 'load (f--files
