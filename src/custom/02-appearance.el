@@ -86,5 +86,16 @@
 ;; do not show startup screen
 (setq inhibit-startup-screen t)
 
+;; hide mode line when only a single buffer is open
+(require 'hide-mode-line)
+
+(defun av-hide-mode-line-hook()
+  "Hides mode line."
+  (hide-mode-line-update))
+
+(add-hook 'prog-mode-hook 'av-hide-mode-line-hook)
+
+(setq hide-mode-line t)
+
 (provide '02-appearance)
 ;;; 02-appearance.el ends here
