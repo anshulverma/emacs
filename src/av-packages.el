@@ -47,6 +47,7 @@
         'org-ref 'cm-mode
         'org-plus-contrib
         'ox-twbs ; export org-mode docs as html compatible with twitter bootstrap
+        'org-present ; ultra-minimalist presentation minor-mode for emacs org-mode
 
         'company-flx 'company-math
         'company-dict 'company-quickhelp
