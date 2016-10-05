@@ -29,5 +29,8 @@
      (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on t)
      t))
 
+;; enable smartparens in shell mode
+(add-hook 'eshell-mode-hook (lambda() (smartparens-mode +1)))
+
 (provide '03-shell)
 ;;; 03-shell.el ends here
