@@ -8,5 +8,11 @@
 ;; highlights matching pairs
 (show-smartparens-global-mode t)
 
+(global-set-key (kbd "C-c C-f") 'sp-forward-sexp)
+(global-set-key (kbd "C-c C-b") 'sp-forward-sexp)
+(global-set-key (kbd "C-c C-l C-b") 'sp-backward-slurp-sexp)
+(global-set-key (kbd "C-c C-l C-f") 'sp-forward-slurp-sexp)
+(global-set-key (kbd "C-c C-t") 'sp-transpose-sexp)
+
 (provide 'setup-smartparens)
 ;;; setup-smartparens.el ends here

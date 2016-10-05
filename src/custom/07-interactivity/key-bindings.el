@@ -42,14 +42,6 @@
                 (lambda ()
                   (interactive)
                   (ignore-errors (forward-line -5))))
-(global-set-key (kbd "C-c C-f")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (forward-char 5))))
-(global-set-key (kbd "C-c C-b")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (backward-char 5))))
 
 (global-set-key (kbd "C-c ;") 'iedit-mode-toggle-on-function)
 
