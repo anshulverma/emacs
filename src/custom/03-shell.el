@@ -32,5 +32,27 @@
 ;; enable smartparens in shell mode
 (add-hook 'eshell-mode-hook (lambda() (smartparens-mode +1)))
 
+;; set up eshell prompt
+(defmacro with-face (str &rest properties)
+  `(propertize ,str 'face (list ,@properties)))
+
+(defun shk-eshell-prompt ()
+  (let ((header-bg "#777"))
+    (concat
+     (with-face (eshell/pwd) :background header-bg)
+     (with-face
+      (or (ignore-errors (format " (%s)" (vc-responsible-backend default-directory))) "")
+      :background header-bg)
+     (with-face "\n" :background header-bg)
+     (with-face user-login-name :foreground "blue")
+     "@"
+     (with-face "localhost" :foreground "green")
+     (if (= (user-uid) 0)
+         (with-face " #" :foreground "red")
+       " $")
+     " ")))
+(setq eshell-prompt-function 'shk-eshell-prompt)
+(setq eshell-highlight-prompt nil)
+
 (provide '03-shell)
 ;;; 03-shell.el ends here
