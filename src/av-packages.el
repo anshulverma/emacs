@@ -86,7 +86,9 @@
         'clojure-mode
         'cider
         'markdown-mode
-        'scala-mode)
+        'scala-mode
+        'validate
+        'which-key)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p starter-kit-packages)
