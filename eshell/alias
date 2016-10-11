@@ -1,0 +1,30 @@
+alias tree tree -Csuh
+alias tmuxa tmux -2 a
+alias timestamp date +%s
+alias rmf rm -f
+alias rm rm -i
+alias mvf mv -f
+alias mv mv -i
+alias mkdir mkdir -p
+alias ls gls --color $1
+alias ll gls -ltr --color $1
+alias la gls -ltrA --color $1
+alias j jobs -l
+alias head1 awk BEGIN{blank=0}{if (NF == 0) {blank=1} if (blank==0) {print blank}}
+alias h history
+alias grep grep --color=auto
+alias gca git commit -am
+alias fgrep fgrep --color=auto
+alias egrep egrep --color=auto
+alias du du -kh
+alias df df -kTh
+alias debug set -o nounset
+alias cpf cp -f
+alias cp cp -i
+alias ... cd ../..
+alias .. cd ..
+alias . pwd
+alias ff find-file $1
+alias d dired $1
+alias openo find-file-other-window $1
+alias open find-file-other-window $1
