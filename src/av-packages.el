@@ -85,7 +85,8 @@
         'slime
         'clojure-mode
         'cider
-        'markdown-mode)
+        'markdown-mode
+        'scala-mode)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p starter-kit-packages)
