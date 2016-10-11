@@ -86,7 +86,11 @@
         'clojure-mode
         'cider
         'markdown-mode
+
+        ;; scala
         'scala-mode
+        'sbt-mode
+
         'validate
         'which-key)
   "Libraries that should be installed by default.")

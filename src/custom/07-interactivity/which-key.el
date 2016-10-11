@@ -1,10 +1,9 @@
-;;; which-key --- Show help popups for prefix keys.
+ ;;; which-key --- Show help popups for prefix keys.
 
 ;;; Commentary:
 
 ;;; Code:
 
-(require 'validate)
 (require 'which-key)
 
 (use-package which-key

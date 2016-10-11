@@ -6,6 +6,7 @@
 
 (require 'av-util)
 (require 'f)
+(require 'validate)
 
 ;; copy environment variables when running in window mode
 (when (memq window-system '(mac ns))
