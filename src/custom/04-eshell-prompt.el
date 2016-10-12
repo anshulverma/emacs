@@ -31,12 +31,15 @@ PWD is not in a git repo (or the git command is not found)."
   (interactive)
   (when (and (eshell-search-path "git")
              (locate-dominating-file pwd ".git"))
-    (let ((git-output (shell-command-to-string (concat "cd " pwd " && git branch | grep '\\*' | sed -e 's/^\\* //'"))))
+    (let* ((git-output (shell-command-to-string
+                        (concat "cd " pwd " && git branch | grep '\\*' | sed -e 's/^\\* //'")))
+           (git-status (shell-command-to-string (concat "cd " pwd " && git status --short")))
+           (git-branch-color (if (s-blank? git-status) "#77ff77" "#ff7777")))
       (propertize (concat "("
                           (if (> (length git-output) 0)
                               (substring git-output 0 -1)
                             "no branch")
-                          ") ") 'face `(:foreground "green"))
+                          ") ") 'face `(:foreground ,git-branch-color))
       )))
 
 (setq eshell-prompt-function
