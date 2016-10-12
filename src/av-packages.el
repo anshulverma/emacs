@@ -92,7 +92,11 @@
         'sbt-mode
 
         'validate
-        'which-key)
+        'which-key
+
+        ;; useful additions to eshell
+        'eshell-did-you-mean
+        'eshell-z)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p starter-kit-packages)

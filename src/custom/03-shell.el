@@ -32,5 +32,12 @@
 ;; enable smartparens in shell mode
 (add-hook 'eshell-mode-hook (lambda() (smartparens-mode +1)))
 
+;; enable did-you-mean plugin
+(require 'eshell-did-you-mean)
+(eshell-did-you-mean-setup)
+
+;; enable eshell-z for easy switching between dirs
+(require 'eshell-z)
+
 (provide '03-shell)
 ;;; 03-shell.el ends here
