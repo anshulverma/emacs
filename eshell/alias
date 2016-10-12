@@ -1,10 +1,6 @@
 alias tree tree -Csuh
 alias tmuxa tmux -2 a
 alias timestamp date +%s
-alias rmf rm -f
-alias rm rm -i
-alias mvf mv -f
-alias mv mv -i
 alias ls gls --color $1
 alias ll gls -ltr --color $1
 alias la gls -ltrA --color $1
