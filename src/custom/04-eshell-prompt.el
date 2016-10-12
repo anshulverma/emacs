@@ -57,10 +57,14 @@ PWD is not in a git repo (or the git command is not found)."
                           (mapconcat (lambda (elm) elm)
                                      p-lst
                                      "/")))
-                      (split-string (pwd-repl-home (eshell/pwd)) "/")) 'face `(:foreground "yellow"))
+                      (split-string (pwd-repl-home (eshell/pwd)) "/")) 'face `(:foreground "#ffff77"))
          (propertize " # " 'face 'default))))
 
 (setq eshell-highlight-prompt nil)
+
+(add-hook 'eshell-mode-hook
+          (lambda()
+            (setq show-trailing-whitespace nil)))
 
 (provide '04-eshell-prompt)
 ;;; 04-eshell-prompt.el ends here
