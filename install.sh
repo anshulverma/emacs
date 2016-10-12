@@ -2,4 +2,19 @@
 
 basedir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-emacs -q -l ${basedir}/init.el
+brew update
+
+packages=("ispell"
+          "bash-completion"
+          "git"
+          "python"
+          "emacs"
+          "auctex"
+          "cask"
+          "scala"
+          "ditaa"
+          "graphviz"
+          "plantuml")
+for pkg in "${packages[@]}"; do
+  brew install $pkg
+done
