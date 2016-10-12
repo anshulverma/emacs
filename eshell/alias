@@ -5,17 +5,13 @@ alias rmf rm -f
 alias rm rm -i
 alias mvf mv -f
 alias mv mv -i
-alias mkdir mkdir -p
 alias ls gls --color $1
 alias ll gls -ltr --color $1
 alias la gls -ltrA --color $1
 alias j jobs -l
 alias head1 awk BEGIN{blank=0}{if (NF == 0) {blank=1} if (blank==0) {print blank}}
 alias h history
-alias grep grep --color=auto
-alias gca git commit -am
-alias fgrep fgrep --color=auto
-alias egrep egrep --color=auto
+alias gca "git commit -am $1"
 alias du du -kh
 alias df df -kTh
 alias debug set -o nounset
