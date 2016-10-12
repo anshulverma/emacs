@@ -48,6 +48,7 @@
 
 ;; ----LINE NUMBERS----
 (require 'linum)
+(require 'linum-off)
 
 ; line number format
 (defun linum-format-func (line)
