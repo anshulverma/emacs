@@ -26,7 +26,8 @@
    (sh . t)
    (ditaa . t)
    (dot . t)
-   (plantuml . t)))
+   (plantuml . t)
+   (gnuplot . t)))
 
 (provide 'setup-org-babel)
 ;;; setup-org-babel.el ends here

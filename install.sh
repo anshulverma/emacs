@@ -14,7 +14,8 @@ packages=("ispell"
           "scala"
           "ditaa"
           "graphviz"
-          "plantuml")
+          "plantuml"
+          "gnuplot")
 for pkg in "${packages[@]}"; do
   brew install $pkg
 done

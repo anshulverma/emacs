@@ -49,6 +49,9 @@
         'ox-twbs ; export org-mode docs as html compatible with twitter bootstrap
         'org-present ; ultra-minimalist presentation minor-mode for emacs org-mode
 
+        ;; enabling support for gnuplot (also for org-mode)
+        'gnuplot
+
         'company-flx 'company-math
         'company-dict 'company-quickhelp
         'undo-tree
