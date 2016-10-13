@@ -25,9 +25,11 @@
     (load "~/.emacs.local.el"))
 
 ;; load all files in custom folder while maintaining the order
-(mapc 'load (f--files
-             (expand-file-name "custom" av-src-dir)
-             (s-matches? "^.*\.el$" it) t))
+(mapc 'load
+      (f--files
+       (expand-file-name "custom" av-src-dir)
+       (and (s-matches? "^.*\.el$" it)
+            (not (s-starts-with? "flycheck_" (f-filename it)))) t))
 
 (provide 'av-setup)
 
