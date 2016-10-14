@@ -30,5 +30,27 @@
 
 (add-hook 'org-mode-hook #'endless/org-ispell)
 
+(setq org-src-fontify-natively t)
+
+;; set up agenda so it reads from dropbox
+(setq org-agenda-files '("~/Dropbox/org"))
+
+;; change color based on colander type
+(add-hook 'org-finalize-agenda-hook
+          (lambda ()
+            (save-excursion
+              (color-org-header "Personal:"  "#97c71c")
+              (color-org-header "Birthday:"  "#ff8000")
+              (color-org-header "Work:"      "#fc5f5f")
+              (color-org-header "Holiday:"   "#008282"))))
+
+(defun color-org-header (tag col)
+  "Change color of a agenda item based on TAG to COL."
+  (interactive)
+  (goto-char (point-min))
+  (while (re-search-forward tag nil t)
+    (add-text-properties (match-beginning 0) (point-at-eol)
+                         `(face (:foreground ,col)))))
+
 (provide '05-org)
 ;;; 05-org.el ends here
