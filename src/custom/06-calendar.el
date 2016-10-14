@@ -63,7 +63,6 @@
 (setq hebrew-holidays 'nil)
 (setq oriental-holidays 'nil)
 
-(setq diary-show-holidays-flag t)
 (setq calendar-mark-holidays-flag t)
 (setq calendar-view-holidays-initially t)
 (setq calendar-mark-diary-entries-flag t)
