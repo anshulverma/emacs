@@ -2,6 +2,37 @@
 ;;; Commentary:
 ;;; Code:
 
+;; -------- calfw setup --------
+
+(require 'calfw)
+(require 'calfw-org)
+(require 'calfw-cal)
+
+(setq cfw:org-overwrite-default-keybinding t)
+
+(defun my-open-calendar ()
+  (interactive)
+  (cfw:open-calendar-buffer
+   :contents-sources
+   (list
+    (cfw:org-create-source "Green")  ; orgmode source
+    (cfw:cal-create-source "Orange") ; diary source
+    )))
+
+;; Month
+(setq calendar-month-name-array
+      ["January" "February" "March"     "April"   "May"      "June"
+       "July"    "August"   "September" "October" "November" "December"])
+
+;; Week days
+(setq calendar-day-name-array
+      ["Sunday" "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday"])
+
+;; First day of the week
+(setq calendar-week-start-day 0) ; 0:Sunday, 1:Monday
+
+;; -----------------------------
+
 (require 'calendar)
 
 (setq calendar-view-diary-initially-flag t)

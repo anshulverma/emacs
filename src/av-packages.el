@@ -99,7 +99,11 @@
 
         ;; useful additions to eshell
         'eshell-did-you-mean
-        'eshell-z)
+        'eshell-z
+
+        'google-maps
+        'calfw
+        'calfw-gcal)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p starter-kit-packages)
