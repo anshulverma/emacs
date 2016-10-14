@@ -43,6 +43,10 @@
 
 (define-abbrev-table 'debugger-mode-abbrev-table '())
 
+(define-abbrev-table 'diary-fancy-display-mode-abbrev-table '())
+
+(define-abbrev-table 'diary-mode-abbrev-table '())
+
 (define-abbrev-table 'diff-mode-abbrev-table '())
 
 (define-abbrev-table 'dig-mode-abbrev-table '())
@@ -58,6 +62,7 @@
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table
   '(
     ("anshu" "anshul" nil 1)
+    ("calander" "colander" nil 0)
     ("chcle" "cycle" nil 0)
     ("frmo" "from" nil 0)
     ("programing" "programming" nil 0)
@@ -85,6 +90,8 @@
     ("teh" "the" nil 2)
    ))
 
+(define-abbrev-table 'gnuplot-comint-mode-abbrev-table '())
+
 (define-abbrev-table 'gnus-article-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'gnus-article-mode-abbrev-table '())
@@ -92,6 +99,8 @@
 (define-abbrev-table 'gnus-group-mode-abbrev-table '())
 
 (define-abbrev-table 'gnus-sticky-article-mode-abbrev-table '())
+
+(define-abbrev-table 'graphviz-dot-mode-abbrev-table '())
 
 (define-abbrev-table 'grep-mode-abbrev-table '())
 
@@ -198,6 +207,7 @@
     ("langage" "language" nil 0)
     ("optimiations" "optimizations" nil 0)
     ("optimze" "optimize" nil 0)
+    ("preare" "prepare" nil 0)
     ("probbilistic" "probabilistic" nil 0)
     ("proceding" "proceeding" nil 0)
     ("shortned" "shortened" nil 0)
@@ -278,6 +288,7 @@
   '(
     ("algrorithm" "algorithm" nil 0)
     ("calculting" "calculating" nil 0)
+    ("relationshis" "relationships" nil 0)
     ("twiter" "twitter" nil 0)
    ))
 

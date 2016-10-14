@@ -37,3 +37,4 @@ flycheck_*.el
 /backup/init.el
 /backup/lib-impl/
 /backup/lib/
+/.org-id-locations
