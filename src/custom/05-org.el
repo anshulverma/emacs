@@ -40,6 +40,7 @@
           (lambda ()
             (save-excursion
               (color-org-header "Personal:"  "#97c71c")
+              (color-org-header "Diary:"     "#e855e4")
               (color-org-header "Birthday:"  "#ff8000")
               (color-org-header "Work:"      "#fc5f5f")
               (color-org-header "Holiday:"   "#008282"))))
