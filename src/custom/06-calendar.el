@@ -8,16 +8,17 @@
 (require 'calfw-org)
 (require 'calfw-cal)
 
-(setq cfw:org-overwrite-default-keybinding t)
-
 (defun my-open-calendar ()
   (interactive)
   (cfw:open-calendar-buffer
    :contents-sources
    (list
-    (cfw:org-create-source "Green")  ; orgmode source
+    (cfw:org-create-source "#1f1f1f")  ; orgmode source
     (cfw:cal-create-source "Orange") ; diary source
     )))
+
+(setq cfw:org-overwrite-default-keybinding t)
+(setq cfw:org-agenda-schedule-args '(:timestamp))
 
 ;; Month
 (setq calendar-month-name-array
@@ -31,11 +32,39 @@
 ;; First day of the week
 (setq calendar-week-start-day 0) ; 0:Sunday, 1:Monday
 
+(add-hook 'cfw:calendar-mode-hook
+          (lambda()
+            (setq show-trailing-whitespace nil)))
+(add-hook 'calendar-mode-hook
+          (lambda()
+            (setq show-trailing-whitespace nil)))
+
+(custom-set-faces
+ '(cfw:face-title ((t (:foreground "#f0dfaf" :weight bold :height 2.0 :inherit variable-pitch))))
+ '(cfw:face-header ((t (:foreground "#d0bf8f" :weight bold))))
+ '(cfw:face-sunday ((t :foreground "#787878" :inherit cfw:face-day-title)))
+ '(cfw:face-saturday ((t :foreground "#787878" :inherit cfw:face-day-title)))
+ '(cfw:face-holiday ((t :foreground "#78aa78" :inherit cfw:face-day-title)))
+ '(cfw:face-grid ((t :foreground "#8f8f8f" :weight bold)))
+ '(cfw:face-default-content ((t :foreground "#bfebbf")))
+ '(cfw:face-periods ((t :foreground "cyan")))
+ '(cfw:face-day-title ((t :background "#333333")))
+ '(cfw:face-default-day ((t :weight bold :inherit cfw:face-day-title)))
+ '(cfw:face-annotation ((t :foreground "RosyBrown" :inherit cfw:face-day-title)))
+ '(cfw:face-disable ((t :foreground "DarkGray" :inherit cfw:face-day-title)))
+ '(cfw:face-today ((t :background "#3377aa" :weight bold)))
+ '(cfw:face-today-title ((t :background "#55aaff" :weight bold)))
+ '(cfw:face-select ((t :background "#999999")))
+ '(cfw:face-toolbar ((t :foreground "Steelblue4")))
+ '(cfw:face-toolbar-button-off ((t :foreground "#656565" :weight bold)))
+ '(cfw:face-toolbar-button-on ((t :foreground "#bbbbbb" :weight bold))))
+
 ;; -----------------------------
 
 (require 'calendar)
 
 (setq calendar-view-diary-initially-flag t)
+(setq org-agenda-include-diary t)
 (setq calendar-mark-diary-entries-flag t)
 (setq diary-entry-marker 'font-lock-reference-face)
 
@@ -66,6 +95,7 @@
 (setq calendar-mark-holidays-flag t)
 (setq calendar-view-holidays-initially t)
 (setq calendar-mark-diary-entries-flag t)
+(setq diary-show-holidays-flag nil)
 
 ;; Appointments
 (setq appt-message-warning-time 10)
