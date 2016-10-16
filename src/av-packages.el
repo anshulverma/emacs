@@ -49,6 +49,8 @@
         'ox-twbs ; export org-mode docs as html compatible with twitter bootstrap
         'org-present ; ultra-minimalist presentation minor-mode for emacs org-mode
 
+        'howm ; wiki like not taking tool
+
         'gnuplot
         'graphviz-dot-mode
 
