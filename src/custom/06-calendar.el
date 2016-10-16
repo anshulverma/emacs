@@ -8,13 +8,13 @@
 (require 'calfw-org)
 (require 'calfw-cal)
 
-(defun my-open-calendar ()
+(defun av/open-calendar ()
   (interactive)
   (cfw:open-calendar-buffer
    :contents-sources
    (list
-    (cfw:org-create-source "#1f1f1f")  ; orgmode source
-    (cfw:cal-create-source "Orange") ; diary source
+    (cfw:org-create-source "#44aa77")  ; orgmode source
+    (cfw:cal-create-source "#aa6677")  ; diary source
     )))
 
 (setq cfw:org-overwrite-default-keybinding t)
@@ -42,8 +42,8 @@
 (custom-set-faces
  '(cfw:face-title ((t (:foreground "#f0dfaf" :weight bold :height 2.0 :inherit variable-pitch))))
  '(cfw:face-header ((t (:foreground "#d0bf8f" :weight bold))))
- '(cfw:face-sunday ((t :foreground "#787878" :inherit cfw:face-day-title)))
- '(cfw:face-saturday ((t :foreground "#787878" :inherit cfw:face-day-title)))
+ '(cfw:face-sunday ((t :foreground "#787878")))
+ '(cfw:face-saturday ((t :foreground "#787878")))
  '(cfw:face-holiday ((t :foreground "#78aa78" :inherit cfw:face-day-title)))
  '(cfw:face-grid ((t :foreground "#8f8f8f" :weight bold)))
  '(cfw:face-default-content ((t :foreground "#bfebbf")))
