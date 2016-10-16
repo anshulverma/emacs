@@ -9,6 +9,7 @@
 ;;; Code:
 
 (require 'dim)
+(require 'slime)
 
 (dim-major-names
  '((emacs-lisp-mode           "𝑬𝑳")
