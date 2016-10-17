@@ -18,7 +18,8 @@
     )))
 
 (setq cfw:org-overwrite-default-keybinding t)
-(setq cfw:org-agenda-schedule-args '(:timestamp))
+(setq cfw:org-agenda-schedule-args '(:scheduled :sexp :closed :deadline :todo :timestamp))
+(setq org-agenda-show-log-scoped t) ;; hack to fix org-agenda error
 
 ;; Month
 (setq calendar-month-name-array
