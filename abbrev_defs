@@ -81,8 +81,6 @@
 
 (define-abbrev-table 'fundamental-mode-abbrev-table '())
 
-(define-abbrev-table 'gfm-mode-abbrev-table '())
-
 (define-abbrev-table 'global-abbrev-table
   '(
     ("hellp" "hello" nil 1)
@@ -158,8 +156,6 @@
 
 (define-abbrev-table 'magit-refs-mode-abbrev-table '())
 
-(define-abbrev-table 'magit-repolist-mode-abbrev-table '())
-
 (define-abbrev-table 'magit-revision-mode-abbrev-table '())
 
 (define-abbrev-table 'magit-stash-mode-abbrev-table '())
@@ -167,8 +163,6 @@
 (define-abbrev-table 'magit-stashes-mode-abbrev-table '())
 
 (define-abbrev-table 'magit-status-mode-abbrev-table '())
-
-(define-abbrev-table 'markdown-mode-abbrev-table '())
 
 (define-abbrev-table 'message-mode-abbrev-table '())
 
@@ -210,7 +204,6 @@
     ("preare" "prepare" nil 0)
     ("probbilistic" "probabilistic" nil 0)
     ("proceding" "proceeding" nil 0)
-    ("shortned" "shortened" nil 0)
     ("similarty" "similarity" nil 0)
     ("slighly" "slightly" nil 0)
     ("unversal" "universal" nil 0)
@@ -252,6 +245,7 @@
 (define-abbrev-table 'sh-mode-abbrev-table
   '(
     ("deamon" "daemon" nil 0)
+    ("tunnelling" "tunneling" nil 0)
    ))
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
