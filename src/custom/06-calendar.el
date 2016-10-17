@@ -54,7 +54,7 @@
  '(cfw:face-disable ((t :foreground "DarkGray" :inherit cfw:face-day-title)))
  '(cfw:face-today ((t :background "#3377aa" :weight bold)))
  '(cfw:face-today-title ((t :background "#55aaff" :weight bold)))
- '(cfw:face-select ((t :background "#999999")))
+ '(cfw:face-select ((t :background "#aaaaaa")))
  '(cfw:face-toolbar ((t :foreground "Steelblue4")))
  '(cfw:face-toolbar-button-off ((t :foreground "#656565" :weight bold)))
  '(cfw:face-toolbar-button-on ((t :foreground "#bbbbbb" :weight bold))))
