@@ -67,7 +67,7 @@
 (setq calendar-view-diary-initially-flag t)
 (setq org-agenda-include-diary t)
 (setq calendar-mark-diary-entries-flag t)
-(setq diary-entry-marker 'font-lock-reference-face)
+(setq diary-entry-marker 'font-lock-constant-face)
 
 (setq calendar-time-zone -300)
 (setq calendar-standard-time-zone-name "PST")
