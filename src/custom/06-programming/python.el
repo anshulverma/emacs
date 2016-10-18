@@ -5,7 +5,6 @@
 (require 'python-mode)
 
 (elpy-enable)
-(elpy-use-ipython)
 
 ;; use flycheck not flymake with elpy
 (when (require 'flycheck nil t)
@@ -22,19 +21,19 @@
 (setq py-autopep8-options '("--ignore=E501,W293,W391,W690"))
 (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 
-;; ;; use the wx backend, for both mayavi and matplotlib
+;; use the wx backend, for both mayavi and matplotlib
 (setq py-python-command-args
   '("--gui=wx" "--pylab=wx" "-colors" "Linux"))
 (setq py-force-py-shell-name-p t)
 
-;; ;; switch to the interpreter after executing code
+;; switch to the interpreter after executing code
 (setq py-shell-switch-buffers-on-execute-p t)
 (setq py-switch-buffers-on-execute-p t)
 
-;; ;; don't split windows
+;; don't split windows
 (setq py-split-windows-on-execute-p nil)
 
-;; ;; try to automagically figure out indentation
+;; try to automagically figure out indentation
 (setq py-smart-indentation t)
 
 ;; no whitespace in inferior python mode
