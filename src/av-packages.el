@@ -48,6 +48,7 @@
         'org-plus-contrib
         'ox-twbs ; export org-mode docs as html compatible with twitter bootstrap
         'org-present ; ultra-minimalist presentation minor-mode for emacs org-mode
+        'ob-ipython
 
         'howm ; wiki like not taking tool
 

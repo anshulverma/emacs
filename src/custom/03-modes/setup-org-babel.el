@@ -19,15 +19,28 @@
       (av/org-babel-get-lib-jar
        (s-trim (shell-command-to-string "brew --prefix plantuml"))))
 
+(require 'ob-ipython)
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
+   (python . t)
+   (sh . t)
+   (matlab . t)
+   (sqlite . t)
+   (ruby . t)
+   (perl . t)
+   (org . t)
+   (dot . t)
+   (plantuml . t)
+   (R . t)
+   (C . t)
    (clojure . t)
    (sh . t)
    (ditaa . t)
    (dot . t)
-   (plantuml . t)
-   (gnuplot . t)))
+   (gnuplot . t)
+   (ipython . t)))
 
 (provide 'setup-org-babel)
 ;;; setup-org-babel.el ends here
