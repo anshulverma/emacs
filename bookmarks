@@ -1,0 +1,15 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("tasks.org"
+ (filename . "~/Dropbox/org/tasks.org")
+ (front-context-string . "\n    CLOSED: [20")
+ (rear-context-string . "cklisted entries")
+ (position . 3312))
+("diary"
+ (filename . "~/Dropbox/org/diary")
+ (front-context-string . "Friday 7:00pm Da")
+ (rear-context-string)
+ (position . 1))
+)
