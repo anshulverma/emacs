@@ -27,7 +27,11 @@
 (package-initialize)
 
 (defvar starter-kit-packages
-  (list 'flx-ido 'ido-ubiquitous 'ido-vertical-mode
+  (list 'flx-ido
+        'ido-ubiquitous
+        'ido-vertical-mode
+        'ido-at-point
+
         'smex
         'dired-details 'dired-details+
         'yasnippet
