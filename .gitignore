@@ -39,3 +39,4 @@ flycheck_*.el
 /backup/lib/
 /.org-id-locations
 /framegeometry
+/request/curl-cookie-jar
