@@ -52,7 +52,6 @@
         'org-plus-contrib
         'ox-twbs ; export org-mode docs as html compatible with twitter bootstrap
         'org-present ; ultra-minimalist presentation minor-mode for emacs org-mode
-        'ob-ipython
         'ob-http
 
         'howm ; wiki like not taking tool
@@ -65,7 +64,17 @@
         'undo-tree
         'dim
         'eimp
-        'elpy 'pydoc 'python-mode
+
+        'elpy
+        'pydoc
+        'python-mode
+        'py-autopep8
+        'anaconda-mode
+        'pyenv-mode
+        'company-jedi
+        'ein
+        'ob-ipython
+
         'jedi 'jedi-direx
         'helm 'helm-themes 'helm-bibtex
         'helm-swoop 'helm-flx 'helm-fuzzier
@@ -111,7 +120,8 @@
 
         'google-maps
         'calfw
-        'calfw-gcal)
+        'calfw-gcal
+        'websocket)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p starter-kit-packages)
