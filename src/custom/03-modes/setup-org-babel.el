@@ -40,7 +40,8 @@
    (ditaa . t)
    (dot . t)
    (gnuplot . t)
-   (ipython . t)))
+   (ipython . t)
+   (http . t)))
 
 (provide 'setup-org-babel)
 ;;; setup-org-babel.el ends here
