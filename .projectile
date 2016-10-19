@@ -20,6 +20,10 @@ ido.last
 /recentf
 org-clock-save.el
 /url/
+/.org-id-locations
+/framegeometry
+/request/curl-cookie-jar
+/.python-environments
 
 # Library files
 -lib/

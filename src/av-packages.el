@@ -69,13 +69,11 @@
         'pydoc
         'python-mode
         'py-autopep8
-        'anaconda-mode
-        'pyenv-mode
         'company-jedi
         'ein
         'ob-ipython
+        ;; 'jedi 'jedi-direx
 
-        'jedi 'jedi-direx
         'helm 'helm-themes 'helm-bibtex
         'helm-swoop 'helm-flx 'helm-fuzzier
         'helm-dash 'helm-projectile
@@ -120,7 +118,6 @@
 
         'google-maps
         'calfw
-        'calfw-gcal
         'websocket)
   "Libraries that should be installed by default.")
 

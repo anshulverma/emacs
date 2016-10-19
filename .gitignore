@@ -6,6 +6,10 @@
 *.eld
 .DS_Store
 /smex-items
+/.org-id-locations
+/framegeometry
+/request/curl-cookie-jar
+/.python-environments
 
 # compilation artifacts
 .yas-compiled-snippets.el

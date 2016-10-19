@@ -24,7 +24,9 @@ done
 pip_packages=("jedi"
               "importmagic"
               "autopep8"
-              "flake8")
+              "flake8"
+              "epc"
+              "deferred")
 for pkg in "${pip_packages[@]}"; do
   pip install $pkg
 done

@@ -74,6 +74,15 @@
           (lambda()
             (setq show-trailing-whitespace nil)))
 
+;; set up jedi
+(defun av/python-mode-hook ()
+  "Setup autocomplete."
+  (add-to-list 'company-backends 'company-jedi)
+  (jedi:setup)
+  (subword-mode 1))
+
+(setq jedi:complete-on-dot t)
+
 ;;---------EIN---------
 
 (require 'ein)

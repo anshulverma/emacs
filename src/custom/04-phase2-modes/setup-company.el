@@ -21,11 +21,27 @@
 ;; (setq completion-cycle-threshold 5)
 
 (after-load 'company
-            (define-key company-mode-map (kbd "M-/") 'company-complete)
-            (define-key company-active-map (kbd "M-/") 'company-select-next)
-            (setq-default company-backends '((company-capf company-dabbrev-code) company-dabbrev))
-            (company-flx-mode +1)
-            (company-quickhelp-mode 1))
+  (define-key company-mode-map (kbd "M-/") 'company-complete)
+  (define-key company-active-map (kbd "M-/") 'company-select-next)
+  (setq-default company-backends
+                '((company-dabbrev-code
+                   company-gtags
+                   company-etags
+                   company-keywords)
+                  company-bbdb
+                  company-nxml
+                  company-css
+                  company-eclim
+                  company-semantic
+                  company-clang
+                  company-xcode
+                  company-cmake
+                  company-capf
+                  company-files
+                  company-oddmuse
+                  company-dabbrev))
+  (company-flx-mode +1)
+  (company-quickhelp-mode 1))
 (global-set-key (kbd "M-C-/") 'company-complete)
 
 (after-load 'company-quickhelp
