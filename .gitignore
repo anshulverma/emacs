@@ -32,11 +32,11 @@ org-clock-save.el
 flycheck_*.el
 /semanticdb/
 /tramp
+/.org-id-locations
+/framegeometry
+/request/curl-cookie-jar
 
 # backup code
 /backup/init.el
 /backup/lib-impl/
 /backup/lib/
-/.org-id-locations
-/framegeometry
-/request/curl-cookie-jar

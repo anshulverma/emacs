@@ -31,3 +31,37 @@ org-clock-save.el
 # helpers
 -dict/
 -snippets/
+
+# compilation artifacts
+.yas-compiled-snippets.el
+.cask/
+*~
+node_modules
+/lib/elpa/
+/elpa
+
+# caches
+eshell/
+*.log
+*.eld
+projectile.cache
+.yas-compiled*
+.mc-lists.el
+projectile.cache
+ac-comphist.dat
+places
+ido.last
+/recentf
+org-clock-save.el
+/url/
+flycheck_*.el
+/semanticdb/
+/tramp
+/.org-id-locations
+/framegeometry
+/request/curl-cookie-jar
+
+# backup code
+/backup/init.el
+/backup/lib-impl/
+/backup/lib/
