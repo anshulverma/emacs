@@ -26,7 +26,7 @@
 
 (package-initialize)
 
-(defvar starter-kit-packages
+(defvar av/packages
   (list 'flx-ido
         'ido-ubiquitous
         'ido-vertical-mode
@@ -124,9 +124,9 @@
         'websocket)
   "Libraries that should be installed by default.")
 
-(unless (every #'package-installed-p starter-kit-packages)
+(unless (every #'package-installed-p av/packages)
   (package-refresh-contents)
-  (dolist (package starter-kit-packages)
+  (dolist (package av/packages)
     (unless (package-installed-p package)
       (message "installing %s" package)
       (package-install package))))
