@@ -6,7 +6,7 @@
 (with-eval-after-load "ido"
   (setq ido-enable-prefix nil
         ido-enable-flex-matching t
-        ido-case-fold  nil                 ; be case-sensitive
+        ido-case-fold t                 ; be case-insensitive
         ido-auto-merge-work-directories-length -1
         ido-create-new-buffer 'always
         ido-use-filename-at-point 'guess
@@ -21,8 +21,7 @@
         ido-default-buffer-method 'selected-window
         ido-max-prospects 10
         ido-use-faces nil ;; disable ido faces to see flx highlights
-        ido-vertical-define-keys 'C-n-C-p-up-down-left-right
-        )
+        ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
 
   (add-to-list 'ido-ignore-directories "target")
   (add-to-list 'ido-ignore-directories "node_modules")
