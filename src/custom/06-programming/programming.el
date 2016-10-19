@@ -18,6 +18,17 @@
 (add-hook 'java-mode-hook       'custom-programming-modes-hook)
 (add-hook 'clojure-mode-hook    'custom-programming-modes-hook)
 
+;; eldoc mode
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
+(defun ted-frob-eldoc-argument-list (string)
+  "Upcase and fontify STRING for use with `eldoc-mode'."
+  (propertize (upcase string)
+              'face 'font-lock-variable-name-face))
+(setq eldoc-argument-case 'ted-frob-eldoc-argument-list)
+
 ;; enable yas snippets in programming modes
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 
