@@ -37,8 +37,7 @@
   (setq ido-at-point-use-helm nil)
   (setq ido-at-point-partial t)
   (setq ido-at-point-fuzzy t)
-  (ido-at-point-mode)
-  )
+  (ido-at-point-mode))
 
 ;;(ido-mode t)
 
@@ -81,6 +80,8 @@
   (bind-key "C-x C-w" 'ido-copy-current-file-name ido-file-dir-completion-map))
 
 (add-hook 'ido-setup-hook 'my/setup-ido)
+
+(global-set-key (kbd "C-c s") 'ido-select-text)
 
 (provide 'setup-ido)
 ;;; setup-ido.el ends here
