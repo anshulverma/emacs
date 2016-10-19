@@ -15,14 +15,16 @@ packages=("ispell"
           "ditaa"
           "graphviz"
           "plantuml"
-          "gnuplot")
+          "gnuplot"
+          "pyenv")
 for pkg in "${packages[@]}"; do
   brew install $pkg
 done
 
 pip_packages=("jedi"
               "importmagic"
-              "autopep8")
+              "autopep8"
+              "flake8")
 for pkg in "${pip_packages[@]}"; do
   pip install $pkg
 done

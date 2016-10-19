@@ -4,12 +4,45 @@
 
 (require 'python-mode)
 
+;;--------PyENV--------
+
+;; set the right version of python using pyenv
+(require 'pyenv-mode)
+
+(pyenv-mode)
+
+(defvar av/pyenv-default-version "2.7.10"
+  "Default version of python to use in case .python-version file is absent.")
+
+(defvar av/pyenv-basedir "/usr/local/var/pyenv"
+  "Base directory where pyenv is located.")
+
+(defun av/pyenv-mode-auto-hook ()
+  "Automatically activates pyenv version if .python-version file exists."
+  (f-traverse-upwards
+   (lambda (path)
+     (let ((pyenv-version-path (f-expand ".python-version" path)))
+       (if (f-exists? pyenv-version-path)
+           (pyenv-mode-set (s-trim (f-read-text pyenv-version-path 'utf-8)))
+         (pyenv-mode-set av/pyenv-default-version))))))
+
+(add-hook 'python-mode-hook 'av/pyenv-mode-auto-hook)
+
+(add-to-list 'exec-path (f-join av/pyenv-basedir "shims"))
+
+;;---------------------
+
 (elpy-enable)
 
 ;; use flycheck not flymake with elpy
 (when (require 'flycheck nil t)
   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
   (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; Use Jedi instead of buggy Rope
+(setq elpy-rpc-backend "jedi")
+(setq python-check-command (expand-file-name (f-join av/pyenv-basedir "shims/flake8")))
+(setq python-check-command "flake8")
 
 ;; enable autopep8 formatting on save
 ;; ignoring:
