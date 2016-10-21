@@ -16,7 +16,7 @@
         ido-handle-duplicate-virtual-buffers 3
         confirm-nonexistent-file-or-buffer nil
         ido-file-extension-order '(".clj" ".cljs" ".cljc" ".html" ".el" ".org" ".txt" ".js") ; give priority to certain file types
-        ido-ignore-extensions t
+        ido-ignore-extensions nil
         ido-default-file-method 'selected-window
         ido-default-buffer-method 'selected-window
         ido-max-prospects 10
@@ -31,6 +31,7 @@
   (flx-ido-mode 1)
   (ido-ubiquitous-mode 1)
   (ido-vertical-mode 1)
+  (ido-everywhere 1)
 
   ;; Ido at point (C-,)
   (setq ido-at-point-use-helm nil)
@@ -43,8 +44,6 @@
 ;; Use ido everywhere
 ;;(require 'ido-ubiquitous)
 (with-eval-after-load "ido-ubiquitous"
-
-
   ;; Fix ido-ubiquitous for newer packages
   (defmacro ido-ubiquitous-use-new-completing-read (cmd package)
     `(eval-after-load ,package
