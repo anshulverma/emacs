@@ -118,7 +118,13 @@
 
         'google-maps
         'calfw
-        'websocket)
+        'websocket
+
+        ; R
+        'ess
+
+        'docker
+        'dockerfile-mode)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p av/packages)
