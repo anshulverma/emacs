@@ -5,6 +5,40 @@
 
 (define-abbrev-table 'Info-edit-mode-abbrev-table '())
 
+(define-abbrev-table 'Rd-mode-abbrev-table
+  '(
+    ("`ag" "\\arguments" nil 0)
+    ("`al" "\\alias" nil 0)
+    ("`au" "\\author" nil 0)
+    ("`bf" "\\bold" nil 0)
+    ("`co" "\\code" nil 0)
+    ("`de" "\\describe" nil 0)
+    ("`dn" "\\description" nil 0)
+    ("`dt" "\\details" nil 0)
+    ("`em" "\\emph" nil 0)
+    ("`en" "\\enumerate" nil 0)
+    ("`ex" "\\examples" nil 0)
+    ("`fi" "\\file" nil 0)
+    ("`fo" "\\format" nil 0)
+    ("`it" "\\item" nil 0)
+    ("`iz" "\\itemize" nil 0)
+    ("`kw" "\\keyword" nil 0)
+    ("`li" "\\link" nil 0)
+    ("`me" "\\method" nil 0)
+    ("`na" "\\name" nil 0)
+    ("`no" "\\note" nil 0)
+    ("`re" "\\references" nil 0)
+    ("`sa" "\\seealso" nil 0)
+    ("`se" "\\section" nil 0)
+    ("`so" "\\source" nil 0)
+    ("`ss" "\\subsection" nil 0)
+    ("`sy" "\\synopsis" nil 0)
+    ("`ta" "\\tabular" nil 0)
+    ("`ti" "\\title" nil 0)
+    ("`us" "\\usage" nil 0)
+    ("`va" "\\value" nil 0)
+   ))
+
 (define-abbrev-table 'TeX-error-overview-mode-abbrev-table '())
 
 (define-abbrev-table 'TeX-output-mode-abbrev-table '())
@@ -67,6 +101,8 @@
 
 (define-abbrev-table 'elisp-byte-code-mode-abbrev-table '())
 
+(define-abbrev-table 'elpy-refactor-mode-abbrev-table '())
+
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table
   '(
     ("anshu" "anshul" nil 1)
@@ -90,6 +126,8 @@
 (define-abbrev-table 'epa-key-mode-abbrev-table '())
 
 (define-abbrev-table 'eshell-mode-abbrev-table '())
+
+(define-abbrev-table 'ess-julia-mode-abbrev-table '())
 
 (define-abbrev-table 'flycheck-error-list-mode-abbrev-table '())
 
@@ -156,6 +194,8 @@
 
 (define-abbrev-table 'image-dired-thumbnail-mode-abbrev-table '())
 
+(define-abbrev-table 'inferior-julia-mode-abbrev-table '())
+
 (define-abbrev-table 'inferior-python-mode-abbrev-table '())
 
 (define-abbrev-table 'java-mode-abbrev-table
@@ -165,6 +205,8 @@
 (define-abbrev-table 'js-jsx-mode-abbrev-table '())
 
 (define-abbrev-table 'js-mode-abbrev-table '())
+
+(define-abbrev-table 'julia-mode-abbrev-table '())
 
 (define-abbrev-table 'latex-mode-abbrev-table '())
 
@@ -209,6 +251,8 @@
 (define-abbrev-table 'messages-buffer-mode-abbrev-table '())
 
 (define-abbrev-table 'nroff-mode-abbrev-table '())
+
+(define-abbrev-table 'ob-http-mode-abbrev-table '())
 
 (define-abbrev-table 'objc-mode-abbrev-table
   '(
@@ -270,6 +314,12 @@
 
 (define-abbrev-table 'prog-mode-abbrev-table '())
 
+(define-abbrev-table 'py-auto-completion-mode-abbrev-table '())
+
+(define-abbrev-table 'py-ipython-shell-mode-abbrev-table '())
+
+(define-abbrev-table 'py-python-shell-mode-abbrev-table '())
+
 (define-abbrev-table 'python-mode-abbrev-table '())
 
 (define-abbrev-table 'python-mode-skeleton-abbrev-table
@@ -318,9 +368,7 @@
 
 (define-abbrev-table 'speedbar-mode-abbrev-table '())
 
-(define-abbrev-table 'sql-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'sql-mode-abbrev-table '())
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 
