@@ -98,5 +98,12 @@
 (setq undo-tree-visualizer-relative-timestamps t)
 (setq undo-tree-visualizer-timestamps t)
 
+;; save place of last cursor position in a file
+(if (version< emacs-version "25.0")
+    (progn
+      (require 'saveplace)
+      (setq-default save-place t))
+  (save-place-mode 1))
+
 (provide '02-global)
 ;;; 02-global.el ends here
