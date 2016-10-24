@@ -12,7 +12,7 @@
         ido-use-filename-at-point 'guess
         ido-use-virtual-buffers t
         ido-enable-regexp nil
-        ido-enable-last-directory-history nil
+        ido-enable-last-directory-history t
         ido-handle-duplicate-virtual-buffers 3
         confirm-nonexistent-file-or-buffer nil
         ido-file-extension-order '(".clj" ".cljs" ".cljc" ".html" ".el" ".org" ".txt" ".js") ; give priority to certain file types
