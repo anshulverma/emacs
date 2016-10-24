@@ -27,6 +27,9 @@
   (add-to-list 'ido-ignore-directories "node_modules")
   (add-to-list 'ido-ignore-directories "out")
 
+  (require 'flx-ido)
+  (ido-mode 1)
+
   (setq flx-ido-use-faces t) ;; enable flx highlights
   (flx-ido-mode 1)
   (ido-ubiquitous-mode 1)
