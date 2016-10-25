@@ -39,6 +39,8 @@ flycheck_*.el
 /.org-id-locations
 /framegeometry
 /request/curl-cookie-jar
+/.emacs.desktop
+/.emacs.desktop.lock
 
 # backup code
 /backup/init.el

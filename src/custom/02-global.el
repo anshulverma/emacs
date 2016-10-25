@@ -105,5 +105,37 @@
       (setq-default save-place t))
   (save-place-mode 1))
 
+;; save desktop on close and restore after startup
+(require 'desktop)
+
+;; use only one desktop
+(setq desktop-path '("~/.emacs.d/"))
+(setq desktop-dirname "~/.emacs.d/")
+(setq desktop-base-file-name ".emacs.desktop")
+
+(defun av/is-desktop-saved ()
+  "Check if a desktop session exists."
+  (file-exists-p (concat desktop-dirname "/" desktop-base-file-name)))
+
+(defun av/restore-desktop ()
+  "Restore a saved Emacs session."
+  (interactive)
+  (if (av/is-desktop-saved)
+      (desktop-read)
+    (message "No desktop found.")))
+
+(defun av/desktop-save ()
+  "Auto save the desktop when Emacs is idle."
+  (interactive)
+  (desktop-save-in-desktop-dir))
+
+;; ask user whether to restore desktop at start-up
+(add-hook 'after-init-hook
+          '(lambda ()
+             (if (av/is-desktop-saved)
+                 (av/restore-desktop))))
+
+(add-hook 'kill-emacs-hook 'av/desktop-save)
+
 (provide '02-global)
 ;;; 02-global.el ends here
