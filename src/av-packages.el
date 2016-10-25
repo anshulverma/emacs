@@ -27,7 +27,8 @@
 (package-initialize)
 
 (defvar av/packages
-  (list 'flx-ido
+  (list 'flx
+        'flx-ido
         'ido-ubiquitous
         'ido-vertical-mode
         'ido-at-point
