@@ -57,8 +57,15 @@ Puts point in the middle line as well as indent it by correct amount."
   (end-of-line 1)
   (av/auto-indent-method-maybe))
 
-(define-key java-mode-map (kbd "RET") 'av/auto-indent-method-maybe)
-(define-key java-mode-map (kbd "M-RET") 'av/nextline-and-indent)
+(defun av/structured-programming-mode-hook ()
+  "Set up key bindings for structured programming language hooks."
+  (local-set-key (kbd "RET") 'av/auto-indent-method-maybe)
+  (local-set-key (kbd "M-RET") 'av/nextline-and-indent)
+  (subword-mode 1))
+
+(add-hook 'java-mode-hook 'av/structured-programming-mode-hook)
+(add-hook 'groovy-mode-hook 'av/structured-programming-mode-hook)
+(add-hook 'scala-mode-hook 'av/structured-programming-mode-hook)
 
 (provide 'programming)
 ;;; programming.el ends here
