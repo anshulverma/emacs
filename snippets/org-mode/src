@@ -3,6 +3,5 @@
 # key: src
 # --
 #+BEGIN_SRC ${1:emacs-lisp$$(yas/choose-value '("emacs-lisp" "python" "sh" "matlab" "sqlite" "ruby" "perl" "org" "latex" "plantuml" "R" "C" "clojure" "sh" "ditaa" "dot" "gnuplot" "ipython" "http" "restclient" "table" "sql" "js" "css"))}
-
 $0
 #+END_SRC
