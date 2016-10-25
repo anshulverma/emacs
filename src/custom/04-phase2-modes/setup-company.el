@@ -39,7 +39,8 @@
                   company-capf
                   company-files
                   company-oddmuse
-                  company-dabbrev))
+                  company-dabbrev
+                  company-restclient))
   (company-flx-mode +1)
   (company-quickhelp-mode 1))
 (global-set-key (kbd "M-C-/") 'company-complete)

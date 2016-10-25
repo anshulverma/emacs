@@ -41,7 +41,8 @@
    (dot . t)
    (gnuplot . t)
    (ipython . t)
-   (http . t)))
+   (http . t)
+   (restclient . t)))
 
 (provide 'setup-org-babel)
 ;;; setup-org-babel.el ends here

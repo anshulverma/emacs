@@ -128,7 +128,14 @@
         'docker
         'dockerfile-mode
 
-        'groovy-mode)
+        'groovy-mode
+
+        ;; REST with emacs
+        'cl-lib
+        'restclient
+        'ob-restclient
+        'company-restclient
+        'know-your-http-well)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p av/packages)
