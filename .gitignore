@@ -41,6 +41,7 @@ flycheck_*.el
 /request/curl-cookie-jar
 /.emacs.desktop
 /.emacs.desktop.lock
+/ensime
 
 # backup code
 /backup/init.el
