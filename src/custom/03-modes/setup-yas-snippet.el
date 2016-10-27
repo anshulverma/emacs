@@ -26,7 +26,8 @@
         (delete-char (- init-word original-point))
         (insert key)
         (yas-expand)))))
-(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-ido-expand)
+(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
+(define-key yas-minor-mode-map (kbd "\C-c TAB") 'yas-ido-expand)
 
 (add-to-list 'yas-snippet-dirs (concat "~/.emacs.d/" "snippets"))
 
