@@ -129,11 +129,17 @@
   (interactive)
   (desktop-save-in-desktop-dir))
 
-;; ask user whether to restore desktop at start-up
+(defun av/delete-desktop-file ()
+  "Delete the desktop config file."
+  (interactive)
+  (f-delete (f-join desktop-dirname desktop-base-file-name)))
+
+;; auto load desktop at startup without asking user
 (add-hook 'after-init-hook
           '(lambda ()
              (if (av/is-desktop-saved)
-                 (av/restore-desktop))))
+                 ((av/restore-desktop)
+                  (av/delete-desktop-file)))))
 
 (add-hook 'kill-emacs-hook 'av/desktop-save)
 
