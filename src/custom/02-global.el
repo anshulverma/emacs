@@ -138,8 +138,8 @@
 (add-hook 'after-init-hook
           '(lambda ()
              (if (av/is-desktop-saved)
-                 ((av/restore-desktop)
-                  (av/delete-desktop-file)))))
+                 (av/restore-desktop))
+             (av/delete-desktop-file)))
 
 (add-hook 'kill-emacs-hook 'av/desktop-save)
 
