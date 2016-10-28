@@ -137,7 +137,7 @@
         'company-restclient
         'know-your-http-well
 
-        ;; pig
+        ;; big data
         'pig-mode
         'pig-snippets)
   "Libraries that should be installed by default.")
