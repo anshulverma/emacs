@@ -51,7 +51,10 @@
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-service 25)
  '(tab-width 2)
- '(user-full-name "Anshul Verma"))
+ '(user-full-name "Anshul Verma")
+
+ ;; this will make whitespace column length same as fill-column
+ '(whitespace-line-column nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
