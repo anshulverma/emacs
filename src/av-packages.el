@@ -78,14 +78,21 @@
         'helm 'helm-themes 'helm-bibtex
         'helm-swoop 'helm-flx 'helm-fuzzier
         'helm-dash 'helm-projectile
-        'f			 ; file functions https://github.com/rejeep/f.el
-        's			 ; string functions
-        'dash		 ; list functions
-        'ht			 ; hash functions
+
+        'f         ; file functions https://github.com/rejeep/f.el
+        's         ; string functions
+        'dash      ; list functions
+        'ht        ; hash functions
         'rainbow-mode
-        'ace-jump-mode 'ace-isearch
+
+        'ace-jump-mode
+        'ace-isearch
+
         'use-package
-        'hydra 'key-chord
+
+        'hydra
+        'key-chord
+
         'git-timemachine
         'button-lock
         'elfeed
