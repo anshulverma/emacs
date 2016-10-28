@@ -158,5 +158,15 @@ http://www.emacswiki.org/emacs/AlignCommands"
                   (concat regexp "\\([[:space:]]*\\)")
                   1 spacing t)))
 
+;; figure out what face is under point
+(defun av/face-under-point (pos)
+  "Print face under point at POS."
+  (interactive "d")
+  (let ((face (or (get-char-property (point) 'read-face-name)
+                  (get-char-property (point) 'face))))
+    (if face
+        (message "Face: %s" face)
+      (message "No face at %d" pos))))
+
 (provide 'interactive-utils)
 ;;; interactive-utils.el ends here
