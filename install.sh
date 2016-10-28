@@ -16,7 +16,8 @@ packages=("ispell"
           "graphviz"
           "plantuml"
           "gnuplot"
-          "pyenv")
+          "pyenv"
+          "pig")
 for pkg in "${packages[@]}"; do
   brew install $pkg
 done
