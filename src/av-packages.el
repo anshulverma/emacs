@@ -135,7 +135,11 @@
         'restclient
         'ob-restclient
         'company-restclient
-        'know-your-http-well)
+        'know-your-http-well
+
+        ;; pig
+        'pig-mode
+        'pig-snippets)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p av/packages)
