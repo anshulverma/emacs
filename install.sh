@@ -7,7 +7,6 @@ brew update
 packages=("ispell"
           "bash-completion"
           "git"
-          "python"
           "emacs"
           "auctex"
           "cask"
@@ -16,6 +15,7 @@ packages=("ispell"
           "graphviz"
           "plantuml"
           "gnuplot"
+          "python"
           "pyenv"
           "pig")
 for pkg in "${packages[@]}"; do
@@ -23,8 +23,11 @@ for pkg in "${packages[@]}"; do
 done
 
 pip_packages=("jedi"
+              "elpy"
+              "rope"
               "importmagic"
               "autopep8"
+              "yapf"
               "flake8"
               "epc"
               "deferred")
