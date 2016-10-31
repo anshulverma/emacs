@@ -39,6 +39,11 @@ python_version="2.7.10"
 pyenv install $python_version
 pyenv local $python_version
 
+if [ ! -f "$HOME/.python-version" ]; then
+  echo "Setting base python version for pyenv to $python_version"
+  echo "$python_version" >> $HOME/.python-version
+fi
+
 pip install --upgrade pip
 
 pip_packages=("jedi"
