@@ -9,8 +9,6 @@
 ;; set the right version of python using pyenv
 (require 'pyenv-mode)
 
-(pyenv-mode)
-
 (defvar av/pyenv-default-version "2.7.10"
   "Default version of python to use in case .python-version file is absent.")
 
@@ -19,6 +17,7 @@
 
 (defun av/pyenv-mode-auto-hook ()
   "Automatically activates pyenv version if .python-version file exists."
+  (pyenv-mode 1)
   (f-traverse-upwards
    (lambda (path)
      (let ((pyenv-version-path (f-expand ".python-version" path)))
@@ -27,6 +26,9 @@
          (pyenv-mode-set av/pyenv-default-version))))))
 
 (add-hook 'python-mode-hook 'av/pyenv-mode-auto-hook)
+
+(define-key pyenv-mode-map (kbd "C-c C-s") nil)
+(define-key pyenv-mode-map (kbd "C-c C-u") nil)
 
 (add-to-list 'exec-path (f-join av/pyenv-basedir "shims"))
 
