@@ -7,6 +7,8 @@
 (require 'calfw)
 (require 'calfw-org)
 (require 'calfw-cal)
+(require 'f)
+(require 's)
 
 (defun av/open-calendar ()
   (interactive)
@@ -82,8 +84,16 @@
 ;; mark today as underlined
 (add-hook 'today-visible-calendar-hook 'calendar-mark-today)
 
-;; Diary
-(setq diary-file (concat "~/Dropbox/org/diary"))
+(if (and (boundp 'av/org-base-dir)
+         (f-exists? av/org-base-dir))
+    (progn
+      (message (concat "Using '" av/org-base-dir "' for setting up org-agenda."))
+      (setq diary-file (f-join av/org-base-dir "diary"))
+      (setq org-agenda-files
+            (f-files av/org-base-dir
+                     (lambda (file)
+                       (s-matches? "^[a-zA-Z0-9\-]*\.org$" (f-filename file))))))
+  (message "Not setting up org agenda files because 'av/org-base-dir' is not set."))
 
 ;;; number of diary entries to display, from Sunday to Saturday
 (setq number-of-diary-entries [2 1 1 1 1 4 2])

@@ -32,9 +32,6 @@
 
 (setq org-src-fontify-natively t)
 
-;; set up agenda so it reads from dropbox
-(setq org-agenda-files '("~/Dropbox/org"))
-
 ;; change color based on colander type
 (add-hook 'org-finalize-agenda-hook
           (lambda ()
