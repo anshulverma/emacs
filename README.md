@@ -20,6 +20,8 @@ To load custom theme, add this to `~/.emacs.local.el`:
 (setq av/theme 'zenburn)
 ```
 
+By default `leuven` theme is loaded.
+
 ## org-agenda
 
 Custom org agenda files and diary file can be loaded from a predefined
@@ -31,3 +33,12 @@ this:
 ```
 
 It is assumed that the diary file is named `diary`.
+
+## Face height
+
+If the font size is not according to your liking (default 144), then
+change it:
+
+``` lisp
+(setq av/face-height 180)
+```

@@ -12,8 +12,9 @@
 ;; needed to display emojis
 (set-fontset-font t nil "Symbola")
 
-;; resize font height for mac
-(set-face-attribute 'default nil :height 144)
+(defvar av/face-height 144
+  "Font height to set for your enviroment.")
+(set-face-attribute 'default nil :height av/face-height)
 
 ;; visible bel
 (setf visible-bell t)
