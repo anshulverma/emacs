@@ -84,5 +84,9 @@
 
 (global-set-key (kbd "C-c s") 'ido-select-text)
 
+;; ido and imenu integration
+(autoload 'idomenu "idomenu" nil t)
+(global-set-key (kbd "C-c i") 'idomenu)
+
 (provide 'setup-ido)
 ;;; setup-ido.el ends here
