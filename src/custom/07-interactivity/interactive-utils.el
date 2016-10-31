@@ -135,7 +135,9 @@ Repeated invocations toggle between the two most recently open buffers."
                        0))
          (next-theme (nth next-index av-cycle-theme-list)))
     (message (format "%s-theme" next-theme))
-    (load-theme next-theme)))
+    (disable-theme current-theme)
+    (load-theme next-theme)
+    (run-hook-with-args 'av/theme-load-hook next-theme)))
 
 ;; align multiple and repeat
 (defun align-regexp-repeated (start stop regexp)

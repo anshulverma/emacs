@@ -2,7 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
-(load-theme (if (boundp 'av/theme) av/theme 'leuven) t)
+;; add my custom hook
+(defvar av/theme-load-hook nil
+  "Hook called after a theme is loaded.")
+
+(defvar av/theme 'leuven
+  "Name of the theme to initialize Emacs with.")
 
 ;; needed to display emojis
 (set-fontset-font t nil "Symbola")
