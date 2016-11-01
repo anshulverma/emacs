@@ -150,7 +150,9 @@
 
 (define-abbrev-table 'grep-mode-abbrev-table '())
 
-(define-abbrev-table 'groovy-mode-abbrev-table '())
+(define-abbrev-table 'groovy-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'gud-mode-abbrev-table '())
 
@@ -234,11 +236,16 @@
 
 (define-abbrev-table 'org-export-stack-mode-abbrev-table '())
 
-(define-abbrev-table 'org-mode-abbrev-table '())
+(define-abbrev-table 'org-mode-abbrev-table
+  '(
+    ("berkley" "berkeley" nil 0)
+   ))
 
 (define-abbrev-table 'outline-mode-abbrev-table '())
 
 (define-abbrev-table 'package-menu-mode-abbrev-table '())
+
+(define-abbrev-table 'perl-mode-abbrev-table '())
 
 (define-abbrev-table 'pike-mode-abbrev-table
   '(
@@ -293,6 +300,10 @@
 (define-abbrev-table 'special-mode-abbrev-table '())
 
 (define-abbrev-table 'speedbar-mode-abbrev-table '())
+
+(define-abbrev-table 'sql-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 
