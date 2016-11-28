@@ -24,7 +24,8 @@
   (define-key company-mode-map (kbd "M-/") 'company-complete)
   (define-key company-active-map (kbd "M-/") 'company-select-next)
   (setq-default company-backends
-                '((company-dabbrev-code
+                '(company-capf
+                  (company-dabbrev-code
                    company-gtags
                    company-etags
                    company-keywords)
@@ -36,7 +37,6 @@
                   company-clang
                   company-xcode
                   company-cmake
-                  company-capf
                   company-files
                   company-oddmuse
                   company-dabbrev
