@@ -150,9 +150,7 @@
 
 (define-abbrev-table 'grep-mode-abbrev-table '())
 
-(define-abbrev-table 'groovy-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'groovy-mode-abbrev-table '())
 
 (define-abbrev-table 'gud-mode-abbrev-table '())
 
@@ -163,6 +161,8 @@
 (define-abbrev-table 'helm-moccur-mode-abbrev-table '())
 
 (define-abbrev-table 'help-mode-abbrev-table '())
+
+(define-abbrev-table 'html-mode-abbrev-table '())
 
 (define-abbrev-table 'ibuffer-mode-abbrev-table '())
 
@@ -218,11 +218,17 @@
 
 (define-abbrev-table 'magit-status-mode-abbrev-table '())
 
+(define-abbrev-table 'magit-submodule-list-mode-abbrev-table '())
+
+(define-abbrev-table 'mail-abbrevs '())
+
 (define-abbrev-table 'markdown-mode-abbrev-table '())
 
 (define-abbrev-table 'message-mode-abbrev-table '())
 
 (define-abbrev-table 'messages-buffer-mode-abbrev-table '())
+
+(define-abbrev-table 'nxml-mode-abbrev-table '())
 
 (define-abbrev-table 'ob-http-mode-abbrev-table '())
 
@@ -238,7 +244,14 @@
 
 (define-abbrev-table 'org-mode-abbrev-table
   '(
+    ("acccess" "access" nil 0)
+    ("analyse" "analyze" nil 0)
     ("berkley" "berkeley" nil 0)
+    ("boundry" "boundary" nil 0)
+    ("gracefil" "graceful" nil 0)
+    ("gracefull" "graceful" nil 0)
+    ("imigration" "immigration" nil 0)
+    ("visiualization" "visualization" nil 0)
    ))
 
 (define-abbrev-table 'outline-mode-abbrev-table '())
@@ -279,7 +292,12 @@
 
 (define-abbrev-table 'select-tags-table-mode-abbrev-table '())
 
-(define-abbrev-table 'sh-mode-abbrev-table '())
+(define-abbrev-table 'sgml-mode-abbrev-table '())
+
+(define-abbrev-table 'sh-mode-abbrev-table
+  '(
+    ("enviroment" "environment" nil 0)
+   ))
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
 
@@ -301,9 +319,7 @@
 
 (define-abbrev-table 'speedbar-mode-abbrev-table '())
 
-(define-abbrev-table 'sql-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'sql-mode-abbrev-table '())
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 
@@ -311,7 +327,11 @@
 
 (define-abbrev-table 'term-mode-abbrev-table '())
 
-(define-abbrev-table 'text-mode-abbrev-table '())
+(define-abbrev-table 'text-mode-abbrev-table
+  '(
+    ("erraneous" "erroneous" nil 0)
+    ("mgmt" "management" nil 0)
+   ))
 
 (define-abbrev-table 'url-cookie-mode-abbrev-table '())
 
