@@ -142,7 +142,10 @@
 
         ;; big data
         'pig-mode
-        'pig-snippets)
+        'pig-snippets
+
+        ;; dir tree view like vim
+        'neotree)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p av/packages)
