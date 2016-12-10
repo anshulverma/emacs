@@ -32,6 +32,15 @@
 ;; enable yas snippets in programming modes
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 
+;; show pos tip for autocompletion option
+(require 'pos-tip)
+
+(defadvice popup-tip
+    (around popup-pos-tip-wrapper (string &rest args) activate)
+  (if (eq window-system 'x)
+      (apply 'popup-pos-tip string args)
+    ad-do-it))
+
 ;; auto indent on opening brace
 (require 'cc-mode)
 (defun av/auto-indent-method ()
