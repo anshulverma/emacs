@@ -73,6 +73,7 @@
         'company-jedi
         'ein
         'ob-ipython
+        'pyenv-mode
         ;; 'jedi 'jedi-direx
 
         'helm 'helm-themes 'helm-bibtex
