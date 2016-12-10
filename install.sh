@@ -33,6 +33,8 @@ for pkg in "${packages[@]}"; do
   brew install $pkg
 done
 
+brew install --HEAD paulp/extras/coursier
+
 # install python and required packages
 
 python_version="2.7.10"

@@ -16,9 +16,11 @@
     (scala-indent:insert-asterisk-on-multiline-comment))
   (define-key scala-mode-map (kbd "RET")
     #'lunaryorn-newline-and-indent-with-asterisk))
+
 (use-package sbt-mode                   ; Scala build tool
   :ensure t
   :defer t
+  :commands sbt-start sbt-command
   :bind (:map scala-mode-map
               ("C-c m b c" . sbt-command)
               ("C-c m b r" . sbt-run-previous-command))
@@ -45,9 +47,18 @@ the REPL in a new frame instead."
   (add-hook 'sbt-mode-hook
             (lambda ()
               (when (fboundp 'smartparens-mode)
-                (smartparens-mode -1)))))
+                (smartparens-mode -1))))
+
+  ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
+  ;; allows using SPACE when in the minibuffer
+  (substitute-key-definition
+   'minibuffer-complete-word
+   'self-insert-command
+   minibuffer-local-completion-map))
+
 (use-package ensime                     ; Scala interaction mode
   :ensure t
+  :pin melpa-stable
   :after scala-mode
   :bind (:map ensime-mode-map
               ("C-c m E" . ensime-reload)
