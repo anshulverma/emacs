@@ -7,3 +7,6 @@
 [submodule "predictive"]
 	path = lib/predictive
 	url = http://www.dr-qubit.org/git/predictive.git
+[submodule "snippets/AndreaCrotti"]
+	path = snippets/AndreaCrotti
+	url = git@github.com:AndreaCrotti/yasnippet-snippets.git

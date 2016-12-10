@@ -30,6 +30,7 @@
 (define-key yas-minor-mode-map (kbd "\C-c TAB") 'yas-ido-expand)
 
 (add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/custom")
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/AndreaCrotti")
 
 (yas-reload-all)
 
