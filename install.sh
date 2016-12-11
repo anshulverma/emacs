@@ -28,7 +28,8 @@ packages=("ispell"
           "gnuplot"
           "python"
           "pyenv"
-          "pig")
+          "pig"
+          "scalariform")
 for pkg in "${packages[@]}"; do
   brew install $pkg
 done
