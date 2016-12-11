@@ -56,7 +56,7 @@ Puts point in the middle line as well as indent it by correct amount."
   "Check if point is at a closing brace then auto indent."
   (interactive)
   (let ((char-at-point (char-after (point))))
-    (if (char-equal ?} char-at-point)
+    (if (and char-at-point (char-equal ?} char-at-point))
         (av/auto-indent-method)
       (newline-and-indent))))
 
