@@ -110,6 +110,7 @@
         'undo-tree
         'iedit
         'slime
+        'origami
 
         ;; clojure
         'clojure-mode

@@ -6,11 +6,11 @@
 
 (defun custom-programming-modes-hook ()
   "Define common configurations for common programming modes."
-   (make-local-variable 'column-number-mode)
-   (column-number-mode t)
-   (if window-system (hl-line-mode t))
-   (idle-highlight-mode t)
-   (subword-mode +1))
+  (make-local-variable 'column-number-mode)
+  (column-number-mode t)
+  (if window-system (hl-line-mode t))
+  (idle-highlight-mode t)
+  (subword-mode +1))
 
 (add-hook 'emacs-lisp-mode-hook 'custom-programming-modes-hook)
 (add-hook 'ruby-mode-hook       'custom-programming-modes-hook)
@@ -38,8 +38,8 @@
 (defadvice popup-tip
     (around popup-pos-tip-wrapper (string &rest args) activate)
   (if (eq window-system 'x)
-      (apply 'popup-pos-tip string args)
-    ad-do-it))
+    (apply 'popup-pos-tip string args)
+  ad-do-it))
 
 ;; auto indent on opening brace
 (require 'cc-mode)
@@ -57,8 +57,8 @@ Puts point in the middle line as well as indent it by correct amount."
   (interactive)
   (let ((char-at-point (char-after (point))))
     (if (and char-at-point (char-equal ?} char-at-point))
-        (av/auto-indent-method)
-      (newline-and-indent))))
+    (av/auto-indent-method)
+  (newline-and-indent))))
 
 (defun av/nextline-and-indent ()
   "Go to the end of line then `av/auto-indent-method-maybe'."
@@ -75,6 +75,34 @@ Puts point in the middle line as well as indent it by correct amount."
 (add-hook 'java-mode-hook 'av/structured-programming-mode-hook)
 (add-hook 'groovy-mode-hook 'av/structured-programming-mode-hook)
 (add-hook 'scala-mode-hook 'av/structured-programming-mode-hook)
+
+;; setup `origami'
+(require 'origami)
+
+(global-origami-mode)
+
+(defun av/folding (arg)
+  "Fold code base don ARG."
+  (interactive "P")
+  (cond
+   ((eq arg 1) (origami-close-all-nodes (current-buffer)))
+   ((eq arg 2) (origami-open-all-nodes (current-buffer)))
+   ((eq arg 3) (origami-close-node (current-buffer) (point)))
+   ((eq arg 4) (origami-open-node (current-buffer) (point)))
+   (t (error (concat "Invalid ARG: " arg)))))
+
+(global-set-key (kbd "M-<up>")
+                (lambda () (interactive) (av/folding 1)))
+(global-set-key (kbd "M-<down>")
+                (lambda () (interactive) (av/folding 2)))
+(global-set-key (kbd "M-<left>")
+                (lambda () (interactive) (av/folding 3)))
+(global-set-key (kbd "M-<right>")
+                (lambda () (interactive) (av/folding 4)))
+
+(global-set-key (kbd "C-c f o") 'av/folding)
+(global-set-key (kbd "C-c f u") 'origami-undo)
+(global-set-key (kbd "C-c f r") 'origami-redo)
 
 (provide 'programming)
 ;;; programming.el ends here
