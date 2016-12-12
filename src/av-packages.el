@@ -110,8 +110,13 @@
         'undo-tree
         'iedit
         'slime
+
+        ;; clojure
         'clojure-mode
         'cider
+        'clj-refactor
+        'clojure-snippets
+
         'markdown-mode
         'validate
         'which-key
