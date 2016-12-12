@@ -50,5 +50,19 @@
     (add-text-properties (match-beginning 0) (point-at-eol)
                          `(face (:foreground ,col)))))
 
+;; enable `org-bullets'
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+;; set up `org-page' for blog
+(require 'org-page)
+
+(if (and (boundp 'av/blog-dir)
+         (f-exists? av/blog-dir))
+  (setq op/repository-directory av/blog-dir)
+  (setq op/site-domain av/blog-site-domain)
+  (setq op/personal-disqus-shortname av/blog-disqus-username)
+  (setq op/personal-google-analytics-id av/blog-google-analytics-id))
+
 (provide '05-org)
 ;;; 05-org.el ends here

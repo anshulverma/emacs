@@ -54,6 +54,9 @@
         'ox-twbs ; export org-mode docs as html compatible with twitter bootstrap
         'org-present ; ultra-minimalist presentation minor-mode for emacs org-mode
         'ob-http
+        'org-bullets ; show org-mode bullets as UTF-8 characters
+        'ox-ioslide
+        'org-page
 
         'howm ; wiki like not taking tool
 
