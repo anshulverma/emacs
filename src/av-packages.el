@@ -129,7 +129,11 @@
         'eshell-did-you-mean
         'eshell-z
 
+        ;; google packages
         'google-maps
+        'google-translate
+        'google-this
+
         'calfw
         'websocket
 

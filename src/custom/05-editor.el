@@ -63,5 +63,8 @@
     (setq fci-rule-width 2)
     (setq fci-rule-color "dark gray")))
 
+;; enable `google-this' mode
+(google-this-mode 1)
+
 (provide '05-editor)
 ;;; 05-editor.el ends here
