@@ -118,7 +118,10 @@
         'clj-refactor
         'clojure-snippets
 
+        ;; markdown
         'markdown-mode
+        'markdown-toc
+
         'validate
         'which-key
 
