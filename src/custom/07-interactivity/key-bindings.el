@@ -52,11 +52,5 @@
                                   (interactive)
                                   (describe-function (intern (thing-at-point 'symbol)))))
 
-;; helm semantic for looking at symbol list in the current buffer
-(global-set-key (kbd "C-c b s") 'helm-semantic-or-imenu)
-
-;; helm swoop lets you move around quickly
-(global-set-key (kbd "C-c h w") 'helm-swoop)
-
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
