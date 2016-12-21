@@ -151,7 +151,10 @@
 
 (define-abbrev-table 'elpy-refactor-mode-abbrev-table '())
 
-(define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
+(define-abbrev-table 'emacs-lisp-mode-abbrev-table
+  '(
+    ("programing" "programming" nil 0)
+   ))
 
 (define-abbrev-table 'ensime-connection-list-mode-abbrev-table '())
 
@@ -204,6 +207,10 @@
 (define-abbrev-table 'google-maps-static-mode-abbrev-table '())
 
 (define-abbrev-table 'grep-mode-abbrev-table '())
+
+(define-abbrev-table 'groovy-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'gud-mode-abbrev-table '())
 
@@ -374,6 +381,10 @@
 (define-abbrev-table 'special-mode-abbrev-table '())
 
 (define-abbrev-table 'speedbar-mode-abbrev-table '())
+
+(define-abbrev-table 'sql-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 

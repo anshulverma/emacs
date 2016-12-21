@@ -4,19 +4,28 @@
 
 (semantic-mode 1)
 
-(defun custom-programming-modes-hook ()
+(defun av/programming-mode-hook ()
   "Define common configurations for common programming modes."
   (make-local-variable 'column-number-mode)
   (column-number-mode t)
   (if window-system (hl-line-mode t))
   (idle-highlight-mode t)
-  (subword-mode +1))
+  (subword-mode +1)
+  (set-fill-column 120))
 
-(add-hook 'emacs-lisp-mode-hook 'custom-programming-modes-hook)
-(add-hook 'ruby-mode-hook       'custom-programming-modes-hook)
-(add-hook 'js-mode-hook         'custom-programming-modes-hook)
-(add-hook 'java-mode-hook       'custom-programming-modes-hook)
-(add-hook 'clojure-mode-hook    'custom-programming-modes-hook)
+(defun av/add-programming-mode-hook (type)
+  "Add programming mode hook for TYPE."
+  (let ((mode-hook (intern (s-concat (symbol-name type) "-mode-hook"))))
+    (message (format "setting up '%s' programming environment" type))
+    (add-hook mode-hook 'av/programming-mode-hook)))
+
+(-each '(emacs-lisp
+         ruby
+         js
+         java
+         clojure
+         scala)
+  'av/add-programming-mode-hook)
 
 ;; enable yas snippets in programming modes
 (add-hook 'prog-mode-hook #'yas-minor-mode)
@@ -27,8 +36,8 @@
 (defadvice popup-tip
     (around popup-pos-tip-wrapper (string &rest args) activate)
   (if (eq window-system 'x)
-    (apply 'popup-pos-tip string args)
-  ad-do-it))
+      (apply 'popup-pos-tip string args)
+    ad-do-it))
 
 ;; auto indent on opening brace
 (require 'cc-mode)
@@ -46,8 +55,8 @@ Puts point in the middle line as well as indent it by correct amount."
   (interactive)
   (let ((char-at-point (char-after (point))))
     (if (and char-at-point (char-equal ?} char-at-point))
-    (av/auto-indent-method)
-  (newline-and-indent))))
+        (av/auto-indent-method)
+      (newline-and-indent))))
 
 (defun av/nextline-and-indent ()
   "Go to the end of line then `av/auto-indent-method-maybe'."
