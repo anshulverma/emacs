@@ -6,10 +6,11 @@
 
 (require 'jmax-org)
 
-;; enabling flyspell in special edit source blocks.
-(defadvice org-edit-src-code (around set-buffer-file-name activate compile)
+(defadvice org-edit-src-code
+    (around set-buffer-file-name activate compile)
+  "Enabling flyspell in special edit source blocks."
   (let ((file-name (buffer-file-name))) ;; (1)
-    ad-do-it				  ;; (2)
+    ad-do-it                            ;; (2)
     (setq buffer-file-name file-name))) ;; (3)
 
 ;; flyspell mode for spell checking everywhere
@@ -61,9 +62,18 @@
          (f-exists? av/blog-dir))
     (progn
       (setq op/repository-directory av/blog-dir)
-      (setq op/site-domain (if (boundp 'av/blog-site-domain) av/blog-site-domain nil))
-      (setq op/personal-disqus-shortname (if (boundp 'av/blog-disqus-username) av/blog-disqus-username nil))
-      (setq op/personal-google-analytics-id (if (boundp 'av/blog-google-analytics-id) av/blog-google-analytics-id nil))))
+      (setq op/site-domain
+            (if (boundp 'av/blog-site-domain)
+                av/blog-site-domain
+              nil))
+      (setq op/personal-disqus-shortname
+            (if (boundp 'av/blog-disqus-username)
+                av/blog-disqus-username
+              nil))
+      (setq op/personal-google-analytics-id
+            (if (boundp 'av/blog-google-analytics-id)
+                av/blog-google-analytics-id
+              nil))))
 
 (provide '05-org)
 ;;; 05-org.el ends here
