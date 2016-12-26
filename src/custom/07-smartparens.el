@@ -15,7 +15,12 @@
 (global-set-key (kbd "C-c C-p C-t") 'sp-transpose-sexp)
 (global-set-key (kbd "C-c C-p C-l") 'sp-splice-sexp)
 
-(global-set-key (kbd "C-)") 'sp-up-sexp)
+(add-hook 'av/programming-mode-hook
+          (lambda ()
+            (local-set-key (kbd "M-e") 'sp-up-sexp)
+            (local-set-key (kbd "C-M-k") 'sp-kill-sexp)
+            (local-set-key (kbd "C-M-<backspace>") 'sp-backward-kill-sexp)
+            (local-set-key (kbd "C-<backspace>") 'sp-backward-kill-word)))
 
 (provide 'setup-smartparens)
 ;;; setup-smartparens.el ends here

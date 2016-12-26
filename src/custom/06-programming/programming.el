@@ -4,8 +4,9 @@
 
 (semantic-mode 1)
 
-(defun av/programming-mode-hook ()
+(defun av/setup-programming-mode ()
   "Define common configurations for common programming modes."
+  (interactive)
   (make-local-variable 'column-number-mode)
   (column-number-mode t)
   (if window-system (hl-line-mode t))
@@ -13,11 +14,11 @@
   (subword-mode +1)
   (set-fill-column 120))
 
-(defun av/add-programming-mode-hook (type)
-  "Add programming mode hook for TYPE."
-  (let ((mode-hook (intern (s-concat (symbol-name type) "-mode-hook"))))
-    (message (format "setting up '%s' programming environment" type))
-    (add-hook mode-hook 'av/programming-mode-hook)))
+(define-minor-mode av/programming-mode
+  "Set up a programming environment with proper key-bindings, useful modes, styles etc."
+  :lighter " av/programming"
+  :keymap '(([M-e] . sp-up-sexp))
+  :after av/setup-programming-mode)
 
 (-each '(emacs-lisp
          ruby
@@ -25,7 +26,10 @@
          java
          clojure
          scala)
-  'av/add-programming-mode-hook)
+  (lambda (type)
+         (let ((mode-hook (intern (s-concat (symbol-name type) "-mode-hook"))))
+           (message (format "setting up '%s' programming environment" type))
+           (add-hook mode-hook #'av/programming-mode))))
 
 ;; enable yas snippets in programming modes
 (add-hook 'prog-mode-hook #'yas-minor-mode)
