@@ -69,6 +69,8 @@
 
 (define-abbrev-table 'change-log-mode-abbrev-table '())
 
+(define-abbrev-table 'checkdoc-output-mode-abbrev-table '())
+
 (define-abbrev-table 'cider-browse-ns-mode-abbrev-table '())
 
 (define-abbrev-table 'cider-clojure-interaction-mode-abbrev-table '())
@@ -87,7 +89,10 @@
 
 (define-abbrev-table 'cljr--change-signature-mode-abbrev-table '())
 
-(define-abbrev-table 'clojure-mode-abbrev-table '())
+(define-abbrev-table 'clojure-mode-abbrev-table
+  '(
+    ("functon" "function" nil 0)
+   ))
 
 (define-abbrev-table 'clojurec-mode-abbrev-table '())
 
@@ -208,9 +213,7 @@
 
 (define-abbrev-table 'grep-mode-abbrev-table '())
 
-(define-abbrev-table 'groovy-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'groovy-mode-abbrev-table '())
 
 (define-abbrev-table 'gud-mode-abbrev-table '())
 
@@ -382,9 +385,7 @@
 
 (define-abbrev-table 'speedbar-mode-abbrev-table '())
 
-(define-abbrev-table 'sql-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'sql-mode-abbrev-table '())
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 
