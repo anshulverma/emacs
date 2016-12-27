@@ -18,6 +18,7 @@
 (add-hook 'av/programming-mode-hook
           (lambda ()
             (local-set-key (kbd "M-e") 'sp-up-sexp)
+            (local-set-key (kbd "M-t") 'sp-transpose-sexp)
             (local-set-key (kbd "C-M-k") 'sp-kill-sexp)
             (local-set-key (kbd "C-M-<backspace>") 'sp-backward-kill-sexp)
             (local-set-key (kbd "C-<backspace>") 'sp-backward-kill-word)))
