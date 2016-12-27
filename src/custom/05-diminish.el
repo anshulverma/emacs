@@ -17,6 +17,7 @@
    (lisp-mode                 "𝒍𝒊𝒔𝒑")
    (calendar-mode             "📆")
    (scheme-mode               "λ")
+   (clojure-mode              "λ")
    (help-mode                 "🄷")
    (view-mode                 "👀")
    (java-mode                 "☕")
