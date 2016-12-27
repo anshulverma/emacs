@@ -19,5 +19,7 @@
 
 (add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
 
+(setq cider-mode-line-show-connection nil)
+
 (provide 'clojure)
 ;;; clojure.el ends here

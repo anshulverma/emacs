@@ -40,7 +40,8 @@
    (emacs-keybinding-command-tooltip-mode "" emacs-keybinding-command-tooltip-mode)
    (av/programming-mode                   " 🖥" av-setup)
    (google-this-mode                      "")
-   (clj-refactor-mode                     "" av-setup)))
+   (clj-refactor-mode                     "" av-setup)
+   (cider-mode                            "" av-setup)))
 
 (provide '05-diminish)
 ;;; 05-diminish.el ends here
