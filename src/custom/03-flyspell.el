@@ -155,7 +155,7 @@ With prefix P, create local abbrev.  Otherwise it will be global."
       (message "\"%s\" now expands to \"%s\" %sally"
                bef aft (if p "loc" "glob"))
       (define-abbrev
-        (if p global-abbrev-table local-abbrev-table)
+        (if p local-abbrev-table global-abbrev-table)
         bef aft))))
 
 (provide '03-flyspell)
