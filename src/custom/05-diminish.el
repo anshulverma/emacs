@@ -44,5 +44,9 @@
    (clj-refactor-mode                     "" av-setup)
    (cider-mode                            "" av-setup)))
 
+;; make projectile mode line shorter
+(setq projectile-mode-line
+      '(:eval (format " [%s]" (projectile-project-name))))
+
 (provide '05-diminish)
 ;;; 05-diminish.el ends here
