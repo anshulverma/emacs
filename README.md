@@ -42,3 +42,20 @@ change it:
 ``` lisp
 (setq av/face-height 180)
 ```
+
+# License
+
+
+## Library sources
+
+I don't own any of the code under `lib` directory. I have tried to keep
+the original authoring information for each source file. Other than some
+minor modifications to original work these source files are exact copies
+of the original work.
+
+## Fonts
+
+There are two font type currently in this repository:
+
+- `Symbola` -- http://users.teilar.gr/~g1951d/
+- `source-code-pro` - https://github.com/adobe-fonts/source-code-pro
