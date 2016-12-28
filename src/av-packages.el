@@ -161,7 +161,10 @@
         'pig-snippets
 
         ;; dir tree view like vim
-        'neotree)
+        'neotree
+
+        ;; highlight symbol under point
+        'highlight-symbol)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p av/packages)
