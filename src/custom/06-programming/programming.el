@@ -12,7 +12,11 @@
   (if window-system (hl-line-mode t))
   (idle-highlight-mode t)
   (subword-mode +1)
-  (set-fill-column 120))
+  (set-fill-column 120)
+
+  ;; set face based on mode
+  (setq buffer-face-mode-face '(:family "Source Code Pro"))
+  (buffer-face-mode))
 
 (define-minor-mode av/programming-mode
   "Set up a programming environment with proper key-bindings, useful modes, styles etc."
