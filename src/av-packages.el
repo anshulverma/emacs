@@ -67,14 +67,14 @@
         'company-dict 'company-quickhelp
         'undo-tree
         'dim
-        'eimp
+        'eimp ; image manipulation library
 
         'elpy
         'pydoc
         'python-mode
         'py-autopep8
         'company-jedi
-        'ein
+        'ein ; emacs ipython notebook support
         'ob-ipython
         'pyenv-mode
         ;; 'jedi 'jedi-direx
