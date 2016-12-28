@@ -146,8 +146,10 @@
 (define-abbrev-table 'global-abbrev-table
   '(
     ("afaict" "as far as I can tell" nil 1)
+    ("autoring" "authoring" nil 0)
     ("btw" "by the way" nil 3)
-    ("ewiki" "http://www.emacswiki.org/cgi-bin/wiki.pl" nil 3)
+    ("diectory" "directory" nil 0)
+    ("ewiki" "http://www.emacswiki.org/cgi-bin/wiki.pl" nil 4)
     ("functon" "function" nil 0)
     ("gogle" "google" nil 0)
     ("manipulateion" "manipulation" nil 0)
@@ -291,6 +293,8 @@
 (define-abbrev-table 'select-tags-table-mode-abbrev-table '())
 
 (define-abbrev-table 'sgml-mode-abbrev-table '())
+
+(define-abbrev-table 'sh-mode-abbrev-table '())
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
 
