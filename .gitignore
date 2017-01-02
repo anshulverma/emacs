@@ -42,6 +42,7 @@ flycheck_*.el
 /.emacs.desktop
 /.emacs.desktop.lock
 /ensime
+/helm-doc.org
 
 # backup code
 /backup/init.el

@@ -69,3 +69,6 @@ flycheck_*.el
 /backup/init.el
 /backup/lib-impl/
 /backup/lib/
+
+# fonts
+/fonts
