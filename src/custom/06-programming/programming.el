@@ -14,6 +14,17 @@
   (subword-mode +1)
   (set-fill-column 120)
 
+  ;; use pretty symbols for commonly used words
+  (-each '((">=" . ?≥)
+           ("<=" . ?≤)
+           ("!=" . ?≠)
+           ("lambda" ?λ)
+           ("defun" ?ƒ)
+           ("function" ?ƒ))
+    (lambda (mapping) (push mapping prettify-symbols-alist)))
+  (setq prettify-symbols-unprettify-at-point 'right-edge)
+  (prettify-symbols-mode +1)
+
   ;; set face based on mode
   (setq buffer-face-mode-face '(:family "Source Code Pro"))
   (buffer-face-mode))
@@ -22,7 +33,12 @@
   "Set up a programming environment with proper key-bindings, useful modes, styles etc."
   :lighter " av/programming"
   :keymap '(([M-e] . sp-up-sexp))
-  :after av/setup-programming-mode)
+  :init-value nil
+  (if av/programming-mode
+      ;; Turn on
+      (av/setup-programming-mode)
+    ;; Turn off
+    (message "Turning off all modifications made by the av/programming mode is currently not supported")))
 
 (-each '(emacs-lisp
          ruby
