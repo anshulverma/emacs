@@ -20,6 +20,7 @@
            ("!=" . ?≠)
            ("lambda" ?λ)
            ("defun" ?ƒ)
+           ("defn" ?ƒ)
            ("function" ?ƒ))
     (lambda (mapping) (push mapping prettify-symbols-alist)))
   (setq prettify-symbols-unprettify-at-point 'right-edge)
