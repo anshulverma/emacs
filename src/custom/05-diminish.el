@@ -42,7 +42,8 @@
    (av/programming-mode                   " 🖥" av-setup)
    (google-this-mode                      "")
    (clj-refactor-mode                     "" av-setup)
-   (cider-mode                            "" av-setup)))
+   (cider-mode                            "" av-setup)
+   (buffer-face-mode                      "" av-setup)))
 
 ;; make projectile mode line shorter
 (setq projectile-mode-line
