@@ -186,8 +186,10 @@
       (message "installing %s" package)
       (package-install package))))
 
+(message (format "%d packages configured" (length av/packages)))
+
 ;; Make sure some packages are byte-compiled. This should only happen the first
-;; time.  I committed some packages to git without .elc files, so it seems like
+;; time. I committed some packages to git without .elc files, so it seems like
 ;; this is a good idea.
 (loop for library in '("org" "org-plus-contrib")
       do
