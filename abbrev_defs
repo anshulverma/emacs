@@ -149,6 +149,7 @@
     ("autoring" "authoring" nil 0)
     ("btw" "by the way" nil 3)
     ("diectory" "directory" nil 0)
+    ("enhanved" "enhanced" nil 0)
     ("ewiki" "http://www.emacswiki.org/cgi-bin/wiki.pl" nil 4)
     ("functon" "function" nil 0)
     ("gogle" "google" nil 0)
@@ -285,6 +286,8 @@
 (define-abbrev-table 'reb-mode-abbrev-table '())
 
 (define-abbrev-table 'restclient-mode-abbrev-table '())
+
+(define-abbrev-table 'ruby-mode-abbrev-table '())
 
 (define-abbrev-table 'sbt-mode-abbrev-table '())
 

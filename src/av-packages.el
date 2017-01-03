@@ -164,7 +164,15 @@
         'neotree
 
         ;; highlight symbol under point
-        'highlight-symbol)
+        'highlight-symbol
+
+        ;; ruby mode setup
+        'yard-mode ; highlights yard document tags
+        'robe ; code assistance tool
+        'rvm ; emacs integration with rvm
+        'enh-ruby-mode ; enhanced ruby mode
+        'rspec-mode ; convenience functions for dealing with RSpec
+        )
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p av/packages)
