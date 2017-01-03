@@ -172,6 +172,7 @@
         'rvm ; emacs integration with rvm
         'enh-ruby-mode ; enhanced ruby mode
         'rspec-mode ; convenience functions for dealing with RSpec
+        'ruby-tools ; collection of handy functions for ruby mode
         )
   "Libraries that should be installed by default.")
 
