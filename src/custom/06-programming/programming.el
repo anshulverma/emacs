@@ -43,6 +43,7 @@
 
 (-each '(emacs-lisp
          ruby
+         enh-ruby
          js
          java
          clojure
