@@ -173,6 +173,9 @@
         'enh-ruby-mode ; enhanced ruby mode
         'rspec-mode ; convenience functions for dealing with RSpec
         'ruby-tools ; collection of handy functions for ruby mode
+        'ruby-additional ; ruby extensions yet to be merged into emacs
+        'ruby-hash-syntax ; toggle ruby hash syntax between classic and 1.9 styles
+        'ruby-refactor ; minor mode for ruby refactoring utilities
         )
   "Libraries that should be installed by default.")
 

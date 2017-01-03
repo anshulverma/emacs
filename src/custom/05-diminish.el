@@ -51,7 +51,9 @@
    (highlight-symbol-mode                 "" av-setup)
    (rspec-mode                            "" av-setup)
    (buffer-face-mode                      "" av-setup)
-   (ruby-tools-mode                       "" av-setup)))
+   (ruby-tools-mode                       "" av-setup)
+   (ruby-refactor-mode                    "" av-setup)
+   (hi-lock-mode                          "" av-setup)))
 
 ;; make projectile mode line shorter
 (setq projectile-mode-line
