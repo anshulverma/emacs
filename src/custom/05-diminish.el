@@ -21,7 +21,9 @@
    (help-mode                 "🄷")
    (view-mode                 "👀")
    (java-mode                 "☕")
-   (org-mode                  "𝒐𝒓𝒈")))
+   (org-mode                  "𝒐𝒓𝒈")
+   (enh-ruby-mode             "🔷")
+   (ruby-mode                 "♦")))
 (dim-minor-names
  '((visual-line-mode                      "")
    (auto-fill-function                    "")
@@ -43,7 +45,13 @@
    (google-this-mode                      "")
    (clj-refactor-mode                     "" av-setup)
    (cider-mode                            "" av-setup)
-   (buffer-face-mode                      "" av-setup)))
+   (hs-minor-mode                         "" av-setup)
+   (yard-mode                             "" av-setup)
+   (robe-mode                             "" av-setup)
+   (highlight-symbol-mode                 "" av-setup)
+   (rspec-mode                            "" av-setup)
+   (buffer-face-mode                      "" av-setup)
+   (ruby-tools-mode                       "" av-setup)))
 
 ;; make projectile mode line shorter
 (setq projectile-mode-line
