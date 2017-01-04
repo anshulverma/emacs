@@ -107,11 +107,27 @@
 
 (define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
 
+(define-abbrev-table 'ein:ipdb-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:notebook-plain-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:notebook-python-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:notebooklist-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:pager-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:traceback-mode-abbrev-table '())
+
 (define-abbrev-table 'elisp-byte-code-mode-abbrev-table '())
 
 (define-abbrev-table 'elpy-refactor-mode-abbrev-table '())
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
+
+(define-abbrev-table 'enh-ruby-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'ensime-connection-list-mode-abbrev-table '())
 
@@ -151,12 +167,14 @@
     ("diectory" "directory" nil 0)
     ("enhanved" "enhanced" nil 0)
     ("ewiki" "http://www.emacswiki.org/cgi-bin/wiki.pl" nil 4)
+    ("existance" "existence" nil 1)
     ("functon" "function" nil 0)
     ("gogle" "google" nil 0)
     ("manipulateion" "manipulation" nil 0)
     ("omuse" "http://www.emacswiki.org/cgi-bin/oddmuse.pl" nil 0)
     ("pov" "point of view" nil 1)
     ("programing" "programming" nil 0)
+    ("sheilds" "shields" nil 0)
     ("someting" "something" nil 0)
     ("wether" "whether" nil 5)
    ))
@@ -192,6 +210,8 @@
 (define-abbrev-table 'image-dired-display-image-mode-abbrev-table '())
 
 (define-abbrev-table 'image-dired-thumbnail-mode-abbrev-table '())
+
+(define-abbrev-table 'inf-ruby-mode-abbrev-table '())
 
 (define-abbrev-table 'inferior-python-mode-abbrev-table '())
 
@@ -287,6 +307,8 @@
 
 (define-abbrev-table 'restclient-mode-abbrev-table '())
 
+(define-abbrev-table 'rspec-compilation-mode-abbrev-table '())
+
 (define-abbrev-table 'ruby-mode-abbrev-table '())
 
 (define-abbrev-table 'sbt-mode-abbrev-table '())
@@ -320,6 +342,8 @@
 (define-abbrev-table 'speedbar-mode-abbrev-table '())
 
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
+
+(define-abbrev-table 'tar-mode-abbrev-table '())
 
 (define-abbrev-table 'text-mode-abbrev-table '())
 
