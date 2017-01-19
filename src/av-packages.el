@@ -176,7 +176,9 @@
         'ruby-additional ; ruby extensions yet to be merged into emacs
         'ruby-hash-syntax ; toggle ruby hash syntax between classic and 1.9 styles
         'ruby-refactor ; minor mode for ruby refactoring utilities
-        )
+
+        ;; highlight uncommitted changes
+        'diff-hl)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p av/packages)

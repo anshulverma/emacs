@@ -141,5 +141,9 @@
 (eval-after-load "flyspell"
   '(define-key flyspell-mode-map (kbd "C-.") nil))
 
+;; integrate with diff-hl
+(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+(global-diff-hl-mode +1)
+
 (provide 'setup-magit)
 ;;; setup-magit.el ends here

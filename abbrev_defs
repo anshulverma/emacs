@@ -93,6 +93,24 @@
 
 (define-abbrev-table 'completion-list-mode-abbrev-table '())
 
+(define-abbrev-table 'conf-colon-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-javaprop-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-ppd-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-space-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-unix-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-windows-mode-abbrev-table '())
+
+(define-abbrev-table 'conf-xdefaults-mode-abbrev-table '())
+
+(define-abbrev-table 'data-debug-mode-abbrev-table '())
+
+(define-abbrev-table 'debugger-mode-abbrev-table '())
+
 (define-abbrev-table 'diary-fancy-display-mode-abbrev-table '())
 
 (define-abbrev-table 'diary-mode-abbrev-table '())
@@ -125,9 +143,7 @@
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
-(define-abbrev-table 'enh-ruby-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'enh-ruby-mode-abbrev-table '())
 
 (define-abbrev-table 'ensime-connection-list-mode-abbrev-table '())
 
@@ -162,6 +178,7 @@
 (define-abbrev-table 'global-abbrev-table
   '(
     ("afaict" "as far as I can tell" nil 1)
+    ("asymetric" "asymmetric" nil 0)
     ("autoring" "authoring" nil 0)
     ("btw" "by the way" nil 3)
     ("diectory" "directory" nil 0)
@@ -174,8 +191,10 @@
     ("omuse" "http://www.emacswiki.org/cgi-bin/oddmuse.pl" nil 0)
     ("pov" "point of view" nil 1)
     ("programing" "programming" nil 0)
+    ("reivew" "review" nil 0)
     ("sheilds" "shields" nil 0)
     ("someting" "something" nil 0)
+    ("uncommited" "uncommitted" nil 0)
     ("wether" "whether" nil 5)
    ))
 
@@ -190,6 +209,10 @@
 (define-abbrev-table 'google-maps-static-mode-abbrev-table '())
 
 (define-abbrev-table 'grep-mode-abbrev-table '())
+
+(define-abbrev-table 'groovy-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'gud-mode-abbrev-table '())
 
@@ -224,6 +247,8 @@
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'log-edit-mode-abbrev-table '())
+
+(define-abbrev-table 'log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'magit-cherry-mode-abbrev-table '())
 
@@ -348,6 +373,8 @@
 (define-abbrev-table 'text-mode-abbrev-table '())
 
 (define-abbrev-table 'url-cookie-mode-abbrev-table '())
+
+(define-abbrev-table 'vc-annotate-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
 
