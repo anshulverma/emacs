@@ -124,5 +124,21 @@ This checks in turn:
 (define-key emacs-lisp-mode-map [(control f1)] 'describe-function)
 (define-key emacs-lisp-mode-map [(shift f1)] 'describe-variable)
 
+;;----------------------------------------------------------------------------
+;; Homebrew specific functions
+;;----------------------------------------------------------------------------
+(defun av/brew-prefix (pkg)
+  "Get prefix of a PKG installed using brew."
+  (let* ((pkg-version-str (s-trim (shell-command-to-string (format "brew list --versions %s" pkg))))
+         (version (cadr (s-split " " pkg-version-str)))
+         (pkg-basedir (f-dirname (s-trim (shell-command-to-string (format "brew --prefix %s" pkg))))))
+    (f-join pkg-basedir version)))
+
+
+(defun av/brew-file (pkg ext)
+  "Find file in brew PKG that has extension EXT."
+  (seq-find (lambda (path) (f-ext? path "jar"))
+            (s-split "\n" (s-trim (shell-command-to-string (format "brew list --prefix %s" pkg))))))
+
 (provide 'av-util)
 ;;; av-util.el ends here

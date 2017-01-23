@@ -143,7 +143,9 @@
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
-(define-abbrev-table 'enh-ruby-mode-abbrev-table '())
+(define-abbrev-table 'enh-ruby-mode-abbrev-table
+  '(
+   ))
 
 (define-abbrev-table 'ensime-connection-list-mode-abbrev-table '())
 
@@ -177,24 +179,33 @@
 
 (define-abbrev-table 'global-abbrev-table
   '(
+    ("aceptable" "acceptable" nil 0)
     ("afaict" "as far as I can tell" nil 1)
     ("asymetric" "asymmetric" nil 0)
     ("autoring" "authoring" nil 0)
     ("btw" "by the way" nil 3)
+    ("configration" "configuration" nil 0)
     ("diectory" "directory" nil 0)
     ("enhanved" "enhanced" nil 0)
     ("ewiki" "http://www.emacswiki.org/cgi-bin/wiki.pl" nil 4)
     ("existance" "existence" nil 1)
     ("functon" "function" nil 0)
     ("gogle" "google" nil 0)
+    ("involed" "involved" nil 0)
+    ("loaading" "loading" nil 0)
     ("manipulateion" "manipulation" nil 0)
     ("omuse" "http://www.emacswiki.org/cgi-bin/oddmuse.pl" nil 0)
+    ("pakage" "package" nil 0)
     ("pov" "point of view" nil 1)
     ("programing" "programming" nil 0)
+    ("ralative" "relative" nil 0)
     ("reivew" "review" nil 0)
+    ("relationsip" "relationship" nil 0)
     ("sheilds" "shields" nil 0)
     ("someting" "something" nil 0)
+    ("specifing" "specifying" nil 0)
     ("uncommited" "uncommitted" nil 0)
+    ("verious" "various" nil 0)
     ("wether" "whether" nil 5)
    ))
 
@@ -210,9 +221,7 @@
 
 (define-abbrev-table 'grep-mode-abbrev-table '())
 
-(define-abbrev-table 'groovy-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'groovy-mode-abbrev-table '())
 
 (define-abbrev-table 'gud-mode-abbrev-table '())
 
@@ -376,11 +385,15 @@
 
 (define-abbrev-table 'vc-annotate-mode-abbrev-table '())
 
+(define-abbrev-table 'vc-dir-mode-abbrev-table '())
+
 (define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-region-history-mode-abbrev-table '())
+
+(define-abbrev-table 'vc-hg-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'web-mode-abbrev-table '())
 

@@ -2,24 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 
-(setq org-html-htmlize-output-type 'css)
-
-(defun av/org-babel-get-lib-jar (path)
-  (let
-      ((lib-files (f-files path (lambda (file) (equal (f-ext file) "jar")))))
-    (if (equal 1 (length lib-files))
-        (car lib-files)
-      (error (s-concat "Invalid number of jar files in " path)))))
-
-(setq org-ditaa-jar-path
-      (av/org-babel-get-lib-jar
-       (f-join (s-trim (shell-command-to-string "brew --prefix ditaa")) "libexec")))
-
-(setq org-plantuml-jar-path
-      (av/org-babel-get-lib-jar
-       (s-trim (shell-command-to-string "brew --prefix plantuml"))))
-
+(require 'ox-html)
+(require 'ob-ditaa)
+(require 'ob-plantuml)
 (require 'ob-ipython)
+
+(setq org-html-htmlize-output-type 'css)
+(setq org-ditaa-jar-path (av/brew-file "ditaa" "jar"))
+(setq org-plantuml-jar-path (av/brew-file "plantuml" "jar"))
 
 (org-babel-do-load-languages
  'org-babel-load-languages
