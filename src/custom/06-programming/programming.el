@@ -4,6 +4,14 @@
 
 (semantic-mode 1)
 
+(defun av/make-pretty-symbol-list (chars-or-string)
+  "Make a pretty symbol list based on CHARS-OR-STRING that can be used for function `prettify-symbols-mode'."
+  (let ((chars (cond
+                 ((stringp chars-or-string) (string-to-list chars-or-string))
+                 ((listp chars-or-string) chars-or-string)
+                 (t (error "Invalid argument %s" chars-or-string)))))
+    (append (--mapcat (list it '(Br . Bl)) (butlast chars)) (last chars))))
+
 (defun av/setup-programming-mode ()
   "Define common configurations for common programming modes."
   (interactive)
@@ -15,16 +23,17 @@
   (set-fill-column 120)
 
   ;; use pretty symbols for commonly used words
-  (-each '((">="       . ?⩾)
-           ("<="       . ?⩽)
-           ("!="       . ?≠)
-           ("lambda"   . ?λ)
-           ("defun"    . ?ƒ)
-           ("defn"     . ?ƒ)
-           ("function" . ?ƒ)
-           ("defn-"    . (?ƒ (Br . Bl) ?-))
-           ("->"       . (?\s (Bc . Bc) ?🠊))
-           ("->>"      . (?\s (Br . Bl) ?\s (Br . Bl) ?\s (Bc . Br) ?🠊 (Bc . Bl) ?🠊)))
+  (-each `((">="          . ?⩾)
+           ("<="          . ?⩽)
+           ("!="          . ?≠)
+           ("lambda"      . ?λ)
+           ("defun"       . ?ƒ)
+           ("defn"        . ?ƒ)
+           ("function"    . ?ƒ)
+           ("defn-"       . ,(av/make-pretty-symbol-list "ƒ-"))
+           ("schema/defn" . ,(av/make-pretty-symbol-list "schema/ƒ"))
+           ("->"          . (?\s (Bc . Bc) ?🠊))
+           ("->>"         . (?\s (Br . Bl) ?\s (Br . Bl) ?\s (Bc . Br) ?🠊 (Bc . Bl) ?🠊)))
     (lambda (mapping) (push mapping prettify-symbols-alist)))
   (setq prettify-symbols-unprettify-at-point 'right-edge)
   (prettify-symbols-mode +1)
