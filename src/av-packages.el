@@ -57,6 +57,7 @@
         'org-bullets ; show org-mode bullets as UTF-8 characters
         'ox-ioslide
         'org-page
+        'ox-pandoc ; allows exporting to many formats including word doc
 
         'howm ; wiki like not taking tool
 
