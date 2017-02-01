@@ -188,7 +188,7 @@ http://www.emacswiki.org/emacs/AlignCommands"
               (message (format "Reformatting %s" path))
               (save-excursion
                 (find-file path)
-                (indent-region (point-min) (point-max) nil)
+                (funcall indent-region-function (point-min) (point-max))
                 (write-file path)
                 (kill-buffer (current-buffer)))))
           files)))
