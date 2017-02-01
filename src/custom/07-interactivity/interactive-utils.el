@@ -170,5 +170,28 @@ http://www.emacswiki.org/emacs/AlignCommands"
         (message "Face: %s" face)
       (message "No face at %d" pos))))
 
+;; reformat multiple files
+(defun av/projectile-reformat-files (ext)
+  "Reformat all files that have extension EXT in the current project."
+  (interactive (list (read-regexp "File extension: ")))
+  (let* ((projectile-root (projectile-project-root))
+         (projectile-files (-map (lambda (path)
+                                   (f-join projectile-root path))
+                                 (projectile-current-project-files)))
+         (files (-filter (lambda (path)
+                           (and (f-ext? path ext)
+                                (f-exists? path)
+                                (not (f-hidden? path))))
+                         projectile-files)))
+    (mapc (lambda (path)
+            (progn
+              (message (format "Reformatting %s" path))
+              (save-excursion
+                (find-file path)
+                (indent-region (point-min) (point-max) nil)
+                (write-file path)
+                (kill-buffer (current-buffer)))))
+          files)))
+
 (provide 'interactive-utils)
 ;;; interactive-utils.el ends here

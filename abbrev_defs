@@ -39,6 +39,10 @@
     ("`va" "\\value" nil 0)
    ))
 
+(define-abbrev-table 'TeX-error-overview-mode-abbrev-table '())
+
+(define-abbrev-table 'TeX-output-mode-abbrev-table '())
+
 (define-abbrev-table 'awk-mode-abbrev-table
   '(
    ))
@@ -143,9 +147,7 @@
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
-(define-abbrev-table 'enh-ruby-mode-abbrev-table
-  '(
-   ))
+(define-abbrev-table 'enh-ruby-mode-abbrev-table '())
 
 (define-abbrev-table 'ensime-connection-list-mode-abbrev-table '())
 
@@ -179,34 +181,50 @@
 
 (define-abbrev-table 'global-abbrev-table
   '(
+    ("abiltity" "ability" nil 0)
     ("aceptable" "acceptable" nil 0)
     ("afaict" "as far as I can tell" nil 1)
     ("asymetric" "asymmetric" nil 0)
     ("autoring" "authoring" nil 0)
     ("btw" "by the way" nil 3)
+    ("campaings" "campaigns" nil 0)
     ("configration" "configuration" nil 0)
+    ("continueing" "continuing" nil 0)
     ("diectory" "directory" nil 0)
+    ("documenet" "document" nil 0)
     ("enhanved" "enhanced" nil 0)
     ("ewiki" "http://www.emacswiki.org/cgi-bin/wiki.pl" nil 4)
     ("existance" "existence" nil 1)
+    ("foreward" "forward" nil 0)
+    ("forseeable" "foreseeable" nil 0)
+    ("foundin" "in" nil 1)
     ("functon" "function" nil 0)
     ("gogle" "google" nil 0)
+    ("implment" "implement" nil 0)
+    ("invlude" "include" nil 0)
     ("involed" "involved" nil 0)
     ("loaading" "loading" nil 0)
     ("manipulateion" "manipulation" nil 0)
     ("omuse" "http://www.emacswiki.org/cgi-bin/oddmuse.pl" nil 0)
+    ("onlu" "only" nil 0)
     ("pakage" "package" nil 0)
+    ("pipelinen" "pipeline" nil 0)
     ("pov" "point of view" nil 1)
     ("programing" "programming" nil 0)
     ("ralative" "relative" nil 0)
+    ("reformating" "reformatting" nil 0)
+    ("reguire" "require" nil 0)
     ("reivew" "review" nil 0)
     ("relationsip" "relationship" nil 0)
     ("sheilds" "shields" nil 0)
     ("someting" "something" nil 0)
     ("specifing" "specifying" nil 0)
+    ("stright" "straight" nil 0)
+    ("trenchcoat" "coat" nil 2)
     ("uncommited" "uncommitted" nil 0)
     ("verious" "various" nil 0)
     ("wether" "whether" nil 5)
+    ("winidow" "window" nil 0)
    ))
 
 (define-abbrev-table 'gnus-article-edit-mode-abbrev-table '())
@@ -245,11 +263,19 @@
 
 (define-abbrev-table 'inf-ruby-mode-abbrev-table '())
 
+(define-abbrev-table 'inferior-pig-mode-abbrev-table '())
+
 (define-abbrev-table 'inferior-python-mode-abbrev-table '())
 
 (define-abbrev-table 'java-mode-abbrev-table
   '(
    ))
+
+(define-abbrev-table 'js-jsx-mode-abbrev-table '())
+
+(define-abbrev-table 'js-mode-abbrev-table '())
+
+(define-abbrev-table 'json-mode-abbrev-table '())
 
 (define-abbrev-table 'latex-mode-abbrev-table '())
 
@@ -295,7 +321,13 @@
 
 (define-abbrev-table 'messages-buffer-mode-abbrev-table '())
 
+(define-abbrev-table 'neotree-mode-abbrev-table '())
+
 (define-abbrev-table 'nrepl-messages-mode-abbrev-table '())
+
+(define-abbrev-table 'nroff-mode-abbrev-table '())
+
+(define-abbrev-table 'nxml-mode-abbrev-table '())
 
 (define-abbrev-table 'ob-http-mode-abbrev-table '())
 
@@ -315,9 +347,13 @@
 
 (define-abbrev-table 'package-menu-mode-abbrev-table '())
 
+(define-abbrev-table 'pig-mode-abbrev-table '())
+
 (define-abbrev-table 'pike-mode-abbrev-table
   '(
    ))
+
+(define-abbrev-table 'plain-tex-mode-abbrev-table '())
 
 (define-abbrev-table 'process-menu-mode-abbrev-table '())
 
@@ -367,6 +403,8 @@
 
 (define-abbrev-table 'slime-xref-mode-abbrev-table '())
 
+(define-abbrev-table 'slitex-mode-abbrev-table '())
+
 (define-abbrev-table 'smime-mode-abbrev-table '())
 
 (define-abbrev-table 'snippet-mode-abbrev-table '())
@@ -378,6 +416,10 @@
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 
 (define-abbrev-table 'tar-mode-abbrev-table '())
+
+(define-abbrev-table 'tex-mode-abbrev-table '())
+
+(define-abbrev-table 'tex-shell-abbrev-table '())
 
 (define-abbrev-table 'text-mode-abbrev-table '())
 
