@@ -29,12 +29,14 @@ packages=("ispell"
           "python"
           "pyenv"
           "pig"
-          "scalariform")
+          "scalariform"
+          "pandoc")
 for pkg in "${packages[@]}"; do
   brew install $pkg
 done
 
 brew install --HEAD paulp/extras/coursier
+brew cask install pdftotext
 
 # install python and required packages
 
