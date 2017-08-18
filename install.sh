@@ -18,8 +18,6 @@ brew update
 packages=("ispell"
           "bash-completion"
           "git"
-          "emacs"
-          "auctex"
           "cask"
           "scala"
           "ditaa"
@@ -43,6 +41,8 @@ brew cask install pdftotext
 python_version="2.7.10"
 pyenv install $python_version
 pyenv local $python_version
+
+export PATH="$(pyenv root)/shims:$PATH"
 
 if [ ! -f "$HOME/.python-version" ]; then
   echo "Setting base python version for pyenv to $python_version"
