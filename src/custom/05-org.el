@@ -75,8 +75,7 @@
                 av/blog-google-analytics-id
               nil))))
 
-;; set up ox-pandoc
-(require 'ox-pandoc)
+;; TODO figure out how to set up ox-pandoc
 
 (provide '05-org)
 ;;; 05-org.el ends here
