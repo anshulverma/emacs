@@ -5,6 +5,9 @@
 ;;; Fancier dired display
 (require 'dired-details+)
 
+;;; make sure SSL/TLS is supported
+(require 'tls)
+
 ;;; ----MAC OSX----
 (if (eq system-type 'darwin)
     (progn
