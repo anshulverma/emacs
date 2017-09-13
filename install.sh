@@ -63,3 +63,10 @@ pip_packages=("jedi"
 for pkg in "${pip_packages[@]}"; do
   pip install $pkg
 done
+
+# install mural
+pushd $HOME
+git clone git@github.com:anshulverma/mural.git .mural
+cd .mural
+make
+popd
