@@ -64,5 +64,8 @@
       (add-hook 'after-init-hook 'load-framegeometry)
       (add-hook 'kill-emacs-hook 'save-framegeometry)))
 
+;; easily go back and forward in window-configuration
+(when (fboundp 'winner-mode) (winner-mode 1))
+
 (provide '02-frame)
 ;;; 02-frame.el ends here
