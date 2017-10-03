@@ -123,5 +123,8 @@ stuff, to the current ERC buffer."
 ;; channel specific prompt
 (setq erc-prompt (lambda () (concat "[" (buffer-name) "]")))
 
+;; hide join, part and quit messages
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
+
 (provide 'irc)
 ;;; irc.el ends here
