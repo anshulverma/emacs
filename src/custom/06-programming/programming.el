@@ -117,15 +117,50 @@ Puts point in the middle line as well as indent it by correct amount."
 
 (global-origami-mode)
 
+(defun av/origami-close-node ()
+  "Close node using `origami'."
+  (origami-close-node (current-buffer) (point)))
+
+(defun av/origami-open-node ()
+  "Open node using `origami'."
+  (origami-open-node (current-buffer) (point)))
+
+(defun av/origami-close-all-nodes ()
+  "Close all using `origami'."
+  (origami-close-all-nodes (current-buffer)))
+
+(defun av/origami-open-all-nodes ()
+  "Open all using `origami'."
+  (origami-open-all-nodes (current-buffer)))
+
+(defun av/hs-close-node ()
+  "Close node using `hs'."
+  (hs-hide-block))
+
+(defun av/hs-open-node ()
+  "Open node using `hs'."
+  (hs-show-block))
+
+(defun av/hs-close-all-nodes ()
+  "Close all using `hs'."
+  (hs-hide-all))
+
+(defun av/hs-open-all-nodes ()
+  "Open all using `hs'."
+  (hs-show-all))
+
 (defun av/folding (arg)
   "Fold code base don ARG."
   (interactive "P")
-  (cond
-   ((eq arg 1) (origami-close-all-nodes (current-buffer)))
-   ((eq arg 2) (origami-open-all-nodes (current-buffer)))
-   ((eq arg 3) (origami-close-node (current-buffer) (point)))
-   ((eq arg 4) (origami-open-node (current-buffer) (point)))
-   (t (error (concat "Invalid ARG: " arg)))))
+  (let* ((function-prefix (if (-contains? '(json-mode) major-mode) "hs" "origami"))
+         (function-suffix (cond
+                           ((eq arg 1) "close-all-nodes")
+                           ((eq arg 2) "open-all-nodes")
+                           ((eq arg 3) "close-node")
+                           ((eq arg 4) "open-node")
+                           (t (error (concat "Invalid ARG: " arg)))))
+         (function-name (format "av/%s-%s" function-prefix function-suffix)))
+    (funcall (intern function-name))))
 
 (global-set-key (kbd "M-<up>")
                 (lambda () (interactive) (av/folding 1)))
