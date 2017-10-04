@@ -114,8 +114,10 @@ Puts point in the middle line as well as indent it by correct amount."
 
 ;; setup `origami'
 (require 'origami)
+(require 'hideshow)
 
 (global-origami-mode)
+(add-hook 'json-mode #'hs-minor-mode)
 
 (defun av/origami-close-node ()
   "Close node using `origami'."
