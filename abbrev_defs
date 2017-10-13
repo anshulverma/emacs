@@ -77,6 +77,8 @@
 
 (define-abbrev-table 'cider-inspector-mode-abbrev-table '())
 
+(define-abbrev-table 'cider-repl-history-mode-abbrev-table '())
+
 (define-abbrev-table 'cider-repl-mode-abbrev-table '())
 
 (define-abbrev-table 'cider-stacktrace-mode-abbrev-table '())
@@ -129,7 +131,11 @@
 
 (define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
 
+(define-abbrev-table 'ein:inspector-mode-abbrev-table '())
+
 (define-abbrev-table 'ein:ipdb-mode-abbrev-table '())
+
+(define-abbrev-table 'ein:ipynb-mode-abbrev-table '())
 
 (define-abbrev-table 'ein:notebook-plain-mode-abbrev-table '())
 
@@ -154,6 +160,10 @@
 (define-abbrev-table 'ensime-inf-mode-abbrev-table '())
 
 (define-abbrev-table 'ensime-inspector-mode-abbrev-table '())
+
+(define-abbrev-table 'erc-list-menu-mode-abbrev-table '())
+
+(define-abbrev-table 'erc-mode-abbrev-table '())
 
 (define-abbrev-table 'eshell-mode-abbrev-table '())
 
@@ -188,8 +198,10 @@
     ("autoring" "authoring" nil 0)
     ("btw" "by the way" nil 3)
     ("campaings" "campaigns" nil 0)
+    ("comparision" "comparison" nil 0)
     ("configration" "configuration" nil 0)
     ("continueing" "continuing" nil 0)
+    ("devlopment" "development" nil 0)
     ("diectory" "directory" nil 0)
     ("documenet" "document" nil 0)
     ("enhanved" "enhanced" nil 0)
@@ -274,6 +286,10 @@
 (define-abbrev-table 'js-jsx-mode-abbrev-table '())
 
 (define-abbrev-table 'js-mode-abbrev-table '())
+
+(define-abbrev-table 'js2-jsx-mode-abbrev-table '())
+
+(define-abbrev-table 'js2-mode-abbrev-table '())
 
 (define-abbrev-table 'json-mode-abbrev-table '())
 
@@ -392,6 +408,10 @@
 (define-abbrev-table 'sh-mode-abbrev-table '())
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
+
+(define-abbrev-table 'skewer-clients-mode-abbrev-table '())
+
+(define-abbrev-table 'skewer-error-mode-abbrev-table '())
 
 (define-abbrev-table 'sldb-mode-abbrev-table '())
 
