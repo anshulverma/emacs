@@ -43,6 +43,8 @@
 
 (define-abbrev-table 'TeX-output-mode-abbrev-table '())
 
+(define-abbrev-table 'apropos-mode-abbrev-table '())
+
 (define-abbrev-table 'awk-mode-abbrev-table
   '(
    ))
@@ -63,13 +65,21 @@
   '(
    ))
 
+(define-abbrev-table 'calc-trail-mode-abbrev-table '())
+
 (define-abbrev-table 'calendar-mode-abbrev-table '())
 
 (define-abbrev-table 'change-log-mode-abbrev-table '())
 
-(define-abbrev-table 'checkdoc-output-mode-abbrev-table '())
-
 (define-abbrev-table 'cider-browse-ns-mode-abbrev-table '())
+
+(define-abbrev-table 'cider-browse-spec-example-mode-abbrev-table '())
+
+(define-abbrev-table 'cider-browse-spec-mode-abbrev-table '())
+
+(define-abbrev-table 'cider-browse-spec-view-mode-abbrev-table '())
+
+(define-abbrev-table 'cider-clojure-interaction-mode-abbrev-table '())
 
 (define-abbrev-table 'cider-connections-buffer-mode-abbrev-table '())
 
@@ -93,33 +103,15 @@
 
 (define-abbrev-table 'clojurescript-mode-abbrev-table '())
 
-(define-abbrev-table 'clojurex-mode-abbrev-table '())
-
 (define-abbrev-table 'comint-mode-abbrev-table '())
 
 (define-abbrev-table 'completion-list-mode-abbrev-table '())
 
-(define-abbrev-table 'conf-colon-mode-abbrev-table '())
+(define-abbrev-table 'context-mode-abbrev-table '())
 
-(define-abbrev-table 'conf-javaprop-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-ppd-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-space-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-unix-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-windows-mode-abbrev-table '())
-
-(define-abbrev-table 'conf-xdefaults-mode-abbrev-table '())
-
-(define-abbrev-table 'data-debug-mode-abbrev-table '())
+(define-abbrev-table 'css-mode-abbrev-table '())
 
 (define-abbrev-table 'debugger-mode-abbrev-table '())
-
-(define-abbrev-table 'diary-fancy-display-mode-abbrev-table '())
-
-(define-abbrev-table 'diary-mode-abbrev-table '())
 
 (define-abbrev-table 'diff-mode-abbrev-table '())
 
@@ -127,15 +119,11 @@
 
 (define-abbrev-table 'doctex-mode-abbrev-table '())
 
-(define-abbrev-table 'edebug-eval-mode-abbrev-table '())
-
 (define-abbrev-table 'edit-abbrevs-mode-abbrev-table '())
 
 (define-abbrev-table 'ein:inspector-mode-abbrev-table '())
 
 (define-abbrev-table 'ein:ipdb-mode-abbrev-table '())
-
-(define-abbrev-table 'ein:ipynb-mode-abbrev-table '())
 
 (define-abbrev-table 'ein:notebook-plain-mode-abbrev-table '())
 
@@ -145,6 +133,8 @@
 
 (define-abbrev-table 'ein:pager-mode-abbrev-table '())
 
+(define-abbrev-table 'ein:shared-output-mode-abbrev-table '())
+
 (define-abbrev-table 'ein:traceback-mode-abbrev-table '())
 
 (define-abbrev-table 'elisp-byte-code-mode-abbrev-table '())
@@ -153,91 +143,29 @@
 
 (define-abbrev-table 'emacs-lisp-mode-abbrev-table '())
 
-(define-abbrev-table 'enh-ruby-mode-abbrev-table '())
+(define-abbrev-table 'ert-results-mode-abbrev-table '())
 
-(define-abbrev-table 'ensime-connection-list-mode-abbrev-table '())
-
-(define-abbrev-table 'ensime-inf-mode-abbrev-table '())
-
-(define-abbrev-table 'ensime-inspector-mode-abbrev-table '())
-
-(define-abbrev-table 'erc-list-menu-mode-abbrev-table '())
-
-(define-abbrev-table 'erc-mode-abbrev-table '())
+(define-abbrev-table 'ert-simple-view-mode-abbrev-table '())
 
 (define-abbrev-table 'eshell-mode-abbrev-table '())
+
+(define-abbrev-table 'ess-julia-mode-abbrev-table '())
+
+(define-abbrev-table 'ffip-diff-mode-abbrev-table '())
 
 (define-abbrev-table 'flycheck-error-list-mode-abbrev-table '())
 
 (define-abbrev-table 'fundamental-mode-abbrev-table '())
 
-(define-abbrev-table 'gdb-breakpoints-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-disassembly-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-frames-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-locals-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-memory-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-registers-mode-abbrev-table '())
-
 (define-abbrev-table 'gdb-script-mode-abbrev-table '())
-
-(define-abbrev-table 'gdb-threads-mode-abbrev-table '())
 
 (define-abbrev-table 'gfm-mode-abbrev-table '())
 
-(define-abbrev-table 'global-abbrev-table
-  '(
-    ("abiltity" "ability" nil 0)
-    ("aceptable" "acceptable" nil 0)
-    ("afaict" "as far as I can tell" nil 1)
-    ("asymetric" "asymmetric" nil 0)
-    ("autoring" "authoring" nil 0)
-    ("btw" "by the way" nil 3)
-    ("campaings" "campaigns" nil 0)
-    ("comparision" "comparison" nil 0)
-    ("configration" "configuration" nil 0)
-    ("continueing" "continuing" nil 0)
-    ("devlopment" "development" nil 0)
-    ("diectory" "directory" nil 0)
-    ("documenet" "document" nil 0)
-    ("enhanved" "enhanced" nil 0)
-    ("ewiki" "http://www.emacswiki.org/cgi-bin/wiki.pl" nil 4)
-    ("existance" "existence" nil 1)
-    ("foreward" "forward" nil 0)
-    ("forseeable" "foreseeable" nil 0)
-    ("foundin" "in" nil 1)
-    ("functon" "function" nil 0)
-    ("gogle" "google" nil 0)
-    ("implment" "implement" nil 0)
-    ("invlude" "include" nil 0)
-    ("involed" "involved" nil 0)
-    ("loaading" "loading" nil 0)
-    ("manipulateion" "manipulation" nil 0)
-    ("omuse" "http://www.emacswiki.org/cgi-bin/oddmuse.pl" nil 0)
-    ("onlu" "only" nil 0)
-    ("pakage" "package" nil 0)
-    ("pipelinen" "pipeline" nil 0)
-    ("pov" "point of view" nil 1)
-    ("programing" "programming" nil 0)
-    ("ralative" "relative" nil 0)
-    ("reformating" "reformatting" nil 0)
-    ("reguire" "require" nil 0)
-    ("reivew" "review" nil 0)
-    ("relationsip" "relationship" nil 0)
-    ("sheilds" "shields" nil 0)
-    ("someting" "something" nil 0)
-    ("specifing" "specifying" nil 0)
-    ("stright" "straight" nil 0)
-    ("trenchcoat" "coat" nil 2)
-    ("uncommited" "uncommitted" nil 0)
-    ("verious" "various" nil 0)
-    ("wether" "whether" nil 5)
-    ("winidow" "window" nil 0)
-   ))
+(define-abbrev-table 'gfm-view-mode-abbrev-table '())
+
+(define-abbrev-table 'global-abbrev-table '())
+
+(define-abbrev-table 'gnuplot-comint-mode-abbrev-table '())
 
 (define-abbrev-table 'gnus-article-edit-mode-abbrev-table '())
 
@@ -250,8 +178,6 @@
 (define-abbrev-table 'google-maps-static-mode-abbrev-table '())
 
 (define-abbrev-table 'grep-mode-abbrev-table '())
-
-(define-abbrev-table 'groovy-mode-abbrev-table '())
 
 (define-abbrev-table 'gud-mode-abbrev-table '())
 
@@ -269,15 +195,13 @@
 
 (define-abbrev-table 'idl-mode-abbrev-table '())
 
-(define-abbrev-table 'image-dired-display-image-mode-abbrev-table '())
-
-(define-abbrev-table 'image-dired-thumbnail-mode-abbrev-table '())
-
-(define-abbrev-table 'inf-ruby-mode-abbrev-table '())
-
-(define-abbrev-table 'inferior-pig-mode-abbrev-table '())
+(define-abbrev-table 'inferior-julia-mode-abbrev-table '())
 
 (define-abbrev-table 'inferior-python-mode-abbrev-table '())
+
+(define-abbrev-table 'ivy-occur-grep-mode-abbrev-table '())
+
+(define-abbrev-table 'ivy-occur-mode-abbrev-table '())
 
 (define-abbrev-table 'java-mode-abbrev-table
   '(
@@ -291,15 +215,13 @@
 
 (define-abbrev-table 'js2-mode-abbrev-table '())
 
-(define-abbrev-table 'json-mode-abbrev-table '())
+(define-abbrev-table 'julia-mode-abbrev-table '())
 
 (define-abbrev-table 'latex-mode-abbrev-table '())
 
 (define-abbrev-table 'lisp-mode-abbrev-table '())
 
 (define-abbrev-table 'log-edit-mode-abbrev-table '())
-
-(define-abbrev-table 'log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'magit-cherry-mode-abbrev-table '())
 
@@ -333,15 +255,13 @@
 
 (define-abbrev-table 'markdown-mode-abbrev-table '())
 
+(define-abbrev-table 'markdown-view-mode-abbrev-table '())
+
 (define-abbrev-table 'message-mode-abbrev-table '())
 
 (define-abbrev-table 'messages-buffer-mode-abbrev-table '())
 
-(define-abbrev-table 'neotree-mode-abbrev-table '())
-
 (define-abbrev-table 'nrepl-messages-mode-abbrev-table '())
-
-(define-abbrev-table 'nroff-mode-abbrev-table '())
 
 (define-abbrev-table 'nxml-mode-abbrev-table '())
 
@@ -363,8 +283,6 @@
 
 (define-abbrev-table 'package-menu-mode-abbrev-table '())
 
-(define-abbrev-table 'pig-mode-abbrev-table '())
-
 (define-abbrev-table 'pike-mode-abbrev-table
   '(
    ))
@@ -375,37 +293,25 @@
 
 (define-abbrev-table 'prog-mode-abbrev-table '())
 
-(define-abbrev-table 'py-auto-completion-mode-abbrev-table '())
-
-(define-abbrev-table 'py-ipython-shell-mode-abbrev-table '())
-
-(define-abbrev-table 'py-python-shell-mode-abbrev-table '())
-
 (define-abbrev-table 'python-mode-abbrev-table '())
 
 (define-abbrev-table 'python-mode-skeleton-abbrev-table
   '(
    ))
 
-(define-abbrev-table 'reb-lisp-mode-abbrev-table '())
+(define-abbrev-table 'rst-mode-abbrev-table
+  '(
+   ))
 
-(define-abbrev-table 'reb-mode-abbrev-table '())
-
-(define-abbrev-table 'restclient-mode-abbrev-table '())
-
-(define-abbrev-table 'rspec-compilation-mode-abbrev-table '())
+(define-abbrev-table 'rst-toc-mode-abbrev-table '())
 
 (define-abbrev-table 'ruby-mode-abbrev-table '())
 
-(define-abbrev-table 'sbt-mode-abbrev-table '())
-
-(define-abbrev-table 'scala-mode-abbrev-table '())
+(define-abbrev-table 'scss-mode-abbrev-table '())
 
 (define-abbrev-table 'select-tags-table-mode-abbrev-table '())
 
 (define-abbrev-table 'sgml-mode-abbrev-table '())
-
-(define-abbrev-table 'sh-mode-abbrev-table '())
 
 (define-abbrev-table 'shell-mode-abbrev-table '())
 
@@ -415,15 +321,21 @@
 
 (define-abbrev-table 'sldb-mode-abbrev-table '())
 
+(define-abbrev-table 'slime-compiler-notes-mode-abbrev-table '())
+
 (define-abbrev-table 'slime-connection-list-mode-abbrev-table '())
+
+(define-abbrev-table 'slime-fuzzy-completions-mode-abbrev-table '())
 
 (define-abbrev-table 'slime-inspector-mode-abbrev-table '())
 
 (define-abbrev-table 'slime-thread-control-mode-abbrev-table '())
 
-(define-abbrev-table 'slime-xref-mode-abbrev-table '())
+(define-abbrev-table 'slime-trace-dialog--detail-mode-abbrev-table '())
 
-(define-abbrev-table 'slitex-mode-abbrev-table '())
+(define-abbrev-table 'slime-trace-dialog-mode-abbrev-table '())
+
+(define-abbrev-table 'slime-xref-mode-abbrev-table '())
 
 (define-abbrev-table 'smime-mode-abbrev-table '())
 
@@ -433,31 +345,27 @@
 
 (define-abbrev-table 'speedbar-mode-abbrev-table '())
 
+(define-abbrev-table 'tablist-mode-abbrev-table '())
+
 (define-abbrev-table 'tabulated-list-mode-abbrev-table '())
 
 (define-abbrev-table 'tar-mode-abbrev-table '())
 
-(define-abbrev-table 'tex-mode-abbrev-table '())
+(define-abbrev-table 'term-mode-abbrev-table '())
 
-(define-abbrev-table 'tex-shell-abbrev-table '())
+(define-abbrev-table 'texinfo-mode-abbrev-table '())
 
 (define-abbrev-table 'text-mode-abbrev-table '())
 
 (define-abbrev-table 'url-cookie-mode-abbrev-table '())
 
-(define-abbrev-table 'vc-annotate-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-dir-mode-abbrev-table '())
+(define-abbrev-table 'use-package-statistics-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-region-history-mode-abbrev-table '())
-
-(define-abbrev-table 'vc-hg-log-view-mode-abbrev-table '())
-
-(define-abbrev-table 'web-mode-abbrev-table '())
 
 (define-abbrev-table 'xref--xref-buffer-mode-abbrev-table '())
 
