@@ -5,7 +5,6 @@
 ;;; Code:
 
 (use-package scala-mode                 ; Scala editing
-  :ensure t
   :defer t
   :config
   (validate-setq scala-indent:default-run-on-strategy
@@ -18,9 +17,8 @@
     #'lunaryorn-newline-and-indent-with-asterisk))
 
 (use-package sbt-mode                   ; Scala build tool
-  :ensure t
   :defer t
-  :commands sbt-start sbt-command
+  :commands sbgt-start sbt-command
   :bind (:map scala-mode-map
               ("C-c m b c" . sbt-command)
               ("C-c m b r" . sbt-run-previous-command))
@@ -57,8 +55,6 @@ the REPL in a new frame instead."
    minibuffer-local-completion-map))
 
 (use-package ensime                     ; Scala interaction mode
-  :ensure t
-  :pin melpa-stable
   :after scala-mode
   :bind (:map ensime-mode-map
               ("C-c m E" . ensime-reload)
@@ -68,7 +64,7 @@ the REPL in a new frame instead."
               ("<f5>" . ensime-sbt-do-compile)
               :map scala-mode-map ("C-c m e" . ensime))
   :config
-  ;; ;; Enable Ensime for all Scala buffers.
+  ;; Enable Ensime for all Scala buffers.
   (add-hook 'scala-mode-hook #'ensime-mode)
   ;; Compile on save.  My projects are small enough :)
   (validate-setq ensime-sbt-perform-on-save "test:compile"))
@@ -76,7 +72,6 @@ the REPL in a new frame instead."
   :ensure ensime
   :after ensime)
 (use-package play-routes-mode           ; Mode for Play 2 routes files
-  :ensure t
   :defer t)
 (use-package flycheck-ensime            ; Ensime-based checker for Flycheck
   :disabled t
