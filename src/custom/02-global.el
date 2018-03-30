@@ -2,9 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;; Fancier dired display
-(require 'dired-details+)
-
 ;; turn on syntax highlighting
 (global-font-lock-mode 1)
 

@@ -2,8 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; Fancier dired display
-(require 'dired-details+)
+;;; extensions to dired
+(require 'dired+)
 
 ;;; make sure SSL/TLS is supported
 (require 'tls)

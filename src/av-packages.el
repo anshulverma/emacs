@@ -34,7 +34,6 @@
         'ido-at-point
 
         'smex
-        'dired-details 'dired-details+
         'yasnippet
         'flycheck 'flycheck-pos-tip
         'magit
