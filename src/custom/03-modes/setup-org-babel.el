@@ -23,7 +23,11 @@
    (org . t)
    (dot . t)
    (plantuml . t)
-   (R . t)
+
+   ;; ;; disabling because this does not seem to work at the moment
+   ;; more context -- https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00424.html
+   ;; (R . t)
+
    (C . t)
    (clojure . t)
    (sh . t)

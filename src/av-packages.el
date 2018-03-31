@@ -48,8 +48,8 @@
         'auctex 'reftex
 
         ;; org mode additions
-        'org-ref 'cm-mode
         'org-plus-contrib
+        'org-ref 'cm-mode
         'ox-twbs ; export org-mode docs as html compatible with twitter bootstrap
         'org-present ; ultra-minimalist presentation minor-mode for emacs org-mode
         'ob-http

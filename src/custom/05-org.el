@@ -9,7 +9,9 @@
 
 (setq org-latex-create-formula-image-program 'dvipng)
 
-(require 'jmax-org)
+;; Disabled because there are issues with loading it currently
+;; described in -- https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00424.html
+;; (require 'jmax-org)
 
 (defadvice org-edit-src-code
     (around set-buffer-file-name activate compile)
