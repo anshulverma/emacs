@@ -82,7 +82,8 @@
                 av/blog-google-analytics-id
               nil))))
 
-;; TODO figure out how to set up ox-pandoc
+;; org mode exported via pandoc
+(require 'ox-pandoc)
 
 (provide '05-org)
 ;;; 05-org.el ends here
