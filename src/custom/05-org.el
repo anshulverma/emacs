@@ -2,6 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
+;; files extensions to open with org mode
+(add-to-list 'auto-mode-alist '("\\.org\\" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.notes\\" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.text\\" . org-mode))
+
 (setq org-latex-create-formula-image-program 'dvipng)
 
 (require 'jmax-org)
