@@ -180,7 +180,10 @@
         'ruby-refactor ; minor mode for ruby refactoring utilities
 
         ;; highlight uncommitted changes
-        'diff-hl)
+        'diff-hl
+
+        ;; attach to a debugger process (like pdb)
+        'realgud)
   "Libraries that should be installed by default.")
 
 (unless (every #'package-installed-p av/packages)
