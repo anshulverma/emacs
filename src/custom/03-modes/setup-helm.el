@@ -2,11 +2,22 @@
 ;;; Commentary:
 ;;; Code:
 
+(defvar av-helm-dir (expand-file-name "helm" av-lib-dir)
+  "Base directory for helm source.")
+
+;; helm install location
+(add-to-list 'load-path av-helm-dir)
+
+(require 'helm)
+
 ;; from helm-better-defaults
 (require 'helm-config)
 (helm-mode 1)
 (helm-flx-mode 1)
 (helm-fuzzier-mode 1)
+
+(setq helm-mode-fuzzy-match t)
+(setq helm-completion-in-region-fuzzy-match t)
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 

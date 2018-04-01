@@ -10,3 +10,6 @@
 [submodule "snippets/AndreaCrotti"]
 	path = snippets/AndreaCrotti
 	url = git@github.com:AndreaCrotti/yasnippet-snippets.git
+[submodule "lib/helm"]
+	path = lib/helm
+	url = git@github.com:emacs-helm/helm.git

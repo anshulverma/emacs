@@ -80,7 +80,7 @@
 
         'helm 'helm-themes 'helm-bibtex
         'helm-swoop 'helm-flx 'helm-fuzzier
-        'helm-dash 'helm-projectile
+        'helm-dash
 
         'f         ; file functions https://github.com/rejeep/f.el
         's         ; string functions
