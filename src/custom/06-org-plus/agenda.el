@@ -54,18 +54,18 @@
                          (org-agenda-overriding-header "This week's Agenda\n------------------")))
                 (tags-todo "+PRIORITY=\"A\""
                            ((org-agenda-overriding-header "\nTop Priority Tasks\n------------------")))
-                (tags-todo "checkpointing"
+                (tags-todo "checkpointing&-PRIORITY=\"A\""
                            ((org-agenda-overriding-header "\nCheckpoint Project\n------------------")))
-                (tags-todo "dper"
+                (tags-todo "dper&-PRIORITY=\"A\""
                            ((org-agenda-overriding-header "\nDPer platform\n------------------")))
-                (tags-todo "followup"
+                (tags-todo "followup&-PRIORITY=\"A\""
                            ((org-agenda-overriding-header "\nFollow ups\n------------------")))
                 (todo "DONE"
                       ((org-agenda-overriding-header "\nFinished Tasks\n------------------"))))
                ((org-agenda-compact-blocks t)
                 (org-deadline-warning-days 1)
                 (org-agenda-start-on-weekday nil)
-                (org-agenda-sorting-strategy '(tag-up priority-down))
+                (org-agenda-sorting-strategy '(priority-down tag-up))
                 (org-agenda-with-colors t)
                 (org-agenda-remove-tags nil)
                 (ps-number-of-columns 2)
