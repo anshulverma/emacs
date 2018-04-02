@@ -35,24 +35,6 @@
 
 (setq org-src-fontify-natively t)
 
-;; change color based on colander type
-(add-hook 'org-finalize-agenda-hook
-          (lambda ()
-            (save-excursion
-              (color-org-header "Personal:"  "#97c71c")
-              (color-org-header "Diary:"     "#e855e4")
-              (color-org-header "Birthday:"  "#ff8000")
-              (color-org-header "Work:"      "#fc5f5f")
-              (color-org-header "Holiday:"   "#008282"))))
-
-(defun color-org-header (tag col)
-  "Change color of a agenda item based on TAG to COL."
-  (interactive)
-  (goto-char (point-min))
-  (while (re-search-forward tag nil t)
-    (add-text-properties (match-beginning 0) (point-at-eol)
-                         `(face (:foreground ,col)))))
-
 ;; enable `org-bullets'
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
