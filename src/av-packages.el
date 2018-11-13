@@ -29,7 +29,7 @@
 (defvar av/packages
   (list 'flx
         'flx-ido
-        'ido-ubiquitous
+        'ido-completing-read+
         'ido-vertical-mode
         'ido-at-point
 

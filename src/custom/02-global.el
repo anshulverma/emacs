@@ -88,8 +88,9 @@
 (setq-default abbrev-mode t)
 
 ;; undo tree everywhere
-(global-undo-tree-mode)
-(setq undo-tree-auto-save-history t)
+(require 'undo-tree)
+(global-undo-tree-mode +1)
+;; (setq undo-tree-auto-save-history t)
 (setq undo-tree-history-directory-alist (quote (("*" . ".emacs-undo-history"))))
 (setq undo-tree-visualizer-diff t)
 (setq undo-tree-visualizer-relative-timestamps t)
