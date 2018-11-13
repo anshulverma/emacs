@@ -15,7 +15,6 @@
  'org-babel-load-languages
  '((emacs-lisp . t)
    (python . t)
-   (sh . t)
    (matlab . t)
    (sqlite . t)
    (ruby . t)
@@ -30,7 +29,6 @@
 
    (C . t)
    (clojure . t)
-   (sh . t)
    (ditaa . t)
    (dot . t)
    (gnuplot . t)

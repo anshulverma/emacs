@@ -54,6 +54,8 @@
                          (org-agenda-overriding-header "This week's Agenda\n------------------")))
                 (tags-todo "+PRIORITY=\"A\""
                            ((org-agenda-overriding-header "\nTop Priority Tasks\n------------------")))
+                (tags-todo "oncall"
+                           ((org-agenda-overriding-header "\nOncall Tasks\n------------------")))
                 (tags-todo "checkpointing&-PRIORITY=\"A\""
                            ((org-agenda-overriding-header "\nCheckpointing Project\n------------------")))
                 (tags-todo "dper&-PRIORITY=\"A\""

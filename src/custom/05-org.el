@@ -62,5 +62,16 @@
 ;; org mode exported via pandoc
 (require 'ox-pandoc)
 
+;; no need to prompt for confirmation of code block evaluation in case of dot
+(defun av/org-confirm-babel-evaluate (lang body)
+  "Don't prompt for bot blocks."
+  (not (string= lang "dot")))
+(setq org-confirm-babel-evaluate 'av/org-confirm-babel-evaluate)
+
+;; display inline images when evaluating blocks
+(define-key org-mode-map (kbd "C-c C-c")
+  (lambda () (interactive) (org-ctrl-c-ctrl-c)
+    (org-display-inline-images)))
+
 (provide '05-org)
 ;;; 05-org.el ends here
