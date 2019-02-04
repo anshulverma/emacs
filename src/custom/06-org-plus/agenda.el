@@ -4,7 +4,7 @@
 
 (defun bh/show-org-agenda ()
   (interactive)
-  (if org-agenda-sticky
+n  (if org-agenda-sticky
       (switch-to-buffer "*Org Agenda( )*")
     (switch-to-buffer "*Org Agenda*"))
   (delete-other-windows))
@@ -56,12 +56,10 @@
                            ((org-agenda-overriding-header "\nTop Priority Tasks\n------------------")))
                 (tags-todo "oncall"
                            ((org-agenda-overriding-header "\nOncall Tasks\n------------------")))
-                (tags-todo "checkpointing&-PRIORITY=\"A\""
-                           ((org-agenda-overriding-header "\nCheckpointing Project\n------------------")))
+                (tags-todo "glass"
+                           ((org-agenda-overriding-header "\nGLASS\n------------------")))
                 (tags-todo "dper&-PRIORITY=\"A\""
                            ((org-agenda-overriding-header "\nDPer platform\n------------------")))
-                (tags-todo "retrieval&-PRIORITY=\"A\""
-                           ((org-agenda-overriding-header "\nRetrieval\n------------------")))
                 (tags-todo "followup&-PRIORITY=\"A\""
                            ((org-agenda-overriding-header "\nFollow ups\n------------------")))
                 (tags-todo "misc"
