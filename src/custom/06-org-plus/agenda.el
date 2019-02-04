@@ -64,8 +64,9 @@ n  (if org-agenda-sticky
                            ((org-agenda-overriding-header "\nFollow ups\n------------------")))
                 (tags-todo "misc"
                            ((org-agenda-overriding-header "\nMiscellaneous\n------------------")))
-                (todo "DONE"
-                      ((org-agenda-overriding-header "\nFinished Tasks\n------------------"))))
+                (todo "DONE|CANCELLED"
+                      ((org-agenda-overriding-header "\nFinished Tasks\n------------------")
+                       (org-agenda-sorting-strategy '(category-down priority-down)))))
                ((org-agenda-compact-blocks t)
                 (org-deadline-warning-days 1)
                 (org-agenda-start-on-weekday 1)
