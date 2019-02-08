@@ -62,6 +62,8 @@ n  (if org-agenda-sticky
                            ((org-agenda-overriding-header "\nDPer platform\n------------------")))
                 (tags-todo "followup&-PRIORITY=\"A\""
                            ((org-agenda-overriding-header "\nFollow ups\n------------------")))
+                (tags-todo "personal"
+                           ((org-agenda-overriding-header "\nPersonal tasks\n------------------")))
                 (tags-todo "misc"
                            ((org-agenda-overriding-header "\nMiscellaneous\n------------------")))
                 (todo "DONE|CANCELLED"
@@ -160,6 +162,10 @@ n  (if org-agenda-sticky
   (while (re-search-forward tag nil t)
     (add-text-properties (match-beginning 0) (point-at-eol)
                          `(face (:foreground ,col)))))
+
+;; clocking tasks
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
 
 (provide 'agenda)
 ;;; agenda.el ends here
