@@ -58,9 +58,9 @@ n  (if org-agenda-sticky
                            ((org-agenda-overriding-header "\nOncall Tasks\n------------------")))
                 (tags-todo "glass"
                            ((org-agenda-overriding-header "\nGLASS\n------------------")))
-                (tags-todo "dper&-PRIORITY=\"A\""
+                (tags-todo "dper"
                            ((org-agenda-overriding-header "\nDPer platform\n------------------")))
-                (tags-todo "followup&-PRIORITY=\"A\""
+                (tags-todo "followup"
                            ((org-agenda-overriding-header "\nFollow ups\n------------------")))
                 (tags-todo "personal"
                            ((org-agenda-overriding-header "\nPersonal tasks\n------------------")))
