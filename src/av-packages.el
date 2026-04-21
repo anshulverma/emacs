@@ -188,9 +188,6 @@ unused:
               (file-name-directory (locate-library library))
               0))))
 
-(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
-(cask-initialize)
-
 (provide 'av-packages)
 
 ;;; av-packages.el ends here

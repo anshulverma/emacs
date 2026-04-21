@@ -33,7 +33,7 @@
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (org org-contrib pydoc sr-speedbar markdown-mode zotelo zenburn-theme window-number web-mode use-package smex smartparens prodigy popwin pallet multiple-cursors magit idle-highlight-mode htmlize helm-swoop helm-projectile helm-fuzzier helm-flx helm-dash flycheck-pos-tip flycheck-cask expand-region exec-path-from-shell drag-stuff dired-details+ company-quickhelp company-math company-flx company-dict company-auctex better-defaults)))
+    (org org-contrib pydoc sr-speedbar markdown-mode zotelo zenburn-theme window-number web-mode use-package smex smartparens prodigy popwin multiple-cursors magit idle-highlight-mode htmlize helm-swoop helm-projectile helm-fuzzier helm-flx helm-dash flycheck-pos-tip expand-region exec-path-from-shell drag-stuff dired-details+ company-quickhelp company-math company-flx company-dict company-auctex better-defaults)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
