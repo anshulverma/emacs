@@ -149,7 +149,11 @@
         'ruby-refactor
 
         'diff-hl                        ; highlight uncommitted changes
-        'realgud)                       ; attach to a debugger like pdb
+        'realgud                        ; attach to a debugger like pdb
+
+        ;; AI assistants
+        'gptel                          ; Claude/OpenAI/etc chat client
+        'eat)                           ; pure-elisp terminal, used by claude-code-ide
   "Libraries that should be installed by default.
 
 Pruned 2026-04 — removed packages that were dead, unavailable, or

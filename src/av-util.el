@@ -136,9 +136,11 @@ This checks in turn:
 
 
 (defun av/brew-file (pkg ext)
-  "Find file in brew PKG that has extension EXT."
-  (seq-find (lambda (path) (f-ext? path "jar"))
-            (s-split "\n" (s-trim (shell-command-to-string (format "brew list --prefix %s" pkg))))))
+  "Find file in brew PKG that has extension EXT.
+Returns nil on non-macOS systems so callers degrade gracefully."
+  (when (eq system-type 'darwin)
+    (seq-find (lambda (path) (f-ext? path ext))
+              (s-split "\n" (s-trim (shell-command-to-string (format "brew list --prefix %s" pkg)))))))
 
 (provide 'av-util)
 ;;; av-util.el ends here

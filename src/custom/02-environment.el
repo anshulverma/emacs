@@ -27,6 +27,19 @@
   ;; set function key as hyper
   (setq ns-function-modifier 'hyper))
 
+;;; ----LINUX (Codespaces, dev containers, Debian/Ubuntu)----
+(when (eq system-type 'gnu/linux)
+  (when-let ((speller (or (executable-find "aspell")
+                          (executable-find "hunspell")
+                          (executable-find "ispell"))))
+    (setq ispell-program-name speller))
+
+  (with-eval-after-load 'markdown-mode
+    (when-let ((md (or (executable-find "markdown")
+                       (executable-find "multimarkdown")
+                       (executable-find "pandoc"))))
+      (setq markdown-command md))))
+
 ;; fix the PATH variable
 (defun set-exec-path-from-shell-PATH ()
   (let ((path-from-shell (shell-command-to-string "echo $PATH")))

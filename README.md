@@ -1,6 +1,6 @@
 # emacs
 
-Personal Emacs configuration. macOS + Homebrew, Emacs 27.1 or newer (CI covers 28.2, 29.4, 30.2, and snapshot).
+Personal Emacs configuration. macOS + Homebrew and Debian/Ubuntu Linux (incl. GitHub Codespaces). Emacs 27.1 or newer (CI covers 28.2, 29.4, 30.2, and snapshot).
 
 [![CI](https://github.com/anshulverma/emacs/actions/workflows/ci.yml/badge.svg)](https://github.com/anshulverma/emacs/actions/workflows/ci.yml)
 
@@ -14,9 +14,14 @@ cd ~/workspace/emacs
 
 `install.sh` is idempotent. It:
 
-- checks for Homebrew and Emacs,
-- installs the external binaries this config shells out to (`ispell`, `pandoc`, `graphviz`, `plantuml`, `gnuplot`),
+- detects macOS or Debian/Ubuntu,
+- installs the external binaries this config shells out to (via Homebrew or apt): `ispell`/`aspell`, `pandoc`, `graphviz`, `plantuml`, `gnuplot`,
+- on Linux, installs `emacs-nox` if Emacs isn't already present,
 - symlinks the checkout into `~/.emacs.d` if nothing is there.
+
+### GitHub Codespaces
+
+`./install.sh` works out of the box in a Codespace. To get Claude features (see below) working, add your Anthropic key as a Codespace secret named `ANTHROPIC_API_KEY` — `gptel` picks it up automatically.
 
 If `~/.emacs.d` already exists, `install.sh` leaves it alone. Move it aside first:
 
@@ -83,6 +88,23 @@ Optional, install yourself:
 
 - **Python LSP/formatter** — `pipx install pyright ruff black`. Eglot starts automatically when one of these is on `$PATH`; apheleia formats on save with `ruff` or `black`.
 - **Scala** — install Metals via `coursier install metals` if you want LSP.
+- **Claude Code CLI** — `npm install -g @anthropic-ai/claude-code`. When the `claude` binary is on `$PATH` and Emacs is 29+, `claude-code-ide.el` self-installs via `package-vc` on next launch.
+
+## Claude integration
+
+Two complementary packages are wired up:
+
+- **`gptel`** — provider-agnostic LLM client; pre-configured with Claude as the default backend.
+  - `C-c a c` — open a chat buffer
+  - `C-c a s` — send the region/buffer
+  - `C-c a m` — transient menu
+  - API key: `ANTHROPIC_API_KEY` env var wins; otherwise `auth-source` is read (`machine api.anthropic.com login apikey password sk-...` in `~/.authinfo` or `~/.authinfo.gpg`).
+  - Override the default model from `~/.emacs.local.el`: `(setq av/claude-model 'claude-opus-4-7)`.
+
+- **`claude-code-ide.el`** — deep integration with the Claude Code CLI via MCP (xref, project, tree-sitter tools exposed to Claude; ediff-style suggestions in-buffer).
+  - `C-c c` — open the claude-code-ide menu
+  - Requires Emacs 29+ and the `claude` CLI on `$PATH`; uses `eat` as the terminal backend (pure-elisp, works in any TTY).
+  - Self-installed via `package-vc-install` on first launch when the prerequisites are present; silently skipped otherwise.
 
 ## Troubleshooting
 
