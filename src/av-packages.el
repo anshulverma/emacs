@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-(require 'cl)
+(require 'cl-lib)
 (require 'package)
 
 (setq package-archives
@@ -187,7 +187,7 @@
         'realgud)
   "Libraries that should be installed by default.")
 
-(unless (every #'package-installed-p av/packages)
+(unless (cl-every #'package-installed-p av/packages)
   (package-refresh-contents)
   (dolist (package av/packages)
     (unless (package-installed-p package)
@@ -199,13 +199,13 @@
 ;; Make sure some packages are byte-compiled. This should only happen the first
 ;; time. I committed some packages to git without .elc files, so it seems like
 ;; this is a good idea.
-(loop for library in '("org" "org-plus-contrib")
-      do
-      (when (locate-library library)
-        (unless (string= "elc" (file-name-extension (locate-library library)))
-          (byte-recompile-directory
-           (file-name-directory (locate-library library))
-           0))))
+(cl-loop for library in '("org" "org-plus-contrib")
+         do
+         (when (locate-library library)
+           (unless (string= "elc" (file-name-extension (locate-library library)))
+             (byte-recompile-directory
+              (file-name-directory (locate-library library))
+              0))))
 
 (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)

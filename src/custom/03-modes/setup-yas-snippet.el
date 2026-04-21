@@ -3,6 +3,7 @@
 ;;; Code:
 
 ;; Completing point by some yasnippet key
+(require 'cl-lib)
 (require 'yasnippet)
 
 (defun yas-ido-expand ()
@@ -18,7 +19,7 @@
            (word (buffer-substring init-word original-point))
            (list (yas-active-keys)))
       (goto-char original-point)
-      (let ((key (remove-if-not
+      (let ((key (cl-remove-if-not
                   (lambda (s) (string-match (concat "^" word) s)) list)))
         (if (= (length key) 1)
             (setq key (pop key))

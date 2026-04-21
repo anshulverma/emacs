@@ -208,13 +208,13 @@
                            (cdr mp-3-patterns)))
            res)
 
-      (setq res (loop for candidate in candidates
-                      for matched = (loop for (predicate . regexp) in patterns
-                                          always (funcall
-                                                  predicate
-                                                  (string-match regexp
-                                                                (helm-candidate-get-display
-                                                                 candidate))))
+      (setq res (cl-loop for candidate in candidates
+                         for matched = (cl-loop for (predicate . regexp) in patterns
+                                                always (funcall
+                                                        predicate
+                                                        (string-match regexp
+                                                                      (helm-candidate-get-display
+                                                                       candidate))))
                       if matched
                       collect (let ((score (flx-score candidate flx-pattern helm-flx-cache)))
                                 (cons (copy-sequence candidate)
