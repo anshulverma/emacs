@@ -1,72 +1,61 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Bootstrap external dependencies for this Emacs config.
+#
+# Only the binaries Emacs shells out to are installed here. All
+# Emacs packages themselves are installed by package.el on first
+# start (see src/av-packages.el).
+#
+# Supported: macOS with Homebrew.
 
-basedir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+set -euo pipefail
 
-case "$OSTYPE" in
-  darwin*)  ;;
-
-  *)        echo "Only MacOSX supported currently."
-            echo "Please consider adding support for your OS type."
-            exit 1
-            ;;
-esac
-
-# all the base packages are installed using homebrew
-
-brew update
-
-packages=("ispell"
-          "bash-completion"
-          "git"
-          "cask"
-          "scala"
-          "ditaa"
-          "graphviz"
-          "plantuml"
-          "gnuplot"
-          "python"
-          "pyenv"
-          "pig"
-          "scalariform"
-          "pandoc")
-for pkg in "${packages[@]}"; do
-  brew install $pkg
-done
-
-brew install --HEAD paulp/extras/coursier
-brew cask install pdftotext
-
-# install python and required packages
-
-python_version="2.7.10"
-pyenv install $python_version
-pyenv local $python_version
-
-export PATH="$(pyenv root)/shims:$PATH"
-
-if [ ! -f "$HOME/.python-version" ]; then
-  echo "Setting base python version for pyenv to $python_version"
-  echo "$python_version" >> $HOME/.python-version
+if [[ "$OSTYPE" != darwin* ]]; then
+  echo "install.sh only supports macOS. Install the deps below manually:"
+  echo "  ispell, pandoc, graphviz, plantuml, gnuplot"
+  echo "and then link this directory into ~/.emacs.d."
+  exit 1
 fi
 
-pip install --upgrade pip
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Homebrew not found. Install from https://brew.sh first."
+  exit 1
+fi
 
-pip_packages=("jedi"
-              "elpy"
-              "rope"
-              "importmagic"
-              "autopep8"
-              "yapf"
-              "flake8"
-              "epc"
-              "deferred")
-for pkg in "${pip_packages[@]}"; do
-  pip install $pkg
+if ! command -v emacs >/dev/null 2>&1; then
+  echo "Emacs not found. 'brew install --cask emacs' or install from"
+  echo "https://emacsformacosx.com/, then re-run this script."
+  exit 1
+fi
+
+packages=(
+  ispell           # spell checking
+  pandoc           # ox-pandoc export backend, markdown-command fallback
+  graphviz         # dot for org-babel diagrams
+  plantuml         # plantuml for org-babel diagrams
+  gnuplot          # org-babel plots
+)
+
+for pkg in "${packages[@]}"; do
+  if brew list --formula "$pkg" >/dev/null 2>&1; then
+    echo "✓ $pkg already installed"
+  else
+    echo "→ installing $pkg"
+    brew install "$pkg"
+  fi
 done
 
-# install mural
-pushd $HOME
-git clone git@github.com:anshulverma/mural.git .mural
-cd .mural
-make
-popd
+basedir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+target="${HOME}/.emacs.d"
+
+if [[ ! -e "$target" ]]; then
+  echo "→ symlinking $basedir → $target"
+  ln -s "$basedir" "$target"
+elif [[ -L "$target" && "$(readlink "$target")" == "$basedir" ]]; then
+  echo "✓ $target already points to this checkout"
+else
+  echo "⚠ $target exists and doesn't point here; leaving it alone"
+fi
+
+echo
+echo "Done. Run 'emacs' — package.el will install Elisp packages on"
+echo "first launch (may take a few minutes)."
