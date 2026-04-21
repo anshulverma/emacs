@@ -46,8 +46,11 @@
         'company-auctex
         'auctex 'reftex
 
-        ;; org mode additions
-        'org-plus-contrib
+        ;; org mode additions. `org' ships with Emacs, but GNU ELPA
+        ;; tracks a newer release; `org-contrib' replaces the old
+        ;; `org-plus-contrib' meta-package (retired in 2021).
+        'org
+        'org-contrib
         'org-ref
         'cm-mode
         'ox-twbs ; export org-mode docs as html compatible with twitter bootstrap
@@ -198,7 +201,7 @@
 ;; Make sure some packages are byte-compiled. This should only happen the first
 ;; time. I committed some packages to git without .elc files, so it seems like
 ;; this is a good idea.
-(cl-loop for library in '("org" "org-plus-contrib")
+(cl-loop for library in '("org" "org-contrib")
          do
          (when (locate-library library)
            (unless (string= "elc" (file-name-extension (locate-library library)))
