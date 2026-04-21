@@ -152,8 +152,8 @@ already hidden."
 	(progn (setq hide-mode-line-saved-mode-line-format
 		     (list mode-line-format))
 	       (setq mode-line-format nil)
-	       ;; bug workaround
-	       (redraw-modeline)))))
+	       ;; bug workaround (redraw-modeline was removed in Emacs 28)
+	       (force-mode-line-update)))))
 (defun show-mode-line-in (buffer)
   "If the specified BUFFER's mode line is hidden, un-hides it.
 
