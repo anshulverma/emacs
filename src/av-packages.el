@@ -42,9 +42,9 @@
 
         'company
 
-        ;; latex stuff
+        ;; latex stuff  (reftex and info-look are built-in)
         'company-auctex
-        'auctex 'reftex
+        'auctex
 
         ;; org mode additions. `org' ships with Emacs, but GNU ELPA
         ;; tracks a newer release; `org-contrib' replaces the old
@@ -53,14 +53,8 @@
         'org-contrib
         'org-ref
         'cm-mode
-        'ox-twbs ; export org-mode docs as html compatible with twitter bootstrap
         'org-present ; ultra-minimalist presentation minor-mode for emacs org-mode
-        'ob-http
         'org-bullets ; show org-mode bullets as UTF-8 characters
-        'ox-ioslide
-        'org-page
-
-        'howm ; wiki like not taking tool
 
         'gnuplot
         'graphviz-dot-mode
@@ -69,30 +63,26 @@
         'company-dict 'company-quickhelp
         'undo-tree
         'dim
-        'eimp ; image manipulation library
 
+        ;; python — this stack is slated for replacement with
+        ;; built-in python.el + eglot + apheleia in Stage 3.4.
         'elpy
         'pydoc
         'python-mode
         'py-autopep8
         'company-jedi
-        'ein ; emacs ipython notebook support
-        'ob-ipython
+        'ein                            ; emacs ipython notebook support
         'pyenv-mode
-        ;; 'jedi 'jedi-direx
 
-        'helm 'helm-themes 'helm-bibtex
+        'helm 'helm-bibtex
         'helm-swoop 'helm-flx 'helm-fuzzier
         'helm-dash
 
-        'f         ; file functions https://github.com/rejeep/f.el
-        's         ; string functions
-        'dash      ; list functions
-        'ht        ; hash functions
+        'f                              ; file functions
+        's                              ; string functions
+        'dash                           ; list functions
+        'ht                             ; hash functions
         'rainbow-mode
-
-        'ace-jump-mode
-        'ace-isearch
 
         'use-package
 
@@ -100,7 +90,6 @@
         'key-chord
 
         'git-timemachine
-        'button-lock
         'elfeed
         'expand-region
         'idle-highlight-mode
@@ -111,10 +100,8 @@
         'smartparens
         'window-number
         'better-defaults
-        'info-look
-        'undo-tree
         'iedit
-        'slime
+        'slime                          ; referenced in 05-diminish.el
         'origami
 
         ;; clojure
@@ -134,10 +121,7 @@
         'eshell-did-you-mean
         'eshell-z
 
-        ;; google packages
-        'google-maps
-        'google-translate
-        'google-this
+        'google-this                    ; activated in 05-editor.el
 
         'calfw
         'calfw-org
@@ -145,49 +129,44 @@
 
         'websocket
 
-        ;; R
-        'ess
+        'ess                            ; R
 
-        ;; docker
         'docker
         'dockerfile-mode
 
         'groovy-mode
 
         ;; REST with emacs
-        'cl-lib
         'restclient
         'ob-restclient
         'company-restclient
         'know-your-http-well
 
-        ;; big data
-        'pig-mode
-        'pig-snippets
-
-        ;; dir tree view like vim
-        'neotree
-
-        ;; highlight symbol under point
         'highlight-symbol
 
         ;; ruby mode setup
-        'yard-mode ; highlights yard document tags
-        'robe ; code assistance tool
-        'rvm ; emacs integration with rvm
-        'enh-ruby-mode ; enhanced ruby mode
-        'rspec-mode ; convenience functions for dealing with RSpec
-        'ruby-tools ; collection of handy functions for ruby mode
-        'ruby-additional ; ruby extensions yet to be merged into emacs
-        'ruby-hash-syntax ; toggle ruby hash syntax between classic and 1.9 styles
-        'ruby-refactor ; minor mode for ruby refactoring utilities
+        'yard-mode                      ; highlights yard document tags
+        'robe                           ; code assistance tool
+        'rvm                            ; emacs integration with rvm
+        'enh-ruby-mode
+        'rspec-mode
+        'ruby-tools
+        'ruby-hash-syntax
+        'ruby-refactor
 
-        ;; highlight uncommitted changes
-        'diff-hl
+        'diff-hl                        ; highlight uncommitted changes
+        'realgud)                       ; attach to a debugger like pdb
+  "Libraries that should be installed by default.
 
-        ;; attach to a debugger process (like pdb)
-        'realgud)
-  "Libraries that should be installed by default.")
+Pruned 2026-04 — removed packages that were dead, unavailable, or
+unused:
+  - cl-lib, reftex, info-look: shipped with Emacs
+  - helm-themes, howm: unavailable / broken on modern Emacs
+  - ace-jump-mode, ace-isearch: unused (superseded by avy)
+  - ob-http, ox-twbs, ox-ioslide, org-page, eimp, neotree,
+    button-lock, google-maps, google-translate, ruby-additional,
+    ob-ipython, pig-mode, pig-snippets: no references in src/custom
+  - jedi-direx: already commented out.")
 
 (unless (cl-every #'package-installed-p av/packages)
   (package-refresh-contents)

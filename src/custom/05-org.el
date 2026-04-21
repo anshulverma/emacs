@@ -39,26 +39,6 @@
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
-;; set up `org-page' for blog
-(require 'org-page)
-
-(if (and (boundp 'av/blog-dir)
-         (f-exists? av/blog-dir))
-    (progn
-      (setq op/repository-directory av/blog-dir)
-      (setq op/site-domain
-            (if (boundp 'av/blog-site-domain)
-                av/blog-site-domain
-              nil))
-      (setq op/personal-disqus-shortname
-            (if (boundp 'av/blog-disqus-username)
-                av/blog-disqus-username
-              nil))
-      (setq op/personal-google-analytics-id
-            (if (boundp 'av/blog-google-analytics-id)
-                av/blog-google-analytics-id
-              nil))))
-
 ;; org mode exported via pandoc
 (require 'ox-pandoc)
 
@@ -68,10 +48,9 @@
   (not (string= lang "dot")))
 (setq org-confirm-babel-evaluate 'av/org-confirm-babel-evaluate)
 
-;; display inline images when evaluating blocks
-(define-key org-mode-map (kbd "C-c C-c")
-  (lambda () (interactive) (org-ctrl-c-ctrl-c)
-    (org-display-inline-images)))
+;; display inline images after babel C-c C-c evaluations, without
+;; clobbering the rest of the C-c C-c behavior in org-mode.
+(add-hook 'org-babel-after-execute-hook #'org-display-inline-images)
 
 (provide '05-org)
 ;;; 05-org.el ends here
