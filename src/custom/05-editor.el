@@ -55,15 +55,13 @@
 
 ;; fill column
 (defun av/enable-column-marker ()
-  "Enabled the column marker and fill column indicator."
+  "Show a visual fill-column indicator in the current buffer."
   (interactive)
-  (progn
-    (require 'column-marker)
-    (require 'fill-column-indicator)
-    (setq-default fill-column 100)
-    (add-hook 'after-change-major-mode-hook 'fci-mode) ; every file should have a fill-column
-    (setq fci-rule-width 2)
-    (setq fci-rule-color "dark gray")))
+  (setq-default fill-column 100)
+  ;; Emacs 27+ ships display-fill-column-indicator-mode; the vendored
+  ;; fill-column-indicator.el is no longer needed.
+  (add-hook 'after-change-major-mode-hook
+            #'display-fill-column-indicator-mode))
 
 ;; enable `google-this' mode
 (google-this-mode 1)

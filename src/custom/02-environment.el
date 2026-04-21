@@ -2,8 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; extensions to dired
-(require 'dired+)
+;; Built-in dired has gained most of what the vendored dired+ provided
+;; (hide-details, toggle-marks, subtree navigation via dired-subtree
+;; from MELPA if desired). The old dired+.el was fragile on newer
+;; Emacs, so it's no longer loaded here.
 
 ;;; make sure SSL/TLS is supported
 (require 'tls)
