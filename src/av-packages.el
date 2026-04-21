@@ -62,15 +62,11 @@
         'undo-tree
         'dim
 
-        ;; python — this stack is slated for replacement with
-        ;; built-in python.el + eglot + apheleia in Stage 3.4.
-        'elpy
+        ;; python — built-in python.el + eglot + apheleia. Former
+        ;; stack (elpy, python-mode, py-autopep8, company-jedi, ein,
+        ;; pyenv-mode, jedi) removed.
+        'apheleia
         'pydoc
-        'python-mode
-        'py-autopep8
-        'company-jedi
-        'ein                            ; emacs ipython notebook support
-        'pyenv-mode
 
         'helm 'helm-bibtex
         'helm-flx 'helm-fuzzier

@@ -1,188 +1,58 @@
-;;; python --- Summary
+;;; python --- Python support  -*- lexical-binding: t; -*-
+
 ;;; Commentary:
+
+;; Minimal modern Python stack.  The built-in python.el has been very
+;; capable for years, so we don't load python-mode.el any more.  For
+;; completion/diagnostics we use eglot (built-in on Emacs 29+) with
+;; pyright or ruff-lsp as the server, and apheleia for format-on-save
+;; via black or ruff.
+;;
+;; Servers and formatters are probed at runtime, so the config
+;; degrades gracefully if the user hasn't installed them.
+;;
+;; Pre-requisites (install with pipx or pip --user):
+;;   pipx install pyright          # type checker / completion
+;;   pipx install ruff             # fast linter + formatter
+;;   pipx install black            # alternative formatter
+
 ;;; Code:
 
-(require 'python-mode)
+(require 'python)
 
-;;--------PyENV--------
+(setq python-indent-guess-indent-offset-verbose nil)
 
-;; set the right version of python using pyenv
-(require 'pyenv-mode)
+;; Treat pyproject.toml / setup.cfg as python project roots so eglot
+;; finds the right directory automatically.
+(with-eval-after-load 'project
+  (dolist (marker '("pyproject.toml" "setup.cfg" "setup.py" "requirements.txt"))
+    (add-to-list 'project-vc-extra-root-markers marker)))
 
-(defvar av/pyenv-default-version "2.7.10"
-  "Default version of python to use in case .python-version file is absent.")
+(defun av/python-eglot-maybe ()
+  "Start eglot for this buffer if a supported LSP server is on PATH."
+  (when (and (fboundp 'eglot-ensure)
+             (or (executable-find "pyright")
+                 (executable-find "pyright-langserver")
+                 (executable-find "ruff")
+                 (executable-find "basedpyright")))
+    (eglot-ensure)))
 
-(defvar av/pyenv-basedir
-  (or (getenv "PYENV_ROOT")
-      (let ((candidates '("/opt/homebrew/var/pyenv"
-                          "/usr/local/var/pyenv"
-                          "~/.pyenv")))
-        (or (seq-find #'file-directory-p
-                      (mapcar #'expand-file-name candidates))
-            (expand-file-name "~/.pyenv"))))
-  "Base directory where pyenv is located.")
+(add-hook 'python-mode-hook #'av/python-eglot-maybe)
+(when (fboundp 'python-ts-mode)
+  (add-hook 'python-ts-mode-hook #'av/python-eglot-maybe))
 
-(defun av/pyenv-mode-auto-hook ()
-  "Automatically activates pyenv version if .python-version file exists."
-  (pyenv-mode 1)
-  (f-traverse-upwards
-   (lambda (path)
-     (let ((pyenv-version-path (f-expand ".python-version" path)))
-       (if (f-exists? pyenv-version-path)
-           (pyenv-mode-set (s-trim (f-read-text pyenv-version-path 'utf-8)))
-         (pyenv-mode-set av/pyenv-default-version))))))
-
-(add-hook 'python-mode-hook 'av/pyenv-mode-auto-hook)
-
-(define-key pyenv-mode-map (kbd "C-c C-s") nil)
-(define-key pyenv-mode-map (kbd "C-c C-u") nil)
-
-(add-to-list 'exec-path (f-join av/pyenv-basedir "shims"))
-
-;;---------------------
-
-(elpy-enable)
-
-;; use flycheck not flymake with elpy
-(when (require 'flycheck nil t)
-  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
-
-;; Use Jedi instead of buggy Rope
-(setq elpy-rpc-backend "jedi")
-(setq python-check-command (expand-file-name (f-join av/pyenv-basedir "shims/flake8")))
-(setq python-check-command "flake8")
-
-;; enable autopep8 formatting on save
-;; ignoring:
-;; - E501 - Try to make lines fit within --max-line-length characters.
-;; - W293 - Remove trailing whitespace on blank line.
-;; - W391 - Remove trailing blank lines.
-;; - W690 - Fix various deprecated code (via lib2to3).
-(require 'py-autopep8)
-(setq py-autopep8-options '("--ignore=E501,W293,W391,W690"))
-(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
-
-;; use the wx backend, for both mayavi and matplotlib
-(setq py-python-command-args
-      '("--gui=wx" "--pylab=wx" "-colors" "Linux"))
-(setq py-force-py-shell-name-p t)
-
-;; switch to the interpreter after executing code
-(setq py-shell-switch-buffers-on-execute-p t)
-(setq py-switch-buffers-on-execute-p t)
-
-;; don't split windows
-(setq py-split-windows-on-execute-p nil)
-
-;; try to automagically figure out indentation
-(setq py-smart-indentation t)
-
-;; no whitespace in inferior python mode
-(add-hook 'inferior-python-mode-hook
-          (lambda()
-            (setq show-trailing-whitespace nil)))
-
-;; set up jedi
-(defun av/python-mode-hook ()
-  "Setup autocomplete."
-  (add-to-list 'company-backends 'company-jedi)
-  (jedi:setup)
-  (subword-mode 1))
-
-(setq jedi:complete-on-dot t)
-
-;;---------EIN---------
-
-(require 'ein)
-
-;; enable autocomplete in ein
-(add-hook 'ein:connect-mode-hook 'ein:jedi-setup)
-
-(setq ein:use-auto-complete t)
-
-;;---------------------
-
-;; org babel async execution for python -- useful for long running tasks
-(defun org-babel-async-execute:python ()
-  "Execute the python src-block at point asynchronously.
-:var headers are supported.
-:results output is all that is supported for output.
-
-A new window will pop up showing you the output as it appears,
-and the output in that window will be put in the RESULTS section
-of the code block."
-  (interactive)
-  (let* ((current-file (buffer-file-name))
-         (uuid (org-id-uuid))
-         (code (org-element-property :value (org-element-context)))
-         (temporary-file-directory ".")
-         (tempfile (make-temp-file "py-"))
-         (pbuffer (format "*%s*" uuid))
-         (varcmds (org-babel-variable-assignments:python
-                   (nth 2 (org-babel-get-src-block-info))))
-         process)
-
-    ;; get rid of old results, and put a place-holder for the new results to
-    ;; come.
-    (org-babel-remove-result)
-
-    (save-excursion
-      (re-search-forward "#\\+END_SRC")
-      (insert (format
-               "\n\n#+RESULTS: %s\n: %s"
-               (or (org-element-property :name (org-element-context))
-                   "")
-               uuid)))
-
-    ;; open the results buffer to see the results in.
-    (switch-to-buffer-other-window pbuffer)
-
-    ;; Create temp file containing the code.
-    (with-temp-file tempfile
-      ;; if there are :var headers insert them.
-      (dolist (cmd varcmds)
-        (insert cmd)
-        (insert "\n"))
-      (insert code))
-
-    ;; run the code
-    (setq process (start-process
-                   uuid
-                   pbuffer
-                   "python"
-                   tempfile))
-
-    ;; when the process is done, run this code to put the results in the
-    ;; org-mode buffer.
-    (set-process-sentinel
-     process
-     `(lambda (process event)
-        (save-window-excursion
-          (save-excursion
-            (save-restriction
-              (with-current-buffer (find-file-noselect ,current-file)
-                (goto-char (point-min))
-                (re-search-forward ,uuid)
-                (beginning-of-line)
-                (kill-line)
-                (insert
-                 (mapconcat
-                  (lambda (x)
-                    (format ": %s" x))
-                  (butlast (split-string
-                            (with-current-buffer
-                                ,pbuffer
-                              (buffer-string))
-                            "\n"))
-                  "\n"))))))
-        ;; delete the results buffer then delete the tempfile.
-        ;; finally, delete the process.
-        (when (get-buffer ,pbuffer)
-          (kill-buffer ,pbuffer)
-          (delete-window))
-        (delete-file ,tempfile)
-        (delete-process process)))))
+(use-package apheleia
+  :ensure t
+  :hook ((python-mode python-ts-mode) . apheleia-mode)
+  :config
+  ;; Prefer ruff (fastest) and fall back to black.
+  (setf (alist-get 'python-mode apheleia-mode-alist)
+        (cond ((executable-find "ruff")  'ruff-format)
+              ((executable-find "black") 'black)
+              (t nil)))
+  (when (boundp 'python-ts-mode)
+    (setf (alist-get 'python-ts-mode apheleia-mode-alist)
+          (alist-get 'python-mode apheleia-mode-alist))))
 
 (provide 'python)
 ;;; python.el ends here
