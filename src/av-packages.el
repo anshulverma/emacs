@@ -8,21 +8,20 @@
 (require 'package)
 
 (setq package-archives
-      '(("elpy"         . "http://jorgenschaefer.github.io/packages/")
-        ("org"          . "http://orgmode.org/elpa/")
-        ("gnu"          . "http://elpa.gnu.org/packages/")
-        ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
-        ("melpa"        . "http://melpa.org/packages/")))
+      '(("gnu"          . "https://elpa.gnu.org/packages/")
+        ("nongnu"       . "https://elpa.nongnu.org/nongnu/")
+        ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ("melpa"        . "https://melpa.org/packages/")))
+
+;; Prefer stable releases, but fall back to melpa for packages that
+;; don't cut stable tags.
+(setq package-archive-priorities
+      '(("gnu"          . 10)
+        ("nongnu"       . 8)
+        ("melpa-stable" . 5)
+        ("melpa"        . 1)))
 
 (setq package-user-dir (expand-file-name "elpa" av-lib-dir))
-
-;; we need this specific version of highlight-indentation. This is a little
-;; hackery to make sure we get the version from the elpy repo.
-(unless (file-directory-p (expand-file-name "elpa/highlight-indentation-0.6.0" av-lib-dir))
-  (let ((package-archives '(("elpy" . "http://jorgenschaefer.github.io/packages/"))))
-    (package-initialize)
-    (package-refresh-contents)
-    (package-install 'highlight-indentation)))
 
 (package-initialize)
 
