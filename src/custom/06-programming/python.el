@@ -12,7 +12,14 @@
 (defvar av/pyenv-default-version "2.7.10"
   "Default version of python to use in case .python-version file is absent.")
 
-(defvar av/pyenv-basedir "/usr/local/var/pyenv"
+(defvar av/pyenv-basedir
+  (or (getenv "PYENV_ROOT")
+      (let ((candidates '("/opt/homebrew/var/pyenv"
+                          "/usr/local/var/pyenv"
+                          "~/.pyenv")))
+        (or (seq-find #'file-directory-p
+                      (mapcar #'expand-file-name candidates))
+            (expand-file-name "~/.pyenv"))))
   "Base directory where pyenv is located.")
 
 (defun av/pyenv-mode-auto-hook ()

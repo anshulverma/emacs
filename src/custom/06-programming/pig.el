@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(setq pig-executable "/usr/local/bin/pig")
+(setq pig-executable (or (executable-find "pig") "pig"))
 (setq pig-executable-options '("-x" "local"))
 (setq pig-executable-prompt-regexp "^grunt> ")
 (setq pig-indent-level 4)

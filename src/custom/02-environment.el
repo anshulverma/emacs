@@ -9,22 +9,21 @@
 (require 'tls)
 
 ;;; ----MAC OSX----
-(if (eq system-type 'darwin)
-    (progn
-      ;; ispell is hard to find in emacs
-      (setq ispell-program-name "/usr/local/bin/ispell")
+;; exec-path-from-shell (loaded in av-setup) populates PATH from the
+;; user's shell, so `executable-find' sees both /usr/local/bin (Intel)
+;; and /opt/homebrew/bin (Apple Silicon) without hard-coded prefixes.
+(when (eq system-type 'darwin)
+  (when-let ((ispell (executable-find "ispell")))
+    (setq ispell-program-name ispell))
 
-      ;; make COMMAND key function as CTRL
-      ;; (setq mac-command-modifier 'control)
+  (with-eval-after-load 'markdown-mode
+    (when-let ((md (or (executable-find "markdown")
+                       (executable-find "multimarkdown")
+                       (executable-find "pandoc"))))
+      (setq markdown-command md)))
 
-      ;; markdown seems to be hard to find too
-      (defun markdown-custom ()
-        "markdown-mode-hook"
-        (setq markdown-command "/usr/local/bin/markdown"))
-      (add-hook 'markdown-mode-hook '(lambda() (markdown-custom)))
-
-      ;; set function key as hyper
-      (setq ns-function-modifier 'hyper)))
+  ;; set function key as hyper
+  (setq ns-function-modifier 'hyper))
 
 ;; fix the PATH variable
 (defun set-exec-path-from-shell-PATH ()
