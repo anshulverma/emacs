@@ -1,4 +1,4 @@
-;;; av-setup.el --- Where all the magic begins
+;;; av-setup.el --- Where all the magic begins  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -7,6 +7,14 @@
 (require 'av-util)
 (require 'f)
 (require 'validate)
+
+;; use-package is loaded early so setup files can safely wrap their
+;; configuration in (use-package FOO :defer t :config ...) without
+;; having to require it themselves. Deferral is opt-in per block —
+;; making it the default breaks :config blocks that do work the
+;; package is expected to have loaded (e.g. validate-setq).
+(require 'use-package)
+(setq use-package-expand-minimally t)
 
 ;; copy environment variables when running in window mode
 (when (memq window-system '(mac ns))

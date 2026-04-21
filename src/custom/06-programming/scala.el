@@ -54,28 +54,11 @@ the REPL in a new frame instead."
    'self-insert-command
    minibuffer-local-completion-map))
 
-(use-package ensime                     ; Scala interaction mode
-  :after scala-mode
-  :bind (:map ensime-mode-map
-              ("C-c m E" . ensime-reload)
-              ;; Free M-n and M-p again
-              ("M-n" . nil)
-              ("M-p" . nil)
-              ("<f5>" . ensime-sbt-do-compile)
-              :map scala-mode-map ("C-c m e" . ensime))
-  :config
-  ;; Enable Ensime for all Scala buffers.
-  (add-hook 'scala-mode-hook #'ensime-mode)
-  ;; Compile on save.  My projects are small enough :)
-  (validate-setq ensime-sbt-perform-on-save "test:compile"))
-(use-package ensime-expand-region       ; Integrate Ensime into expand-region
-  :ensure ensime
-  :after ensime)
+;; Ensime was retired when Scala IDE development moved to the LSP-based
+;; Metals server. For Scala in modern Emacs, use scala-mode + lsp-mode
+;; (or eglot on Emacs 29+) with `metals' installed via coursier.
+
 (use-package play-routes-mode           ; Mode for Play 2 routes files
-  :defer t)
-(use-package flycheck-ensime            ; Ensime-based checker for Flycheck
-  :disabled t
-  :load-path "lisp/"
   :defer t)
 
 (provide 'scala)
