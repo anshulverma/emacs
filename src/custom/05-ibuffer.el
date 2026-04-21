@@ -42,13 +42,13 @@
 (define-key ibuffer-mode-map (kbd "<down>") 'ibuffer-next-line)
 
 ;; Switching to ibuffer puts the cursor on the most recent buffer
-(defadvice ibuffer (around ibuffer-point-to-most-recent) ()
-           "Open ibuffer with cursor pointed to most recent buffer name"
-           (let ((recent-buffer-name (buffer-name)))
-             ad-do-it
-             (ibuffer-jump-to-buffer recent-buffer-name)
-             (ibuffer-forward-line)))
-(ad-activate 'ibuffer)
+(defun av/ibuffer-point-to-most-recent (orig-fun &rest args)
+  "Open ibuffer with cursor pointed to most recent buffer name."
+  (let ((recent-buffer-name (buffer-name)))
+    (apply orig-fun args)
+    (ibuffer-jump-to-buffer recent-buffer-name)
+    (ibuffer-forward-line)))
+(advice-add 'ibuffer :around #'av/ibuffer-point-to-most-recent)
 
 (provide '05-ibuffer)
 ;;; 05-ibuffer.el ends here

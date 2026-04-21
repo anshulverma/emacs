@@ -42,11 +42,13 @@
 (setq kill-whole-line t) ; kill entire line including RET
 
 ;; yank with indentation
-(defadvice yank (after indent-region activate)
-  (if (member major-mode '(emacs-lisp-mode
-                           lisp-mode
-                           sh-mode))
-      (indent-region (region-beginning) (region-end) nil)))
+(defun av/yank-indent-region (&rest _)
+  "After yanking, re-indent the yanked region in lisp/sh buffers."
+  (when (member major-mode '(emacs-lisp-mode
+                             lisp-mode
+                             sh-mode))
+    (indent-region (region-beginning) (region-end) nil)))
+(advice-add 'yank :after #'av/yank-indent-region)
 
 ;; auto fill
 (auto-fill-mode -1)

@@ -8,12 +8,12 @@
 ;; described in -- https://lists.gnu.org/archive/html/emacs-orgmode/2016-02/msg00424.html
 ;; (require 'jmax-org)
 
-(defadvice org-edit-src-code
-    (around set-buffer-file-name activate compile)
+(defun av/org-edit-src-code-keep-filename (orig-fun &rest args)
   "Enabling flyspell in special edit source blocks."
-  (let ((file-name (buffer-file-name))) ;; (1)
-    ad-do-it                            ;; (2)
-    (setq buffer-file-name file-name))) ;; (3)
+  (let ((file-name (buffer-file-name)))
+    (apply orig-fun args)
+    (setq buffer-file-name file-name)))
+(advice-add 'org-edit-src-code :around #'av/org-edit-src-code-keep-filename)
 
 ;; flyspell mode for spell checking everywhere
 (add-hook 'org-mode-hook 'turn-on-flyspell 'append)

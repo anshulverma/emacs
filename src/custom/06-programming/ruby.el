@@ -22,9 +22,10 @@
             (hs-minor-mode 1) ;; Enables folding
             (modify-syntax-entry ?: "."))) ;; Adds ":" to the word definition
 
-(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-  "Automatically load correct ruby version."
+(defun av/activate-rvm-for-robe (&rest _)
+  "Automatically load correct ruby version before starting the ruby console."
   (rvm-activate-corresponding-ruby))
+(advice-add 'inf-ruby-console-auto :before #'av/activate-rvm-for-robe)
 
 ;; add robe as a company backend
 (eval-after-load 'company

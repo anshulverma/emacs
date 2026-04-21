@@ -44,24 +44,23 @@
                   (setq i (1+ i)))))
             (split-string doc) " ")))))
 
-(defadvice eldoc-get-fnsym-args-string (around highlight activate)
-  ""
-  (setq ad-return-value (eldoc-highlight-nth-arg ad-do-it
-                                                 (eldoc-get-arg-index))))
-
-;; add docstring to eldoc
-(defadvice eldoc-get-fnsym-args-string (after add-dacstring (sym)
-                                              activate compile)
-  "Add a doc string to ElDoc's modeline information."
-  (let ((doc (eldoc-docstring-first-line
-              (cdr (help-split-fundoc (documentation sym t) sym)))))
-    (when (and doc (not (equal doc "")))
-      (setq ad-return-value
-            (concat ad-return-value
-                    (if (> (+ (length ad-return-value) (length doc) 4)
-                           (frame-width)) "\n" "    ")
-                    doc))))
-  ad-return-value)
+(defun av/eldoc-highlight-and-add-docstring (orig-fun sym &rest args)
+  "Highlight the current argument in eldoc and append the function's docstring."
+  (let* ((raw (apply orig-fun sym args))
+         (highlighted (eldoc-highlight-nth-arg raw (eldoc-get-arg-index)))
+         (doc (ignore-errors
+                (eldoc-docstring-first-line
+                 (cdr (help-split-fundoc (documentation sym t) sym))))))
+    (if (and doc (not (equal doc "")))
+        (concat highlighted
+                (if (> (+ (length highlighted) (length doc) 4)
+                       (frame-width))
+                    "\n" "    ")
+                doc)
+      highlighted)))
+(when (fboundp 'eldoc-get-fnsym-args-string)
+  (advice-add 'eldoc-get-fnsym-args-string
+              :around #'av/eldoc-highlight-and-add-docstring))
 
 ;; help in *help* buffer
 (defvar context-help nil
@@ -96,13 +95,16 @@ context-help to false"
               (describe-function rgr-symbol)
             (if (boundp rgr-symbol) (describe-variable rgr-symbol)))))))
 
-(defadvice eldoc-print-current-symbol-info
-    (around eldoc-show-c-tag activate)
-  (cond
-   ((eq major-mode 'emacs-lisp-mode) (rgr/context-help) ad-do-it)
-   ((eq major-mode 'lisp-interaction-mode) (rgr/context-help) ad-do-it)
-   ((eq major-mode 'apropos-mode) (rgr/context-help) ad-do-it)
-   (t ad-do-it)))
+(defun av/eldoc-show-c-tag (orig-fun &rest args)
+  "Trigger `rgr/context-help' in lisp-like modes before eldoc displays info."
+  (when (memq major-mode '(emacs-lisp-mode
+                           lisp-interaction-mode
+                           apropos-mode))
+    (rgr/context-help))
+  (apply orig-fun args))
+(when (fboundp 'eldoc-print-current-symbol-info)
+  (advice-add 'eldoc-print-current-symbol-info
+              :around #'av/eldoc-show-c-tag))
 
 (global-set-key (kbd "C-c h") 'rgr/toggle-context-help)
 

@@ -85,9 +85,11 @@ stuff, to the current ERC buffer."
 (setq erc-hide-timestamps nil)
 
 ;; save buffers when quitting emacs
-(defadvice save-buffers-kill-emacs (before save-logs (arg) activate)
-  (save-some-buffers t (lambda () (when (and (eq major-mode 'erc-mode)
-                                        (not (null buffer-file-name)))))))
+(defun av/save-erc-logs-on-exit (&rest _)
+  "Save ERC chat logs when exiting Emacs."
+  (save-some-buffers t (lambda () (and (eq major-mode 'erc-mode)
+                                       (not (null buffer-file-name))))))
+(advice-add 'save-buffers-kill-emacs :before #'av/save-erc-logs-on-exit)
 
 (add-hook 'erc-insert-post-hook 'erc-save-buffer-in-logs)
 (add-hook 'erc-mode-hook '(lambda () (when (not (featurep 'xemacs))

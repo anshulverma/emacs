@@ -86,10 +86,12 @@
 
 ;; full screen magit-status
 
-(defadvice magit-status (around magit-fullscreen activate)
+(defun av/magit-fullscreen (orig-fun &rest args)
+  "Open magit-status full-screen and remember the previous layout."
   (window-configuration-to-register :magit-fullscreen)
-  ad-do-it
+  (apply orig-fun args)
   (delete-other-windows))
+(advice-add 'magit-status :around #'av/magit-fullscreen)
 
 (defun magit-quit-session ()
   "Restores the previous window configuration and kills the magit buffer"
@@ -107,14 +109,14 @@
   (kill-buffer)
   (jump-to-register :vc-annotate-fullscreen))
 
-(eval-after-load "vc-annotate"
-  '(progn
-     (defadvice vc-annotate (around fullscreen activate)
-       (window-configuration-to-register :vc-annotate-fullscreen)
-       ad-do-it
-       (delete-other-windows))
-
-     (define-key vc-annotate-mode-map (kbd "q") 'vc-annotate-quit)))
+(defun av/vc-annotate-fullscreen (orig-fun &rest args)
+  "Open vc-annotate full-screen and remember the previous layout."
+  (window-configuration-to-register :vc-annotate-fullscreen)
+  (apply orig-fun args)
+  (delete-other-windows))
+(with-eval-after-load "vc-annotate"
+  (advice-add 'vc-annotate :around #'av/vc-annotate-fullscreen)
+  (define-key vc-annotate-mode-map (kbd "q") 'vc-annotate-quit))
 
 ;; ignore whitespace
 

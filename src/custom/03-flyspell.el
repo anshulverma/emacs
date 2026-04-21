@@ -45,10 +45,8 @@
   (if (window-system)
       (funcall org-fun event poss word)
     (flyspell-emacs-popup-textual event poss word)))
-(eval-after-load "flyspell"
-  '(progn
-     (defadvice flyspell-emacs-popup (around flyspell-emacs-popup-choose-advice)
-       (flyspell-emacs-popup-choose))))
+(with-eval-after-load "flyspell"
+  (advice-add 'flyspell-emacs-popup :around #'flyspell-emacs-popup-choose))
 
 ;; key bindings
 

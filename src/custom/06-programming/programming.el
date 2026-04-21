@@ -71,11 +71,12 @@
 ;; show pos tip for autocompletion option
 (require 'pos-tip)
 
-(defadvice popup-tip
-    (around popup-pos-tip-wrapper (string &rest args) activate)
+(defun av/popup-pos-tip-on-x (orig-fun string &rest args)
+  "On X, use popup-pos-tip instead of popup-tip for richer tooltips."
   (if (eq window-system 'x)
-      (apply 'popup-pos-tip string args)
-    ad-do-it))
+      (apply #'popup-pos-tip string args)
+    (apply orig-fun string args)))
+(advice-add 'popup-tip :around #'av/popup-pos-tip-on-x)
 
 ;; auto indent on opening brace
 (require 'cc-mode)
