@@ -2,11 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Helm comes from MELPA via package.el; the lib/helm submodule that
+;; used to live here is no longer needed. Keep an optional fallback
+;; only if someone has initialized the submodule.
 (defvar av-helm-dir (expand-file-name "helm" av-lib-dir)
-  "Base directory for helm source.")
-
-;; helm install location
-(add-to-list 'load-path av-helm-dir)
+  "Base directory for a locally vendored helm checkout, if any.")
+(when (file-directory-p av-helm-dir)
+  (add-to-list 'load-path av-helm-dir))
 
 (require 'helm)
 
