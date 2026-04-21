@@ -15,9 +15,13 @@
 .yas-compiled-snippets.el
 .cask/
 *~
+*.elc
 node_modules
 /lib/elpa/
 /elpa
+
+# Claude Code per-project config
+.claude/
 
 # caches
 eshell/
