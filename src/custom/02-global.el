@@ -70,8 +70,9 @@
 ;; disable backup file creation
 (setq backup-inhibited t)
 
-;; answer with y/n instead of yes/no
-(fset 'yes-or-no-p 'y-or-n-p)
+;; answer with y/n instead of yes/no (Emacs 28+ variable; the old
+;; fset-based hack is brittle because it touches a core function).
+(setq use-short-answers t)
 
 ;; http://emacsredux.com/blog/2013/04/05/recently-visited-files
 (require 'recentf)

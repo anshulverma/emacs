@@ -29,13 +29,8 @@
 (package-initialize)
 
 (defvar av/packages
-  (list 'flx
-        'flx-ido
-        'ido-completing-read+
-        'ido-vertical-mode
-        'ido-at-point
-
-        'smex
+  (list 'flx                            ; used by helm-flx and helm-smex
+        'smex                           ; ranking backend for helm-smex
         'yasnippet
         'flycheck 'flycheck-pos-tip
         'magit
