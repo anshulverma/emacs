@@ -7,7 +7,7 @@ Personal Emacs configuration. macOS + Homebrew, Emacs 27.1 or newer (CI covers 2
 ## Install
 
 ```sh
-git clone --recursive git@github.com:anshulverma/emacs.git ~/workspace/emacs
+git clone https://github.com/anshulverma/emacs.git ~/workspace/emacs
 cd ~/workspace/emacs
 ./install.sh
 ```
@@ -18,7 +18,16 @@ cd ~/workspace/emacs
 - installs the external binaries this config shells out to (`ispell`, `pandoc`, `graphviz`, `plantuml`, `gnuplot`),
 - symlinks the checkout into `~/.emacs.d` if nothing is there.
 
+If `~/.emacs.d` already exists, `install.sh` leaves it alone. Move it aside first:
+
+```sh
+mv ~/.emacs.d ~/.emacs.d.bak.$(date +%Y%m%d)
+./install.sh
+```
+
 Elisp packages are installed by `package.el` on the first launch (takes a few minutes the first time — subsequent launches are fast).
+
+The submodules (`snippets/AndreaCrotti`, `lib/predictive`) are optional; clone without `--recursive` and the config degrades gracefully.
 
 ## Layout
 
@@ -74,6 +83,29 @@ Optional, install yourself:
 
 - **Python LSP/formatter** — `pipx install pyright ruff black`. Eglot starts automatically when one of these is on `$PATH`; apheleia formats on save with `ruff` or `black`.
 - **Scala** — install Metals via `coursier install metals` if you want LSP.
+
+## Troubleshooting
+
+Start Emacs with `--debug-init` to get a full backtrace for any startup error.
+
+### `Expected printf output from shell, but got …`
+
+Your shell rc (e.g. `.zshrc`) is printing something — often a fancy prompt — in non-interactive subshells, which pollutes what `exec-path-from-shell` expects. The config already runs the shell with `-l` (login only, no `.zshrc`) and wraps the call in `with-demoted-errors`, so this should not abort init. If it recurs, move `PATH` exports from `.zshrc` to `.zshenv` and keep rc files silent when stdout isn't a tty.
+
+### `Symbol's function definition is void: …`
+
+A vendored library (under `lib/`) is calling a function that got removed in a recent Emacs. Usually a one-line rename fix — check `lib/` for the symbol and either update the call, delete the unused library, or replace it with a built-in equivalent.
+
+### A package fails to install
+
+`package.el` pulls from GNU ELPA + NonGNU ELPA + MELPA + melpa-stable. If a package has been pulled from all four (has happened to `helm-swoop`, `helm-themes`, `ensime`), prune it from `src/av-packages.el` and strip the matching `src/custom/` setup. The weekly CI cron catches these before they bite.
+
+### Starting clean
+
+```sh
+rm -rf lib/elpa/             # force a re-download of every ELPA package
+rm ~/.emacs.d/custom.el      # drop Customize state
+```
 
 ## Licensing
 
