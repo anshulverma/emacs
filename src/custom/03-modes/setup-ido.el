@@ -32,9 +32,10 @@
 
   (setq flx-ido-use-faces t) ;; enable flx highlights
   (flx-ido-mode 1)
-  (ido-ubiquitous-mode 1)
   (ido-vertical-mode 1)
-  (ido-everywhere 1)
+  ;; ido-everywhere / ido-ubiquitous disabled: helm-mode (setup-helm)
+  ;; is the project-wide completing-read provider. Stage 3.3 will
+  ;; pick a single stack so ido and helm stop fighting.
 
   ;; Ido at point (C-,)
   (setq ido-at-point-use-helm nil)

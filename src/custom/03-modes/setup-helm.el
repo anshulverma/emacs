@@ -12,8 +12,9 @@
 
 (require 'helm)
 
-;; from helm-better-defaults
-(require 'helm-config)
+;; `helm-config' was removed in helm 4.0 (June 2024); its keymap
+;; definition is now built into helm.el, so just loading helm is
+;; enough.
 (helm-mode 1)
 (helm-flx-mode 1)
 (helm-fuzzier-mode 1)
@@ -269,61 +270,9 @@
 ;; ;; helm semantic for looking at symbol list in the current buffer
 (global-set-key (kbd "M-S") 'helm-semantic-or-imenu)
 
-;;; setup `helm-swoop' ;;;
-(require 'helm-swoop)
-
-(global-set-key (kbd "M-i") 'helm-swoop)
-(global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
-(global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
-(global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)
-
-;; When doing isearch, hand the word over to helm-swoop
-(define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch)
-;; From helm-swoop to helm-multi-swoop-all
-(define-key helm-swoop-map
-  (kbd "M-i") 'helm-multi-swoop-all-from-helm-swoop)
-
-;; Instead of helm-multi-swoop-all, you can also use
-;; helm-multi-swoop-current-mode
-(define-key helm-swoop-map
-  (kbd "M-m") 'helm-multi-swoop-current-mode-from-helm-swoop)
-
-;; Move up and down like isearch
-(define-key helm-swoop-map (kbd "C-r") 'helm-previous-line)
-(define-key helm-swoop-map (kbd "C-s") 'helm-next-line)
-(define-key helm-multi-swoop-map (kbd "C-r") 'helm-previous-line)
-(define-key helm-multi-swoop-map (kbd "C-s") 'helm-next-line)
-
-;; Save buffer when helm-multi-swoop-edit complete
-(setq helm-multi-swoop-edit-save t)
-
-;; If this value is t, split window inside the current window
-(setq helm-swoop-split-with-multiple-windows t)
-
-;; Split direction. 'split-window-vertically or
-;; 'split-window-horizontally
-(setq helm-swoop-split-direction 'split-window-vertically)
-
-;; If nil, you can slightly boost invoke speed in exchange for text
-;; color
-(setq helm-swoop-speed-or-color t)
-
-;; Go to the opposite side of line from the end or beginning of line
-(setq helm-swoop-move-to-line-cycle t)
-
-;; Optional face for line numbers
-;; Face name is `helm-swoop-line-number-face`
-(setq helm-swoop-use-line-number-face t)
-
-;; If you prefer fuzzy matching
-(setq helm-swoop-use-fuzzy-match t)
-
-;; If there is no symbol at the cursor, use the last used words instead.
-(setq helm-swoop-pre-input-function
-      (lambda ()
-        (let (($pre-input (thing-at-point 'symbol)))
-          (if (eq (length $pre-input) 0) "" $pre-input))))
-;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; helm-swoop was pulled from MELPA. Stage 3.3 introduces a modern
+;; in-buffer search (consult-line / swiper). For now, M-i / C-c M-i
+;; fall back to built-in isearch and occur until that lands.
 
 (provide 'setup-helm)
 ;;; setup-helm.el ends here

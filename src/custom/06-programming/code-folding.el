@@ -13,11 +13,20 @@
 
 ;;; Code:
 
-;; setup `origami'
-(require 'origami)
+;; Origami is effectively unmaintained (last release 2020) and its
+;; defface for origami-fold-header-face uses `:color unspecified',
+;; which Emacs 30 rejects. Guard the require so a face error
+;; doesn't abort startup, and fall back to built-in hideshow for
+;; modes origami would've handled.
 (require 'hideshow)
-
-(global-origami-mode)
+(defvar av/origami-available
+  (condition-case err
+      (progn (require 'origami)
+             (global-origami-mode)
+             t)
+    (error
+     (message "origami disabled: %s" (error-message-string err))
+     nil)))
 
 (defvar hs-based-folding-modes-list
   '(c-mode
@@ -69,15 +78,17 @@
   (hs-show-all))
 
 (defun av/folding (arg)
-  "Fold code base don ARG."
+  "Fold code based on ARG."
   (interactive "P")
-  (let* ((function-prefix (if (-contains? hs-based-folding-modes-list major-mode) "hs" "origami"))
+  (let* ((use-hs (or (not av/origami-available)
+                     (-contains? hs-based-folding-modes-list major-mode)))
+         (function-prefix (if use-hs "hs" "origami"))
          (function-suffix (cond
                            ((eq arg 1) "close-all-nodes")
                            ((eq arg 2) "open-all-nodes")
                            ((eq arg 3) "close-node")
                            ((eq arg 4) "open-node")
-                           (t (error (concat "Invalid ARG: " arg)))))
+                           (t (error "Invalid ARG: %s" arg))))
          (function-name (format "av/%s-%s" function-prefix function-suffix)))
     (funcall (intern function-name))))
 

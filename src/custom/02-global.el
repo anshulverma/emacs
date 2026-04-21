@@ -123,9 +123,12 @@
     (message "No desktop found.")))
 
 (defun av/desktop-save ()
-  "Auto save the desktop when Emacs is idle."
+  "Auto save the desktop when Emacs is idle.
+Skip in batch mode (CI, byte-compile, -Q runs) so it doesn't
+prompt for confirmation on kill-emacs-hook."
   (interactive)
-  (desktop-save-in-desktop-dir))
+  (unless noninteractive
+    (desktop-save-in-desktop-dir)))
 
 (defun av/delete-desktop-file ()
   "Delete the desktop config file."

@@ -13,13 +13,16 @@
         ("melpa-stable" . "https://stable.melpa.org/packages/")
         ("melpa"        . "https://melpa.org/packages/")))
 
-;; Prefer stable releases, but fall back to melpa for packages that
-;; don't cut stable tags.
+;; Package availability varies by archive: many useful packages
+;; only exist on melpa (rolling), not melpa-stable. Giving melpa the
+;; top priority means package.el will happily install anything it
+;; finds, while still preferring GNU/NonGNU ELPA when they publish
+;; the same package.
 (setq package-archive-priorities
       '(("gnu"          . 10)
         ("nongnu"       . 8)
-        ("melpa-stable" . 5)
-        ("melpa"        . 1)))
+        ("melpa"        . 5)
+        ("melpa-stable" . 1)))
 
 (setq package-user-dir (expand-file-name "elpa" av-lib-dir))
 
@@ -75,7 +78,7 @@
         'pyenv-mode
 
         'helm 'helm-bibtex
-        'helm-swoop 'helm-flx 'helm-fuzzier
+        'helm-flx 'helm-fuzzier
         'helm-dash
 
         'f                              ; file functions

@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(require 'cl-lib)
+
 (defun delete-current-buffer-file ()
   "Removes file connected to current buffer and kills buffer."
   (interactive)
@@ -77,7 +79,7 @@
       ;; now insert as many time as requested
       (while (> n 0)
         (insert current-line)
-        (decf n)))))
+        (cl-decf n)))))
 
 ;; temporary full-screen toggle
 (defun toggle-maximize-buffer () "Maximize buffer"
