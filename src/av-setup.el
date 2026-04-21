@@ -16,18 +16,25 @@
 (require 'use-package)
 (setq use-package-expand-minimally t)
 
-;; copy environment variables when running in window mode
+;; GUI Emacs on macOS doesn't inherit PATH from the user's shell;
+;; exec-path-from-shell runs the shell to capture it. Use a login
+;; shell (-l) but NOT interactive — interactive shells source
+;; .zshrc / .bashrc, whose prompts and greetings pollute the output
+;; and crash exec-path-from-shell's printf framing. Wrap the whole
+;; block in with-demoted-errors so a single shell misconfig never
+;; aborts init.
 (when (memq window-system '(mac ns))
-  (progn
+  (setq exec-path-from-shell-arguments '("-l")
+        exec-path-from-shell-check-startup-files nil)
+  (with-demoted-errors "exec-path-from-shell: %S"
     (exec-path-from-shell-initialize)
-    (exec-path-from-shell-copy-env "PS1")
-    (exec-path-from-shell-copy-env "GEM_HOME")
-    (exec-path-from-shell-copy-env "IRBC")
-    (exec-path-from-shell-copy-env "MY_RUBY_HOME")
-    (exec-path-from-shell-copy-env "rvm_env_string")
-    (exec-path-from-shell-copy-env "rvm_ruby_string")
-    (exec-path-from-shell-copy-env "GEM_PATH")
-    (exec-path-from-shell-copy-env "RUBY_VERSION")))
+    ;; Copy only things that are likely to exist and that Emacs cares
+    ;; about. rvm-related vars are only needed if the user actually
+    ;; uses rvm; exec-path-from-shell-copy-env silently no-ops when
+    ;; the var isn't set.
+    (dolist (var '("GEM_HOME" "GEM_PATH" "MY_RUBY_HOME" "RUBY_VERSION"
+                   "rvm_env_string" "rvm_ruby_string"))
+      (exec-path-from-shell-copy-env var))))
 
 (if (file-exists-p "~/.emacs.local.el")
     (load "~/.emacs.local.el"))
