@@ -1,61 +1,82 @@
-emacs
-=====
+# emacs
 
-Tracking emacs configuration using `package-install`.
+Personal Emacs configuration. macOS + Homebrew, Emacs 27.1 or newer (CI covers 28.2, 29.4, 30.2, and snapshot).
 
-# Installation
+[![CI](https://github.com/anshulverma/emacs/actions/workflows/ci.yml/badge.svg)](https://github.com/anshulverma/emacs/actions/workflows/ci.yml)
 
-Clone this repository and run the `install.sh` script.
+## Install
 
-# Local customizations
-
-Create `~/.emacs.local.el` to load any customizations along with this
-configuration.
-
-## Appearance
-
-To load custom theme, add this to `~/.emacs.local.el`:
-
-``` lisp
-(setq av/theme 'zenburn)
+```sh
+git clone --recursive git@github.com:anshulverma/emacs.git ~/workspace/emacs
+cd ~/workspace/emacs
+./install.sh
 ```
 
-By default `leuven` theme is loaded.
+`install.sh` is idempotent. It:
 
-## org-agenda
+- checks for Homebrew and Emacs,
+- installs the external binaries this config shells out to (`ispell`, `pandoc`, `graphviz`, `plantuml`, `gnuplot`),
+- symlinks the checkout into `~/.emacs.d` if nothing is there.
 
-Custom org agenda files and diary file can be loaded from a predefined
-location. If these files are in your dropbox folder, then you can do
-this:
+Elisp packages are installed by `package.el` on the first launch (takes a few minutes the first time — subsequent launches are fast).
 
-``` lisp
+## Layout
+
+- `early-init.el` — pre-UI setup (GC tuning, UI chrome stripped before the frame is drawn). Emacs 27+.
+- `init.el` — bootstraps `av-packages` + `av-setup`, then loads `custom.el`.
+- `custom.el` — Customize's auto-generated state, kept separate so it can't fight hand-edits.
+- `src/av-packages.el` — the authoritative package list (`av/packages`). Edit here to add/remove packages.
+- `src/av-setup.el` — loads `use-package`, then walks `src/custom/` in load order.
+- `src/custom/NN-*.el` — feature-specific setup, ordered by the numeric prefix (02 = foundation … 101 = post-init).
+- `lib/` — third-party / historical helpers. Most vendored copies were deleted in the 2026 cleanup in favor of modern built-ins.
+
+## Local customizations
+
+Create `~/.emacs.local.el`; it loads before any `src/custom/*.el` file, so values set there win.
+
+### Theme
+
+```lisp
+(setq av/theme 'zenburn)    ; default 'leuven
+```
+
+### Font size
+
+```lisp
+(setq av/face-height 180)   ; default 144
+```
+
+### Org agenda / diary
+
+```lisp
 (setq av/org-base-dir "~/Dropbox/org")
 ```
 
-It is assumed that the diary file is named `diary`.
+(Expects a file named `diary` in that directory.)
 
-## Face height
+### IRC email (used by ERC setup)
 
-If the font size is not according to your liking (default 144), then
-change it:
-
-``` lisp
-(setq av/face-height 180)
+```lisp
+(setq av/user-email "you@example.com")
 ```
 
-# License
+## External binaries the config expects
 
+Installed by `install.sh`:
 
-## Library sources
+- **ispell** — flyspell backend
+- **pandoc** — `ox-pandoc` export + fallback for `markdown-command`
+- **graphviz** — `dot` for org-babel diagrams
+- **plantuml** — UML diagrams in org-babel
+- **gnuplot** — org-babel plots
 
-I don't own any of the code under `lib` directory. I have tried to keep
-the original authoring information for each source file. Other than some
-minor modifications to original work these source files are exact copies
-of the original work.
+Optional, install yourself:
 
-## Fonts
+- **Python LSP/formatter** — `pipx install pyright ruff black`. Eglot starts automatically when one of these is on `$PATH`; apheleia formats on save with `ruff` or `black`.
+- **Scala** — install Metals via `coursier install metals` if you want LSP.
 
-There are two font type currently in this repository:
+## Licensing
 
-- `Symbola` -- http://users.teilar.gr/~g1951d/
-- `source-code-pro` - https://github.com/adobe-fonts/source-code-pro
+Code under `lib/` is third-party — upstream authors are credited in each file. The rest of the config is the author's own.
+
+The bundled font `source-code-pro` is from <https://github.com/adobe-fonts/source-code-pro>.
