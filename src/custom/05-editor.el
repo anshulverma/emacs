@@ -5,7 +5,6 @@
 ;; set default width and onlyspaces mode
 (setq tab-width 2)
 (defvaralias 'c-basic-offset 'tab-width)
-(defvaralias 'sh-basic-offset 'tab-width)
 (setq sh-basic-offset 2
       sh-indentation 2)
 

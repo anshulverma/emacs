@@ -532,11 +532,14 @@ Meant to be added to `helm-cleanup-hook', from which it removes
   (remove-hook 'helm-after-update-hook #'helm-projectile--move-to-real)
   (remove-hook 'helm-cleanup-hook #'helm-projectile--remove-move-to-real))
 
+(defun helm-projectile--files-before-init ()
+  "Set up move-to-real hooks for projectile files source."
+  (add-hook 'helm-after-update-hook #'helm-projectile--move-to-real)
+  (add-hook 'helm-cleanup-hook #'helm-projectile--remove-move-to-real))
+
 (defvar helm-source-projectile-files-list
   (helm-build-sync-source "Projectile files"
-    :before-init-hook (lambda ()
-                        (add-hook 'helm-after-update-hook #'helm-projectile--move-to-real)
-                        (add-hook 'helm-cleanup-hook #'helm-projectile--remove-move-to-real))
+    :before-init-hook 'helm-projectile--files-before-init
     :candidates (lambda ()
                   (when (projectile-project-p)
                     (with-helm-current-buffer
