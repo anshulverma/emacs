@@ -52,18 +52,21 @@
 (autoload 'whitespace-toggle-options "whitespace" "Toggle local `whitespace-mode' options." t)
 
 ;; ----LINE NUMBERS----
-(require 'linum)
-(require 'linum-off)
+;; Use the built-in display-line-numbers-mode (Emacs 26+). The legacy
+;; linum-mode is slow on large files and was removed upstream.
+(setq-default display-line-numbers-width-start t)
+(global-display-line-numbers-mode 1)
 
-; line number format
-(defun linum-format-func (line)
-  (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
-    (propertize (format (if (display-graphic-p)
-                            (format "%%%dd" w)
-                          (format "%%%dd " w)) line) 'face 'linum)))
-
-(setq linum-format 'linum-format-func)
-(global-linum-mode 1)
+;; Don't show line numbers in buffers where they add noise.
+(dolist (mode-hook '(term-mode-hook
+                     shell-mode-hook
+                     eshell-mode-hook
+                     org-mode-hook
+                     org-agenda-mode-hook
+                     Info-mode-hook
+                     help-mode-hook
+                     dired-mode-hook))
+  (add-hook mode-hook (lambda () (display-line-numbers-mode -1))))
 
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
