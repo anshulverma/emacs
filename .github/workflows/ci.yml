@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  # Catch upstream breakage even without commits.
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  load-init:
+    name: Load init on Emacs ${{ matrix.emacs-version }} (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        emacs-version: ['28.2', '29.4', '30.2', 'snapshot']
+        exclude:
+          # Apple Silicon macOS runners don't have older Emacs builds.
+          - os: macos-latest
+            emacs-version: '28.2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+
+      - uses: purcell/setup-emacs@master
+        with:
+          version: ${{ matrix.emacs-version }}
+
+      - name: System deps
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y aspell pandoc
+
+      - name: Load init.el (installs ELPA packages)
+        run: |
+          emacs -Q --batch \
+            -l init.el \
+            --eval '(message "INIT OK on Emacs %s" emacs-version)' \
+            --kill
