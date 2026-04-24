@@ -9,12 +9,14 @@
 (defvar av/theme 'leuven
   "Name of the theme to initialize Emacs with.")
 
-;; needed to display emojis
-(set-fontset-font t nil "Symbola")
+;; needed to display emojis (GUI-only; absent in emacs-nox / batch)
+(when (fboundp 'set-fontset-font)
+  (set-fontset-font t nil "Symbola"))
 
 (defvar av/face-height 144
   "Font height to set for your enviroment.")
-(set-face-attribute 'default nil :height av/face-height)
+(when (display-graphic-p)
+  (set-face-attribute 'default nil :height av/face-height))
 
 ;; visible bel
 (setf visible-bell t)
@@ -25,8 +27,9 @@
                    (concat "Emacs: " (abbreviate-file-name (buffer-file-name)))
                  "Emacs: %b"))))
 
-;; mouse settings
-(set-mouse-color "black")
+;; mouse settings (GUI-only)
+(when (and (display-graphic-p) (fboundp 'set-mouse-color))
+  (set-mouse-color "black"))
 
 ;; ----WHITESPACE----
 (require 'whitespace)

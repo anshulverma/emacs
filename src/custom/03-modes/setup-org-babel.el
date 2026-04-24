@@ -5,7 +5,6 @@
 (require 'ox-html)
 (require 'ob-ditaa)
 (require 'ob-plantuml)
-(require 'ob-ipython)
 
 (setq org-html-htmlize-output-type 'css)
 (setq org-ditaa-jar-path (av/brew-file "ditaa" "jar"))
@@ -32,8 +31,6 @@
    (ditaa . t)
    (dot . t)
    (gnuplot . t)
-   (ipython . t)
-   (http . t)
    (restclient . t)))
 
 (provide 'setup-org-babel)

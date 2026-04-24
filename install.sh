@@ -60,14 +60,19 @@ install_debian() {
 }
 
 link_emacs_d() {
-  if [[ ! -e "$target" ]]; then
-    echo "→ symlinking $basedir → $target"
-    ln -s "$basedir" "$target"
-  elif [[ -L "$target" && "$(readlink "$target")" == "$basedir" ]]; then
+  if [[ -L "$target" && "$(readlink "$target")" == "$basedir" ]]; then
     echo "✓ $target already points to this checkout"
-  else
-    echo "⚠ $target exists and doesn't point here; leaving it alone"
+    return
   fi
+
+  if [[ -e "$target" || -L "$target" ]]; then
+    local backup="${target}.backup-$(date +%Y%m%d%H%M%S)"
+    echo "→ $target exists; renaming to $backup"
+    mv "$target" "$backup"
+  fi
+
+  echo "→ symlinking $basedir → $target"
+  ln -s "$basedir" "$target"
 }
 
 os="$(detect_os)"
