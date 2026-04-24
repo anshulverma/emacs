@@ -25,6 +25,7 @@ node_modules
 
 # caches
 eshell/
+eln-cache/
 *.log
 *.eld
 projectile.cache
