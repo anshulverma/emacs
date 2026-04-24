@@ -171,13 +171,22 @@ unused:
   (dolist (package av/packages)
     (unless (package-installed-p package)
       (message "installing %s" package)
-      (package-install package))))
+      (package-install package)
+      ;; package-install byte-compiles the new package against whatever
+      ;; is currently on load-path — which for `org' / `org-contrib'
+      ;; means the *built-in* Org is still ahead, so the fresh .elc
+      ;; bakes in the old `org-release' string and triggers "Org
+      ;; version mismatch" warnings on every subsequent startup.
+      ;; Re-byte-compile now that the ELPA copy is activated.
+      (when (memq package '(org org-contrib))
+        (let ((dir (file-name-directory (locate-library (symbol-name package)))))
+          (byte-recompile-directory dir 0 t))))))
 
 (message (format "%d packages configured" (length av/packages)))
 
-;; Make sure some packages are byte-compiled. This should only happen the first
-;; time. I committed some packages to git without .elc files, so it seems like
-;; this is a good idea.
+;; Ensure org / org-contrib are byte-compiled at least once. The loop
+;; above handles the stale-version case on first install; this handles
+;; the case where the repo was ever checked in without .elc files.
 (cl-loop for library in '("org" "org-contrib")
          do
          (when (locate-library library)
