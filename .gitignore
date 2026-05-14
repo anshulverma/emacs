@@ -29,6 +29,7 @@ eln-cache/
 *.log
 *.eld
 projectile.cache
+projects
 .yas-compiled*
 .mc-lists.el
 projectile.cache
