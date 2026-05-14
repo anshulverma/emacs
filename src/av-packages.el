@@ -29,7 +29,8 @@
 (package-initialize)
 
 (defvar av/packages
-  (list 'flx                            ; used by helm-flx and helm-smex
+  (list 'compat                          ; required by transient (magit dep)
+        'flx                            ; used by helm-flx and helm-smex
         'smex                           ; ranking backend for helm-smex
         'yasnippet
         'flycheck 'flycheck-pos-tip
