@@ -5,7 +5,8 @@
 # Emacs packages themselves are installed by package.el on first
 # start (see src/av-packages.el).
 #
-# Supported: macOS (Homebrew), Debian/Ubuntu (apt), GitHub Codespaces.
+# Supported: macOS (Homebrew), Debian/Ubuntu (apt), RHEL/CentOS/Fedora (dnf),
+# GitHub Codespaces.
 
 set -euo pipefail
 
@@ -18,6 +19,8 @@ detect_os() {
     linux*)
       if [[ -r /etc/os-release ]] && grep -qiE 'ubuntu|debian' /etc/os-release; then
         echo debian
+      elif [[ -r /etc/os-release ]] && grep -qiE 'rhel|centos|fedora' /etc/os-release; then
+        echo rhel
       else
         echo linux-other
       fi ;;
@@ -59,6 +62,27 @@ install_debian() {
   $sudo apt-get install -y "${packages[@]}"
 }
 
+install_rhel() {
+  local sudo=""
+  [[ $EUID -ne 0 ]] && sudo="sudo"
+
+  if ! command -v emacs >/dev/null 2>&1; then
+    echo "Emacs not found. Install with 'dnf install emacs' or"
+    echo "'dnf install emacs-nox', then re-run this script."
+    exit 1
+  fi
+
+  local packages=(ispell pandoc graphviz plantuml gnuplot)
+  for pkg in "${packages[@]}"; do
+    if rpm -q "$pkg" >/dev/null 2>&1 || command -v "$pkg" >/dev/null 2>&1; then
+      echo "✓ $pkg already installed"
+    else
+      echo "→ installing $pkg"
+      $sudo dnf install -y "$pkg" || echo "⚠ $pkg not available — install manually if needed"
+    fi
+  done
+}
+
 link_emacs_d() {
   if [[ -L "$target" && "$(readlink "$target")" == "$basedir" ]]; then
     echo "✓ $target already points to this checkout"
@@ -81,6 +105,7 @@ echo "==> detected OS: $os"
 case "$os" in
   macos)  install_macos ;;
   debian) install_debian ;;
+  rhel)   install_rhel ;;
   *)
     echo "install.sh does not auto-install on '$os'. Install these manually:"
     echo "  emacs, ispell, pandoc, graphviz, plantuml, gnuplot"
