@@ -27,6 +27,12 @@
 ;; configuring archives; skip Emacs 27+'s automatic call.
 (setq package-enable-at-startup nil)
 
+;; Async native-compilation of third-party packages (helm-flx,
+;; helm-fuzzier, flx, ...) emits byte-compile warnings we can't fix
+;; without editing vendored source. Keep them in the log, but don't
+;; let the *Warnings* buffer pop up. Emacs 28+; harmless to set on 27.
+(setq native-comp-async-report-warnings-errors 'silent)
+
 ;; Skip the site-start startup banner; save a full directory walk.
 (setq site-run-file nil)
 

@@ -6,6 +6,48 @@
 
 (require 'cl-lib)
 (require 'package)
+(require 'url-vars)
+
+;;; Proxy support — detect from av/proxy or standard environment
+;;; variables so package downloads work behind a forward proxy.
+
+(defun av--parse-proxy-url (url)
+  "Extract HOST:PORT from a proxy URL like http://host:port."
+  (when (and url (not (string-empty-p url)))
+    (replace-regexp-in-string
+     "\\`https?://" ""
+     (replace-regexp-in-string "/\\'" "" url))))
+
+(defun av--no-proxy-regexp ()
+  "Build a regexp from no_proxy/NO_PROXY environment variable."
+  (let ((no-proxy (or (getenv "no_proxy") (getenv "NO_PROXY"))))
+    (when (and no-proxy (not (string-empty-p no-proxy)))
+      (mapconcat
+       (lambda (entry)
+         (setq entry (string-trim entry))
+         (if (string-prefix-p "." entry)
+             (concat "\\(^\\|\\.\\)" (regexp-quote (substring entry 1)) "$")
+           (concat "^" (regexp-quote entry) "$")))
+       (split-string no-proxy "," t)
+       "\\|"))))
+
+(let* ((proxy-url (or (and (boundp 'av/proxy) av/proxy)
+                      (getenv "https_proxy")
+                      (getenv "HTTPS_PROXY")
+                      (getenv "http_proxy")
+                      (getenv "HTTP_PROXY")))
+       (proxy (av--parse-proxy-url proxy-url)))
+  (when proxy
+    (let ((no-proxy-re (av--no-proxy-regexp)))
+      (setq url-proxy-services
+            (append `(("http"  . ,proxy)
+                      ("https" . ,proxy))
+                    (when no-proxy-re
+                      `(("no_proxy" . ,no-proxy-re))))))
+    (message "Package proxy: %s" proxy)))
+
+;; Fail fast instead of hanging when the network is unreachable.
+(setq url-retrieve-timeout 15)
 
 (setq package-archives
       '(("gnu"          . "https://elpa.gnu.org/packages/")
@@ -167,21 +209,23 @@ unused:
     ob-ipython, pig-mode, pig-snippets: no references in src/custom
   - jedi-direx: already commented out.")
 
-(unless (cl-every #'package-installed-p av/packages)
-  (package-refresh-contents)
-  (dolist (package av/packages)
-    (unless (package-installed-p package)
-      (message "installing %s" package)
-      (package-install package)
-      ;; package-install byte-compiles the new package against whatever
-      ;; is currently on load-path — which for `org' / `org-contrib'
-      ;; means the *built-in* Org is still ahead, so the fresh .elc
-      ;; bakes in the old `org-release' string and triggers "Org
-      ;; version mismatch" warnings on every subsequent startup.
-      ;; Re-byte-compile now that the ELPA copy is activated.
-      (when (memq package '(org org-contrib))
-        (let ((dir (file-name-directory (locate-library (symbol-name package)))))
-          (byte-recompile-directory dir 0 t))))))
+(if (getenv "AV_SKIP_PACKAGES")
+    (message "AV_SKIP_PACKAGES set — skipping package installation")
+  (unless (cl-every #'package-installed-p av/packages)
+    (package-refresh-contents)
+    (dolist (package av/packages)
+      (unless (package-installed-p package)
+        (message "installing %s" package)
+        (package-install package)
+        ;; package-install byte-compiles the new package against whatever
+        ;; is currently on load-path — which for `org' / `org-contrib'
+        ;; means the *built-in* Org is still ahead, so the fresh .elc
+        ;; bakes in the old `org-release' string and triggers "Org
+        ;; version mismatch" warnings on every subsequent startup.
+        ;; Re-byte-compile now that the ELPA copy is activated.
+        (when (memq package '(org org-contrib))
+          (let ((dir (file-name-directory (locate-library (symbol-name package)))))
+            (byte-recompile-directory dir 0 t)))))))
 
 (message (format "%d packages configured" (length av/packages)))
 

@@ -24,6 +24,7 @@ node_modules
 .claude/
 
 # caches
+/av-theme-state.el
 eshell/
 eln-cache/
 *.log
