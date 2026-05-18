@@ -50,7 +50,10 @@ Users override defaults via `~/.emacs.local.el`, loaded in `av-setup.el` before 
 - `av/face-height` — default font height (default 144)
 - `av/org-base-dir` — location of org agenda files and `diary`
 - `av/user-email` — IRC email userid
+- `av/proxy` — forward proxy URL for package downloads (e.g., `"http://fwdproxy:8080"`). Alternatively set `https_proxy`/`http_proxy` env vars; `av/proxy` takes precedence. Supports `no_proxy`/`NO_PROXY` env var.
 - `av/blog-*` — (historical — `org-page` was removed in Stage 2.1)
+
+The env var `AV_SKIP_PACKAGES=1` skips all package installation at startup (useful on hosts with no internet access). Install packages later with `AV_SKIP_PACKAGES= emacs --batch -l init.el`.
 
 When adding new tunables: `defvar av/... default` + `(boundp 'av/...)` guard.
 
