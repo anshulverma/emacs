@@ -6,8 +6,31 @@
 (defvar av/theme-load-hook nil
   "Hook called after a theme is loaded.")
 
-(defvar av/theme 'leuven
-  "Name of the theme to initialize Emacs with.")
+(defvar av/theme-state-file
+  (expand-file-name "av-theme-state.el" user-emacs-directory)
+  "File persisting the theme last chosen via `av-cycle-theme'.")
+
+(defun av/save-theme (theme)
+  "Persist THEME to `av/theme-state-file' for the next Emacs launch.
+Added to `av/theme-load-hook', so every theme switch is remembered."
+  (ignore-errors
+    (with-temp-file av/theme-state-file
+      (prin1 theme (current-buffer)))))
+
+(add-hook 'av/theme-load-hook #'av/save-theme)
+
+(defvar av/theme
+  (or (ignore-errors
+        (when (file-readable-p av/theme-state-file)
+          (with-temp-buffer
+            (insert-file-contents av/theme-state-file)
+            (let ((sym (read (current-buffer))))
+              (and (symbolp sym) sym)))))
+      'leuven)
+  "Name of the theme to initialize Emacs with.
+Defaults to `leuven'; overridden by the theme last chosen via
+`av-cycle-theme' (persisted in `av/theme-state-file'), or by
+setting `av/theme' in ~/.emacs.local.el.")
 
 ;; needed to display emojis (GUI-only; absent in emacs-nox / batch)
 (when (fboundp 'set-fontset-font)
