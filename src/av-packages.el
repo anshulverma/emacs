@@ -129,7 +129,8 @@
         'git-timemachine
         'elfeed
         'expand-region
-        'idle-highlight-mode
+        ;; idle-highlight-mode is added below — it requires Emacs 29.1,
+        ;; so it is gated on the running version to keep 28.x working.
         'multiple-cursors
         'popwin
         'prodigy
@@ -209,10 +210,28 @@ unused:
     ob-ipython, pig-mode, pig-snippets: no references in src/custom
   - jedi-direx: already commented out.")
 
+;; idle-highlight-mode 1.1.5+ requires Emacs 29.1. Including it
+;; unconditionally aborts startup on 28.x with "Package
+;; ‘emacs-29.1’ is unavailable"; gate it on the running version
+;; instead (its sole use in programming.el is `fboundp'-guarded).
+(when (version<= "29.1" emacs-version)
+  (setq av/packages (append av/packages '(idle-highlight-mode))))
+
 (if (getenv "AV_SKIP_PACKAGES")
     (message "AV_SKIP_PACKAGES set — skipping package installation")
   (unless (cl-every #'package-installed-p av/packages)
     (package-refresh-contents)
+    ;; `transient' ships with Emacs 29+, but magit needs a newer
+    ;; release than the built-in. `package-installed-p' treats the
+    ;; built-in copy as satisfied, so without forcing the ELPA version
+    ;; magit gets byte-compiled against the stale built-in and dies
+    ;; with "transient--init-suffix-key is already defined as
+    ;; something else than a generic function". `package-alist' lists
+    ;; only ELPA-installed packages, so its absence there means the
+    ;; built-in is still the only copy — install the ELPA one first.
+    (unless (assq 'transient package-alist)
+      (message "installing transient (ELPA, ahead of magit)")
+      (package-install 'transient))
     (dolist (package av/packages)
       (unless (package-installed-p package)
         (message "installing %s" package)

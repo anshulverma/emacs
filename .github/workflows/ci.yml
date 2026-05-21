@@ -10,6 +10,12 @@ on:
     - cron: '0 6 * * 1'
   workflow_dispatch:
 
+# Cancel superseded runs: a new push to a branch/PR stops the previous
+# in-progress run instead of letting both burn the full matrix.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   load-init:
     name: Load init on Emacs ${{ matrix.emacs-version }} (${{ matrix.os }})

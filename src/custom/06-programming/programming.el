@@ -18,7 +18,10 @@
   (make-local-variable 'column-number-mode)
   (column-number-mode t)
   (if window-system (hl-line-mode t))
-  (idle-highlight-mode t)
+  ;; idle-highlight-mode is only installed on Emacs 29.1+ (see
+  ;; av-packages.el); skip it gracefully on older Emacs.
+  (when (fboundp 'idle-highlight-mode)
+    (idle-highlight-mode t))
   (subword-mode +1)
   (set-fill-column 120)
 
