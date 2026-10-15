@@ -127,7 +127,8 @@
         'key-chord
 
         'git-timemachine
-        'elfeed
+        ;; elfeed is added below — it requires Emacs 29.1,
+        ;; so it is gated on the running version to keep 28.x working.
         'expand-region
         ;; idle-highlight-mode is added below — it requires Emacs 29.1,
         ;; so it is gated on the running version to keep 28.x working.
@@ -214,8 +215,11 @@ unused:
 ;; unconditionally aborts startup on 28.x with "Package
 ;; ‘emacs-29.1’ is unavailable"; gate it on the running version
 ;; instead (its sole use in programming.el is `fboundp'-guarded).
+;; elfeed now declares (emacs "29.1") + (compat "31") on MELPA, so installing
+;; it on 28.x aborts startup with "Package ‘emacs-29.1’ is unavailable" too.
+;; Nothing under src/custom references elfeed, so gating it is inert on 28.x.
 (when (version<= "29.1" emacs-version)
-  (setq av/packages (append av/packages '(idle-highlight-mode))))
+  (setq av/packages (append av/packages '(idle-highlight-mode elfeed))))
 
 (if (getenv "AV_SKIP_PACKAGES")
     (message "AV_SKIP_PACKAGES set — skipping package installation")
