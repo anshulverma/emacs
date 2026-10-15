@@ -1023,7 +1023,11 @@ DIR is the project root, if not set then current directory is used"
       (define-key projectile-mode-map [remap projectile-grep] nil)
       (define-key projectile-mode-map [remap projectile-ag] nil)
       (define-key projectile-mode-map [remap projectile-browse-dirty-projects] nil)
-      (projectile-commander-bindings))))
+      ;; `projectile-commander-bindings' was removed upstream; calling it
+      ;; unconditionally makes `helm-projectile-off' fail on a current
+      ;; projectile. Restore the defaults only when it still exists.
+      (when (fboundp 'projectile-commander-bindings)
+        (projectile-commander-bindings)))))
 
 ;;;###autoload
 (defun helm-projectile (&optional arg)
