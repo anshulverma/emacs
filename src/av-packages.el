@@ -236,6 +236,19 @@ unused:
     (unless (assq 'transient package-alist)
       (message "installing transient (ELPA, ahead of magit)")
       (package-install 'transient))
+    ;; Exactly the same hazard as `transient', and the reason Emacs 28.2
+    ;; was the only matrix job still failing. Emacs bundles `org', and
+    ;; `package-installed-p' counts that built-in copy as satisfying
+    ;; 'org, so the ELPA release never gets installed. On 28.2 the
+    ;; built-in is Org 9.5, which predates `org-assert-version' (added
+    ;; in Org 9.6) — so org-contrib/org-ref, which are far newer and
+    ;; call that macro, load against the stale built-in and abort init
+    ;; with "void-function org-assert-version". Emacs 29+/30 bundle Org
+    ;; 9.6+, which already has it, which is why only 28.2 broke.
+    ;; ELPA org 9.8.3 declares (emacs "28.2"), so 28.2 stays supported.
+    (unless (assq 'org package-alist)
+      (message "installing org (ELPA, ahead of org-contrib/org-ref)")
+      (package-install 'org))
     (dolist (package av/packages)
       (unless (package-installed-p package)
         (message "installing %s" package)
