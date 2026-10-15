@@ -1,6 +1,6 @@
 # emacs
 
-Personal Emacs configuration. macOS + Homebrew and Debian/Ubuntu Linux (incl. GitHub Codespaces). Emacs 27.1 or newer (CI covers 28.2, 29.4, 30.2, and snapshot).
+Personal Emacs configuration. macOS + Homebrew and Debian/Ubuntu Linux (incl. GitHub Codespaces). Emacs 29.1 or newer (CI covers 29.4, 30.2, and snapshot). `init.el` only *warns* below 27.1, but 29.1 is the practical floor: `elfeed` and `idle-highlight-mode` both require it, and ELPA `org` cannot byte-compile against Emacs 28's built-in Org 9.5.
 
 [![CI](https://github.com/anshulverma/emacs/actions/workflows/ci.yml/badge.svg)](https://github.com/anshulverma/emacs/actions/workflows/ci.yml)
 

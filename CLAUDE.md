@@ -4,13 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository purpose
 
-Personal Emacs configuration. Cloned into a working directory and linked into `~/.emacs.d` by `install.sh`. Targets macOS on Homebrew, though the Emacs side is portable (the CI workflow exercises Linux too). Minimum Emacs version is **27.1** (enforced by `init.el`; CI covers 28.2 / 29.4 / 30.2 / snapshot).
+Personal Emacs configuration. Cloned into a working directory and linked into `~/.emacs.d` by `install.sh`. Targets macOS on Homebrew, though the Emacs side is portable (the CI workflow exercises Linux too). Practical minimum Emacs version is **29.1** (CI covers 29.4 / 30.2 / snapshot). `init.el` only *warns* below 27.1 — it does not enforce — but 29.1 is the real floor: `elfeed` and `idle-highlight-mode` declare `(emacs "29.1")` and are version-gated in `src/av-packages.el`, and ELPA `org` 9.8.3 cannot byte-compile against Emacs 28's built-in Org 9.5 (`org-assert-version` is missing). 28.2 was dropped from CI on 2026-10-15.
 
 ## Bootstrap
 
 - `./install.sh` — idempotent; checks for Homebrew and Emacs, installs a small set of external binaries (`ispell`, `pandoc`, `graphviz`, `plantuml`, `gnuplot`), and symlinks the repo into `~/.emacs.d` if nothing is there. Elisp packages are installed by `package.el` on first Emacs launch (see `src/av-packages.el`).
 - `./install-font.sh` — installs the bundled fonts.
-- No test suite; `.github/workflows/ci.yml` runs `emacs -Q --batch -l init.el` across Emacs 28–snapshot on every push and weekly cron.
+- No test suite; `.github/workflows/ci.yml` runs `emacs -Q --batch -l init.el` across Emacs 29.4–snapshot on every push and weekly cron.
 
 ## Entry points and load order
 

@@ -24,11 +24,14 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
-        emacs-version: ['28.2', '29.4', '30.2', 'snapshot']
-        exclude:
-          # Apple Silicon macOS runners don't have older Emacs builds.
-          - os: macos-latest
-            emacs-version: '28.2'
+        # Floor is 29.1. Two packages hard-require it — elfeed and
+        # idle-highlight-mode both declare (emacs "29.1") and are gated on
+        # the running version in src/av-packages.el. Emacs 28.2 was dropped
+        # on 2026-10-15: its built-in Org is 9.5, whose `org-macs' predates
+        # `org-assert-version' (Org 9.6+), so ELPA org 9.8.3 cannot
+        # byte-compile its own files there without evicting the built-in org
+        # from `load-path' first. 29.4 / 30.2 / snapshot all pass.
+        emacs-version: ['29.4', '30.2', 'snapshot']
     steps:
       - uses: actions/checkout@v7
         with:
