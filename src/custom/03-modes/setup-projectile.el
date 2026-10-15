@@ -4,7 +4,9 @@
 
 (require 'projectile)
 
-(projectile-global-mode) ;; to enable in all buffers
+(projectile-mode +1) ;; to enable in all buffers
+;; `projectile-global-mode' was an alias for `projectile-mode' and has been
+;; removed upstream; calling it fails init on a fresh ELPA install.
 (setq projectile-enable-caching t)
 (setq projectile-indexing-method 'native)
 
